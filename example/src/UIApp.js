@@ -6,7 +6,6 @@ import {
   Appbar,
   AppTitleContainer,
   AppbarToggleButton,
-  IconButton,
   AppTitle,
   AppbarToolbar,
   DropdownButton,
@@ -48,6 +47,7 @@ import {
   GridFragment,
   ExamplesFragment,
   AppFragment,
+  SwitchFragment,
   TextFragment,
   TextAreaFragment,
   ToastFragment,
@@ -143,6 +143,7 @@ class UIApp extends Component {
                 <NavGroup>
                   <NavSubheader>Inputs</NavSubheader>
                   <Link to="/component/Checkbox" style={style.navLink}><NavItem><NavItemText>Checkbox</NavItemText></NavItem></Link>
+                  <Link to="/component/Switch" style={style.navLink}><NavItem><NavItemText>Switch</NavItemText></NavItem></Link>
                 </NavGroup>
 
                 <NavGroup>
@@ -192,6 +193,7 @@ class UIApp extends Component {
               <Route path="/component/Icon" component={IconFragment} />
 
               <Route path="/component/Checkbox" component={CheckboxFragment} />
+              <Route path="/component/Switch" component={SwitchFragment} />
 
               <Route path="/component/BottomNavigation" component={BottomNavigationFragment} />
               <Route path="/component/NavDrawer" component={NavDrawerFragment} />

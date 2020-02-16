@@ -16,6 +16,7 @@ import NavDrawerFragment from "./NavDrawerFragment";
 import PaperFragment from "./PaperFragment";
 import ParagraphFragment from "./ParagraphFragment";
 import RowFragment from "./RowFragment";
+import SwitchFragment from "./SwitchFragment";
 import TableFragment from "./TableFragment";
 import TextAreaFragment from "./TextAreaFragment";
 import TextFragment from "./TextFragment";
@@ -41,6 +42,7 @@ export {
     PaperFragment,
     ParagraphFragment,
     RowFragment,
+    SwitchFragment,
     TableFragment,
     TextAreaFragment,
     TextFragment,
