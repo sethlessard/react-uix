@@ -34,8 +34,8 @@ const Card = ({ children, style: compStyle, z = 1 }) => {
   };
   Object.assign(style.card, compStyle);
 
-  if (compStyle.height) style.paper.height = compStyle.height;
-  if (compStyle.width) style.paper.width = compStyle.width;
+  if (compStyle && compStyle.height) style.paper.height = compStyle.height;
+  if (compStyle && compStyle.width) style.paper.width = compStyle.width;
   if (z < 1) z = 1;
   if (z > 5) z = 5;
   switch (z) {
