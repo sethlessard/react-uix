@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
+import IconButton from "../IconButton";
+
 import { updateNavDrawerOpen, updateNavDrawerClosingFromToggleButton } from "../../redux/actions/ui";
 
 const mapStateToProps = (state) => ({
@@ -24,7 +26,7 @@ const Wrapper = styled.div`
   pointer-events: none;
 `;
 
-const AppbarToggleButton = ({ children, navDrawerOpen, updateNavDrawerClosingFromToggleButton, updateNavDrawerOpen, style: compStyle, visible = true }) => {
+const AppbarToggleButton = ({ children, color, navDrawerOpen, updateNavDrawerClosingFromToggleButton, updateNavDrawerOpen, style: compStyle, visible = true }) => {
   const style = {
     button: {}
   };
@@ -40,13 +42,14 @@ const AppbarToggleButton = ({ children, navDrawerOpen, updateNavDrawerClosingFro
         updateNavDrawerClosingFromToggleButton(true);
         updateNavDrawerOpen(!navDrawerOpen);
       }}>
-      {children}
+      <IconButton color={color}>{ children }</IconButton>
     </Wrapper>
   );
 };
 
 AppbarToggleButton.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.string,
+  color: PropTypes.string,
   visible: PropTypes.bool
 };
 
