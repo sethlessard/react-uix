@@ -12,12 +12,12 @@ const Span = styled.span`
   letter-spacing: 0.5;
   display: block;
   font-family: 'Roboto', sans-serif;
+  font-size: ${props => props.fontSize};
 `;
 
-const Text = ({ children, color, fontSize = "1rem", foregroundColor, style: compStyle }) => {
+const Text = ({ children, color, fontSize = ".8rem", foregroundColor, style: compStyle }) => {
   const style = {
     text: {
-      fontSize,
       color: color || foregroundColor
     }
   };
@@ -25,7 +25,7 @@ const Text = ({ children, color, fontSize = "1rem", foregroundColor, style: comp
   Object.assign(style.text, compStyle);
   return (
     <div>
-      <Span style={style.text}>{ children }</Span>
+      <Span fontSize={fontSize} style={style.text}>{ children }</Span>
     </div>
   );
 }
