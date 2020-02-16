@@ -6,7 +6,8 @@ import Row from "../Row";
 import GridItem from "./GridItem";
 
 const Wrapper = styled.div`
- width: 100%;
+  width: 100%;
+  display: inline-block;
 `;
 
 /**
