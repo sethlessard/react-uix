@@ -53,7 +53,8 @@ import {
   ToastFragment,
 } from "./fragment";
 
-const COLOR_PRIMARY = "#6c5ce7";
+// const COLOR_PRIMARY = "#6c5ce7";
+const COLOR_PRIMARY = "#009866";
 const COLOR_SECONDARY = "#000000";
 const COLOR_FOREGROUND = "#000";
 
@@ -88,10 +89,7 @@ class UIApp extends Component {
           <Router basename={process.env.PUBLIC_URL}>
             <Appbar>
               <AppTitleContainer>
-                <AppbarToggleButton visible={!this.state.navDrawerOpen} onClick={() => { this.setState({ navDrawerOpen: true })}}>
-
-                  <IconButton color="#ffffff">menu</IconButton>
-                </AppbarToggleButton>
+                <AppbarToggleButton visible={!this.state.navDrawerOpen} onClick={() => { this.setState({ navDrawerOpen: true })}}>menu</AppbarToggleButton>
                 <AppTitle>UiX</AppTitle>
               </AppTitleContainer>
               <AppbarToolbar>
