@@ -1,25 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from "styled-components";
 
-import "./Table.css";
+const Wrapper = styled.tr`
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: .35rem;
+  background-color: ${props => props.backgroundColor || "#fff"};
+  color: ${props => props.foregroundColor || "#000"};
 
-const TableRow = (props) => {
+  @media screen and (max-width: 720px) {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: .35rem;
+  }
+`;
+
+const TableRow = ({ backgroundColor, children, foregroundColor, style: compStyle }) => {
   const style = {
-    tableRow: {
-      backgroundColor: props.backgroundColor || "#ffffff",
-      color: props.foregroundColor || "#000000"
-    }
+    tableRow: {}
   };
+  Object.assign(style.tableRow, compStyle);
   return (
-    <tr style={style.tableRow}>{props.children}</tr>
+    <Wrapper backgroundColor={backgroundColor} foregroundColor={foregroundColor} style={style.tableRow}>{children}</Wrapper>
   );
 }
 
 TableRow.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node)
-  ]),
+  children: PropTypes.node,
   foregroundColor: PropTypes.string,
   backgroundColor: PropTypes.string
 };

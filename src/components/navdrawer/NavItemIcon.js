@@ -1,9 +1,7 @@
 import React from "react";
-
 import Icon from "../Icon";
 import PropTypes from "prop-types";
 
-import "./NavItemIcon.css";
 const NavItemIcon = ({ children, size, color, style: compStyle }) => {
   const style = {
     navItemIcon: {}

@@ -80,6 +80,7 @@ import Icon from "./components/Icon";
 import IconButton from "./components/IconButton";
 import Image from "./components/Image";
 import Paper from "./components/Paper";
+import PaddedHeading from "./components/PaddedHeading";
 import Paragraph from "./components/Paragraph";
 import Row from "./components/Row";
 import Subtitle from "./components/Subtitle";
@@ -159,6 +160,7 @@ export {
   IconButton,
   Image,
   Paper,
+  PaddedHeading,
   Paragraph,
   Row,
   Subtitle,

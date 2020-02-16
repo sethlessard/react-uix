@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import { updateNavDrawerDefined, updateNavDrawerOpen, updateNavDrawerClosingFromToggleButton } from '../../redux/actions/ui';
 import { connect } from 'react-redux';
-import "./NavDrawer.css";
 
 const mapStateToProps = (state) => {
   return {

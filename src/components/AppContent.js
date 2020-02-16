@@ -16,22 +16,26 @@ const Wrapper = styled.div`
   width: 100vw;
   position: fixed;
   z-index: 0;
-  background-color: #ecf0f1;
-  min-width: 320;
   left: 0;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+  top: ${props => (props.appbarDefined) ? props.appbarHeight : 0}px;
+  height: ${props => props.height};
 `;
-
 const Relative = styled.div`
   position: relative;
-  z-index: 0;
   width: 100vw;
+  height: ${props => props.height};
 `;
-
 const Content = styled.div`
-  z-index: 0;
-  padding: 1em 1.5em;
+  height: ${props => props.height};
+  padding: 2em 1.5em;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #ecf0f1;
+  -webkit-overflow-scrolling: touch;
+`;
+const Padding = styled.div`
+  width: 100vw;
+  height: 6em;
 `;
 
 class AppContent extends Component {
@@ -45,13 +49,9 @@ class AppContent extends Component {
     const { appbarDefined, appbarHeight, bottomNavDefined, bottomNavHeight } = this.props;
     let height = "100vh";
     let margins = 0;
-    if (appbarDefined && bottomNavDefined) {
-      margins = appbarHeight + bottomNavHeight;
-    } else if (appbarDefined) {
-      margins = appbarHeight;
-    } else if (bottomNavDefined) {
-      margins = bottomNavHeight;
-    }
+    if (appbarDefined && bottomNavDefined) margins = appbarHeight + bottomNavHeight;
+    else if (appbarDefined) margins = appbarHeight;
+    else if (bottomNavDefined) margins = bottomNavHeight;
 
     height = `calc(100vh - ${margins}px)`;
 
@@ -61,24 +61,21 @@ class AppContent extends Component {
   render() {
     const { appbarDefined, appbarHeight } = this.props;
     const height = this.calcHeight();
-    let style = {
-      appContent: {
-        top: (appbarDefined) ? appbarHeight : 0,
-        height
-      },
-      relative: {
-        height
-      },
-      content: {
-        height
-      }
+    const style = {
+      appContent: {}
     };
     Object.apply(style.appContent, this.props.style);
     return (
-      <Wrapper style={style.appContent}>
-        <Relative style={style.relative}>
-          <Content style={style.content}>
+      <Wrapper
+        appbarDefined={appbarDefined}
+        appbarHeight={appbarHeight}
+        height={height}
+        style={style.appContent}
+      >
+        <Relative height={height} style={style.relative}>
+          <Content height={height} style={style.content}>
             {this.props.children}
+            <Padding />
           </Content>
         </Relative>
       </Wrapper>

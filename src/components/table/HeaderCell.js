@@ -1,11 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from "styled-components";
 
-import "./Table.css";
+const Wrapper = styled.th`
+  padding: .625rem;
+  text-align: center;
+  font-size: .75rem;
+
+  @media screen and (max-width: 720px) {
+
+  }
+`;
 
 const HeaderCell = (props) => {
   return (
-    <th>{props.children}</th>
+    <Wrapper>{props.children}</Wrapper>
   );
 }
 

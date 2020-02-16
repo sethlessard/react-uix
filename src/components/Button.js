@@ -1,13 +1,71 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-
-import styles from "./Button.css";
+import styled from "styled-components";
 
 const mapStateToProps = (state, ownProps) => ({
   foregroundColor: ownProps.foregroundColor || state.ui.foregroundColor,
   backgroundColor: ownProps.backgroundColor || state.ui.primaryColor
 });
+
+const Wrapper = styled.button`
+  position: relative;
+  border: none;
+  border-radius: 4;
+  padding: 0.65em 1em;
+  vertical-align: middle;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: box-shadow 0.2s;
+
+  &::-moz-focus-inner {
+    border: none;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    padding: 50%;
+    width: 32px; /* Safari */
+    height: 32px; /* Safari */
+    background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+    transition: opacity 1s, transform 0.5s;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  }
+  &:hover::before {
+    opacity: 0.08;
+  }
+  &:focus::before {
+    opacity: 0.24;
+  }
+  &:hover:focus::before {
+    opacity: 0.3;
+  }
+`;
 
 class Button extends Component {
   constructor(props) {
@@ -19,18 +77,7 @@ class Button extends Component {
     const { backgroundColor, children, foregroundColor, style: compStyle, onClick, variant } = this.props;
     const style = {
       button: {
-        color: foregroundColor,
-        position: "relative",
-        border: "none",
-        borderRadius: 4,
-        padding: "0.65rem 1rem",
-        verticalAlign: "middle",
-        overflow: "hidden",
-        outline: "none",
-        cursor: "pointer",
-        userSelect: "none",
-        WebkitUserSelect: "none",
-        transition: "box-shadow 0.2s"
+        color: foregroundColor
       },
       text: {
         fontSize: 14,
@@ -58,9 +105,9 @@ class Button extends Component {
     Object.assign(style.button, compStyle);
 
     return (
-      <button className={styles["pure-material-button-contained"]} style={style.button} onClick={onClick}>
+      <Wrapper style={style.button} onClick={onClick}>
         <span style={style.text}>{children}</span>
-      </button>
+      </Wrapper>
     );
   }
 }

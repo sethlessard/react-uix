@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import CopyToClipboard from "react-copy-to-clipboard";
 import { connect } from "react-redux";
+import styled from "styled-components";
 
 import Icon from "./Icon";
 
@@ -10,99 +11,90 @@ const mapStateToProps = (state, ownProps) => ({
   backgroundColor: ownProps.backgroundColor || state.ui.primaryColor
 });
 
-class Code extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+const Wrapper = styled.div`
+  background-color: ${props => props.backgroundColor || "#000"};
+  color: ${props => props.foregroundColor || "#fff"};
+  padding: 1em;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+const Content = styled.div`
+  display: inline;
 
-  render() {
-    const parseCode = (code) => {
-      let html = [];
-      let token = "";
-      for (let i = 0; i < code.length; i++) {
-        const c = code.charAt(i);
-        switch (c) {
-          case "\t":
-            if (token !== "") {
-              html.push(token);
-              token = "";
-            }
-            html.push(`\u00A0\u00A0`); // 2 spaces
-            break;
-          case "\n":
-            if (token !== "") {
-              html.push(token);
-              token = "";
-            }
-            html.push(<br key={`code-br-${i}`} />);
-            break;
-          default:
-            token += c;
-            break;
+`;
+const Span = styled.span`
+  display: inline;
+  height: 100%;
+  word-wrap: break-word;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  font-size: .6rem;
+  line-height: 1rem;
+`;
+const CopyContainer = styled.div`
+  display: inline;
+  float: right;
+  cursor:pointer;
+  padding: .3em;
+`;
+
+const parseCode = (code) => {
+  let html = [];
+  let token = "";
+  for (let i = 0; i < code.length; i++) {
+    const c = code.charAt(i);
+    switch (c) {
+      case "\t":
+        if (token !== "") {
+          html.push(token);
+          token = "";
         }
-      }
-
-      if (token !== "") {
-        html.push(token);
-        token = "";
-      }
-
-      return html;
-    };
-
-    const style = {
-      code: {
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        margin: ".5rem 0 .75rem",
-        padding: "1rem",
-        backgroundColor: this.state.primaryColor,
-        borderRadius: 3
-      },
-      content: {
-        display: "inline",
-        fontFamily: "Menlo, Monaco, 'Courier New', monospace",
-        fontSize: ".7rem",
-        lineHeight: "1rem"
-      },
-      copyContainer: {
-        display: "inline",
-        float: "right",
-        cursor: "pointer",
-        margin: ".3rem"
-      },
-      img: {
-        cursor: "pointer",
-        userSelect: "none",
-        WebkitUserSelect: "none",
-        height: 16,
-        width: 16,
-        color: this.state.foregroundColor
-      },
-      span: {
-        display: "inline",
-        height: "100%",
-        wordWrap: "break-word",
-        color: this.state.foregroundColor
-      }
-    };
-    return (
-      <div style={style.code}>
-        <div style={style.content}>
-          <span style={style.span}>
-            {parseCode(this.props.text)}
-          </span>
-        </div>
-        <div style={style.copyContainer}>
-          <CopyToClipboard text={this.props.text}>
-            <Icon color={this.state.foregroundColor}>assignment</Icon>
-          </CopyToClipboard>
-        </div>
-      </div>
-    );
+        html.push(`\u00A0\u00A0`); // 2 spaces
+        break;
+      case "\n":
+        if (token !== "") {
+          html.push(token);
+          token = "";
+        }
+        html.push(<br key={`code-br-${i}`} />);
+        break;
+      default:
+        token += c;
+        break;
+    }
   }
+  if (token !== "") {
+    html.push(token);
+    token = "";
+  }
+
+  return html;
+};
+
+const Code = ({ backgroundColor, children, foregroundColor, style: compStyle, text }) => {
+  const style = {
+    Code: {}
+  };
+  Object.assign(style.Code, compStyle);
+  return (
+    <Wrapper
+      style={style.code}
+      backgroundColor={backgroundColor}
+      foregroundColor={foregroundColor}
+    >
+      <Content>
+        <Span style={style.span}>
+          {parseCode(text)}
+        </Span>
+      </Content>
+      <CopyContainer>
+        <CopyToClipboard text={text}>
+          <Icon color={foregroundColor}>assignment</Icon>
+        </CopyToClipboard>
+      </CopyContainer>
+    </Wrapper>
+  );
 }
 
 Code.propTypes = {
