@@ -6,7 +6,6 @@ import Heading from "../Heading";
 const NavSubheader = (props) => {
   const style = {
     navSubheader: {
-      width: "100%",
       padding: ".25em 1em"
     },
     span: {

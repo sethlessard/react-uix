@@ -10,14 +10,17 @@ const Wrapper = styled.div`
   max-width: 1080px;
   overflow: none;
   clear: both;
+  height: auto;
+`;
+const Contents = styled.div`
 `;
 
-const Row = (props) => {
+const Row = ({ children, style: compStyle }) => {
   const style = {
     row: {}
   };
-  Object.assign(style.row, props.style);
-  return <Wrapper style={style.row}>{props.children}</Wrapper>;
+  Object.assign(style.row, compStyle);
+  return <Wrapper style={style.row}><Contents>{children}</Contents></Wrapper>;
 }
 
 Row.propTypes = {

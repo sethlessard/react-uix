@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ListItem from "./ListItem";
-
 const List = ({ children, style: listStyle, type = "ul" }) => {
   const style = {
     list: {

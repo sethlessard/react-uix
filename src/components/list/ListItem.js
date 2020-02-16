@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styled from "styled-components";
+
+const Wrapper = styled.li`
+  margin: 0;
+`;
 
 class ListItem extends Component {
   constructor(props) {
@@ -10,13 +15,11 @@ class ListItem extends Component {
   render() {
     const { children, style: compStyle } = this.props;
     const style = {
-      listItem: {
-        margin: "0 0 0 2rem"
-      }
+      listItem: {}
     };
     Object.assign(style.listItem, compStyle);
     return (
-      <li style={style.listItem}>{children}</li>
+      <Wrapper style={style.listItem}>{children}</Wrapper>
     );
   }
 }
