@@ -1,6 +1,6 @@
 import React from 'react';
 import Fragment from './Fragment';
-import { Heading, Paragraph, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData } from 'react-uix';
+import { PaddedHeading, Paragraph, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData } from 'react-uix';
 
 const ToastFragment = (props) => {
     return (
@@ -9,10 +9,10 @@ const ToastFragment = (props) => {
                 The Toast component is used to display a toast-type notification to the user.
             </Paragraph>
 
-            <Heading h={6}>Usage</Heading>
+            <PaddedHeading h={6}>Usage</PaddedHeading>
             <Code text={`import { Toast } from "react-uix";`} />
 
-            <Heading h={6}>Props</Heading>
+            <PaddedHeading h={6}>Props</PaddedHeading>
             <Table>
                 <TableHeader>
                     <TableRow>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-    Heading, Paragraph, TextArea, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData
+    PaddedHeading, Paragraph, TextArea, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData
 } from "react-uix";
 import Fragment from "./Fragment";
 import { Example } from "../component";
@@ -16,10 +16,10 @@ const TextAreaFragment = (props) => {
                 <TextArea>This is an example TextArea. You can edit this text.</TextArea>
             </Example>
 
-            <Heading h={6}>Usage</Heading>
+            <PaddedHeading h={6}>Usage</PaddedHeading>
             <Code text={`import { TextArea } from "react-uix";`} />
 
-            <Heading h={6}>Props</Heading>
+            <PaddedHeading h={6}>Props</PaddedHeading>
             <Table>
                 <TableHeader>
                     <TableRow>

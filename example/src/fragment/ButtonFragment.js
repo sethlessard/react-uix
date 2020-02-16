@@ -1,6 +1,6 @@
 import React from 'react';
 import Fragment from './Fragment';
-import { Heading, Paragraph, Button, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData } from 'react-uix';
+import { PaddedHeading, Paragraph, Button, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData } from 'react-uix';
 import { Example } from '../component';
 
 const ButtonFragment = () => {
@@ -19,10 +19,10 @@ const ButtonFragment = () => {
                 <Button backgroundColor="#000000">Dark Button</Button>
             </Example>
 
-            <Heading h={6}>Usage</Heading>
+            <PaddedHeading h={6}>Usage</PaddedHeading>
             <Code text={`import { Button } from "react-uix";`} />
 
-            <Heading h={6}>Props</Heading>
+            <PaddedHeading h={6}>Props</PaddedHeading>
             <Table>
                 <TableHeader>
                     <TableRow>

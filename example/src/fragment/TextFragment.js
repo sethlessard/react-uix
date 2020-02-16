@@ -1,6 +1,6 @@
 import React from 'react';
 import Fragment from './Fragment';
-import { Heading, Paragraph, Text, Code, Table, TableHeader, TableRow, TableBody, TableData, HeaderCell } from 'react-uix';
+import { PaddedHeading, Paragraph, Text, Code, Table, TableHeader, TableRow, TableBody, TableData, HeaderCell } from 'react-uix';
 import { Example } from '../component';
 
 const TextFragment = (props) => {
@@ -13,10 +13,10 @@ const TextFragment = (props) => {
                 <Text>This is an example of some text</Text>
             </Example>
 
-            <Heading h={6}>Usage</Heading>
+            <PaddedHeading h={6}>Usage</PaddedHeading>
             <Code text={`import { Text } from "react-uix";`} />
 
-            <Heading h={6}>Props</Heading>
+            <PaddedHeading h={6}>Props</PaddedHeading>
             <Table>
                 <TableHeader>
                     <TableRow>

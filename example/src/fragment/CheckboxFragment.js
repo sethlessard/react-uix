@@ -2,7 +2,7 @@ import React from 'react';
 
 import Fragment from "./Fragment";
 import { Example } from "../component";
-import { Checkbox, Heading, Paragraph, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData } from "react-uix";
+import { Checkbox, PaddedHeading, Paragraph, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData } from "react-uix";
 
 const CheckboxFragment = (props) => {
     return (
@@ -15,10 +15,10 @@ const CheckboxFragment = (props) => {
                 <Checkbox>Another checkbox</Checkbox>
             </Example>
 
-            <Heading h={6}>Usage</Heading>
+            <PaddedHeading h={6}>Usage</PaddedHeading>
             <Code text={`import { Checkbox } from "react-uix";`} />
 
-            <Heading h={6}>Props</Heading>
+            <PaddedHeading h={6}>Props</PaddedHeading>
             <Table>
                 <TableHeader>
                     <TableRow>

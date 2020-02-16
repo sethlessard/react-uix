@@ -1,6 +1,6 @@
 import React from 'react';
 import Fragment from './Fragment';
-import { Heading, Paragraph, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData } from "react-uix";
+import { PaddedHeading, Paragraph, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData } from "react-uix";
 
 const RowFragment = () => {
     return (
@@ -9,10 +9,10 @@ const RowFragment = () => {
                 The Row component is used to set a minimum and maximum width upon a Surface component, as well as center that component within its parent.
             </Paragraph>
 
-            <Heading h={6}>Usage</Heading>
+            <PaddedHeading h={6}>Usage</PaddedHeading>
             <Code text={`import { Row } from "react-uix";`} />
 
-            <Heading h={6}>Props</Heading>
+            <PaddedHeading h={6}>Props</PaddedHeading>
             <Table>
                 <TableHeader>
                     <TableRow>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import {
-    Heading,
     Paragraph,
     Appbar,
     AppTitleContainer,
@@ -17,7 +16,8 @@ import {
     TableData,
     HeaderCell,
     List,
-    ListItem
+    ListItem,
+    PaddedHeading
 } from "react-uix";
 
 
@@ -53,12 +53,12 @@ const AppbarFragment = (props) => {
                     </Appbar>
                 </Example>
 
-                <Heading h={6}>Usage</Heading>
+                <PaddedHeading h={6}>Usage</PaddedHeading>
                 <Paragraph>
                     <Code text={`import { Appbar } from "react-uix";`} />
                 </Paragraph>
 
-                <Heading h={6}>Props</Heading>
+                <PaddedHeading h={6}>Props</PaddedHeading>
                 <Table>
                     <TableHeader>
                         <TableRow>
@@ -100,7 +100,7 @@ const AppbarFragment = (props) => {
                         </TableRow>
                     </TableBody>
                 </Table>
-                <Heading h={6}>Direct Subcomponents</Heading>
+                <PaddedHeading h={6}>Direct Subcomponents</PaddedHeading>
                 <Paragraph>
                     Appbar has the following direct subcomponents used for styling:
                 </Paragraph>
@@ -112,8 +112,7 @@ const AppbarFragment = (props) => {
                 </List>
             </Fragment>
 
-            <Fragment style={{margin: "1rem 0"}}>
-                <Heading h={5}>AppTitle</Heading>
+            <Fragment style={{margin: "1rem 0"}} title="AppTitle">
                 <Paragraph>
                     The AppTitle component defines a title in the Appbar.
                 </Paragraph>
@@ -124,9 +123,9 @@ const AppbarFragment = (props) => {
                         </AppTitleContainer>
                     </Appbar>
                 </Example>
-                <Heading h={6}>Usage</Heading>
+                <PaddedHeading h={6}>Usage</PaddedHeading>
                 <Code text={`import { AppTitle } from "react-uix";`} />
-                <Heading h={6}>Props</Heading>
+                <PaddedHeading h={6}>Props</PaddedHeading>
                 <Paragraph>
                     <Table>
                         <TableHeader>
@@ -151,15 +150,14 @@ const AppbarFragment = (props) => {
                 </Paragraph>
             </Fragment>
 
-            <Fragment style={{margin: "1rem 0"}}>
-                <Heading h={5}>AppTitleContainer</Heading>
+            <Fragment style={{margin: "1rem 0"}} title="AppTitleContainer">
                 <Paragraph>
                     The AppTitleContainer component is used to position both the AppTitle and AppbarToggleButton components
                     in the Appbar.
                 </Paragraph>
-                <Heading h={6}>Usage</Heading>
+                <PaddedHeading h={6}>Usage</PaddedHeading>
                 <Code text={`import { AppTitleContainer } from "react-uix";`} />
-                <Heading h={6}>Props</Heading>
+                <PaddedHeading h={6}>Props</PaddedHeading>
                 <Paragraph>
                     <Table>
                         <TableHeader>
@@ -182,7 +180,7 @@ const AppbarFragment = (props) => {
                         </TableBody>
                     </Table>
                 </Paragraph>
-                <Heading h={6}>Direct Subcomponents</Heading>
+                <PaddedHeading h={6}>Direct Subcomponents</PaddedHeading>
                 <Paragraph>
                     AppTitleContainer has the following direct subcomponents used for styling:
                 </Paragraph>
@@ -192,8 +190,7 @@ const AppbarFragment = (props) => {
                 </List>
             </Fragment>
 
-            <Fragment style={{margin: "1rem 0"}}>
-                <Heading h={5}>AppbarToggleButton</Heading>
+            <Fragment style={{margin: "1rem 0"}} title="AppbarToggleButton">
                 <Paragraph>
                     The AppbarToggleButton component is used to position a toggle button within the Appbar.
                 </Paragraph>
@@ -204,9 +201,9 @@ const AppbarFragment = (props) => {
                         </AppTitleContainer>
                     </Appbar>
                 </Example>
-                <Heading h={6}>Usage</Heading>
+                <PaddedHeading h={6}>Usage</PaddedHeading>
                 <Code text={`import { AppbarToggleButton } from "react-uix";`} />
-                <Heading h={6}>Props</Heading>
+                <PaddedHeading h={6}>Props</PaddedHeading>
                 <Paragraph>
                     <Table>
                         <TableHeader>
@@ -229,7 +226,7 @@ const AppbarFragment = (props) => {
                         </TableBody>
                     </Table>
                 </Paragraph>
-                <Heading h={6}>Direct Subcomponents</Heading>
+                <PaddedHeading h={6}>Direct Subcomponents</PaddedHeading>
                 <Paragraph>
                     AppbarToggleButton has the following direct subcomponents used for styling:
                 </Paragraph>
@@ -238,14 +235,13 @@ const AppbarFragment = (props) => {
                 </List>
             </Fragment>
 
-            <Fragment style={{margin: "1rem 0"}}>
-                <Heading h={5}>AppbarToolbar</Heading>
+            <Fragment style={{margin: "1rem 0"}} title="AppbarToolbar">
                 <Paragraph>
                     The AppbarToolbar component is used to position elements on the right side of the Appbar.
                 </Paragraph>
-                <Heading h={6}>Usage</Heading>
+                <PaddedHeading h={6}>Usage</PaddedHeading>
                 <Code text={`import { AppbarToolbar } from "react-uix";`} />
-                <Heading h={6}>Props</Heading>
+                <PaddedHeading h={6}>Props</PaddedHeading>
                 <Paragraph>
                     <Table>
                         <TableHeader>
@@ -268,7 +264,7 @@ const AppbarFragment = (props) => {
                         </TableBody>
                     </Table>
                 </Paragraph>
-                <Heading h={6}>Direct Subcomponents</Heading>
+                <PaddedHeading h={6}>Direct Subcomponents</PaddedHeading>
                 <Paragraph>
                     AppbarToolbar has the following direct subcomponents used for styling:
                 </Paragraph>

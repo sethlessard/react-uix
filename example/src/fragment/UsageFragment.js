@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Paragraph, Code } from 'react-uix';
+import { Paragraph, Code } from 'react-uix';
 import Fragment from './Fragment';
 
 const UsageFragment = () => {
@@ -34,8 +34,7 @@ const UsageFragment = () => {
                 `} />
             </Fragment>
 
-            <Fragment style={{margin: "1rem auto 0 auto"}}>
-                <Heading h={5}>Theming</Heading>
+            <Fragment style={{margin: "1rem auto 0 auto"}} title="Themeing">
                 <Paragraph>
                     In order to theme your application, you must wrap it with an App component. You can describe your application's primary color using
                     the 'primaryColor' prop of the App component. You can also describe the secondary and foreground colors for your application using

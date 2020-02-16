@@ -1,7 +1,7 @@
 import React from 'react';
 import Fragment from './Fragment';
 import { Link } from "react-router-dom";
-import { Heading, BottomNavigation, BottomNavItem, Code, Paragraph, Table, TableHeader, TableData, TableRow, HeaderCell, TableBody, List, ListItem } from 'react-uix';
+import { PaddedHeading, BottomNavigation, BottomNavItem, Code, Paragraph, Table, TableHeader, TableData, TableRow, HeaderCell, TableBody, List, ListItem } from 'react-uix';
 import { Example } from '../component';
 
 const BottomNavigationFragment = (props) => {
@@ -28,12 +28,12 @@ const BottomNavigationFragment = (props) => {
 
                 <Paragraph>The BottomNavigation component is populated with <Link to="/component/BottomNavItem">BottomNavItem</Link> objects.</Paragraph>
 
-                <Heading h={6}>Usage</Heading>
+                <PaddedHeading h={6}>Usage</PaddedHeading>
                 <Paragraph>
                     <Code text={`import { BottomNavigation } from "react-uix";`} />
                 </Paragraph>
 
-                <Heading h={6}>Props</Heading>
+                <PaddedHeading h={6}>Props</PaddedHeading>
                 <Table>
                     <TableHeader>
                         <TableRow>
@@ -76,7 +76,7 @@ const BottomNavigationFragment = (props) => {
                     </TableBody>
                 </Table>
 
-                <Heading h={6}>Direct Subcomponents</Heading>
+                <PaddedHeading h={6}>Direct Subcomponents</PaddedHeading>
                 <Paragraph>The BottomNavigation component has the following direct subcomponents:</Paragraph>
                 <List>
                     <ListItem>BottomNavItem</ListItem>
@@ -84,15 +84,15 @@ const BottomNavigationFragment = (props) => {
             </Fragment>
 
             <Fragment style={{margin: "1rem auto 0 auto"}}>
-                <Heading h={5}>BottomNavItem</Heading>
+                <PaddedHeading h={5}>BottomNavItem</PaddedHeading>
                 <Paragraph>The BottomNavItem component is used to implement a button within a BottomNavigation component.</Paragraph>
 
-                <Heading h={6}>Usage</Heading>
+                <PaddedHeading h={6}>Usage</PaddedHeading>
                 <Paragraph>
                     <Code text={`import { BottomNavItem } from "react-uix";`} />
                 </Paragraph>
 
-                <Heading h={6}>Props</Heading>
+                <PaddedHeading h={6}>Props</PaddedHeading>
                 <Table>
                     <TableHeader>
                         <TableRow>

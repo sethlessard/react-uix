@@ -4,7 +4,7 @@ import Fragment from './Fragment';
 import { Link } from "react-router-dom";
 
 import {
-    Heading,
+    PaddedHeading,
     DropdownButton,
     DropdownButtonText,
     IconButton,
@@ -36,10 +36,10 @@ const DropdownButtonFragment = (props) => {
                     </DropdownButton>
                 </Example>
 
-                <Heading h={6}>Usage</Heading>
+                <PaddedHeading h={6}>Usage</PaddedHeading>
                 <Code text={`import { DropdownButton } from "react-uix";`} />
 
-                <Heading h={6}>Props</Heading>
+                <PaddedHeading h={6}>Props</PaddedHeading>
                 <Table>
                     <TableHeader>
                         <TableRow>
@@ -75,7 +75,7 @@ const DropdownButtonFragment = (props) => {
                     </TableBody>
                 </Table>
 
-                <Heading h={6}>Direct Subcomponents</Heading>
+                <PaddedHeading h={6}>Direct Subcomponents</PaddedHeading>
                 <Paragraph>
                     The DropdownButton components has the following direct subcomponents:
                 </Paragraph>
@@ -84,16 +84,15 @@ const DropdownButtonFragment = (props) => {
                 </List>
             </Fragment>
 
-            <Fragment style={{margin: "1rem auto 0 auto"}}>
-                <Heading h={5}>DropdownIcon</Heading>
+            <Fragment style={{margin: "1rem auto 0 auto"}} title="DropdownIcon">
                 <Paragraph>
                     The DropdownIcon component positions an Icon component within a DropdownItem.
                 </Paragraph>
 
-                <Heading h={6}>Usage</Heading>
+                <PaddedHeading h={6}>Usage</PaddedHeading>
                 <Code text={`import { DropdownIcon } from "react-uix";`} />
 
-                <Heading h={6}>Props</Heading>
+                <PaddedHeading h={6}>Props</PaddedHeading>
                 <Paragraph>
                     <Table>
                         <TableHeader>
@@ -132,16 +131,15 @@ const DropdownButtonFragment = (props) => {
                 </Paragraph>
             </Fragment>
 
-            <Fragment style={{margin: "1rem auto 0 auto"}}>
-                <Heading h={5}>DropdownItem</Heading>
+            <Fragment style={{margin: "1rem auto 0 auto"}} title="DropdownItem">
                 <Paragraph>
                     DropdownItem.
                 </Paragraph>
 
-                <Heading h={6}>Usage</Heading>
+                <PaddedHeading h={6}>Usage</PaddedHeading>
                 <Code text={`import { DropdownItem } from "react-uix";`} />
 
-                <Heading h={6}>Props</Heading>
+                <PaddedHeading h={6}>Props</PaddedHeading>
                 <Paragraph>
                     <Table>
                         <TableHeader>
@@ -172,7 +170,7 @@ const DropdownButtonFragment = (props) => {
                     </Table>
                 </Paragraph>
 
-                <Heading h={6}>Direct Subcomponents</Heading>
+                <PaddedHeading h={6}>Direct Subcomponents</PaddedHeading>
                 <Paragraph>The DropdownItem component has the following direct subcomponents:</Paragraph>
                 <List>
                     <ListItem>DropdownIcon</ListItem>
@@ -180,16 +178,15 @@ const DropdownButtonFragment = (props) => {
                 </List>
             </Fragment>
 
-            <Fragment style={{margin: "1rem auto 0 auto"}}>
-                <Heading h={5}>DropdownText</Heading>
+            <Fragment style={{margin: "1rem auto 0 auto"}} title="DropdownText">
                 <Paragraph>
                     DropdownText.
                 </Paragraph>
 
-                <Heading h={6}>Usage</Heading>
+                <PaddedHeading h={6}>Usage</PaddedHeading>
                 <Code text={`import { DropdownText } from "react-uix";`} />
 
-                <Heading h={6}>Props</Heading>
+                <PaddedHeading h={6}>Props</PaddedHeading>
                 <Paragraph>
                     <Table>
                         <TableHeader>

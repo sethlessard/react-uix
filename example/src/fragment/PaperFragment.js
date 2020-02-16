@@ -2,7 +2,7 @@ import React from 'react';
 import Fragment from './Fragment';
 import {
     Code,
-    Heading,
+    PaddedHeading,
     Paragraph,
     Paper,
     Table,
@@ -24,10 +24,10 @@ const PaperFragment = () => {
                 <Paper style={{width: 100, height: 100}}/>
             </Example>
 
-            <Heading h={4}>Usage</Heading>
+            <PaddedHeading h={4}>Usage</PaddedHeading>
             <Code text={`import { Paper } from "react-ui";`} />
 
-            <Heading h={4}>Props</Heading>
+            <PaddedHeading h={4}>Props</PaddedHeading>
             <Table>
                 <TableHeader>
                     <TableRow>

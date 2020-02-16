@@ -1,7 +1,7 @@
 import React from 'react';
 import Fragment from './Fragment';
 import { Example } from '../component';
-import { Paragraph, Card, Code, Heading, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData } from 'react-uix';
+import { Paragraph, Card, Code, PaddedHeading, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData } from 'react-uix';
 
 const CardFragment = () => {
     return (
@@ -13,10 +13,10 @@ const CardFragment = () => {
                 <Card z={4} style={{width: 100, height: 100}}/>
             </Example>
 
-            <Heading h={6}>Usage</Heading>
+            <PaddedHeading h={6}>Usage</PaddedHeading>
             <Code text={`import { Card } from "react-ui";`} />
 
-            <Heading h={6}>Props</Heading>
+            <PaddedHeading h={6}>Props</PaddedHeading>
             <Table>
                 <TableHeader>
                     <TableRow>
