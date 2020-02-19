@@ -52,6 +52,7 @@ import {
   TextAreaFragment,
   ToastFragment,
 } from "./fragment";
+import TextInputFragment from './fragment/TextInputFragment';
 
 // const COLOR_PRIMARY = "#6c5ce7";
 const COLOR_PRIMARY = "#009866";
@@ -143,6 +144,7 @@ class UIApp extends Component {
                 <NavGroup>
                   <NavSubheader>Inputs</NavSubheader>
                   <Link to="/component/Checkbox" style={style.navLink}><NavItem><NavItemText>Checkbox</NavItemText></NavItem></Link>
+                  <Link to="/component/TextInput" style={style.navLink}><NavItem><NavItemText>Text Input</NavItemText></NavItem></Link>
                   <Link to="/component/Switch" style={style.navLink}><NavItem><NavItemText>Switch</NavItemText></NavItem></Link>
                 </NavGroup>
 
@@ -193,6 +195,7 @@ class UIApp extends Component {
               <Route path="/component/Icon" component={IconFragment} />
 
               <Route path="/component/Checkbox" component={CheckboxFragment} />
+              <Route path="/component/TextInput" component={TextInputFragment} />
               <Route path="/component/Switch" component={SwitchFragment} />
 
               <Route path="/component/BottomNavigation" component={BottomNavigationFragment} />
