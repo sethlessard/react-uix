@@ -1,20 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  padding: 0 2em 0 0;
+  display: flex;
+  user-select: none;
+  -webkit-user-select: none;
+`;
 
 const AppbarToolbar = (props) => {
   const style = {
-    toolbar: {
-      marginRight: "1em",
-      display: "flex",
-      userSelect: "none",
-      WebkitUserSelect: "none"
-    }
+    toolbar: {}
   };
 
   return (
-    <div style={style.toolbar}>
+    <Wrapper style={style.toolbar}>
       {props.children}
-    </div>
+    </Wrapper>
   );
 };
 

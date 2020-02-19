@@ -18,14 +18,14 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const Wrapper = styled.div`
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  padding: 0 1em 0 1.5em;
+  padding: 0 0 0 1.5em;
 `;
 
 class Appbar extends Component {

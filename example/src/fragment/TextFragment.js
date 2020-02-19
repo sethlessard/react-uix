@@ -14,7 +14,7 @@ const TextFragment = (props) => {
             </Example>
 
             <PaddedHeading h={6}>Usage</PaddedHeading>
-            <Code text={`import { Text } from "react-uix";`} />
+            <Code foregroundColor="#fff" text={`import { Text } from "react-uix";`} />
 
             <PaddedHeading h={6}>Props</PaddedHeading>
             <Table>
@@ -31,7 +31,7 @@ const TextFragment = (props) => {
                     <TableRow>
                         <TableData>children</TableData>
                         <TableData>string</TableData>
-                        <TableData>false</TableData>
+                        <TableData>No</TableData>
                         <TableData />
                         <TableData>The text.</TableData>
                     </TableRow>

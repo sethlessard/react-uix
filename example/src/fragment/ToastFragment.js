@@ -10,7 +10,7 @@ const ToastFragment = (props) => {
             </Paragraph>
 
             <PaddedHeading h={6}>Usage</PaddedHeading>
-            <Code text={`import { Toast } from "react-uix";`} />
+            <Code foregroundColor="#fff" text={`import { Toast } from "react-uix";`} />
 
             <PaddedHeading h={6}>Props</PaddedHeading>
             <Table>
@@ -27,7 +27,7 @@ const ToastFragment = (props) => {
                     <TableRow>
                         <TableData>children</TableData>
                         <TableData>string</TableData>
-                        <TableData>false</TableData>
+                        <TableData>No</TableData>
                         <TableData />
                         <TableData>The text.</TableData>
                     </TableRow>

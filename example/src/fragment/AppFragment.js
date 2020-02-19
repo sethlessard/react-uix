@@ -10,7 +10,7 @@ const AppFragment = () => {
                     The App component is used to provide initial layout as well as global themeing for your application.
                 </Paragraph>
                 <PaddedHeading h={6}>Usage</PaddedHeading>
-                <Code text={`import { App } from "react-uix";`} />
+                <Code foregroundColor="#fff" text={`import { App } from "react-uix";`} />
                 <PaddedHeading h={6}>Props</PaddedHeading>
                 <Table>
                     <TableHeader>
@@ -26,28 +26,28 @@ const AppFragment = () => {
                         <TableRow>
                             <TableData>children</TableData>
                             <TableData>node || [node]</TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData></TableData>
                             <TableData>The contents of the App.</TableData>
                         </TableRow>
                         <TableRow>
                             <TableData>foregroundColor</TableData>
                             <TableData>string</TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData>#000000</TableData>
                             <TableData>The foreground color for the application. This is used for themeing.</TableData>
                         </TableRow>
                         <TableRow>
                             <TableData>primaryColor</TableData>
                             <TableData>string</TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData>#000000</TableData>
                             <TableData>The primary color for the application. This is used for themeing.</TableData>
                         </TableRow>
                         <TableRow>
                             <TableData>secondaryColor</TableData>
                             <TableData>string</TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData>#000000</TableData>
                             <TableData>The secondary color for the application. This is used for themeing.</TableData>
                         </TableRow>

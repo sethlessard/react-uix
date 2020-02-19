@@ -20,7 +20,7 @@ const ButtonFragment = () => {
             </Example>
 
             <PaddedHeading h={6}>Usage</PaddedHeading>
-            <Code text={`import { Button } from "react-uix";`} />
+            <Code foregroundColor="#fff" text={`import { Button } from "react-uix";`} />
 
             <PaddedHeading h={6}>Props</PaddedHeading>
             <Table>
@@ -37,21 +37,21 @@ const ButtonFragment = () => {
                     <TableRow>
                         <TableData>backgroundColor</TableData>
                         <TableData>string</TableData>
-                        <TableData>false</TableData>
+                        <TableData>No</TableData>
                         <TableData></TableData>
                         <TableData>The background color.</TableData>
                     </TableRow>
                     <TableRow>
                         <TableData>children</TableData>
                         <TableData>string</TableData>
-                        <TableData>false</TableData>
+                        <TableData>No</TableData>
                         <TableData></TableData>
                         <TableData>The text of the Button.</TableData>
                     </TableRow>
                     <TableRow>
                         <TableData>foregroundColor</TableData>
                         <TableData>string</TableData>
-                        <TableData>false</TableData>
+                        <TableData>No</TableData>
                         <TableData></TableData>
                         <TableData>The text color.</TableData>
                     </TableRow>

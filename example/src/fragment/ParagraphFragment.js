@@ -10,7 +10,7 @@ const ParagraphFragment = () => {
             </Paragraph>
 
             <PaddedHeading h={6}>Usage</PaddedHeading>
-            <Code text={`import { Paragraph } from "react-uix";`} />
+            <Code foregroundColor="#fff" text={`import { Paragraph } from "react-uix";`} />
 
             <PaddedHeading h={6}>Props</PaddedHeading>
             <Table>
@@ -27,7 +27,7 @@ const ParagraphFragment = () => {
                     <TableRow>
                         <TableData>children</TableData>
                         <TableData>string</TableData>
-                        <TableData>false</TableData>
+                        <TableData>No</TableData>
                         <TableData />
                         <TableData>The contents of the Paragraph.</TableData>
                     </TableRow>

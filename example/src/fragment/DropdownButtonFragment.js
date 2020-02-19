@@ -37,7 +37,7 @@ const DropdownButtonFragment = (props) => {
                 </Example>
 
                 <PaddedHeading h={6}>Usage</PaddedHeading>
-                <Code text={`import { DropdownButton } from "react-uix";`} />
+                <Code foregroundColor="#fff" text={`import { DropdownButton } from "react-uix";`} />
 
                 <PaddedHeading h={6}>Props</PaddedHeading>
                 <Table>
@@ -54,21 +54,21 @@ const DropdownButtonFragment = (props) => {
                         <TableRow>
                             <TableData>children</TableData>
                             <TableData>node</TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData></TableData>
                             <TableData>The contents of the DropdownButton.</TableData>
                         </TableRow>
                         <TableRow>
                             <TableData>icon</TableData>
                             <TableData><Link to="/component/IconButton">IconButton</Link></TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData></TableData>
                             <TableData>The contents of the DropdownButton.</TableData>
                         </TableRow>
                         <TableRow>
                             <TableData>style</TableData>
                             <TableData>object</TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData></TableData>
                             <TableData>The style of the DropdownButton.</TableData>
                         </TableRow>
@@ -90,7 +90,7 @@ const DropdownButtonFragment = (props) => {
                 </Paragraph>
 
                 <PaddedHeading h={6}>Usage</PaddedHeading>
-                <Code text={`import { DropdownIcon } from "react-uix";`} />
+                <Code foregroundColor="#fff" text={`import { DropdownIcon } from "react-uix";`} />
 
                 <PaddedHeading h={6}>Props</PaddedHeading>
                 <Paragraph>
@@ -108,21 +108,21 @@ const DropdownButtonFragment = (props) => {
                             <TableRow>
                                 <TableData>children</TableData>
                                 <TableData>node</TableData>
-                                <TableData>false</TableData>
+                                <TableData>No</TableData>
                                 <TableData></TableData>
                                 <TableData>The contents of the DropdownButton.</TableData>
                             </TableRow>
                             <TableRow>
                                 <TableData>icon</TableData>
                                 <TableData><Link to="/component/Icon">Icon</Link></TableData>
-                                <TableData>false</TableData>
+                                <TableData>No</TableData>
                                 <TableData></TableData>
                                 <TableData>The contents of the DropdownButton.</TableData>
                             </TableRow>
                             <TableRow>
                                 <TableData>style</TableData>
                                 <TableData>object</TableData>
-                                <TableData>false</TableData>
+                                <TableData>No</TableData>
                                 <TableData></TableData>
                                 <TableData>The style of the DropdownButton.</TableData>
                             </TableRow>
@@ -137,7 +137,7 @@ const DropdownButtonFragment = (props) => {
                 </Paragraph>
 
                 <PaddedHeading h={6}>Usage</PaddedHeading>
-                <Code text={`import { DropdownItem } from "react-uix";`} />
+                <Code foregroundColor="#fff" text={`import { DropdownItem } from "react-uix";`} />
 
                 <PaddedHeading h={6}>Props</PaddedHeading>
                 <Paragraph>
@@ -155,14 +155,14 @@ const DropdownButtonFragment = (props) => {
                             <TableRow>
                                 <TableData>children</TableData>
                                 <TableData>node</TableData>
-                                <TableData>false</TableData>
+                                <TableData>No</TableData>
                                 <TableData></TableData>
                                 <TableData>The contents of the DropdownItem. See Direct Subcomponents below.</TableData>
                             </TableRow>
                             <TableRow>
                                 <TableData>foregroundColor</TableData>
                                 <TableData>string</TableData>
-                                <TableData>false</TableData>
+                                <TableData>No</TableData>
                                 <TableData></TableData>
                                 <TableData>The foreground color of the DropdownItem.</TableData>
                             </TableRow>
@@ -184,7 +184,7 @@ const DropdownButtonFragment = (props) => {
                 </Paragraph>
 
                 <PaddedHeading h={6}>Usage</PaddedHeading>
-                <Code text={`import { DropdownText } from "react-uix";`} />
+                <Code foregroundColor="#fff" text={`import { DropdownText } from "react-uix";`} />
 
                 <PaddedHeading h={6}>Props</PaddedHeading>
                 <Paragraph>
@@ -202,7 +202,7 @@ const DropdownButtonFragment = (props) => {
                             <TableRow>
                                 <TableData>children</TableData>
                                 <TableData>string</TableData>
-                                <TableData>false</TableData>
+                                <TableData>No</TableData>
                                 <TableData></TableData>
                                 <TableData>The text displayed by the DropdownText.</TableData>
                             </TableRow>

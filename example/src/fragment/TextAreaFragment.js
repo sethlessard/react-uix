@@ -17,7 +17,7 @@ const TextAreaFragment = (props) => {
             </Example>
 
             <PaddedHeading h={6}>Usage</PaddedHeading>
-            <Code text={`import { TextArea } from "react-uix";`} />
+            <Code foregroundColor="#fff" text={`import { TextArea } from "react-uix";`} />
 
             <PaddedHeading h={6}>Props</PaddedHeading>
             <Table>
@@ -34,7 +34,7 @@ const TextAreaFragment = (props) => {
                     <TableRow>
                         <TableData>children</TableData>
                         <TableData>string</TableData>
-                        <TableData>true</TableData>
+                        <TableData>Yes</TableData>
                         <TableData />
                         <TableData>The placeholder for the TextArea.</TableData>
                     </TableRow>

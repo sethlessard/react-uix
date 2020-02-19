@@ -1,17 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+import Text from "../Text";
+
+const Wrapper = styled.div`
+`;
 
 const DropdownButtonText = (props) => {
   const style = {
-    dropdownText: {
-      fontSize: ".8rem"
-    }
+    dropdownText: {}
   };
-
+  Object.assign(style.dropdownText, props.style);
   return (
-    <div style={style.dropdownText}>
-      {props.children}
-    </div>
+    <Wrapper style={style.dropdownText}>
+      <Text fontSize=".8rem">{props.children}</Text>
+    </Wrapper>
   );
 };
 

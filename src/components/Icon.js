@@ -9,31 +9,27 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const Wrapper = styled.div`
-  width: 1em;
-  height: 1em;
 `;
 
 const I = styled.i`
-  color: #000000;
-  font-size: 1rem;
+  color: ${props => props.color};
+  font-size: ${props => props.size};
 `;
 
-const Icon = ({ accent, children, foregroundColor, size, style: compStyle }) => {
+const Icon = ({ accent, children, color, size = "1rem", style: compStyle }) => {
   const style = {
     icon: {
       width: size,
       height: size
     },
     i: {
-      fontSize: size,
-      color: foregroundColor
     }
   };
 
   Object.assign(style.icon, compStyle);
   return (
     <Wrapper style={style.icon} >
-      <I className="material-icons">{children}</I>
+      <I color={color} size={size} className="material-icons">{children}</I>
     </Wrapper>
   );
 };

@@ -14,7 +14,7 @@ const CardFragment = () => {
             </Example>
 
             <PaddedHeading h={6}>Usage</PaddedHeading>
-            <Code text={`import { Card } from "react-ui";`} />
+            <Code foregroundColor="#fff" text={`import { Card } from "react-ui";`} />
 
             <PaddedHeading h={6}>Props</PaddedHeading>
             <Table>
@@ -31,21 +31,21 @@ const CardFragment = () => {
                     <TableRow>
                         <TableData>children</TableData>
                         <TableData>node</TableData>
-                        <TableData>false</TableData>
+                        <TableData>No</TableData>
                         <TableData />
                         <TableData>The content of the Paper</TableData>
                     </TableRow>
                     <TableRow>
                         <TableData>style</TableData>
                         <TableData>object</TableData>
-                        <TableData>false</TableData>
+                        <TableData>No</TableData>
                         <TableData />
                         <TableData>CSS styles for the Paper</TableData>
                     </TableRow>
                     <TableRow>
                         <TableData>z</TableData>
                         <TableData>number</TableData>
-                        <TableData>false</TableData>
+                        <TableData>No</TableData>
                         <TableData>1</TableData>
                         <TableData>The elevation level of the Card. 1-5 are permissiable options.</TableData>
                     </TableRow>

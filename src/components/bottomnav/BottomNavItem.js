@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from "react-redux";
-
+// TODO: styled-components
 import Icon from "../Icon";
 
 const mapStateToProps = (state, ownProps) => ({
@@ -31,6 +31,8 @@ const BottomNavItem = ({ children, foregroundColor, icon, onClick, style }) => {
   Object.assign(compStyle.bottomNavItem, style);
   return (
     <div style={compStyle.bottomNavItem} onClick={onClick}>
+      {/* TODO: BottomNavItemIcon */}
+      {/* TODO: BottomNavItemText */}
       <Icon color={foregroundColor} style={compStyle.icon}>{icon}</Icon>
       {children}
     </div>

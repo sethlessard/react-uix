@@ -11,6 +11,17 @@ const Wrapper = styled.label`
   font-size: 16px;
   line-height: 1.5;
 `;
+const Track = styled.div`
+  float: right;
+  display: inline-block;
+  margin: 5px 0 5px 10px;
+  border-radius: 7px;
+  width: 36px;
+  height: 14px;
+  background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+  vertical-align: top;
+  transition: background-color 0.2s, opacity 0.2s;
+`;
 const Sw = styled.input`
   appearance: none;
   -moz-appearance: none;
@@ -48,32 +59,17 @@ const Span = styled.span`
   display: inline-block;
   width: 100%;
   cursor: pointer;
-
-  &:before {
-    content: "";
-    float: right;
-    display: inline-block;
-    margin: 5px 0 5px 10px;
-    border-radius: 7px;
-    width: 36px;
-    height: 14px;
-    background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
-    vertical-align: top;
-    transition: background-color 0.2s, opacity 0.2s;
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    top: 2px;
-    right: 16px;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
-    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-    transition: background-color 0.2s, transform 0.2s;
-  }
+`;
+const Thumb = styled.div`
+  position: absolute;
+  top: 2px;
+  right: 16px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  transition: background-color 0.2s, transform 0.2s;
 `;
 
 const Switch = ({ children, style: compStyle }) => {
@@ -83,8 +79,10 @@ const Switch = ({ children, style: compStyle }) => {
   Object.assign(style.Switch, compStyle);
   return (
     <Wrapper style={style.Switch}>
+      <Track />
       <Sw type="checkbox" id={`lb-${children}`} />
       <Span>{ children }</Span>
+      <Thumb />
     </Wrapper>
   );
 };

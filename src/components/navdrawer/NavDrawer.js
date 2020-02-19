@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import { updateNavDrawerDefined, updateNavDrawerOpen, updateNavDrawerClosingFromToggleButton } from '../../redux/actions/ui';
 import { connect } from 'react-redux';
+import styled from "styled-components";
 
 const mapStateToProps = (state) => {
   return {
@@ -18,6 +19,28 @@ const mapDispatchToProps = (dispatch) => ({
   updateNavDrawerOpen: (open) => dispatch(updateNavDrawerOpen(open)),
   updateNavDrawerClosingFromToggleButton: (closingFromToggle) => dispatch(updateNavDrawerClosingFromToggleButton(closingFromToggle))
 })
+
+const Wrapper = styled.div`
+  position: fixed;
+  width: ${props => props.width || "240px"};
+  height: calc(100vh - ${props => ((props.appbarDefined) ? props.appbarHeight : 0) + ((props.bottomNavDefined) ? props.bottomNavHeight : 0)}px);
+  top: ${props => (props.appbarDefined) ? `${props.appbarHeight}px` : 0};
+  -webkit-transform: ${props => (props.open) ? "translate(0, 0)" : "translate(-107%, 0)"};
+  -webkit-transition-property: -webkit-transform;
+  transform:  ${props => (props.open) ? "translate(0, 0)" : "translate(-107%, 0)"};
+  transition: transform 300ms ease-in-out;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 1;
+  background-color: #fff;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+`;
 
 class NavDrawer extends Component {
   constructor(props) {
@@ -54,38 +77,25 @@ class NavDrawer extends Component {
   }
 
   render() {
-    const { appbarDefined, appbarHeight, bottomNavDefined, bottomNavHeight, navDrawerOpen } = this.props;
-    let style = {
-      navDrawer: {
-        position: "fixed",
-        overflowY: "scroll",
-        width: this.props.width || 240,
-        top: 0,
-        height: `calc(100vh - ${((appbarDefined) ? appbarHeight : 0) + ((bottomNavDefined) ? bottomNavHeight : 0)}px)`,
-        WebkitOverflowScrolling: "touch",
-        WebkitTransform: `translate(-107%, 0)`,
-        transform: `translate(-107%, 0)`,
-        transition: "transform 300ms ease-in-out",
-        zIndex: 2,
-        backgroundColor: "#ffffff",
-        boxShadow: "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)"
-      }
+    const { appbarDefined, appbarHeight, bottomNavDefined, bottomNavHeight, children, navDrawerOpen, style: compStyle, width } = this.props;
+    const style = {
+      navDrawer: {}
     };
-
+    Object.assign(style.navDrawer, compStyle);
     // setNavDrawerWidth(style.navDrawer.width); TODO: create redux action
-    if (appbarDefined) {
-      style.navDrawer.top = appbarHeight;
-    }
-
-    if (navDrawerOpen) {
-      style.navDrawer.WebkitTransform = `translate(0, 0)`;
-      style.navDrawer.transform = `translate(0, 0)`;
-    }
-
     return (
-      <div style={style.navDrawer} ref={this.ref}>
-        {this.props.children}
-      </div>
+      <Wrapper
+        appbarDefined={appbarDefined}
+        appbarHeight={appbarHeight}
+        bottomNavDefined={bottomNavDefined}
+        bottomNavHeight={bottomNavHeight}
+        style={style.navDrawer}
+        open={navDrawerOpen}
+        ref={this.ref}
+        width={width}
+      >
+        {children}
+      </Wrapper>
     );
   }
 }

@@ -33,7 +33,7 @@ const TableFragment = (props) => {
             </Example>
 
             <PaddedHeading h={6}>Usage</PaddedHeading>
-            <Code text={`import { Table } from "react-uix";`} />
+            <Code foregroundColor="#fff" text={`import { Table } from "react-uix";`} />
 
             <PaddedHeading h={6}>Props</PaddedHeading>
             <Table>

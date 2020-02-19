@@ -30,7 +30,7 @@ const BottomNavigationFragment = (props) => {
 
                 <PaddedHeading h={6}>Usage</PaddedHeading>
                 <Paragraph>
-                    <Code text={`import { BottomNavigation } from "react-uix";`} />
+                    <Code foregroundColor="#fff" text={`import { BottomNavigation } from "react-uix";`} />
                 </Paragraph>
 
                 <PaddedHeading h={6}>Props</PaddedHeading>
@@ -48,28 +48,28 @@ const BottomNavigationFragment = (props) => {
                         <TableRow>
                             <TableData>children</TableData>
                             <TableData>node</TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData></TableData>
                             <TableData>The contents of the BottomNavigation component.</TableData>
                         </TableRow>
                         <TableRow>
                             <TableData>backgroundColor</TableData>
                             <TableData>string</TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData></TableData>
                             <TableData>The background color.</TableData>
                         </TableRow>
                         <TableRow>
                             <TableData>foregroundColor</TableData>
                             <TableData>string</TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData></TableData>
                             <TableData>The foreground color.</TableData>
                         </TableRow>
                         <TableRow>
                             <TableData>height</TableData>
                             <TableData>number</TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData>62</TableData>
                             <TableData>The height of the BottomNavigation component.</TableData>
                         </TableRow>
@@ -89,7 +89,7 @@ const BottomNavigationFragment = (props) => {
 
                 <PaddedHeading h={6}>Usage</PaddedHeading>
                 <Paragraph>
-                    <Code text={`import { BottomNavItem } from "react-uix";`} />
+                    <Code foregroundColor="#fff" text={`import { BottomNavItem } from "react-uix";`} />
                 </Paragraph>
 
                 <PaddedHeading h={6}>Props</PaddedHeading>
@@ -107,28 +107,28 @@ const BottomNavigationFragment = (props) => {
                         <TableRow>
                             <TableData>children</TableData>
                             <TableData>string</TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData></TableData>
                             <TableData>The text to display in the BottomNavItem.</TableData>
                         </TableRow>
                         <TableRow>
                             <TableData>color</TableData>
                             <TableData>string</TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData></TableData>
                             <TableData>The foreground color.</TableData>
                         </TableRow>
                         <TableRow>
                             <TableData>icon</TableData>
                             <TableData>string</TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData></TableData>
                             <TableData>The icon.</TableData>
                         </TableRow>
                         <TableRow>
                             <TableData>onClick</TableData>
                             <TableData>function</TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData></TableData>
                             <TableData>The height of the BottomNavigation component.</TableData>
                         </TableRow>

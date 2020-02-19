@@ -10,7 +10,6 @@ const Wrapper = styled.div`
   vertical-align: center;
   text-align: center;
   padding: .5em;
-  font-size: ".8rem";
   overflow: hidden;
   outline: none;
   cursor: pointer;

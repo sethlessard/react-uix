@@ -33,7 +33,7 @@ const AppbarFragment = (props) => {
                 <Example>
                     <Appbar demo={true}>
                         <AppTitleContainer>
-                            <AppbarToggleButton><IconButton color="#ffffff">menu</IconButton></AppbarToggleButton>
+                            <AppbarToggleButton>menu</AppbarToggleButton>
                             <AppTitle>Appbar</AppTitle>
                         </AppTitleContainer>
                         <AppbarToolbar>
@@ -55,7 +55,7 @@ const AppbarFragment = (props) => {
 
                 <PaddedHeading h={6}>Usage</PaddedHeading>
                 <Paragraph>
-                    <Code text={`import { Appbar } from "react-uix";`} />
+                    <Code foregroundColor="#fff" text={`import { Appbar } from "react-uix";`} />
                 </Paragraph>
 
                 <PaddedHeading h={6}>Props</PaddedHeading>
@@ -73,28 +73,28 @@ const AppbarFragment = (props) => {
                         <TableRow>
                             <TableData>backgroundColor</TableData>
                             <TableData>string</TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData>"#000000"</TableData>
                             <TableData>The background color of the Appbar</TableData>
                         </TableRow>
                         <TableRow>
                             <TableData>children</TableData>
                             <TableData>node</TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData></TableData>
                             <TableData>The contents of the Appbar</TableData>
                         </TableRow>
                         <TableRow>
                             <TableData>foregroundColor</TableData>
                             <TableData>string</TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData>"#ffffff"</TableData>
                             <TableData>The foreground color of the Appbar</TableData>
                         </TableRow>
                         <TableRow>
                             <TableData>height</TableData>
                             <TableData>number</TableData>
-                            <TableData>false</TableData>
+                            <TableData>No</TableData>
                             <TableData></TableData>
                             <TableData>The contents of the Appbar</TableData>
                         </TableRow>
@@ -124,7 +124,7 @@ const AppbarFragment = (props) => {
                     </Appbar>
                 </Example>
                 <PaddedHeading h={6}>Usage</PaddedHeading>
-                <Code text={`import { AppTitle } from "react-uix";`} />
+                <Code foregroundColor="#fff" text={`import { AppTitle } from "react-uix";`} />
                 <PaddedHeading h={6}>Props</PaddedHeading>
                 <Paragraph>
                     <Table>
@@ -141,7 +141,7 @@ const AppbarFragment = (props) => {
                             <TableRow>
                                 <TableData>children</TableData>
                                 <TableData>string</TableData>
-                                <TableData>false</TableData>
+                                <TableData>No</TableData>
                                 <TableData></TableData>
                                 <TableData>The title.</TableData>
                             </TableRow>
@@ -156,7 +156,7 @@ const AppbarFragment = (props) => {
                     in the Appbar.
                 </Paragraph>
                 <PaddedHeading h={6}>Usage</PaddedHeading>
-                <Code text={`import { AppTitleContainer } from "react-uix";`} />
+                <Code foregroundColor="#fff" text={`import { AppTitleContainer } from "react-uix";`} />
                 <PaddedHeading h={6}>Props</PaddedHeading>
                 <Paragraph>
                     <Table>
@@ -173,7 +173,7 @@ const AppbarFragment = (props) => {
                             <TableRow>
                                 <TableData>children</TableData>
                                 <TableData>node</TableData>
-                                <TableData>false</TableData>
+                                <TableData>No</TableData>
                                 <TableData></TableData>
                                 <TableData>The contents of the AppTitleContainer. See Direct Subcomponents below.</TableData>
                             </TableRow>
@@ -197,12 +197,12 @@ const AppbarFragment = (props) => {
                 <Example>
                     <Appbar demo={true}>
                         <AppTitleContainer>
-                            <AppbarToggleButton><IconButton color="#ffffff">menu</IconButton></AppbarToggleButton>
+                            <AppbarToggleButton>menu</AppbarToggleButton>
                         </AppTitleContainer>
                     </Appbar>
                 </Example>
                 <PaddedHeading h={6}>Usage</PaddedHeading>
-                <Code text={`import { AppbarToggleButton } from "react-uix";`} />
+                <Code foregroundColor="#fff" text={`import { AppbarToggleButton } from "react-uix";`} />
                 <PaddedHeading h={6}>Props</PaddedHeading>
                 <Paragraph>
                     <Table>
@@ -218,21 +218,14 @@ const AppbarFragment = (props) => {
                         <TableBody>
                             <TableRow>
                                 <TableData>children</TableData>
-                                <TableData>node</TableData>
-                                <TableData>false</TableData>
+                                <TableData>string</TableData>
+                                <TableData>No</TableData>
                                 <TableData></TableData>
-                                <TableData>The contents of the AppbarToggleButton. See Direct Subcomponents below.</TableData>
+                                <TableData>The material icon to be used for the AppbarToggleButton.</TableData>
                             </TableRow>
                         </TableBody>
                     </Table>
                 </Paragraph>
-                <PaddedHeading h={6}>Direct Subcomponents</PaddedHeading>
-                <Paragraph>
-                    AppbarToggleButton has the following direct subcomponents used for styling:
-                </Paragraph>
-                <List>
-                    <ListItem><Link to="/component/IconButton">IconButton</Link></ListItem>
-                </List>
             </Fragment>
 
             <Fragment style={{margin: "1rem 0"}} title="AppbarToolbar">
@@ -240,7 +233,7 @@ const AppbarFragment = (props) => {
                     The AppbarToolbar component is used to position elements on the right side of the Appbar.
                 </Paragraph>
                 <PaddedHeading h={6}>Usage</PaddedHeading>
-                <Code text={`import { AppbarToolbar } from "react-uix";`} />
+                <Code foregroundColor="#fff" text={`import { AppbarToolbar } from "react-uix";`} />
                 <PaddedHeading h={6}>Props</PaddedHeading>
                 <Paragraph>
                     <Table>
@@ -257,7 +250,7 @@ const AppbarFragment = (props) => {
                             <TableRow>
                                 <TableData>children</TableData>
                                 <TableData>node</TableData>
-                                <TableData>false</TableData>
+                                <TableData>No</TableData>
                                 <TableData></TableData>
                                 <TableData>The contents of the AppbarToolbar. See Direct Subcomponents below.</TableData>
                             </TableRow>

@@ -10,7 +10,7 @@ const RowFragment = () => {
             </Paragraph>
 
             <PaddedHeading h={6}>Usage</PaddedHeading>
-            <Code text={`import { Row } from "react-uix";`} />
+            <Code foregroundColor="#fff" text={`import { Row } from "react-uix";`} />
 
             <PaddedHeading h={6}>Props</PaddedHeading>
             <Table>
@@ -27,7 +27,7 @@ const RowFragment = () => {
                     <TableRow>
                         <TableData>children</TableData>
                         <TableData>node || [node]</TableData>
-                        <TableData>false</TableData>
+                        <TableData>No</TableData>
                         <TableData />
                         <TableData>The contents of the Row.</TableData>
                     </TableRow>

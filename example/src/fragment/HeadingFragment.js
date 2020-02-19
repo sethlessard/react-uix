@@ -29,7 +29,7 @@ const HeadingFragment = () => {
             </Example>
 
             <Heading h={6}>Usage</Heading>
-            <Code text={`import { Heading } from "react-uix";`} />
+            <Code foregroundColor="#fff" text={`import { Heading } from "react-uix";`} />
 
             <Heading h={6}>Props</Heading>
             <Table>
@@ -46,14 +46,14 @@ const HeadingFragment = () => {
                     <TableRow>
                         <TableData>children</TableData>
                         <TableData>string</TableData>
-                        <TableData>false</TableData>
+                        <TableData>No</TableData>
                         <TableData />
                         <TableData>The contents of the Heading.</TableData>
                     </TableRow>
                     <TableRow>
                         <TableData>h</TableData>
                         <TableData>number</TableData>
-                        <TableData>true</TableData>
+                        <TableData>Yes</TableData>
                         <TableData />
                         <TableData>The Heading level.</TableData>
                     </TableRow>

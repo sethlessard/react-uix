@@ -13,11 +13,11 @@ const InstallationFragment = () => {
                 <Grid columns={2}>
                     <div>
                         <Paragraph>You can install react-uix with npm:</Paragraph>
-                        <Code text="npm install -E react-uix" />
+                        <Code foregroundColor="#fff" text="npm install -E react-uix" />
                     </div>
                     <div>
                         <Paragraph>Or with Yarn:</Paragraph>
-                        <Code text="yarn add -E react-uix" />
+                        <Code foregroundColor="#fff" text="yarn add -E react-uix" />
                     </div>
                 </Grid>
             </Fragment>
@@ -28,7 +28,7 @@ const InstallationFragment = () => {
                     </CardHeader>
                     <CardBody>
                         <Paragraph>In order to use the Material Icon font, you must include this css file in your HTML file:</Paragraph>
-                        <Code text={MATERIAL_ICON} />
+                        <Code foregroundColor="#fff" text={MATERIAL_ICON} />
                     </CardBody>
                 </Card>
             </Row>
@@ -39,7 +39,7 @@ const InstallationFragment = () => {
                     </CardHeader>
                     <CardBody>
                         <Paragraph>It is recommended to use the Roboto font supplied by Google Fonts with react-uix.</Paragraph>
-                        <Code text={ROBOTO} />
+                        <Code foregroundColor="#fff" text={ROBOTO} />
                     </CardBody>
                 </Card>
             </Row>

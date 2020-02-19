@@ -16,7 +16,7 @@ const CheckboxFragment = (props) => {
             </Example>
 
             <PaddedHeading h={6}>Usage</PaddedHeading>
-            <Code text={`import { Checkbox } from "react-uix";`} />
+            <Code foregroundColor="#fff" text={`import { Checkbox } from "react-uix";`} />
 
             <PaddedHeading h={6}>Props</PaddedHeading>
             <Table>
@@ -33,7 +33,7 @@ const CheckboxFragment = (props) => {
                     <TableRow>
                         <TableData>children</TableData>
                         <TableData>string</TableData>
-                        <TableData>false</TableData>
+                        <TableData>No</TableData>
                         <TableData />
                         <TableData>The text to display alongside the Checkbox.</TableData>
                     </TableRow>

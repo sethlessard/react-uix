@@ -6,12 +6,12 @@ const UsageFragment = () => {
     return (
         <div>
             <Fragment title="Getting Started">
-                <Code text={`import { App } from "react-uix";`} />
+                <Code foregroundColor="#fff" text={`import { App } from "react-uix";`} />
                 <Paragraph>
                     All UiX components can work in isolation. All components can be styled with 'backgroundColor' and 'foregroundColor' properties.
 
                 </Paragraph>
-                <Code text={`
+                <Code foregroundColor="#fff" text={`
                     import React, { Component } from "react";
                     import { App, Appbar, AppContent, AppTitle, AppTitleContainer, Button } from "react-uix";
 
@@ -40,7 +40,7 @@ const UsageFragment = () => {
                     the 'primaryColor' prop of the App component. You can also describe the secondary and foreground colors for your application using
                     the 'secondaryColor' and 'foregroundColor' props of the App component.
                 </Paragraph>
-                <Code text={`
+                <Code foregroundColor="#fff" text={`
                 <App primaryColor="#000000" secondaryColor="#111111" foregroundColor="#ffffff">
                 \t...
                 </App>

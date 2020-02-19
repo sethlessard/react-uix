@@ -25,7 +25,7 @@ const PaperFragment = () => {
             </Example>
 
             <PaddedHeading h={4}>Usage</PaddedHeading>
-            <Code text={`import { Paper } from "react-ui";`} />
+            <Code foregroundColor="#fff" text={`import { Paper } from "react-ui";`} />
 
             <PaddedHeading h={4}>Props</PaddedHeading>
             <Table>
@@ -42,14 +42,14 @@ const PaperFragment = () => {
                     <TableRow>
                         <TableData>children</TableData>
                         <TableData>node</TableData>
-                        <TableData>false</TableData>
+                        <TableData>No</TableData>
                         <TableData />
                         <TableData>The content of the Paper</TableData>
                     </TableRow>
                     <TableRow>
                         <TableData>style</TableData>
                         <TableData>object</TableData>
-                        <TableData>false</TableData>
+                        <TableData>No</TableData>
                         <TableData />
                         <TableData>CSS styles for the Paper</TableData>
                     </TableRow>

@@ -17,7 +17,7 @@ const IconFragment = () => {
             </Example>
 
             <PaddedHeading h={6}>Usage</PaddedHeading>
-            <Code text={`import { Icon } from "react-uix";`} />
+            <Code foregroundColor="#fff" text={`import { Icon } from "react-uix";`} />
 
             <PaddedHeading h={6}>Props</PaddedHeading>
             <Table>
@@ -34,14 +34,14 @@ const IconFragment = () => {
                     <TableRow>
                         <TableData>children</TableData>
                         <TableData>string</TableData>
-                        <TableData>false</TableData>
+                        <TableData>No</TableData>
                         <TableData></TableData>
                         <TableData>The icon name.</TableData>
                     </TableRow>
                     <TableRow>
                         <TableData>color</TableData>
                         <TableData>string</TableData>
-                        <TableData>false</TableData>
+                        <TableData>No</TableData>
                         <TableData></TableData>
                         <TableData>The color of the Icon.</TableData>
                     </TableRow>

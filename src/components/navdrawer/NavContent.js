@@ -1,18 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled, { createGlobalStyle } from "styled-components";
-
-const ScrollbarStyle = createGlobalStyle(`
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-}
-`);
+import styled from "styled-components";
 
 const Wrapper = styled.div`
-  overflow-x: hidden;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+  padding: 2em 0 4em 0;
 `;
 
 const NavContent = (props) => {
@@ -21,7 +12,6 @@ const NavContent = (props) => {
   };
   return (
     <Wrapper style={style.navContent}>
-      <ScrollbarStyle />
       {props.children}
     </Wrapper>
   );
