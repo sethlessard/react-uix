@@ -10,7 +10,7 @@
     "react-dom": "file:../node_modules/react-dom",
     "react-scripts": "1.1.4",
     "react-uix": "file:..",
-    "styled-components": "5.0.1"
+    "styled-components": "file:../node_modules/styled-components"
   },
   "scripts": {
     "start": "react-scripts start",
