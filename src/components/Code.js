@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CopyToClipboard from "react-copy-to-clipboard";
 import { connect } from "react-redux";
 import styled from "styled-components";
+import copy from "copy-to-clipboard";
 
-import Icon from "./Icon";
+import IconButton from "./IconButton";
 
 const mapStateToProps = (state, ownProps) => ({
   foregroundColor: ownProps.foregroundColor || state.ui.foregroundColor,
@@ -28,8 +28,8 @@ const Span = styled.span`
   display: inline;
   height: 100%;
   word-wrap: break-word;
-  font-family: Menlo, Monaco, 'Courier New', monospace;
-  font-size: .6rem;
+  font-family: monospace;
+  font-size: .8rem;
   line-height: 1rem;
 `;
 const CopyContainer = styled.div`
@@ -72,7 +72,7 @@ const parseCode = (code) => {
   return html;
 };
 
-const Code = ({ backgroundColor, children, foregroundColor, style: compStyle, text }) => {
+const Code = ({ backgroundColor, foregroundColor, style: compStyle, text }) => {
   const style = {
     Code: {}
   };
@@ -84,14 +84,19 @@ const Code = ({ backgroundColor, children, foregroundColor, style: compStyle, te
       foregroundColor={foregroundColor}
     >
       <Content>
-        <Span style={style.span}>
+        <Span>
           {parseCode(text)}
         </Span>
       </Content>
       <CopyContainer>
-        <CopyToClipboard text={text}>
-          <Icon color={foregroundColor}>assignment</Icon>
-        </CopyToClipboard>
+        <IconButton
+          onClick={() => {
+            copy(text);
+          }}
+          color={foregroundColor}
+        >
+          assignment
+        </IconButton>
       </CopyContainer>
     </Wrapper>
   );
