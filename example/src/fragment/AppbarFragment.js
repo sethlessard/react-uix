@@ -81,7 +81,7 @@ const AppbarFragment = (props) => {
               <TableData>children</TableData>
               <TableData>node</TableData>
               <TableData>No</TableData>
-              <TableData></TableData>
+              <TableData />
               <TableData>The contents of the Appbar</TableData>
             </TableRow>
             <TableRow>
@@ -95,7 +95,7 @@ const AppbarFragment = (props) => {
               <TableData>height</TableData>
               <TableData>number</TableData>
               <TableData>No</TableData>
-              <TableData></TableData>
+              <TableData />
               <TableData>The contents of the Appbar</TableData>
             </TableRow>
           </TableBody>
@@ -142,7 +142,7 @@ const AppbarFragment = (props) => {
                 <TableData>children</TableData>
                 <TableData>string</TableData>
                 <TableData>No</TableData>
-                <TableData></TableData>
+                <TableData />
                 <TableData>The title.</TableData>
               </TableRow>
             </TableBody>
@@ -174,7 +174,7 @@ const AppbarFragment = (props) => {
                 <TableData>children</TableData>
                 <TableData>node</TableData>
                 <TableData>No</TableData>
-                <TableData></TableData>
+                <TableData />
                 <TableData>The contents of the AppTitleContainer. See Direct Subcomponents below.</TableData>
               </TableRow>
             </TableBody>
@@ -220,7 +220,7 @@ const AppbarFragment = (props) => {
                 <TableData>children</TableData>
                 <TableData>string</TableData>
                 <TableData>No</TableData>
-                <TableData></TableData>
+                <TableData />
                 <TableData>The material icon to be used for the AppbarToggleButton.</TableData>
               </TableRow>
             </TableBody>
@@ -251,7 +251,7 @@ const AppbarFragment = (props) => {
                 <TableData>children</TableData>
                 <TableData>node</TableData>
                 <TableData>No</TableData>
-                <TableData></TableData>
+                <TableData />
                 <TableData>The contents of the AppbarToolbar. See Direct Subcomponents below.</TableData>
               </TableRow>
             </TableBody>

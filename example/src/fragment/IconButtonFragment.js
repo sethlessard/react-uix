@@ -32,13 +32,13 @@ const IconButtonFragment = () => {
           <TableRow>
             <TableData>children</TableData>
             <TableData>string</TableData>
-            <TableData></TableData>
+            <TableData />
             <TableData>The material icons icon name.</TableData>
           </TableRow>
           <TableRow>
             <TableData>onClick</TableData>
             <TableData>function</TableData>
-            <TableData></TableData>
+            <TableData />
             <TableData>A function to call whenever the IconButton is clicked</TableData>
           </TableRow>
         </TableBody>

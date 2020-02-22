@@ -35,14 +35,14 @@ const IconFragment = () => {
             <TableData>children</TableData>
             <TableData>string</TableData>
             <TableData>No</TableData>
-            <TableData></TableData>
+            <TableData />
             <TableData>The icon name.</TableData>
           </TableRow>
           <TableRow>
             <TableData>color</TableData>
             <TableData>string</TableData>
             <TableData>No</TableData>
-            <TableData></TableData>
+            <TableData />
             <TableData>The color of the Icon.</TableData>
           </TableRow>
         </TableBody>

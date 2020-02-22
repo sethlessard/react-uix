@@ -38,21 +38,21 @@ const ButtonFragment = () => {
             <TableData>backgroundColor</TableData>
             <TableData>string</TableData>
             <TableData>No</TableData>
-            <TableData></TableData>
+            <TableData />
             <TableData>The background color.</TableData>
           </TableRow>
           <TableRow>
             <TableData>children</TableData>
             <TableData>string</TableData>
             <TableData>No</TableData>
-            <TableData></TableData>
+            <TableData />
             <TableData>The text of the Button.</TableData>
           </TableRow>
           <TableRow>
             <TableData>foregroundColor</TableData>
             <TableData>string</TableData>
             <TableData>No</TableData>
-            <TableData></TableData>
+            <TableData />
             <TableData>The text color.</TableData>
           </TableRow>
         </TableBody>

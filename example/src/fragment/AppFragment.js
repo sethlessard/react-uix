@@ -27,7 +27,7 @@ const AppFragment = () => {
               <TableData>children</TableData>
               <TableData>node || [node]</TableData>
               <TableData>No</TableData>
-              <TableData></TableData>
+              <TableData />
               <TableData>The contents of the App.</TableData>
             </TableRow>
             <TableRow>

@@ -49,21 +49,21 @@ const BottomNavigationFragment = (props) => {
               <TableData>children</TableData>
               <TableData>node</TableData>
               <TableData>No</TableData>
-              <TableData></TableData>
+              <TableData />
               <TableData>The contents of the BottomNavigation component.</TableData>
             </TableRow>
             <TableRow>
               <TableData>backgroundColor</TableData>
               <TableData>string</TableData>
               <TableData>No</TableData>
-              <TableData></TableData>
+              <TableData />
               <TableData>The background color.</TableData>
             </TableRow>
             <TableRow>
               <TableData>foregroundColor</TableData>
               <TableData>string</TableData>
               <TableData>No</TableData>
-              <TableData></TableData>
+              <TableData />
               <TableData>The foreground color.</TableData>
             </TableRow>
             <TableRow>
@@ -108,28 +108,28 @@ const BottomNavigationFragment = (props) => {
               <TableData>children</TableData>
               <TableData>string</TableData>
               <TableData>No</TableData>
-              <TableData></TableData>
+              <TableData />
               <TableData>The text to display in the BottomNavItem.</TableData>
             </TableRow>
             <TableRow>
               <TableData>color</TableData>
               <TableData>string</TableData>
               <TableData>No</TableData>
-              <TableData></TableData>
+              <TableData />
               <TableData>The foreground color.</TableData>
             </TableRow>
             <TableRow>
               <TableData>icon</TableData>
               <TableData>string</TableData>
               <TableData>No</TableData>
-              <TableData></TableData>
+              <TableData />
               <TableData>The icon.</TableData>
             </TableRow>
             <TableRow>
               <TableData>onClick</TableData>
               <TableData>function</TableData>
               <TableData>No</TableData>
-              <TableData></TableData>
+              <TableData />
               <TableData>The height of the BottomNavigation component.</TableData>
             </TableRow>
           </TableBody>
