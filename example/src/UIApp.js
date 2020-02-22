@@ -66,7 +66,7 @@ class UIApp extends Component {
       navDrawerOpen: false,
       aboutBoxOpen: false,
       settingsBoxOpen: false
-    }
+    };
   }
 
   render() {
@@ -88,7 +88,7 @@ class UIApp extends Component {
         <Router basename={process.env.PUBLIC_URL}>
           <Appbar>
             <AppTitleContainer>
-              <AppbarToggleButton visible={!this.state.navDrawerOpen} onClick={() => { this.setState({ navDrawerOpen: true }) }}>menu</AppbarToggleButton>
+              <AppbarToggleButton visible={!this.state.navDrawerOpen} onClick={() => this.setState({ navDrawerOpen: true })}>menu</AppbarToggleButton>
               <AppTitle>UiX</AppTitle>
             </AppTitleContainer>
             <AppbarToolbar>

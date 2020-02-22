@@ -20,7 +20,7 @@ const TextArea = ({ children, height = "100%", resizable = false, width = "100%"
   return (
     <div style={style.container}><textarea style={style.textArea}>{children}</textarea></div>
   );
-}
+};
 
 TextArea.propTypes = {
   children: PropTypes.string,

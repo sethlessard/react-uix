@@ -31,6 +31,6 @@ const InstallationFragment = () => {
       </Fragment>
     </div>
   );
-}
+};
 
 export default InstallationFragment;

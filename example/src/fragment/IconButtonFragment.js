@@ -45,6 +45,6 @@ const IconButtonFragment = () => {
       </Table>
     </Fragment>
   );
-}
+};
 
 export default IconButtonFragment;

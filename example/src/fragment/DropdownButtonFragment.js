@@ -212,6 +212,6 @@ const DropdownButtonFragment = (props) => {
       </Fragment>
     </div>
   );
-}
+};
 
 export default DropdownButtonFragment;

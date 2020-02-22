@@ -41,6 +41,6 @@ const CheckboxFragment = (props) => {
       </Table>
     </Fragment>
   );
-}
+};
 
 export default CheckboxFragment;

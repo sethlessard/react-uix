@@ -55,6 +55,6 @@ const UsageFragment = () => {
       </Fragment>
     </div>
   );
-}
+};
 
 export default UsageFragment;

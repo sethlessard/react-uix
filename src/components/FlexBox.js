@@ -15,7 +15,7 @@ const FlexBox = ({ alignItems, justifyContent, direction = "row", children, styl
   return (
     <div style={style.flexBox}>{children}</div>
   );
-}
+};
 
 FlexBox.propTypes = {
   direction: PropTypes.oneOf(["row", "column"]),

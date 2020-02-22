@@ -42,6 +42,6 @@ const TextAreaFragment = (props) => {
       </Table>
     </Fragment>
   );
-}
+};
 
 export default TextAreaFragment;

@@ -53,6 +53,6 @@ const CardFragment = () => {
       </Table>
     </Fragment>
   );
-}
+};
 
 export default CardFragment;

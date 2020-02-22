@@ -14,6 +14,6 @@ const HomeFragment = (props) => {
       </Paragraph>
     </Fragment>
   );
-}
+};
 
 export default HomeFragment;

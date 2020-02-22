@@ -28,7 +28,7 @@ const Text = ({ children, color, fontSize = ".8rem", foregroundColor, style: com
       <Span fontSize={fontSize} style={style.text}>{children}</Span>
     </div>
   );
-}
+};
 
 Text.propTypes = {
   color: PropTypes.string

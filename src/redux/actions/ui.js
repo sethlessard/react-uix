@@ -28,7 +28,7 @@ export const updatePrimaryColor = (primaryColor = "#000000") => ({
 export const updateSecondaryColor = (secondaryColor = "#000000") => ({
   type: UPDATE_SECONDARY_COLOR,
   secondaryColor
-})
+});
 
 /**
  * Update the foreground color of the ui.
@@ -37,7 +37,7 @@ export const updateSecondaryColor = (secondaryColor = "#000000") => ({
 export const updateForegroundColor = (foregroundColor = "#ffffff") => ({
   type: UPDATE_FOREGROUND_COLOR,
   foregroundColor
-})
+});
 
 /**
  * Update whether or not an appbar is used by the ui.
@@ -47,7 +47,7 @@ export const updateForegroundColor = (foregroundColor = "#ffffff") => ({
 export const updateAppbarDefined = (appbarDefined = false) => ({
   type: UPDATE_APPBAR_DEFINED,
   appbarDefined
-})
+});
 
 /**
  * Update the height of the appbar.
@@ -56,7 +56,7 @@ export const updateAppbarDefined = (appbarDefined = false) => ({
 export const updateAppbarHeight = (appbarHeight = 0) => ({
   type: UPDATE_APPBAR_HEIGHT,
   appbarHeight
-})
+});
 
 /**
  * Update whether or not the ui uses a bottom nav.
@@ -66,7 +66,7 @@ export const updateAppbarHeight = (appbarHeight = 0) => ({
 export const updateBottomNavDefined = (bottomNavDefined = false) => ({
   type: UPDATE_BOTTOMNAV_DEFINED,
   bottomNavDefined
-})
+});
 
 /**
  * Update the height of the bottom nav.
@@ -75,7 +75,7 @@ export const updateBottomNavDefined = (bottomNavDefined = false) => ({
 export const updateBottomNavHeight = (bottomNavHeight = 0) => ({
   type: UPDATE_BOTTOMNAV_HEIGHT,
   bottomNavHeight
-})
+});
 
 /**
  * Update whether or not the nav drawer is closing from a toggle button click.
@@ -94,7 +94,7 @@ export const updateNavDrawerClosingFromToggleButton = (navDrawerClosingFromToggl
 export const updateNavDrawerDefined = (navDrawerDefined = false) => ({
   type: UPDATE_BOTTOMNAV_DEFINED,
   navDrawerDefined
-})
+});
 
 /**
  * Update whether or not the nav drawer is open.

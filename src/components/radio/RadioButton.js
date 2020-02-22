@@ -4,7 +4,7 @@ import React from 'react';
 const RadioButton = ({ children }) => {
   // TODO: implement
   return <input type="radio" />;
-}
+};
 
 RadioButton.propTypes = {
 

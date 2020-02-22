@@ -48,6 +48,6 @@ const GridFragment = () => {
       <Grid columns={12}>{generateItems(25)}</Grid>
     </div>
   );
-}
+};
 
 export default GridFragment;

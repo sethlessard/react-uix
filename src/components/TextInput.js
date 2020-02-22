@@ -33,7 +33,7 @@ const TextInput = ({ placeholder, primaryColor, style: compStyle }) => {
       <Input primaryColor={primaryColor} placeholder={placeholder} type="text" />
     </Wrapper>
   );
-}
+};
 
 TextInput.propTypes = {
   placeholder: PropTypes.string

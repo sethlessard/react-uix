@@ -5,6 +5,6 @@ const LDSRipple = (props) => {
   return (
     <div className="lds-dual-ring" />
   );
-}
+};
 
 export default LDSRipple;

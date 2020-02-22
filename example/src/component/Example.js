@@ -18,10 +18,10 @@ const Example = (props) => {
   return (
     <Wrapper style={style.example}>{props.children}</Wrapper>
   );
-}
+};
 
 Example.propTypes = {
   children: PropTypes.object
-}
+};
 
 export default Example;

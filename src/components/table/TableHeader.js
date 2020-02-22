@@ -20,7 +20,7 @@ const TableHeader = (props) => {
   return (
     <Wrapper>{props.children}</Wrapper>
   );
-}
+};
 
 TableHeader.propTypes = {
   children: PropTypes.oneOfType([

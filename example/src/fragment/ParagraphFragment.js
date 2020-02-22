@@ -35,6 +35,6 @@ const ParagraphFragment = () => {
       </Table>
     </Fragment>
   );
-}
+};
 
 export default ParagraphFragment;

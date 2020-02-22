@@ -32,7 +32,7 @@ const TableData = (props) => {
   return (
     <Wrapper>{props.children}</Wrapper>
   );
-}
+};
 
 TableData.propTypes = {
   children: PropTypes.oneOfType([

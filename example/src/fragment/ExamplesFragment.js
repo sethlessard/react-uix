@@ -11,6 +11,6 @@ const ExamplesFragment = () => {
       </Paragraph>
     </Fragment>
   );
-}
+};
 
 export default ExamplesFragment;

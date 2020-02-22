@@ -61,6 +61,6 @@ const HeadingFragment = () => {
       </Table>
     </Fragment>
   );
-}
+};
 
 export default HeadingFragment;

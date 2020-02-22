@@ -37,7 +37,7 @@ const BottomNavItem = ({ children, foregroundColor, icon, onClick, style }) => {
       {children}
     </div>
   );
-}
+};
 
 BottomNavItem.propTypes = {
   children: PropTypes.string,

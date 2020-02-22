@@ -35,6 +35,6 @@ const RowFragment = () => {
       </Table>
     </Fragment>
   );
-}
+};
 
 export default RowFragment;

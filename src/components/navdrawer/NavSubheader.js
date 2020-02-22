@@ -14,7 +14,7 @@ const NavSubheader = (props) => {
       <Heading h={6} style={{ margin: 0, padding: 0 }}>{props.children}</Heading>
     </div>
   );
-}
+};
 
 NavSubheader.propTypes = {
   children: PropTypes.node

@@ -24,7 +24,7 @@ const TableRow = ({ backgroundColor, children, foregroundColor, style: compStyle
   return (
     <Wrapper backgroundColor={backgroundColor} foregroundColor={foregroundColor} style={style.tableRow}>{children}</Wrapper>
   );
-}
+};
 
 TableRow.propTypes = {
   children: PropTypes.node,

@@ -137,6 +137,6 @@ const BottomNavigationFragment = (props) => {
       </Fragment>
     </div>
   );
-}
+};
 
 export default BottomNavigationFragment;
