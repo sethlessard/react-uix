@@ -64,10 +64,7 @@ const parseCode = (code) => {
         break;
     }
   }
-  if (token !== "") {
-    html.push(token);
-    token = "";
-  }
+  if (token.length > 0) html.push(token);
 
   return html;
 };
