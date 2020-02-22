@@ -5,8 +5,8 @@ import Text from "../Text";
 
 const DropdownListItemText = ({ children }) => {
   // TODO: implement
-  return <div><Text>{ children }</Text></div>;
-}
+  return <div><Text>{children}</Text></div>;
+};
 
 DropdownListItemText.propTypes = {
   children: PropTypes.string

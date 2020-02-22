@@ -10,20 +10,19 @@ const List = ({ children, style: listStyle, type = "ul" }) => {
   Object.assign(style.list, listStyle);
   return (
     <div style={style.list}>
-      { type === "ol" &&
-      <ol>
-        {children}
-      </ol>
+      {type === "ol" &&
+        <ol>
+          {children}
+        </ol>
       }
-
-      { type === "ul" &&
-      <ul>
-        {children}
-      </ul>
+      {type === "ul" &&
+        <ul>
+          {children}
+        </ul>
       }
     </div>
   );
-}
+};
 
 List.propTypes = {
   children: PropTypes.node,

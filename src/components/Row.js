@@ -21,7 +21,7 @@ const Row = ({ children, style: compStyle }) => {
   };
   Object.assign(style.row, compStyle);
   return <Wrapper style={style.row}><Contents>{children}</Contents></Wrapper>;
-}
+};
 
 Row.propTypes = {
   style: PropTypes.object

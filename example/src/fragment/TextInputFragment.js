@@ -21,24 +21,24 @@ const TextInputFragment = ({ style: compStyle }) => {
 
       <PaddedHeading h={6}>Props</PaddedHeading>
       <Table>
-          <TableHeader>
-              <TableRow>
-                  <HeaderCell>Name</HeaderCell>
-                  <HeaderCell>Type</HeaderCell>
-                  <HeaderCell>Required</HeaderCell>
-                  <HeaderCell>Default</HeaderCell>
-                  <HeaderCell>Description</HeaderCell>
-              </TableRow>
-          </TableHeader>
-          <TableBody>
-              <TableRow>
-                  {/* <TableData>children</TableData>
+        <TableHeader>
+          <TableRow>
+            <HeaderCell>Name</HeaderCell>
+            <HeaderCell>Type</HeaderCell>
+            <HeaderCell>Required</HeaderCell>
+            <HeaderCell>Default</HeaderCell>
+            <HeaderCell>Description</HeaderCell>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            {/* <TableData>children</TableData>
                   <TableData>string</TableData>
                   <TableData>No</TableData>
                   <TableData />
                   <TableData>The text.</TableData> */}
-              </TableRow>
-          </TableBody>
+          </TableRow>
+        </TableBody>
       </Table>
     </Fragment>
   );

@@ -81,7 +81,7 @@ const Switch = ({ children, style: compStyle }) => {
     <Wrapper style={style.Switch}>
       <Track />
       <Sw type="checkbox" id={`lb-${children}`} />
-      <Span>{ children }</Span>
+      <Span>{children}</Span>
       <Thumb />
     </Wrapper>
   );

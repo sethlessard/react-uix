@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     backgroundColor: ownProps.backgroundColor || state.ui.primaryColor,
     foregroundColor: ownProps.foregroundColor || state.ui.foregroundColor
   };
-}
+};
 
 const mapDispatchToProps = (dispatch) => ({
   updateAppbarDefined: (appbarDefined) => dispatch(updateAppbarDefined(appbarDefined)),
@@ -42,13 +42,13 @@ class Appbar extends Component {
     const style = {
       appbar: {
         height: height || 62,
-        backgroundColor: backgroundColor,
+        backgroundColor,
         color: foregroundColor
       }
     };
 
     if (!demo) {
-      style.appbar["position"] = "fixed";
+      style.appbar.position = "fixed";
     }
     Object.apply(style.appbar, compStyle);
     return (

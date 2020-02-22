@@ -16,9 +16,9 @@ const Subtitle = ({ children, style: compStyle, type = 1 }) => {
   }
   Object.assign(style.subtitle, compStyle);
   return (
-    <span style={style.subtitle}>{ children }</span>
+    <span style={style.subtitle}>{children}</span>
   );
-}
+};
 
 Subtitle.propTypes = {
   children: PropTypes.string,

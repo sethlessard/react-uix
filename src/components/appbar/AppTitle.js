@@ -15,7 +15,7 @@ const AppTitle = ({ children, fontSize, style: compStyle }) => {
   Object.assign(style.title, compStyle);
   return (
     <Wrapper style={style.title}>
-      <Heading h={6}>{ children }</Heading>
+      <Heading h={6}>{children}</Heading>
     </Wrapper>
   );
 };

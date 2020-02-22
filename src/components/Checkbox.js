@@ -64,8 +64,9 @@ class Checkbox extends Component {
     super(props);
     this.state = {
       checked: false
-    }
+    };
   }
+
   render() {
     const { children, color } = this.props;
     const style = {
@@ -74,8 +75,8 @@ class Checkbox extends Component {
     return (
       <Wrapper style={style.checkbox}>
         <CB color={color} type="checkbox" style={style.input} placeholder="checkbox" />
-        { children &&
-        <Message style={style.span}>{children}</Message>
+        {children &&
+          <Message style={style.span}>{children}</Message>
         }
       </Wrapper>
     );

@@ -13,7 +13,7 @@ const CardBody = ({ children, style: compStyle }) => {
   };
   Object.assign(style.body, compStyle);
   return <Wrapper style={style.body}>{children}</Wrapper>;
-}
+};
 
 CardBody.propTypes = {
 

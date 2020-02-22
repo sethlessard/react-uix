@@ -25,6 +25,7 @@ class IconButton extends Component {
       pressed: false
     };
   }
+
   render() {
     const { children, color, size, style: compStyle, onClick } = this.props;
     const { pressed } = this.state;

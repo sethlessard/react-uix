@@ -22,9 +22,9 @@ class DropdownButton extends Component {
 
   handleClickOutside(event) {
     if (this.dialogRef &&
-            event &&
-            this.dialogRef.current &&
-            this.dialogRef.current.contains(event.target)) { this.setInvisible(); }
+      event &&
+      this.dialogRef.current &&
+      this.dialogRef.current.contains(event.target)) { this.setInvisible(); }
   }
 
   render() {
@@ -97,7 +97,7 @@ DropdownButton.propTypes = {
   color: PropTypes.string,
   children: PropTypes.node,
   icon: PropTypes.string,
-  iconSize: PropTypes.oneOfType([ PropTypes.number, PropTypes.string ])
+  iconSize: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 };
 
 export default DropdownButton;

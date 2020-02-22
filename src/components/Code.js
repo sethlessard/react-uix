@@ -40,20 +40,20 @@ const CopyContainer = styled.div`
 `;
 
 const parseCode = (code) => {
-  let html = [];
+  const html = [];
   let token = "";
   for (let i = 0; i < code.length; i++) {
     const c = code.charAt(i);
     switch (c) {
       case "\t":
-        if (token !== "") {
+        if (token.length > 0) {
           html.push(token);
           token = "";
         }
         html.push(`\u00A0\u00A0`); // 2 spaces
         break;
       case "\n":
-        if (token !== "") {
+        if (token.length > 0) {
           html.push(token);
           token = "";
         }
@@ -64,10 +64,7 @@ const parseCode = (code) => {
         break;
     }
   }
-  if (token !== "") {
-    html.push(token);
-    token = "";
-  }
+  if (token.length > 0) html.push(token);
 
   return html;
 };
@@ -100,7 +97,7 @@ const Code = ({ backgroundColor, foregroundColor, style: compStyle, text }) => {
       </CopyContainer>
     </Wrapper>
   );
-}
+};
 
 Code.propTypes = {
   text: PropTypes.string

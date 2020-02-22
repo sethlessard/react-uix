@@ -15,7 +15,7 @@ const ToolbarOptionContainer = ({ children, style: compStyle }) => {
   Object.assign(style.optionContainer, compStyle);
   return (
     <div style={style.optionContainer}>
-      { children }
+      {children}
     </div>
   );
 };

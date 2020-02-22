@@ -1,20 +1,19 @@
 import React from 'react';
 
 import {
-    Paragraph,
+  Paragraph
 } from "react-uix";
 import Fragment from "./Fragment";
 
 const HomeFragment = (props) => {
-    return (
-        <Fragment title="React UiX">
-          <Paragraph>
-            UiX is a <a href="https://reactjs.org/" target="__blank">React</a> component library. It is designed with both desktop and mobile landscapes in mind.
-            The source code for UiX can be found <a href="https://github.com/sethlessard/react-uix" target="__blank">here.</a>
-          </Paragraph>
-          <script src="https://github.com/sethlessard/react-uix/blob/master/src/appbar/AppTitleContainer.js"></script>
-        </Fragment>
-    );
-}
+  return (
+    <Fragment title="React UiX">
+      <Paragraph>
+        UiX is a <a href="https://reactjs.org/" target="__blank">React</a> component library. It is designed with both desktop and mobile landscapes in mind.
+        The source code for UiX can be found <a href="https://github.com/sethlessard/react-uix" target="__blank">here.</a>
+      </Paragraph>
+    </Fragment>
+  );
+};
 
 export default HomeFragment;

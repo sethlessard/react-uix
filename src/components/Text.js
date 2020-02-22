@@ -25,10 +25,10 @@ const Text = ({ children, color, fontSize = ".8rem", foregroundColor, style: com
   Object.assign(style.text, compStyle);
   return (
     <div>
-      <Span fontSize={fontSize} style={style.text}>{ children }</Span>
+      <Span fontSize={fontSize} style={style.text}>{children}</Span>
     </div>
   );
-}
+};
 
 Text.propTypes = {
   color: PropTypes.string

@@ -35,7 +35,7 @@ const Toast = ({ children, visible }) => {
       <Message>{children}</Message>
     </Wrapper>
   );
-}
+};
 
 Toast.propTypes = {
   visible: PropTypes.bool

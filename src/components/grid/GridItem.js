@@ -38,20 +38,20 @@ const ItemRight = styled(Wrapper)`
 
 const GridItem = ({ children, gridIndex, numColumns = 4, style: compStyle }) => {
   const style = {
-    GridItem: { }
+    GridItem: {}
   };
   Object.assign(style.GridItem, compStyle);
   if (gridIndex % numColumns === 0) {
     return (
-      <ItemLeft numColumns={numColumns} style={style.GridItem}>{ children }</ItemLeft>
-    )
+      <ItemLeft numColumns={numColumns} style={style.GridItem}>{children}</ItemLeft>
+    );
   } else if ((gridIndex + 1) % numColumns === 0) {
     return (
-      <ItemRight numColumns={numColumns} style={style.GridItem}>{ children }</ItemRight>
+      <ItemRight numColumns={numColumns} style={style.GridItem}>{children}</ItemRight>
     );
   }
   return (
-    <Wrapper numColumns={numColumns} style={style.GridItem}> { children } </Wrapper>
+    <Wrapper numColumns={numColumns} style={style.GridItem}> {children} </Wrapper>
   );
 };
 

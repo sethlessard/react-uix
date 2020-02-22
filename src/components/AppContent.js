@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     bottomNavDefined: state.ui.bottomNavDefined,
     bottomNavHeight: state.ui.bottomNavHeight
   };
-}
+};
 
 const Wrapper = styled.div`
   width: 100vw;

@@ -14,14 +14,14 @@ const mapStateToProps = (state, ownProps) => {
     navDrawerClosingFromToggleButton: state.ui.navDrawerClosingFromToggleButton,
     width: ownProps.width || 240
   };
-}
+};
 
 const mapDispatchToProps = (dispatch) => ({
   updateNavDrawerDefined: (defined) => dispatch(updateNavDrawerDefined(defined)),
   updateNavDrawerOpen: (open) => dispatch(updateNavDrawerOpen(open)),
   updateNavDrawerWidth: (width) => dispatch(updateNavDrawerWidth(width)),
   updateNavDrawerClosingFromToggleButton: (closingFromToggle) => dispatch(updateNavDrawerClosingFromToggleButton(closingFromToggle))
-})
+});
 
 const Wrapper = styled.div`
   position: fixed;
@@ -79,10 +79,10 @@ class NavDrawer extends Component {
   handleClickOutside(event) {
     const { navDrawerClosingFromToggleButton, navDrawerOpen, updateNavDrawerOpen, updateNavDrawerClosingFromToggleButton } = this.props;
     if (navDrawerOpen &&
-        event &&
-        this.ref &&
-        !navDrawerClosingFromToggleButton &&
-        !this.ref.current.contains(event.target)) {
+      event &&
+      this.ref &&
+      !navDrawerClosingFromToggleButton &&
+      !this.ref.current.contains(event.target)) {
       updateNavDrawerOpen(false);
       updateNavDrawerClosingFromToggleButton(false);
     }

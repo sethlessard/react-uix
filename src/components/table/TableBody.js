@@ -5,7 +5,7 @@ const TableBody = (props) => {
   return (
     <tbody>{props.children}</tbody>
   );
-}
+};
 
 TableBody.propTypes = {
   children: PropTypes.oneOfType([

@@ -19,7 +19,7 @@ const Paragraph = ({ children, color, style: compStyle }) => {
   Object.assign(style.Paragraph, compStyle);
   return (
     <Wrapper className="Paragraph" style={style.Paragraph}>
-      <Text color={color}>{ children }</Text>
+      <Text color={color}>{children}</Text>
     </Wrapper>
   );
 };

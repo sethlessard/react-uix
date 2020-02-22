@@ -7,7 +7,7 @@ import { updateNavDrawerOpen } from "../../redux/actions/ui";
 
 import { connect } from "react-redux";
 
-const mapStateToProps = (state) => ({})
+const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
   updateNavDrawerOpen: (open) => dispatch(updateNavDrawerOpen(open))
@@ -39,7 +39,7 @@ const NavItem = ({ active, backgroundColor, children, foregroundColor, style: co
       backgroundColor={backgroundColor}
       foregroundColor={foregroundColor}
       style={style.navItem}
-      onClick={(e) => { updateNavDrawerOpen(false) }}
+      onClick={(e) => updateNavDrawerOpen(false)}
       width={width}
     >
       {children}

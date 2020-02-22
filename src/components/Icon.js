@@ -28,7 +28,7 @@ const Icon = ({ accent, children, color, size = "1rem", style: compStyle }) => {
 
   Object.assign(style.icon, compStyle);
   return (
-    <Wrapper style={style.icon} >
+    <Wrapper style={style.icon}>
       <I color={color} size={size} className="material-icons">{children}</I>
     </Wrapper>
   );

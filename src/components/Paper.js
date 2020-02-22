@@ -14,7 +14,7 @@ const Paper = (props) => {
   return (
     <Wrapper style={style.paper}>{props.children}</Wrapper>
   );
-}
+};
 
 Paper.propTypes = {
   children: PropTypes.oneOfType([

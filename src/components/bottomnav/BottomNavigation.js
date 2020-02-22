@@ -28,7 +28,7 @@ class BottomNavigation extends Component {
       bottomNavigation: {
         width: "100%",
         height: height || 62,
-        backgroundColor: backgroundColor,
+        backgroundColor,
         display: "block",
         userSelect: "none",
         WebkitUserSelect: "none"
