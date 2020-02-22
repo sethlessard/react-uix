@@ -5,138 +5,138 @@ import { PaddedHeading, BottomNavigation, BottomNavItem, Code, Paragraph, Table,
 import { Example } from '../component';
 
 const BottomNavigationFragment = (props) => {
-    return (
-        <div>
-            <Fragment title="Bottom Navigation">
-                <Paragraph>The BottomNavigation component is used to implement a bottom navagation functionality within an app.</Paragraph>
-                <Example>
-                    <BottomNavigation demo={true}>
-                        <BottomNavItem icon="home">Home</BottomNavItem>
-                        <BottomNavItem icon="account_circle">Account</BottomNavItem>
-                        <BottomNavItem icon="settings">Settings</BottomNavItem>
-                    </BottomNavigation>
-                </Example>
+  return (
+    <div>
+      <Fragment title="Bottom Navigation">
+        <Paragraph>The BottomNavigation component is used to implement a bottom navagation functionality within an app.</Paragraph>
+        <Example>
+          <BottomNavigation demo={true}>
+            <BottomNavItem icon="home">Home</BottomNavItem>
+            <BottomNavItem icon="account_circle">Account</BottomNavItem>
+            <BottomNavItem icon="settings">Settings</BottomNavItem>
+          </BottomNavigation>
+        </Example>
 
-                <Paragraph>The BottomNavigation component can be styled with the backgroundColor and color properties.</Paragraph>
-                <Example>
-                    <BottomNavigation backgroundColor="#ffffff" demo={true}>
-                        <BottomNavItem color="#000000"icon="home">Home</BottomNavItem>
-                        <BottomNavItem color="#000000" icon="account_circle">Account</BottomNavItem>
-                        <BottomNavItem color="#000000" icon="settings">Settings</BottomNavItem>
-                    </BottomNavigation>
-                </Example>
+        <Paragraph>The BottomNavigation component can be styled with the backgroundColor and color properties.</Paragraph>
+        <Example>
+          <BottomNavigation backgroundColor="#ffffff" demo={true}>
+            <BottomNavItem color="#000000" icon="home">Home</BottomNavItem>
+            <BottomNavItem color="#000000" icon="account_circle">Account</BottomNavItem>
+            <BottomNavItem color="#000000" icon="settings">Settings</BottomNavItem>
+          </BottomNavigation>
+        </Example>
 
-                <Paragraph>The BottomNavigation component is populated with <Link to="/component/BottomNavItem">BottomNavItem</Link> objects.</Paragraph>
+        <Paragraph>The BottomNavigation component is populated with <Link to="/component/BottomNavItem">BottomNavItem</Link> objects.</Paragraph>
 
-                <PaddedHeading h={6}>Usage</PaddedHeading>
-                <Paragraph>
-                    <Code foregroundColor="#fff" text={`import { BottomNavigation } from "react-uix";`} />
-                </Paragraph>
+        <PaddedHeading h={6}>Usage</PaddedHeading>
+        <Paragraph>
+          <Code foregroundColor="#fff" text={`import { BottomNavigation } from "react-uix";`} />
+        </Paragraph>
 
-                <PaddedHeading h={6}>Props</PaddedHeading>
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <HeaderCell>Name</HeaderCell>
-                            <HeaderCell>Type</HeaderCell>
-                            <HeaderCell>Required</HeaderCell>
-                            <HeaderCell>Default</HeaderCell>
-                            <HeaderCell>Description</HeaderCell>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        <TableRow>
-                            <TableData>children</TableData>
-                            <TableData>node</TableData>
-                            <TableData>No</TableData>
-                            <TableData></TableData>
-                            <TableData>The contents of the BottomNavigation component.</TableData>
-                        </TableRow>
-                        <TableRow>
-                            <TableData>backgroundColor</TableData>
-                            <TableData>string</TableData>
-                            <TableData>No</TableData>
-                            <TableData></TableData>
-                            <TableData>The background color.</TableData>
-                        </TableRow>
-                        <TableRow>
-                            <TableData>foregroundColor</TableData>
-                            <TableData>string</TableData>
-                            <TableData>No</TableData>
-                            <TableData></TableData>
-                            <TableData>The foreground color.</TableData>
-                        </TableRow>
-                        <TableRow>
-                            <TableData>height</TableData>
-                            <TableData>number</TableData>
-                            <TableData>No</TableData>
-                            <TableData>62</TableData>
-                            <TableData>The height of the BottomNavigation component.</TableData>
-                        </TableRow>
-                    </TableBody>
-                </Table>
+        <PaddedHeading h={6}>Props</PaddedHeading>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <HeaderCell>Name</HeaderCell>
+              <HeaderCell>Type</HeaderCell>
+              <HeaderCell>Required</HeaderCell>
+              <HeaderCell>Default</HeaderCell>
+              <HeaderCell>Description</HeaderCell>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableData>children</TableData>
+              <TableData>node</TableData>
+              <TableData>No</TableData>
+              <TableData></TableData>
+              <TableData>The contents of the BottomNavigation component.</TableData>
+            </TableRow>
+            <TableRow>
+              <TableData>backgroundColor</TableData>
+              <TableData>string</TableData>
+              <TableData>No</TableData>
+              <TableData></TableData>
+              <TableData>The background color.</TableData>
+            </TableRow>
+            <TableRow>
+              <TableData>foregroundColor</TableData>
+              <TableData>string</TableData>
+              <TableData>No</TableData>
+              <TableData></TableData>
+              <TableData>The foreground color.</TableData>
+            </TableRow>
+            <TableRow>
+              <TableData>height</TableData>
+              <TableData>number</TableData>
+              <TableData>No</TableData>
+              <TableData>62</TableData>
+              <TableData>The height of the BottomNavigation component.</TableData>
+            </TableRow>
+          </TableBody>
+        </Table>
 
-                <PaddedHeading h={6}>Direct Subcomponents</PaddedHeading>
-                <Paragraph>The BottomNavigation component has the following direct subcomponents:</Paragraph>
-                <List>
-                    <ListItem>BottomNavItem</ListItem>
-                </List>
-            </Fragment>
+        <PaddedHeading h={6}>Direct Subcomponents</PaddedHeading>
+        <Paragraph>The BottomNavigation component has the following direct subcomponents:</Paragraph>
+        <List>
+          <ListItem>BottomNavItem</ListItem>
+        </List>
+      </Fragment>
 
-            <Fragment style={{margin: "1rem auto 0 auto"}}>
-                <PaddedHeading h={5}>BottomNavItem</PaddedHeading>
-                <Paragraph>The BottomNavItem component is used to implement a button within a BottomNavigation component.</Paragraph>
+      <Fragment style={{ margin: "1rem auto 0 auto" }}>
+        <PaddedHeading h={5}>BottomNavItem</PaddedHeading>
+        <Paragraph>The BottomNavItem component is used to implement a button within a BottomNavigation component.</Paragraph>
 
-                <PaddedHeading h={6}>Usage</PaddedHeading>
-                <Paragraph>
-                    <Code foregroundColor="#fff" text={`import { BottomNavItem } from "react-uix";`} />
-                </Paragraph>
+        <PaddedHeading h={6}>Usage</PaddedHeading>
+        <Paragraph>
+          <Code foregroundColor="#fff" text={`import { BottomNavItem } from "react-uix";`} />
+        </Paragraph>
 
-                <PaddedHeading h={6}>Props</PaddedHeading>
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <HeaderCell>Name</HeaderCell>
-                            <HeaderCell>Type</HeaderCell>
-                            <HeaderCell>Required</HeaderCell>
-                            <HeaderCell>Default</HeaderCell>
-                            <HeaderCell>Description</HeaderCell>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        <TableRow>
-                            <TableData>children</TableData>
-                            <TableData>string</TableData>
-                            <TableData>No</TableData>
-                            <TableData></TableData>
-                            <TableData>The text to display in the BottomNavItem.</TableData>
-                        </TableRow>
-                        <TableRow>
-                            <TableData>color</TableData>
-                            <TableData>string</TableData>
-                            <TableData>No</TableData>
-                            <TableData></TableData>
-                            <TableData>The foreground color.</TableData>
-                        </TableRow>
-                        <TableRow>
-                            <TableData>icon</TableData>
-                            <TableData>string</TableData>
-                            <TableData>No</TableData>
-                            <TableData></TableData>
-                            <TableData>The icon.</TableData>
-                        </TableRow>
-                        <TableRow>
-                            <TableData>onClick</TableData>
-                            <TableData>function</TableData>
-                            <TableData>No</TableData>
-                            <TableData></TableData>
-                            <TableData>The height of the BottomNavigation component.</TableData>
-                        </TableRow>
-                    </TableBody>
-                </Table>
-            </Fragment>
-        </div>
-    );
+        <PaddedHeading h={6}>Props</PaddedHeading>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <HeaderCell>Name</HeaderCell>
+              <HeaderCell>Type</HeaderCell>
+              <HeaderCell>Required</HeaderCell>
+              <HeaderCell>Default</HeaderCell>
+              <HeaderCell>Description</HeaderCell>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableData>children</TableData>
+              <TableData>string</TableData>
+              <TableData>No</TableData>
+              <TableData></TableData>
+              <TableData>The text to display in the BottomNavItem.</TableData>
+            </TableRow>
+            <TableRow>
+              <TableData>color</TableData>
+              <TableData>string</TableData>
+              <TableData>No</TableData>
+              <TableData></TableData>
+              <TableData>The foreground color.</TableData>
+            </TableRow>
+            <TableRow>
+              <TableData>icon</TableData>
+              <TableData>string</TableData>
+              <TableData>No</TableData>
+              <TableData></TableData>
+              <TableData>The icon.</TableData>
+            </TableRow>
+            <TableRow>
+              <TableData>onClick</TableData>
+              <TableData>function</TableData>
+              <TableData>No</TableData>
+              <TableData></TableData>
+              <TableData>The height of the BottomNavigation component.</TableData>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </Fragment>
+    </div>
+  );
 }
 
 export default BottomNavigationFragment;

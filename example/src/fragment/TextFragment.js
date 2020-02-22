@@ -4,41 +4,41 @@ import { PaddedHeading, Paragraph, Text, Code, Table, TableHeader, TableRow, Tab
 import { Example } from '../component';
 
 const TextFragment = (props) => {
-    return (
-        <Fragment title="Text">
-            <Paragraph>
-                The Text component is used to implement text.
-            </Paragraph>
-            <Example>
-                <Text>This is an example of some text</Text>
-            </Example>
+  return (
+    <Fragment title="Text">
+      <Paragraph>
+        The Text component is used to implement text.
+      </Paragraph>
+      <Example>
+        <Text>This is an example of some text</Text>
+      </Example>
 
-            <PaddedHeading h={6}>Usage</PaddedHeading>
-            <Code foregroundColor="#fff" text={`import { Text } from "react-uix";`} />
+      <PaddedHeading h={6}>Usage</PaddedHeading>
+      <Code foregroundColor="#fff" text={`import { Text } from "react-uix";`} />
 
-            <PaddedHeading h={6}>Props</PaddedHeading>
-            <Table>
-                <TableHeader>
-                    <TableRow>
-                        <HeaderCell>Name</HeaderCell>
-                        <HeaderCell>Type</HeaderCell>
-                        <HeaderCell>Required</HeaderCell>
-                        <HeaderCell>Default</HeaderCell>
-                        <HeaderCell>Description</HeaderCell>
-                    </TableRow>
-                </TableHeader>
-                <TableBody>
-                    <TableRow>
-                        <TableData>children</TableData>
-                        <TableData>string</TableData>
-                        <TableData>No</TableData>
-                        <TableData />
-                        <TableData>The text.</TableData>
-                    </TableRow>
-                </TableBody>
-            </Table>
-        </Fragment>
-    );
+      <PaddedHeading h={6}>Props</PaddedHeading>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <HeaderCell>Name</HeaderCell>
+            <HeaderCell>Type</HeaderCell>
+            <HeaderCell>Required</HeaderCell>
+            <HeaderCell>Default</HeaderCell>
+            <HeaderCell>Description</HeaderCell>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableData>children</TableData>
+            <TableData>string</TableData>
+            <TableData>No</TableData>
+            <TableData />
+            <TableData>The text.</TableData>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </Fragment>
+  );
 }
 
 export default TextFragment;
