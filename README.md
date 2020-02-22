@@ -12,19 +12,7 @@ npm install --save react-uix
 
 ## Usage
 
-```jsx
-import React, { Component } from 'react'
-
-import MyComponent from 'react-uix'
-
-class Example extends Component {
-  render () {
-    return (
-      <MyComponent />
-    )
-  }
-}
-```
+See [docs](https://sethlessard.github.io/react-uix/).
 
 ## License
 
