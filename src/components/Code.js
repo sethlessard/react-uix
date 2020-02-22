@@ -46,14 +46,14 @@ const parseCode = (code) => {
     const c = code.charAt(i);
     switch (c) {
       case "\t":
-        if (token !== "") {
+        if (token.length > 0) {
           html.push(token);
           token = "";
         }
         html.push(`\u00A0\u00A0`); // 2 spaces
         break;
       case "\n":
-        if (token !== "") {
+        if (token.length > 0) {
           html.push(token);
           token = "";
         }
