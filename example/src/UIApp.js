@@ -109,7 +109,7 @@ class UIApp extends Component {
                 </DropdownButton>
               </AppbarToolbar>
             </Appbar>
-            <NavDrawer open={this.state.navDrawerOpen} onClose={() => { this.setState({ navDrawerOpen: false })}}>
+            <NavDrawer>
               <NavHeader />
               <NavContent>
                 <NavGroup>

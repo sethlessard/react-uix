@@ -8,6 +8,7 @@ export const UPDATE_BOTTOMNAV_HEIGHT = "UPDATE_BOTTOMNAV_HEIGHT";
 export const UPDATE_NAVDRAWER_CLOSING_FROM_TOGGLE_BUTTON = "UPDATE_NAVDRAWER_CLOSING_FROM_TOGGLE_BUTTON";
 export const UPDATE_NAVDRAWER_DEFINED = "UPDATE_NAVDRAWER_DEFINED";
 export const UPDATE_NAVDRAWER_OPEN = "UPDATE_NAVDRAWER_OPEN";
+export const UPDATE_NAVDRAWER_WIDTH = "UPDATE_NAVDRAWER_WIDTH";
 
 /**
  * Update the primary color of the ui.
@@ -102,4 +103,13 @@ export const updateNavDrawerDefined = (navDrawerDefined = false) => ({
 export const updateNavDrawerOpen = (navDrawerOpen = false) => ({
   type: UPDATE_NAVDRAWER_OPEN,
   navDrawerOpen
-})
+});
+
+/**
+ * Update the navigation drawer width.
+ * @param {number} navDrawerWidth the width of the nav drawer.
+ */
+export const updateNavDrawerWidth = (navDrawerWidth = 0) => ({
+  type: UPDATE_NAVDRAWER_WIDTH,
+  navDrawerWidth
+});

@@ -1,34 +1,37 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import { updateNavDrawerDefined, updateNavDrawerOpen, updateNavDrawerClosingFromToggleButton } from '../../redux/actions/ui';
+import { updateNavDrawerDefined, updateNavDrawerOpen, updateNavDrawerClosingFromToggleButton, updateNavDrawerWidth } from '../../redux/actions/ui';
 import { connect } from 'react-redux';
 import styled from "styled-components";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     appbarDefined: state.ui.appbarDefined,
     appbarHeight: state.ui.appbarHeight,
     bottomNavDefined: state.ui.bottomNavDefined,
     bottomNavHeight: state.ui.bottomNavHeight,
-    navDrawerOpen: state.ui.navDrawerOpen
+    navDrawerOpen: state.ui.navDrawerOpen,
+    navDrawerClosingFromToggleButton: state.ui.navDrawerClosingFromToggleButton,
+    width: ownProps.width || 240
   };
 }
 
 const mapDispatchToProps = (dispatch) => ({
   updateNavDrawerDefined: (defined) => dispatch(updateNavDrawerDefined(defined)),
   updateNavDrawerOpen: (open) => dispatch(updateNavDrawerOpen(open)),
+  updateNavDrawerWidth: (width) => dispatch(updateNavDrawerWidth(width)),
   updateNavDrawerClosingFromToggleButton: (closingFromToggle) => dispatch(updateNavDrawerClosingFromToggleButton(closingFromToggle))
 })
 
 const Wrapper = styled.div`
   position: fixed;
-  width: ${props => props.width || "240px"};
+  width: ${props => props.width}px;
   height: calc(100vh - ${props => ((props.appbarDefined) ? props.appbarHeight : 0) + ((props.bottomNavDefined) ? props.bottomNavHeight : 0)}px);
   top: ${props => (props.appbarDefined) ? `${props.appbarHeight}px` : 0};
   -webkit-transform: ${props => (props.open) ? "translate(0, 0)" : "translate(-107%, 0)"};
   -webkit-transition-property: -webkit-transform;
   transform:  ${props => (props.open) ? "translate(0, 0)" : "translate(-107%, 0)"};
-  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-out;
   -webkit-overflow-scrolling: touch;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -47,28 +50,41 @@ class NavDrawer extends Component {
     super(props);
     this.state = {};
     this.ref = React.createRef();
+
+    // binding
+    this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
   componentDidMount() {
-    window.addEventListener("mousedown", (event) => this.handleClickOutside(event));
-    window.addEventListener("touchstart", (event) => this.handleClickOutside(event));
-    this.props.updateNavDrawerDefined(true);
-    this.props.updateNavDrawerOpen(this.props.openByDefault);
+    const {
+      openByDefault,
+      updateNavDrawerDefined,
+      updateNavDrawerOpen,
+      updateNavDrawerWidth,
+      width
+    } = this.props;
+    window.addEventListener("mousedown", this.handleClickOutside);
+    window.addEventListener("touchend", this.handleClickOutside);
+    updateNavDrawerDefined(true);
+    updateNavDrawerOpen(openByDefault);
+    updateNavDrawerWidth(width);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("mousedown", (event) => this.handleClickOutside(event));
-    window.removeEventListener("touchstart", (event) => this.handleClickOutside(event));
+    window.removeEventListener("mousedown", this.handleClickOutside);
+    window.removeEventListener("touchEn", this.handleClickOutside);
     this.props.updateNavDrawerClosingFromToggleButton(false);
   }
 
   handleClickOutside(event) {
-    const { navDrawerOpen, updateNavDrawerOpen } = this.props;
+    const { navDrawerClosingFromToggleButton, navDrawerOpen, updateNavDrawerOpen, updateNavDrawerClosingFromToggleButton } = this.props;
     if (navDrawerOpen &&
-            event &&
-            this.ref &&
-            !this.ref.current.contains(event.target)) {
+        event &&
+        this.ref &&
+        !navDrawerClosingFromToggleButton &&
+        !this.ref.current.contains(event.target)) {
       updateNavDrawerOpen(false);
+      updateNavDrawerClosingFromToggleButton(false);
     }
   }
 
@@ -82,7 +98,6 @@ class NavDrawer extends Component {
       navDrawer: {}
     };
     Object.assign(style.navDrawer, compStyle);
-    // setNavDrawerWidth(style.navDrawer.width); TODO: create redux action
     return (
       <Wrapper
         appbarDefined={appbarDefined}
@@ -101,10 +116,7 @@ class NavDrawer extends Component {
 }
 
 NavDrawer.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node)
-  ]),
+  children: PropTypes.node,
   openByDefault: PropTypes.bool,
   width: PropTypes.number
 };

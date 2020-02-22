@@ -1,6 +1,6 @@
 import React from 'react';
 import Fragment from './Fragment';
-import { Code, Grid, Heading, Paragraph, Card, CardHeader, Row, CardBody } from 'react-uix';
+import { Code, Grid, Paragraph } from 'react-uix';
 
 const MATERIAL_ICON = `<link href="https://fonts.googleapis.com/ icon?family=Material+Icons" rel="stylesheet" />`;
 const ROBOTO = `<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">`;
@@ -21,28 +21,14 @@ const InstallationFragment = () => {
                     </div>
                 </Grid>
             </Fragment>
-            <Row style={{padding: "2em 0 0 0"}}>
-                <Card>
-                    <CardHeader>
-                        <Heading h={6}>Material Icon Font</Heading>
-                    </CardHeader>
-                    <CardBody>
-                        <Paragraph>In order to use the Material Icon font, you must include this css file in your HTML file:</Paragraph>
-                        <Code foregroundColor="#fff" text={MATERIAL_ICON} />
-                    </CardBody>
-                </Card>
-            </Row>
-            <Row style={{padding: "2em 0 0 0"}}>
-                <Card>
-                    <CardHeader>
-                        <Heading h={6}>Roboto Font</Heading>
-                    </CardHeader>
-                    <CardBody>
-                        <Paragraph>It is recommended to use the Roboto font supplied by Google Fonts with react-uix.</Paragraph>
-                        <Code foregroundColor="#fff" text={ROBOTO} />
-                    </CardBody>
-                </Card>
-            </Row>
+            <Fragment style={{ margin: "2em 0 0 0" }} title="Material Icon Font">
+                <Paragraph>In order to use the Material Icon font, you must include this css file in your HTML file:</Paragraph>
+                <Code foregroundColor="#fff" text={MATERIAL_ICON} />
+            </Fragment>
+            <Fragment style={{ margin: "2em 0 0 0" }} title="Roboto Font">
+                <Paragraph>It is recommended to use the Roboto font supplied by Google Fonts with react-uix.</Paragraph>
+                <Code foregroundColor="#fff" text={ROBOTO} />
+            </Fragment>
         </div>
     );
 }
