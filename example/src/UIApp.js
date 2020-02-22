@@ -50,7 +50,7 @@ import {
   SwitchFragment,
   TextFragment,
   TextAreaFragment,
-  ToastFragment,
+  ToastFragment
 } from "./fragment";
 import TextInputFragment from './fragment/TextInputFragment';
 
@@ -65,9 +65,10 @@ class UIApp extends Component {
     this.state = {
       navDrawerOpen: false,
       aboutBoxOpen: false,
-      settingsBoxOpen: false,
+      settingsBoxOpen: false
     }
   }
+
   render() {
     const style = {
       toolbarButtons: {
@@ -216,7 +217,5 @@ class UIApp extends Component {
     );
   }
 }
-
-
 
 export default UIApp;

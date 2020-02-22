@@ -52,7 +52,6 @@ const Wrapper = styled.div`
 `;
 
 class Fragment extends Component {
-
   render() {
     const { children, style: compStyle, title } = this.props;
 
@@ -82,7 +81,7 @@ Fragment.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node)
-  ]),
+  ])
 };
 
 export default Fragment;

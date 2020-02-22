@@ -13,7 +13,7 @@ const FlexBox = ({ alignItems, justifyContent, direction = "row", children, styl
 
   Object.assign(style.flexBox, compStyle);
   return (
-    <div style={style.flexBox}>{ children }</div>
+    <div style={style.flexBox}>{children}</div>
   );
 }
 

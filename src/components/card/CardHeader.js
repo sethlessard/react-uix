@@ -14,7 +14,7 @@ const CardHeader = ({ children, style: compStyle }) => {
     cardHeader: {}
   };
   Object.assign(style.cardHeader, compStyle);
-  return <Wrapper style={style.cardHeader}>{ children }</Wrapper>;
+  return <Wrapper style={style.cardHeader}>{children}</Wrapper>;
 }
 
 CardHeader.propTypes = {

@@ -20,12 +20,10 @@ import {
   PaddedHeading
 } from "react-uix";
 
-
 import Fragment from './Fragment';
 import { Example } from "../component";
 
 const AppbarFragment = (props) => {
-
   return (
     <div>
       <Fragment title="Appbar">
@@ -41,7 +39,6 @@ const AppbarFragment = (props) => {
             </AppbarToolbar>
           </Appbar>
         </Example>
-
         <Example>
           <Appbar backgroundColor="#ffffff" foregroundColor="#000000" demo={true}>
             <AppTitleContainer>
@@ -52,12 +49,10 @@ const AppbarFragment = (props) => {
             </AppbarToolbar>
           </Appbar>
         </Example>
-
         <PaddedHeading h={6}>Usage</PaddedHeading>
         <Paragraph>
           <Code foregroundColor="#fff" text={`import { Appbar } from "react-uix";`} />
         </Paragraph>
-
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Table>
           <TableHeader>
@@ -260,7 +255,7 @@ const AppbarFragment = (props) => {
         <PaddedHeading h={6}>Direct Subcomponents</PaddedHeading>
         <Paragraph>
           AppbarToolbar has the following direct subcomponents used for styling:
-                </Paragraph>
+        </Paragraph>
         <List>
           <ListItem><Link to="/component/IconButton">IconButton</Link></ListItem>
           <ListItem><Link to="/component/DropdownButton">DropdownButton</Link></ListItem>

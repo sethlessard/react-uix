@@ -9,9 +9,10 @@ class DropdownList extends Component {
     };
     // TODO: implement
   }
+
   render() {
     const { children } = this.props;
-    return <div>{ children }</div>;
+    return <div>{children}</div>;
   }
 }
 

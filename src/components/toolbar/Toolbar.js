@@ -23,7 +23,7 @@ class Toolbar extends Component {
     };
     Object.assign(style.toolbar, compStyle);
     return (
-      <div style={style.toolbar}>{ children }</div>
+      <div style={style.toolbar}>{children}</div>
     );
   }
 }

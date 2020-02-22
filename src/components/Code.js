@@ -40,7 +40,7 @@ const CopyContainer = styled.div`
 `;
 
 const parseCode = (code) => {
-  let html = [];
+  const html = [];
   let token = "";
   for (let i = 0; i < code.length; i++) {
     const c = code.charAt(i);

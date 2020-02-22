@@ -37,12 +37,15 @@ const AppbarToggleButton = ({ children, color, navDrawerOpen, updateNavDrawerClo
   }
   Object.assign(style.button, compStyle);
   return (
-    <Wrapper style={style.button}
-      onClick={() => {
-        updateNavDrawerClosingFromToggleButton(true);
-        updateNavDrawerOpen(!navDrawerOpen);
-      }}>
-      <IconButton color={color}>{ children }</IconButton>
+    <Wrapper
+      style={style.button}
+      onClick={
+        () => {
+          updateNavDrawerClosingFromToggleButton(true);
+          updateNavDrawerOpen(!navDrawerOpen);
+        }
+      }>
+      <IconButton color={color}>{children}</IconButton>
     </Wrapper>
   );
 };

@@ -14,7 +14,7 @@ const PaddedHeading = ({ children, h = 1, style: compStyle }) => {
   Object.assign(style.PaddedHeading, compStyle);
   return (
     <Wrapper style={style.PaddedHeading}>
-      <Heading h={h}>{ children }</Heading>
+      <Heading h={h}>{children}</Heading>
     </Wrapper>
   );
 };

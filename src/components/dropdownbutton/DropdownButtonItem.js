@@ -10,7 +10,7 @@ class DropdownButtonItem extends Component {
   }
 
   render() {
-    let style = {
+    const style = {
       dropdownItem: {
         display: "flex",
         alignContent: "center",

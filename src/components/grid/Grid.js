@@ -25,7 +25,7 @@ const renderGridItems = (children, numColumns) => {
       <Row key={`grid-row-${index}`}>
         {
           childArray.map((child, childIndex, _) => {
-            return <GridItem key={`grid-item-${childIndex}-${rowKey}`} gridIndex={childIndex} numColumns={numColumns}>{ child }</GridItem>;
+            return <GridItem key={`grid-item-${childIndex}-${rowKey}`} gridIndex={childIndex} numColumns={numColumns}>{child}</GridItem>;
           })
         }
       </Row>
@@ -41,7 +41,7 @@ const Grid = ({ children, columns = 4, style: compStyle }) => {
   Object.assign(style.Grid, compStyle);
   return (
     <Wrapper style={style.Grid}>
-      { renderGridItems(children, columns) }
+      {renderGridItems(children, columns)}
     </Wrapper>
   );
 };

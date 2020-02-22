@@ -27,7 +27,7 @@ class App extends Component {
     return (
       <Provider store={uiStore}>
         <Wrapper>
-          <ConnectedRouter history={history}>{ children }</ConnectedRouter>
+          <ConnectedRouter history={history}>{children}</ConnectedRouter>
         </Wrapper>
       </Provider>
     );

@@ -79,10 +79,10 @@ class NavDrawer extends Component {
   handleClickOutside(event) {
     const { navDrawerClosingFromToggleButton, navDrawerOpen, updateNavDrawerOpen, updateNavDrawerClosingFromToggleButton } = this.props;
     if (navDrawerOpen &&
-        event &&
-        this.ref &&
-        !navDrawerClosingFromToggleButton &&
-        !this.ref.current.contains(event.target)) {
+      event &&
+      this.ref &&
+      !navDrawerClosingFromToggleButton &&
+      !this.ref.current.contains(event.target)) {
       updateNavDrawerOpen(false);
       updateNavDrawerClosingFromToggleButton(false);
     }

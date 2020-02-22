@@ -57,7 +57,7 @@ const H6 = styled.h6`
 `;
 
 const Heading = ({ children, h = 1, style: compStyle }) => {
-  let style = {
+  const style = {
     h: {}
   };
   Object.assign(style.h, compStyle);

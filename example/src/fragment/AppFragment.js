@@ -8,7 +8,7 @@ const AppFragment = () => {
       <Fragment title="App">
         <Paragraph>
           The App component is used to provide initial layout as well as global themeing for your application.
-                </Paragraph>
+        </Paragraph>
         <PaddedHeading h={6}>Usage</PaddedHeading>
         <Code foregroundColor="#fff" text={`import { App } from "react-uix";`} />
         <PaddedHeading h={6}>Props</PaddedHeading>

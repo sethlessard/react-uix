@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Breadcrumb = ({ children }) => {
   // TODO: implement
-  return <div>{ children }</div>;
+  return <div>{children}</div>;
 }
 
 Breadcrumb.propTypes = {

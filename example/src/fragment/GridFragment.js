@@ -13,10 +13,7 @@ const generateItems = (numItems) => {
 const GridFragment = () => {
   return (
     <div>
-      <Fragment title="Grid">
-
-
-      </Fragment>
+      <Fragment title="Grid" />
       <Row><Toolbar><ToolbarTitle>2 Columns</ToolbarTitle></Toolbar></Row>
       <Grid columns={2}>{generateItems(5)}</Grid>
 

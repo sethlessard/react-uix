@@ -48,7 +48,7 @@ class Appbar extends Component {
     };
 
     if (!demo) {
-      style.appbar["position"] = "fixed";
+      style.appbar.position = "fixed";
     }
     Object.apply(style.appbar, compStyle);
     return (
