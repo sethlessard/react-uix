@@ -56,6 +56,6 @@ const AppFragment = () => {
       </Fragment>
     </div>
   );
-}
+};
 
 export default AppFragment;

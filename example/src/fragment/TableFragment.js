@@ -69,6 +69,6 @@ const TableFragment = (props) => {
       </List>
     </Fragment>
   );
-}
+};
 
 export default TableFragment;

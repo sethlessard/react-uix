@@ -39,6 +39,6 @@ const TextFragment = (props) => {
       </Table>
     </Fragment>
   );
-}
+};
 
 export default TextFragment;

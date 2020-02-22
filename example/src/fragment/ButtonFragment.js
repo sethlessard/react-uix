@@ -59,6 +59,6 @@ const ButtonFragment = () => {
       </Table>
     </Fragment>
   );
-}
+};
 
 export default ButtonFragment;

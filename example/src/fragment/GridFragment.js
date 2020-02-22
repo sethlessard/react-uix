@@ -8,7 +8,7 @@ const generateItems = (numItems) => {
     items.push(<Card style={{ height: 50 }} key={i}><CardBody><Text style={{ textAlign: "center" }}>{i + 1}</Text></CardBody></Card>);
   }
   return items;
-}
+};
 
 const GridFragment = () => {
   return (
@@ -48,6 +48,6 @@ const GridFragment = () => {
       <Grid columns={12}>{generateItems(25)}</Grid>
     </div>
   );
-}
+};
 
 export default GridFragment;

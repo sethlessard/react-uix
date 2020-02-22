@@ -32,7 +32,7 @@ const renderGridItems = (children, numColumns) => {
     ));
   });
   return rows;
-}
+};
 
 const Grid = ({ children, columns = 4, style: compStyle }) => {
   const style = {

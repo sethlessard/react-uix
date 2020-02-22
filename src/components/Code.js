@@ -97,7 +97,7 @@ const Code = ({ backgroundColor, foregroundColor, style: compStyle, text }) => {
       </CopyContainer>
     </Wrapper>
   );
-}
+};
 
 Code.propTypes = {
   text: PropTypes.string

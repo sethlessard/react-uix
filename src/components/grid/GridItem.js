@@ -44,7 +44,7 @@ const GridItem = ({ children, gridIndex, numColumns = 4, style: compStyle }) => 
   if (gridIndex % numColumns === 0) {
     return (
       <ItemLeft numColumns={numColumns} style={style.GridItem}>{children}</ItemLeft>
-    )
+    );
   } else if ((gridIndex + 1) % numColumns === 0) {
     return (
       <ItemRight numColumns={numColumns} style={style.GridItem}>{children}</ItemRight>

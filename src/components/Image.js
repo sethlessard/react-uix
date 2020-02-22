@@ -17,7 +17,7 @@ const Image = ({ alt, src, height, width, style: compStyle }) => {
       <img style={style.img} src={src} height={height} width={width} alt={alt} />
     </div>
   );
-}
+};
 
 Image.propTypes = {
   alt: PropTypes.string,

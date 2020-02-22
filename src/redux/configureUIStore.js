@@ -13,5 +13,5 @@ const configureUIStore = (preloadedState) => {
     preloadedState,
     composeWithDevTools(applyMiddleware(routerMiddleware(history)))
   );
-}
+};
 export default configureUIStore;

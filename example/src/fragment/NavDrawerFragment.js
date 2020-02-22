@@ -6,6 +6,6 @@ const NavDrawerFragment = (props) => {
     <Fragment title="Navigation Drawer">
     </Fragment>
   );
-}
+};
 
 export default NavDrawerFragment;

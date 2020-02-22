@@ -20,7 +20,7 @@ const Table = (props) => {
       <Wrapper>{props.children}</Wrapper>
     </div>
   );
-}
+};
 
 Table.propTypes = {
   children: PropTypes.oneOfType([

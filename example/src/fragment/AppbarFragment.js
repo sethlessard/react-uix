@@ -263,6 +263,6 @@ const AppbarFragment = (props) => {
       </Fragment>
     </div>
   );
-}
+};
 
 export default AppbarFragment;

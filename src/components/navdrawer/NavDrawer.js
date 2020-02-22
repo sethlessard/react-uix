@@ -14,14 +14,14 @@ const mapStateToProps = (state, ownProps) => {
     navDrawerClosingFromToggleButton: state.ui.navDrawerClosingFromToggleButton,
     width: ownProps.width || 240
   };
-}
+};
 
 const mapDispatchToProps = (dispatch) => ({
   updateNavDrawerDefined: (defined) => dispatch(updateNavDrawerDefined(defined)),
   updateNavDrawerOpen: (open) => dispatch(updateNavDrawerOpen(open)),
   updateNavDrawerWidth: (width) => dispatch(updateNavDrawerWidth(width)),
   updateNavDrawerClosingFromToggleButton: (closingFromToggle) => dispatch(updateNavDrawerClosingFromToggleButton(closingFromToggle))
-})
+});
 
 const Wrapper = styled.div`
   position: fixed;

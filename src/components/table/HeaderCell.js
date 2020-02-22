@@ -16,7 +16,7 @@ const HeaderCell = (props) => {
   return (
     <Wrapper>{props.children}</Wrapper>
   );
-}
+};
 
 HeaderCell.propTypes = {
   children: PropTypes.oneOfType([

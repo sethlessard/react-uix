@@ -57,6 +57,6 @@ const PaperFragment = () => {
       </Table>
     </Fragment>
   );
-}
+};
 
 export default PaperFragment;

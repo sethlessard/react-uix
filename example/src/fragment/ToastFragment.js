@@ -35,6 +35,6 @@ const ToastFragment = (props) => {
       </Table>
     </Fragment>
   );
-}
+};
 
 export default ToastFragment;

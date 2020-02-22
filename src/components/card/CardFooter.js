@@ -14,7 +14,7 @@ const CardFooter = ({ children, style: compStyle }) => {
   };
   Object.assign(style.cardFooter, compStyle);
   return <Wrapper style={style.cardFooter}>{children}</Wrapper>;
-}
+};
 
 CardFooter.propTypes = {
 

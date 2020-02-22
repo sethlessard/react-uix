@@ -22,7 +22,7 @@ const List = ({ children, style: listStyle, type = "ul" }) => {
       }
     </div>
   );
-}
+};
 
 List.propTypes = {
   children: PropTypes.node,
