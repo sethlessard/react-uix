@@ -27,7 +27,7 @@ describe("AppContent", () => {
         bottomNavHeight: 0
       }
     });
-  })
+  });
 
   /**
    * Make sure AppContent is exported
