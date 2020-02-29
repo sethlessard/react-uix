@@ -4,38 +4,33 @@ import { Provider } from "react-redux";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
 
-import Button from "./Button";
+import FlexBox from "./FlexBox";
 
 const mockStore = configureStore([]);
 
 const getTree = (store) => {
   return renderer.create((
     <Provider store={store}>
-      <Button />
+      <FlexBox />
     </Provider>
   )).toJSON();
 }
 
-describe("Button", () => {
+describe("FlexBox", () => {
   let defs = {
-    ui: {
-      primaryColor: "#000000",
-      secondaryColor: "#111111",
-      foregroundColor: "#ffffff"
-    }
-  }
+    ui: {}
+  };
   let store;
-
   beforeEach(() => {
     store = mockStore(defs);
   });
 
   /**
-   * Button should be exported.
+   * FlexBox should be exported
    */
   it("Should be truthy", () => {
-    expect(Button).toBeTruthy();
+    expect(FlexBox).toBeTruthy();
   });
 
-  // TODO: Button tests
+  // TODO: FlexBox tests
 });
