@@ -53,7 +53,8 @@ class AppContent extends Component {
     else if (appbarDefined) margins = appbarHeight;
     else if (bottomNavDefined) margins = bottomNavHeight;
 
-    height = `calc(100vh - ${margins}px)`;
+    if (margins === 0) height = "100vh";
+    else height = `calc(100vh - ${margins}px)`;
 
     return height;
   }
