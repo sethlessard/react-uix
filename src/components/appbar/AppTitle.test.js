@@ -4,38 +4,31 @@ import { Provider } from "react-redux";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
 
-import Button from "./Button";
+import AppTitle from "./AppTitle";
 
 const mockStore = configureStore([]);
 
 const getTree = (store) => {
   return renderer.create((
     <Provider store={store}>
-      <Button />
+      <AppTitle />
     </Provider>
   )).toJSON();
 }
 
-describe("Button", () => {
-  let defs = {
-    ui: {
-      primaryColor: "#000000",
-      secondaryColor: "#111111",
-      foregroundColor: "#ffffff"
-    }
-  }
+describe("AppTitle", () => {
+  let defs = {};
   let store;
-
   beforeEach(() => {
     store = mockStore(defs);
   });
 
   /**
-   * Button should be exported.
+   * AppTitle should be exported.
    */
   it("Should be truthy", () => {
-    expect(Button).toBeTruthy();
+    expect(AppTitle).toBeTruthy();
   });
 
-  // TODO: Button tests
+  // TODO: AppTitle tests
 });

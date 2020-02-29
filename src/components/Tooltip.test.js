@@ -4,38 +4,31 @@ import { Provider } from "react-redux";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
 
-import Button from "./Button";
+import Tooltip from "./Tooltip";
 
 const mockStore = configureStore([]);
 
 const getTree = (store) => {
   return renderer.create((
     <Provider store={store}>
-      <Button />
+      <Tooltip />
     </Provider>
   )).toJSON();
 }
 
-describe("Button", () => {
-  let defs = {
-    ui: {
-      primaryColor: "#000000",
-      secondaryColor: "#111111",
-      foregroundColor: "#ffffff"
-    }
-  }
+describe("Tooltip", () => {
+  let defs = {};
   let store;
-
   beforeEach(() => {
     store = mockStore(defs);
   });
 
   /**
-   * Button should be exported.
+   * Tooltip should be exported.
    */
   it("Should be truthy", () => {
-    expect(Button).toBeTruthy();
+    expect(Tooltip).toBeTruthy();
   });
 
-  // TODO: Button tests
+  // TODO: Toooltip tests
 });

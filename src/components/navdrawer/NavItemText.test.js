@@ -4,38 +4,31 @@ import { Provider } from "react-redux";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
 
-import Button from "./Button";
+import NavItemText from "./NavItemText";
 
 const mockStore = configureStore([]);
 
 const getTree = (store) => {
   return renderer.create((
     <Provider store={store}>
-      <Button />
+      <NavItemText />
     </Provider>
   )).toJSON();
 }
 
-describe("Button", () => {
-  let defs = {
-    ui: {
-      primaryColor: "#000000",
-      secondaryColor: "#111111",
-      foregroundColor: "#ffffff"
-    }
-  }
+describe("NavItemText", () => {
+  let defs = {};
   let store;
-
   beforeEach(() => {
     store = mockStore(defs);
   });
 
   /**
-   * Button should be exported.
+   * NavItemText should be exported.
    */
   it("Should be truthy", () => {
-    expect(Button).toBeTruthy();
+    expect(NavItemText).toBeTruthy();
   });
 
-  // TODO: Button tests
+  // TODO: NavItemText tests
 });

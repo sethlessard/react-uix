@@ -1,9 +1,10 @@
 import React from "react";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
-import AppContent from "./AppContent";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
+
+import AppContent from "./AppContent";
 
 const mockStore = configureStore([]);
 
