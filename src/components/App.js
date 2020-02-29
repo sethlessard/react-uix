@@ -25,11 +25,11 @@ class App extends Component {
   render() {
     const { children } = this.props;
     return (
-      <Provider store={uiStore}>
-        <Wrapper>
+      <Wrapper>
+        <Provider store={uiStore}>
           <ConnectedRouter history={history}>{children}</ConnectedRouter>
-        </Wrapper>
-      </Provider>
+        </Provider>
+      </Wrapper>
     );
   }
 }
