@@ -26,6 +26,9 @@ const Wrapper = styled.div`
   z-index: 2;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   padding: 0 0 0 1.5em;
+  color: ${props => props.foregroundColor};
+  background-color: ${props => props.backgroundColor};
+  height: ${props => props.height}px;
 `;
 
 class Appbar extends Component {
@@ -37,13 +40,10 @@ class Appbar extends Component {
   }
 
   render() {
-    const { demo, backgroundColor, children, foregroundColor, height, style: compStyle } = this.props;
+    const { demo, backgroundColor, children, foregroundColor, height = 62, style: compStyle } = this.props;
 
     const style = {
       appbar: {
-        height: height || 62,
-        backgroundColor,
-        color: foregroundColor
       }
     };
 
@@ -52,7 +52,12 @@ class Appbar extends Component {
     }
     Object.apply(style.appbar, compStyle);
     return (
-      <Wrapper style={style.appbar}>
+      <Wrapper
+        backgroundColor={backgroundColor}
+        foregroundColor={foregroundColor}
+        height={height}
+        style={style.appbar}
+      >
         {children}
       </Wrapper>
     );
