@@ -3,19 +3,16 @@ node_js:
 - 11
 - 12
 - 13
-
 before_install:
- - npm install -g npm@'>=6'
-
+- npm install -g npm@'>=6'
 script:
 - npm test
 - npm run build
-true:
-  branch: master
 deploy:
   provider: npm
   email: sethlessard@outlook.com
   api_key:
-    secure: vDeBIxKx+bPoB4EcCugEzLcxCgfTWzx8wiU75PWbYiFNjIzCuCNhbia/FcxwmgQtXrjDXeDmGw82rmNtltoNGmUkTDBu/649Q6zblqf+xY/0yFGPQfPBwIAEi8B/t1hFopeHiq22brgFKJr8j+sWk6vuc/FaH2uXg9kLUw9VyI8sVImuydlw2WiEhy/AU7P0pLeBdN07GuuLaQsaMHfRxXAonMZUEK9got5hgaJTnlKtKcaoj6cTAOX1m2Rn+ym0B2QAs/ieXilnC85Gn4AZBvl48rIhiFlqIEHrQqDPkmjKGjrUrKWyvsv4iQrOJ0LjYYasqBLUXmcLbLJ1xT/H+OWgjqAOelxRc6I8TucDYtsaBN+TelkF1S6mNuwo4vuiBC7dnD5CDiwCyLwpqLJgDxkSSPgXpM/ujyGdoXtKrbnv7b+UzHILVHNprOMc7psVrq5cLmrmdHNd2ohUKzSZDc7cxdT6EcYoTfEV7q2OQwjvoaJkG/7jyCoBUyy2mwDQB5z5HdVKemkiQJ7fqtOI5ZWhEdrrrVqik07KTABs1QQiPaD3gvIHF+T8Ua3pc9eNfwotWrgfUqGwfdV/K4TW9Jzz5wS32VhdxrLiAmofMWCpedX+AzKlKHiqx1mXkf7HIkrWf999qom8XrA92+29yI2w11wmmbBuseA3Q8+DdpI=
+    secure: sfxCONNVJ5MFGttVOkwvxoS7Q3kxm97vDDqjR2t6rgdvsTQwGLv1nadHCNy+g9dxBDo30KRG63nReGHuLCSGdRDwPqto3vAuQIy55Z0hdAl7pI2mF2QRkt/EBSqEHUtOZwwcxuF+bU7+ZSBjvTQm4KKG7+BGWiK4WMHicgC6sxr1mB96NkZiKqA6Gj2mkysa5O7+EiF5jrHKVrOfOlWHlQaoUNd0+FckEPYQwqXS7o6wMOu9LDetTGbHpWzGxBSXurMchviNKM++B1l/pvrH64d+VmHCdqemJfGITKjdeaXFlCKvR9yPkx24vIZyrd7h/QZPx1kHKrg1gOkhJsQRmSe6tCmYLcVCJ1Bj9D7am0M3OIffeZuPn+TOSgay8NpYq5bCrXYzW3joCIy5BzC4Lvx/QLic6ZlwL/iSbday6VbumKSvjAqzJZsJpyrUnlDENxmRugAVCBaQHF/Q8AkvYA65c1T8s5cDo47BUYT5sDZm+1oUqUoHSC1hLueh+8RvLKhoNqBTRSVFxt2vxF68iOOXS5rRxgay6vCcP/zPTTOIsp3V5WLrGjdVqvGQ0Efbx3YajYoX8uWNU0MTSEgjE14boxLzWu+SYbK+AEw5DuMSxCjSaDf4zhaSfeZr72vJEThEsV8BfBTPOpF6sjj6apuPOrHK25xNlqqfQiFu0rM=
   on:
     tags: true
+    repo: sethlessard/react-uix
