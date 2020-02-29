@@ -4,16 +4,18 @@ node_js:
 - 12
 - 13
 
+before_install:
+ - npm install -g npm@'>=6'
+
 script:
 - npm test
 - npm run build
 true:
   branch: master
 deploy:
-  on:
-    tags: true
   provider: npm
+  email: sethlessard@outlook.com
   api_key:
     secure: vDeBIxKx+bPoB4EcCugEzLcxCgfTWzx8wiU75PWbYiFNjIzCuCNhbia/FcxwmgQtXrjDXeDmGw82rmNtltoNGmUkTDBu/649Q6zblqf+xY/0yFGPQfPBwIAEi8B/t1hFopeHiq22brgFKJr8j+sWk6vuc/FaH2uXg9kLUw9VyI8sVImuydlw2WiEhy/AU7P0pLeBdN07GuuLaQsaMHfRxXAonMZUEK9got5hgaJTnlKtKcaoj6cTAOX1m2Rn+ym0B2QAs/ieXilnC85Gn4AZBvl48rIhiFlqIEHrQqDPkmjKGjrUrKWyvsv4iQrOJ0LjYYasqBLUXmcLbLJ1xT/H+OWgjqAOelxRc6I8TucDYtsaBN+TelkF1S6mNuwo4vuiBC7dnD5CDiwCyLwpqLJgDxkSSPgXpM/ujyGdoXtKrbnv7b+UzHILVHNprOMc7psVrq5cLmrmdHNd2ohUKzSZDc7cxdT6EcYoTfEV7q2OQwjvoaJkG/7jyCoBUyy2mwDQB5z5HdVKemkiQJ7fqtOI5ZWhEdrrrVqik07KTABs1QQiPaD3gvIHF+T8Ua3pc9eNfwotWrgfUqGwfdV/K4TW9Jzz5wS32VhdxrLiAmofMWCpedX+AzKlKHiqx1mXkf7HIkrWf999qom8XrA92+29yI2w11wmmbBuseA3Q8+DdpI=
-  email:
-    secure: d9tLXBEgCuST7dxhmuOAVbcyDEdhTJ+dB55wMuXIAWidlaMHunnlEnhIBAwX1CibfeI6ODBn4tbD6IXeAdWI5psaEgAmhF0MIMUd/zaqjphAzCxDaz6ucEc9U+mBa8VHa3/qk/JoyiTAW0DOnbJw0TOGy2k4tmZie9+dM4RhIo1hpEx03k3Nj7qKlWEcqwiDdEI3cncGByawkNBbLN14q64NtJ/RJD/y4VeIvadlVip8XKbqEOP+RbqD3uUaL7g5oL9RWi/xOGnsBuXD6MBoh2RsWVV9akAaYKmeqDU2GtPeO6FuYcbt7vcqK+8RrkJzOnkWB9o1PC1JP4I3i+PviDsXTDKC4rUwb5tq5tDViHwjYb6Y1aAO9Wf07jxm3/9rrvjWvf1F3LWN9G+Pkq4iXzJ8LMW5MuA2HEgiS10vecAH1msHF1H1mFdIS+bO5prkj4qOTroEFdCSVR44D8koABnb0O56vrdvdbC8pZ7uigkVtWe4wS8WclqZeTEsnf9npwdGaT/TGAODpYrhBfAGWvpvL2/NyCso2ex6WXyAGwINk95s/uglxbsZfKeRCfWjd+pnT0jYSeTp1I0kWhsUvNaUk8Axd/RyPqk3C9/eknTFcaP/8maqBcSOacJzj2Q3kMwQU1Cu/nALRJWVTE7zJ3EeMTTdzqVqaPqlLVP3aig=
+  on:
+    tags: true
