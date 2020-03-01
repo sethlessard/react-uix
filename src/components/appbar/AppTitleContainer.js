@@ -6,8 +6,6 @@ const Wrapper = styled.div`
   margin-right: auto;
   display: flex;
   align-items: center;
-  user-select: none;
-  -webkit-user-select: none;
 `;
 
 const AppTitleContainer = (props) => {

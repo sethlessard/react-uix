@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 
 const mapStateToProps = (state, ownProps) => ({
   backgroundColor: ownProps.backgroundColor || state.ui.primaryColor,
-  foregroundColor: ownProps.foregroundColor || state.ui.foregroundColor
+  color: ownProps.color || state.ui.foregroundColor
 });
 
 const Wrapper = styled.div`
@@ -36,6 +36,7 @@ const Icon = ({ accent, children, color, size = "1rem", style: compStyle }) => {
 
 Icon.propTypes = {
   accent: PropTypes.bool,
+  color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   children: PropTypes.string,
   style: PropTypes.object

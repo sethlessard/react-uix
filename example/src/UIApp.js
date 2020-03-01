@@ -20,6 +20,10 @@ import {
   NavItemText,
   NavSubheader,
   AppContent,
+  BottomNavigation,
+  BottomNavItem,
+  BottomNavItemIcon,
+  BottomNavItemText
 } from "react-uix";
 
 // import {
@@ -212,6 +216,20 @@ class UIApp extends Component {
             <Route path="/component/TextArea" component={TextAreaFragment} />
             <Route path="/component/Toast" component={ToastFragment} />
           </AppContent>
+          <BottomNavigation>
+            <BottomNavItem>
+              <BottomNavItemIcon>home</BottomNavItemIcon>
+              <BottomNavItemText>Home</BottomNavItemText>
+            </BottomNavItem>
+            <BottomNavItem>
+              <BottomNavItemIcon>build</BottomNavItemIcon>
+              <BottomNavItemText>Install</BottomNavItemText>
+            </BottomNavItem>
+            <BottomNavItem>
+              <BottomNavItemIcon>info_outline</BottomNavItemIcon>
+              <BottomNavItemText>Get Started</BottomNavItemText>
+            </BottomNavItem>
+          </BottomNavigation>
         </Router>
       </App>
     );

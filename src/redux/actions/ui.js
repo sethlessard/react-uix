@@ -5,7 +5,6 @@ export const UPDATE_APPBAR_DEFINED = "UPDATE_APPBAR_DEFINED";
 export const UPDATE_APPBAR_HEIGHT = "UPDATE_APPBAR_HEIGHT";
 export const UPDATE_BOTTOMNAV_DEFINED = "UPDATE_BOTTOMNAV_DEFINED";
 export const UPDATE_BOTTOMNAV_HEIGHT = "UPDATE_BOTTOMNAV_HEIGHT";
-export const UPDATE_NAVDRAWER_CLOSING_FROM_TOGGLE_BUTTON = "UPDATE_NAVDRAWER_CLOSING_FROM_TOGGLE_BUTTON";
 export const UPDATE_NAVDRAWER_DEFINED = "UPDATE_NAVDRAWER_DEFINED";
 export const UPDATE_NAVDRAWER_OPEN = "UPDATE_NAVDRAWER_OPEN";
 export const UPDATE_NAVDRAWER_WIDTH = "UPDATE_NAVDRAWER_WIDTH";
@@ -78,23 +77,25 @@ export const updateBottomNavHeight = (bottomNavHeight = 0) => ({
 });
 
 /**
- * Update whether or not the nav drawer is closing from a toggle button click.
- * @param {boolean} navDrawerClosingFromToggleButton
- */
-export const updateNavDrawerClosingFromToggleButton = (navDrawerClosingFromToggleButton) => ({
-  type: UPDATE_NAVDRAWER_CLOSING_FROM_TOGGLE_BUTTON,
-  navDrawerClosingFromToggleButton
-});
-
-/**
  * Update whether or not the ui uses a nav drawer.
  * @param {boolean} navDrawerDefined whether or not the nav drawer is defined.
  * @returns {{ type: string, navDrawerDefined: boolean }}
  */
 export const updateNavDrawerDefined = (navDrawerDefined = false) => ({
-  type: UPDATE_BOTTOMNAV_DEFINED,
+  type: UPDATE_NAVDRAWER_DEFINED,
   navDrawerDefined
 });
+
+/**
+ * Toggle to the navigation drawer open/closed.
+ * @returns {{ type: string, navDrawerOpen: boolean }}
+ */
+export const toggleNavigationDrawer = () => {
+  return (dispatch, getState) => {
+    const { navDrawerOpen } = getState().ui;
+    dispatch(updateNavDrawerOpen(!navDrawerOpen));
+  }
+}
 
 /**
  * Update whether or not the nav drawer is open.

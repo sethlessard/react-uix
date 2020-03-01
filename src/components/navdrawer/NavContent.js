@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  padding: 2em 0 4em 0;
+  padding: 0 0 4em 0;
 `;
 
 const NavContent = (props) => {

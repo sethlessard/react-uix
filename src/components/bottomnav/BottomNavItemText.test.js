@@ -4,19 +4,19 @@ import { Provider } from "react-redux";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
 
-import AppTitle from "./AppTitle";
+import BottomNavItemText from "./BottomNavItemText";
 
 const mockStore = configureStore([]);
 
-const getTree = (store, title) => {
+const getTree = (store) => {
   return renderer.create((
     <Provider store={store}>
-      <AppTitle>{title}</AppTitle>
+      <BottomNavItemText />
     </Provider>
   )).toJSON();
 }
 
-describe("AppTitle", () => {
+describe("BottomNavItemText", () => {
   let defs = {};
   let store;
   beforeEach(() => {
@@ -24,19 +24,11 @@ describe("AppTitle", () => {
   });
 
   /**
-   * AppTitle should be exported.
+   * BottomNavItemText should be exported.
    */
   it("Should be truthy", () => {
-    expect(AppTitle).toBeTruthy();
+    expect(BottomNavItemText).toBeTruthy();
   });
 
-  /**
-   * It should display the title supplied
-   */
-  it("Should contain the title", () => {
-    const tree = getTree(store, "title");
-    expect(tree.children[0].children[0]).toEqual("title");
-  });
-
-  // TODO: AppTitle tests
+  // TODO: BottomNavItemText tests
 });

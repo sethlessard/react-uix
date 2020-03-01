@@ -4,11 +4,11 @@ import styled from "styled-components";
 import Heading from "../Heading";
 
 const Wrapper = styled.div`
-  margin: 0 0 0 1.25em;
+  padding: 0 0 0 1.25em;
   display: inline;
 `;
 
-const AppTitle = ({ children, fontSize, style: compStyle }) => {
+const AppTitle = ({ children, style: compStyle }) => {
   const style = {
     title: {}
   };
@@ -21,8 +21,7 @@ const AppTitle = ({ children, fontSize, style: compStyle }) => {
 };
 
 AppTitle.propTypes = {
-  children: PropTypes.string,
-  fontSize: PropTypes.number
+  children: PropTypes.string
 };
 
 export default AppTitle;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardBody, CardHeader, Heading, Row } from 'react-uix';
+import { DropShadow, Heading, Paper, Row } from 'react-uix';
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -51,30 +51,36 @@ const Wrapper = styled.div`
   animation: fadein .4s ease-out;
 `;
 
+const TitleContainer = styled.div`
+  padding: 0 0 .5em 0;
+`;
+
 class Fragment extends Component {
   render() {
     const { children, style: compStyle, title } = this.props;
 
     const style = {
-      card: {
-        flex: 1
+      fragment: {},
+      paper: {
+        borderRadius: 4,
+        padding: "1em"
       }
     };
 
-    Object.assign(style.card, compStyle);
+    Object.assign(style.fragment, compStyle);
     return (
-      <Wrapper>
-        <Row>
-          <Card style={style.card}>
-            <CardHeader>
-              <Heading h={6}>{title}</Heading>
-            </CardHeader>
-            <CardBody>
+      <Row>
+        <Wrapper style={style.fragment}>
+          <DropShadow>
+            <Paper style={style.paper}>
+              <TitleContainer>
+                <Heading h={6}>{title}</Heading>
+              </TitleContainer>
               {children}
-            </CardBody>
-          </Card>
-        </Row>
-      </Wrapper>
+            </Paper>
+          </DropShadow>
+        </Wrapper>
+      </Row>
     );
   }
 }

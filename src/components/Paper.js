@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  background-color: #fff;
+  background-color: ${props => props.backgroundColor};
 `;
 
-const Paper = (props) => {
+const Paper = ({ backgroundColor = "#fff", children, style: compStyle }) => {
   const style = {
     paper: {}
   };
-  Object.assign(style.paper, props.style);
+  Object.assign(style.paper, compStyle);
   return (
-    <Wrapper style={style.paper}>{props.children}</Wrapper>
+    <Wrapper backgroundColor={backgroundColor} style={style.paper}>{children}</Wrapper>
   );
 };
 

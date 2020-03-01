@@ -13,7 +13,6 @@ const Wrapper = styled.div`
   height: auto;
 `;
 const Contents = styled.div`
-  display: flex;
 `;
 
 const Row = ({ children, style: compStyle }) => {

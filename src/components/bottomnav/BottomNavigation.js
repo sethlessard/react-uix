@@ -1,11 +1,43 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from "react-redux";
+import styled from "styled-components";
+
+import {
+  updateBottomNavDefined,
+  updateBottomNavHeight
+} from "../../redux/actions/ui";
+import DropShadow from '../DropShadow';
 
 const mapStateToProps = (state, ownProps) => ({
   foregroundColor: ownProps.foregroundColor || state.ui.foregroundColor,
   backgroundColor: ownProps.backgroundColor || state.ui.primaryColor
 });
+
+const mapDispatchToProps = (dispatch) => ({
+  updateBottomNavDefined: (defined) => dispatch(updateBottomNavDefined(defined)),
+  updateBottomNavHeight: (height) => dispatch(updateBottomNavHeight(height))
+});
+
+const Wrapper = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  height: ${props => props.height}px;
+  background-color: ${props => props.backgroundColor};
+  user-select: none;
+  -webkit-user-select: none;
+`;
+const Content = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+  max-width: 920px;
+  margin: 0 auto;
+  color: ${props => props.foregroundColor};
+`;
 
 class BottomNavigation extends Component {
   constructor(props) {
@@ -14,44 +46,27 @@ class BottomNavigation extends Component {
   }
 
   componentDidMount() {
-    const { demo } = this.props;
+    const { demo, height = 62, updateBottomNavDefined, updateBottomNavHeight } = this.props;
     if (!demo) {
-      // TODO: implement
-      // setBottomNavDefined(true);
-      // setBottomNavHeight(style.bottomNavigation.height);
+      updateBottomNavDefined(true);
+      updateBottomNavHeight(height);
     }
   }
 
   render() {
-    const { children, backgroundColor, foregroundColor, height } = this.props;
+    const { children, backgroundColor, foregroundColor, height = 62 } = this.props;
     const style = {
-      bottomNavigation: {
-        width: "100%",
-        height: height || 62,
-        backgroundColor,
-        display: "block",
-        userSelect: "none",
-        WebkitUserSelect: "none"
-      },
-      content: {
-        display: "flex",
-        height: height || 62,
-        justifyContent: "space-evenly",
-        alignItems: "center",
-        minWidth: 250,
-        width: "100%",
-        maxWidth: 1180,
-        margin: "0 auto",
-        color: foregroundColor
-      }
+      bottomNavigation: {}
     };
 
     return (
-      <div style={style.bottomNavigation}>
-        <div style={style.content}>
-          {children}
-        </div>
-      </div>
+      <Wrapper backgroundColor={backgroundColor} height={height} style={style.bottomNavigation}>
+        <DropShadow style={{zIndex: 2}} z={5}>
+          <Content foregroundColor={foregroundColor}>
+            {children}
+          </Content>
+        </DropShadow>
+      </Wrapper>
     );
   }
 }
@@ -61,10 +76,7 @@ BottomNavigation.propTypes = {
   foregroundColor: PropTypes.string,
   demo: PropTypes.bool,
   height: PropTypes.number,
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node)
-  ])
+  children: PropTypes.node
 };
 
-export default connect(mapStateToProps)(BottomNavigation);
+export default connect(mapStateToProps, mapDispatchToProps)(BottomNavigation);

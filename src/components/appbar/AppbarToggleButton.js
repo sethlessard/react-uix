@@ -5,28 +5,23 @@ import styled from "styled-components";
 
 import IconButton from "../IconButton";
 
-import { updateNavDrawerOpen, updateNavDrawerClosingFromToggleButton } from "../../redux/actions/ui";
+import { toggleNavigationDrawer } from "../../redux/actions/ui";
 
-const mapStateToProps = (state) => ({
-  navDrawerOpen: state.ui.navDrawerOpen
-});
+const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
-  updateNavDrawerOpen: (open) => dispatch(updateNavDrawerOpen(open)),
-  updateNavDrawerClosingFromToggleButton: (closingFromToggle) => dispatch(updateNavDrawerClosingFromToggleButton(closingFromToggle))
+  toggleNavigationDrawer: () => dispatch(toggleNavigationDrawer())
 });
 
 const Wrapper = styled.div`
   visibility: hidden;
   opacity: 0;
   cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
   transition: opacity 0.4s;
   pointer-events: none;
 `;
 
-const AppbarToggleButton = ({ children, color, navDrawerOpen, updateNavDrawerClosingFromToggleButton, updateNavDrawerOpen, style: compStyle, visible = true }) => {
+const AppbarToggleButton = ({ children, color, toggleNavigationDrawer, style: compStyle, visible = true }) => {
   const style = {
     button: {}
   };
@@ -39,12 +34,8 @@ const AppbarToggleButton = ({ children, color, navDrawerOpen, updateNavDrawerClo
   return (
     <Wrapper
       style={style.button}
-      onClick={
-        () => {
-          updateNavDrawerClosingFromToggleButton(true);
-          updateNavDrawerOpen(!navDrawerOpen);
-        }
-      }>
+      onClick={() => toggleNavigationDrawer()}
+    >
       <IconButton color={color}>{children}</IconButton>
     </Wrapper>
   );

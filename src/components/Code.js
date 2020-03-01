@@ -14,29 +14,30 @@ const mapStateToProps = (state, ownProps) => ({
 const Wrapper = styled.div`
   background-color: ${props => props.backgroundColor || "#000"};
   color: ${props => props.foregroundColor || "#fff"};
-  padding: 1em;
+  padding: 1em 0;
   border-radius: 4px;
+  display: block;
+`;
+const Content = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
-const Content = styled.div`
-  display: inline;
-
-`;
 const Span = styled.span`
-  display: inline;
-  height: 100%;
+  padding: 0 0 0 1em;
+  display: inline-block;
   word-wrap: break-word;
   font-family: monospace;
   font-size: .8rem;
   line-height: 1rem;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 const CopyContainer = styled.div`
-  display: inline;
-  float: right;
-  cursor:pointer;
-  padding: .3em;
+  display: inline-block;
+  cursor: pointer;
 `;
 
 const parseCode = (code) => {
@@ -84,17 +85,17 @@ const Code = ({ backgroundColor, foregroundColor, style: compStyle, text }) => {
         <Span>
           {parseCode(text)}
         </Span>
+        <CopyContainer>
+          <IconButton
+            onClick={() => {
+              copy(text);
+            }}
+            color={foregroundColor}
+          >
+            assignment
+          </IconButton>
+        </CopyContainer>
       </Content>
-      <CopyContainer>
-        <IconButton
-          onClick={() => {
-            copy(text);
-          }}
-          color={foregroundColor}
-        >
-          assignment
-        </IconButton>
-      </CopyContainer>
     </Wrapper>
   );
 };

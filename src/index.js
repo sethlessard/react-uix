@@ -8,6 +8,8 @@ import AppTitleContainer from "./components/appbar/AppTitleContainer";
 // Bottom Navigation
 import BottomNavigation from "./components/bottomnav/BottomNavigation";
 import BottomNavItem from "./components/bottomnav/BottomNavItem";
+import BottomNavItemIcon from "./components/bottomnav/BottomNavItemIcon";
+import BottomNavItemText from "./components/bottomnav/BottomNavItemText";
 
 // Breadcrumb
 import Breadcrumb from "./components/breadcrumb/Breadcrumb";
@@ -74,6 +76,7 @@ import AppContent from "./components/AppContent";
 import Button from "./components/Button";
 import Checkbox from "./components/Checkbox";
 import Code from "./components/Code";
+import DropShadow from "./components/DropShadow";
 import FlexBox from "./components/FlexBox";
 import Heading from "./components/Heading";
 import Icon from "./components/Icon";
@@ -100,6 +103,8 @@ export {
 
   BottomNavigation,
   BottomNavItem,
+  BottomNavItemIcon,
+  BottomNavItemText,
 
   Breadcrumb,
   BreadcrumbItem,
@@ -155,6 +160,7 @@ export {
   Checkbox,
   FlexBox,
   Code,
+  DropShadow,
   Heading,
   Icon,
   IconButton,
