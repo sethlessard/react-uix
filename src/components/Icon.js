@@ -33,7 +33,7 @@ const I = styled.i`
   font-size: ${props => props.size};
 `;
 
-const Icon = ({ accent, children, color, refBackgroundColor, size = "1rem", style: compStyle }) => {
+const Icon = ({ accent, children, color, size = "1rem", style: compStyle }) => {
   const style = {
     icon: {
       width: size,
@@ -43,7 +43,7 @@ const Icon = ({ accent, children, color, refBackgroundColor, size = "1rem", styl
 
   Object.assign(style.icon, compStyle);
   return (
-    <Wrapper style={style.icon}>
+    <Wrapper>
       <I color={color} size={size} className="material-icons">{children}</I>
     </Wrapper>
   );
