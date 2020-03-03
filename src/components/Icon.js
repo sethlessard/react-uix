@@ -24,6 +24,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const Wrapper = styled.div`
+  margin: 0;
+  padding: 0;
 `;
 
 const I = styled.i`
