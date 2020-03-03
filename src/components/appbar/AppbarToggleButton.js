@@ -7,7 +7,9 @@ import IconButton from "../IconButton";
 
 import { toggleNavigationDrawer } from "../../redux/actions/ui";
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  colorPrimary: state.ui.theme.colorPrimary
+});
 
 const mapDispatchToProps = (dispatch) => ({
   toggleNavigationDrawer: () => dispatch(toggleNavigationDrawer())
@@ -21,7 +23,7 @@ const Wrapper = styled.div`
   pointer-events: none;
 `;
 
-const AppbarToggleButton = ({ children, color, toggleNavigationDrawer, style: compStyle, visible = true }) => {
+const AppbarToggleButton = ({ children, color, colorPrimary, toggleNavigationDrawer, style: compStyle, visible = true }) => {
   const style = {
     button: {}
   };
@@ -36,7 +38,7 @@ const AppbarToggleButton = ({ children, color, toggleNavigationDrawer, style: co
       style={style.button}
       onClick={() => toggleNavigationDrawer()}
     >
-      <IconButton color={color}>{children}</IconButton>
+      <IconButton color={color} refBackgroundColor={colorPrimary}>{children}</IconButton>
     </Wrapper>
   );
 };

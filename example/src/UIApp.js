@@ -59,9 +59,26 @@ import {
 import TextInputFragment from './fragment/TextInputFragment';
 
 // const COLOR_PRIMARY = "#6c5ce7";
-const COLOR_PRIMARY = "#009866";
-const COLOR_SECONDARY = "#000000";
-const COLOR_FOREGROUND = "#000";
+// const COLOR_PRIMARY = "#16a085";
+// const COLOR_PRIMARY = "#f1c40f";
+// const COLOR_PRIMARY = "#f39c12";
+// const COLOR_PRIMARY = "#2ecc71";
+// const COLOR_PRIMARY = "#e67e22";
+// const COLOR_PRIMARY = "#d35400";
+// const COLOR_PRIMARY = "#3498db";
+// const COLOR_PRIMARY = "#e74c3c";
+// const COLOR_PRIMARY = "#c0392b";
+// const COLOR_PRIMARY = "#2c3e50";
+// const COLOR_PRIMARY = "#1abc9c";
+
+const theme = {
+  colorPrimary: "#2c3e50",
+  colorSecondary: "#000000",
+  text: {
+    colorOnLight: "#111",
+    colorOnDark: "#fff"
+  }
+};
 
 class UIApp extends Component {
   constructor(props) {
@@ -85,9 +102,7 @@ class UIApp extends Component {
 
     return (
       <App
-        primaryColor={COLOR_PRIMARY}
-        secondaryColor={COLOR_SECONDARY}
-        foregroundColor={COLOR_FOREGROUND}
+        theme={theme}
       >
         <Router basename={process.env.PUBLIC_URL}>
           <Appbar>
@@ -99,6 +114,7 @@ class UIApp extends Component {
               <DropdownButton
                 icon="more_vert"
                 style={style.toolbarButtons}
+                refBackgroundColor={theme.colorPrimary}
               >
                 <DropdownButtonItem onClick={() => this.setState({ settingsBoxOpen: true })}>
                   <DropdownButtonIcon>settings</DropdownButtonIcon>

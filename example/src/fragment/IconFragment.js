@@ -13,7 +13,7 @@ const IconFragment = () => {
         <Icon>home</Icon>
         <Icon>account_circle</Icon>
         <Icon>settings</Icon>
-        <Icon color="#ffffff">share</Icon>
+        <Icon>share</Icon>
       </Example>
 
       <PaddedHeading h={6}>Usage</PaddedHeading>

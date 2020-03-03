@@ -1,6 +1,4 @@
-export const UPDATE_PRIMARY_COLOR = "UPDATE_PRIMARY_COLOR";
-export const UPDATE_SECONDARY_COLOR = "UPDATE_SECONDARY_COLOR";
-export const UPDATE_FOREGROUND_COLOR = "UPDATE_FOREGROUND_COLOR";
+export const UPDATE_THEME = "UPDATE_THEME";
 export const UPDATE_APPBAR_DEFINED = "UPDATE_APPBAR_DEFINED";
 export const UPDATE_APPBAR_HEIGHT = "UPDATE_APPBAR_HEIGHT";
 export const UPDATE_BOTTOMNAV_DEFINED = "UPDATE_BOTTOMNAV_DEFINED";
@@ -10,33 +8,15 @@ export const UPDATE_NAVDRAWER_OPEN = "UPDATE_NAVDRAWER_OPEN";
 export const UPDATE_NAVDRAWER_WIDTH = "UPDATE_NAVDRAWER_WIDTH";
 
 /**
- * Update the primary color of the ui.
- * @param {string} primaryColor the primary color.
- * @returns {{ type: string, primaryColor: string }}
+ * Toggle to the navigation drawer open/closed.
+ * @returns {{ type: string, navDrawerOpen: boolean }}
  */
-export const updatePrimaryColor = (primaryColor = "#000000") => ({
-  type: UPDATE_PRIMARY_COLOR,
-  primaryColor
-});
-
-/**
- * Update the secondary color of the ui.
- * @param {string} secondaryColor the secondary color.
- * @returns {{ type: string, secondaryColor: string }}
- */
-export const updateSecondaryColor = (secondaryColor = "#000000") => ({
-  type: UPDATE_SECONDARY_COLOR,
-  secondaryColor
-});
-
-/**
- * Update the foreground color of the ui.
- * @param {string} foregroundColor the foreground color.
- */
-export const updateForegroundColor = (foregroundColor = "#ffffff") => ({
-  type: UPDATE_FOREGROUND_COLOR,
-  foregroundColor
-});
+export const toggleNavigationDrawer = () => {
+  return (dispatch, getState) => {
+    const { navDrawerOpen } = getState().ui;
+    dispatch(updateNavDrawerOpen(!navDrawerOpen));
+  }
+}
 
 /**
  * Update whether or not an appbar is used by the ui.
@@ -87,17 +67,6 @@ export const updateNavDrawerDefined = (navDrawerDefined = false) => ({
 });
 
 /**
- * Toggle to the navigation drawer open/closed.
- * @returns {{ type: string, navDrawerOpen: boolean }}
- */
-export const toggleNavigationDrawer = () => {
-  return (dispatch, getState) => {
-    const { navDrawerOpen } = getState().ui;
-    dispatch(updateNavDrawerOpen(!navDrawerOpen));
-  }
-}
-
-/**
  * Update whether or not the nav drawer is open.
  * @param {boolean} navDrawerOpen whether or not the nav drawer is open.
  */
@@ -113,4 +82,13 @@ export const updateNavDrawerOpen = (navDrawerOpen = false) => ({
 export const updateNavDrawerWidth = (navDrawerWidth = 0) => ({
   type: UPDATE_NAVDRAWER_WIDTH,
   navDrawerWidth
+});
+
+/**
+ * Update the theme.
+ * @param {{ primaryColor: string, secondaryColor: string, text: { colorOnLight: string, colorOnDark: string }}} theme the theme
+ */
+export const updateTheme = (theme) => ({
+  type: UPDATE_THEME,
+  theme
 });

@@ -8,11 +8,11 @@ import IconButton from "./IconButton";
 
 const mapStateToProps = (state, ownProps) => ({
   foregroundColor: ownProps.foregroundColor || state.ui.foregroundColor,
-  backgroundColor: ownProps.backgroundColor || state.ui.primaryColor
+  backgroundColor: ownProps.backgroundColor || "#33495e"
 });
 
 const Wrapper = styled.div`
-  background-color: ${props => props.backgroundColor || "#000"};
+  background-color: ${props => props.backgroundColor};
   color: ${props => props.foregroundColor || "#fff"};
   padding: 1em 0;
   border-radius: 4px;

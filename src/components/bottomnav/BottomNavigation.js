@@ -10,8 +10,8 @@ import {
 import DropShadow from '../DropShadow';
 
 const mapStateToProps = (state, ownProps) => ({
-  foregroundColor: ownProps.foregroundColor || state.ui.foregroundColor,
-  backgroundColor: ownProps.backgroundColor || state.ui.primaryColor
+  foregroundColor: ownProps.foregroundColor || state.ui.theme.text.colorOnDark,
+  backgroundColor: ownProps.backgroundColor || state.ui.theme.colorPrimary
 });
 
 const mapDispatchToProps = (dispatch) => ({

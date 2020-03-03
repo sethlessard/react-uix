@@ -28,7 +28,7 @@ class DropdownButton extends Component {
   }
 
   render() {
-    const { icon, color, children, style } = this.props;
+    const { icon, color, children, refBackgroundColor, style } = this.props;
     let compStyle = {
       dropdownButton: {
         cursor: "pointer",
@@ -75,7 +75,7 @@ class DropdownButton extends Component {
     }
     return (
       <div style={compStyle.dropdownButton} onClick={() => this.toggleVisibility()}>
-        <IconButton color={color} size={this.props.iconSize}>{icon}</IconButton>
+        <IconButton color={color} refBackgroundColor={refBackgroundColor} size={this.props.iconSize}>{icon}</IconButton>
         <div style={compStyle.content} ref={this.dialogRef} onMouseLeave={() => this.setInvisible()}>
           {children}
         </div>

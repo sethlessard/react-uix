@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 // import PropTypes from "prop-types";
 
 const mapStateToProps = (state) => ({
-  primaryColor: state.ui.primaryColor,
-  uiForegroundColor: state.ui.foregroundColor
+  primaryColor: state.ui.theme.colorPrimary,
+  uiForegroundColor: state.ui.theme.text.colorOnDark
 });
 
 class Toolbar extends Component {

@@ -27,7 +27,7 @@ class IconButton extends Component {
   }
 
   render() {
-    const { children, color, size, style: compStyle, onClick } = this.props;
+    const { children, color, refBackgroundColor, size, style: compStyle, onClick } = this.props;
     const { pressed } = this.state;
     const style = {
       iconButton: {}
@@ -40,7 +40,7 @@ class IconButton extends Component {
 
     return (
       <Wrapper style={style.iconButton} onClick={onClick} onMouseDown={() => this.togglePress()} onMouseUp={() => this.togglePress()}>
-        <Icon color={color} size={size}>{children}</Icon>
+        <Icon color={color} refBackgroundColor={refBackgroundColor} size={size}>{children}</Icon>
       </Wrapper>
     );
   }
@@ -53,6 +53,7 @@ class IconButton extends Component {
 IconButton.propTypes = {
   children: PropTypes.string,
   color: PropTypes.string,
+  refBackgroundColor: PropTypes.string,
   size: PropTypes.any,
   onClick: PropTypes.func
 };

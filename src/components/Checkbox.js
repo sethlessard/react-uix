@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) => ({
-  color: ownProps.color || state.ui.primaryColor
+  color: ownProps.color || state.ui.theme.colorPrimary
 });
 
 const Wrapper = styled.div`

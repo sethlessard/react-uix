@@ -10,17 +10,17 @@ const Wrapper = styled.div`
 `;
 
 const mapStateToProps = (state, ownProps) => ({
-  color: ownProps.color || state.ui.foregroundColor
+  refBackgroundColor: ownProps.refBackgroundColor || state.ui.theme.colorPrimary
 });
 
-const BottomNavItemIcon = ({ children, color, size = "1.2em", style: compStyle }) => {
+const BottomNavItemIcon = ({ children, color, refBackgroundColor, size = "1.2em", style: compStyle }) => {
   const style = {
     BottomNavItemIcon: {}
   };
   Object.assign(style.BottomNavItemIcon, compStyle);
   return (
     <Wrapper style={style.BottomNavItemIcon}>
-      <Icon size={size} color={color}>{ children }</Icon>
+      <Icon size={size} color={color} refBackgroundColor={refBackgroundColor}>{ children }</Icon>
     </Wrapper>
   );
 };

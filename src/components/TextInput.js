@@ -20,7 +20,7 @@ const Input = styled.input`
 `;
 
 const mapStateToProps = (state) => ({
-  primaryColor: state.ui.primaryColor
+  primaryColor: state.ui.theme.colorPrimary
 });
 
 const TextInput = ({ placeholder, primaryColor, style: compStyle }) => {

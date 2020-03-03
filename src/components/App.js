@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import configureUIStore, { history } from "../redux/configureUIStore";
-import { updatePrimaryColor, updateSecondaryColor, updateForegroundColor } from '../redux/actions/ui';
+import { updateTheme } from "../redux/actions/ui";
 // import PropTypes from 'prop-types';
 import styled from "styled-components";
 
@@ -17,9 +18,8 @@ const Wrapper = styled.div`
 
 class App extends Component {
   componentDidMount() {
-    if (this.props.primaryColor) uiStore.dispatch(updatePrimaryColor(this.props.primaryColor));
-    if (this.props.secondaryColor) uiStore.dispatch(updateSecondaryColor(this.props.secondaryColor));
-    if (this.props.foregroundColor) uiStore.dispatch(updateForegroundColor(this.props.foregroundColor));
+    const { theme } = this.props;
+    if (theme) uiStore.dispatch(updateTheme(theme));
   }
 
   render() {
@@ -33,5 +33,9 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  theme: PropTypes.object
+};
 
 export default App;

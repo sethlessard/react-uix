@@ -7,8 +7,8 @@ import { updateAppbarDefined, updateAppbarHeight } from '../../redux/actions/ui'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    backgroundColor: ownProps.backgroundColor || state.ui.primaryColor,
-    foregroundColor: ownProps.foregroundColor || state.ui.foregroundColor
+    backgroundColor: ownProps.backgroundColor || state.ui.theme.colorPrimary,
+    foregroundColor: ownProps.foregroundColor || state.ui.theme.text.colorOnDark
   };
 };
 
@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   align-items: center;
   position: relative;
   z-index: 2;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.11), 0 3px 6px rgba(0,0,0,0.20);
   padding: 0 0 0 1.5em;
   user-select: none;
   -webkit-user-select: none;
@@ -35,9 +35,10 @@ const Wrapper = styled.div`
 
 class Appbar extends Component {
   componentDidMount() {
-    if (!this.props.demo) {
-      this.props.updateAppbarDefined(true);
-      this.props.updateAppbarHeight(this.props.height || 62);
+    const { demo, height = 62, updateAppbarDefined, updateAppbarHeight } = this.props;
+    if (!demo) {
+      updateAppbarDefined(true);
+      updateAppbarHeight(height);
     }
   }
 

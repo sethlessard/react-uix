@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 
 const mapStateToProps = (state, ownProps) => ({
-  foregroundColor: ownProps.foregroundColor || state.ui.foregroundColor,
-  backgroundColor: ownProps.backgroundColor || state.ui.primaryColor
+  foregroundColor: ownProps.foregroundColor || "#fff",
+  backgroundColor: ownProps.backgroundColor || state.ui.theme.colorPrimary
 });
 
 const Wrapper = styled.button`
