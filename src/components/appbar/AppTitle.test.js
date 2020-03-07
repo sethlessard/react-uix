@@ -38,5 +38,14 @@ describe("AppTitle", () => {
     expect(tree.children[0].children[0]).toEqual("title");
   });
 
+  /**
+   * The display should be set to "inline".
+   * This will allow objects to be placed next to a title.
+   */
+  it("Should have a display of \"inline\"", () => {
+    const tree = getTree(store, "title");
+    expect(tree).toHaveStyleRule("display", "inline");
+  });
+
   // TODO: AppTitle tests
 });

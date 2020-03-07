@@ -19,9 +19,14 @@ const getTree = (store, code = "Code") => {
 describe("Code", () => {
   let defs = {
     ui: {
-      primaryColor: "#000000",
-      secondaryColor: "#111111",
-      foregroundColor: "#ffffff"
+      theme: {
+        colorPrimary: "#000",
+        colorSecondary: "#111",
+        text: {
+          colorOnLight: "#111",
+          colorOnDark: "#fff"
+        }
+      }
     }
   }
   let store;
@@ -40,16 +45,16 @@ describe("Code", () => {
   /**
    * Should take on the primary color as the background color.
    */
-  it("Should have the background color of the primary color", () => {
+  it("Should have the background color of #33495e", () => {
     const tree = getTree(store);
-    expect(tree).toHaveStyleRule("background-color", defs.ui.primaryColor);
+    expect(tree).toHaveStyleRule("background-color", "#33495e");
   });
 
   /**
-   * The foreground color of the Code should take on the set ui foregroundColor.
+   * The foreground color of the Code should take on the theme.text.colorOnDark value.
    */
   it("Should have the foreground color of the set foreground color", () => {
     const tree = getTree(store);
-    expect(tree).toHaveStyleRule("color", defs.ui.foregroundColor);
+    expect(tree).toHaveStyleRule("color", defs.ui.theme.text.colorOnDark);
   });
 });

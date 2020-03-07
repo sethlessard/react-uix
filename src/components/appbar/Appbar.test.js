@@ -20,9 +20,14 @@ const getTree = (store) => {
 describe("Appbar", () => {
   let defs = {
     ui: {
-      primaryColor: "#000000",
-      secondaryColor: "#111111",
-      foregroundColor: "#ffffff",
+      theme: {
+        colorPrimary: "#000",
+        colorSecondary: "#fff",
+        text: {
+          colorOnDark: "#fff",
+          colorOnLight: "#000"
+        }
+      },
       appbarDefined: false,
       appbarHeight: 0
     }
@@ -53,7 +58,7 @@ describe("Appbar", () => {
    */
   it("Should have the background color of the primary color", () => {
     const tree = getTree(store);
-    expect(tree).toHaveStyleRule("background-color", defs.ui.primaryColor);
+    expect(tree).toHaveStyleRule("background-color", defs.ui.theme.colorPrimary);
   });
 
   /**
