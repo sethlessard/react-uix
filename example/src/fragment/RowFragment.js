@@ -25,11 +25,11 @@ const RowFragment = () => {
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableData>children</TableData>
-            <TableData>node || [node]</TableData>
-            <TableData>No</TableData>
-            <TableData />
-            <TableData>The contents of the Row.</TableData>
+            <TableData label="Name">children</TableData>
+            <TableData label="Type">node || [node]</TableData>
+            <TableData label="Required">No</TableData>
+            <TableData label="Default" />
+            <TableData label="Description">The contents of the Row.</TableData>
           </TableRow>
         </TableBody>
       </Table>

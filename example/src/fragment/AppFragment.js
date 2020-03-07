@@ -25,18 +25,18 @@ const AppFragment = () => {
             </TableHeader>
             <TableBody>
               <TableRow>
-                <TableData>children</TableData>
-                <TableData>node</TableData>
-                <TableData>No</TableData>
-                <TableData />
-                <TableData>The contents of the App.</TableData>
+                <TableData label="Name">children</TableData>
+                <TableData label="Type">node</TableData>
+                <TableData label="Required">No</TableData>
+                <TableData label="Default" />
+                <TableData label="Description">The contents of the App.</TableData>
               </TableRow>
               <TableRow>
-                <TableData>theme</TableData>
-                <TableData>object</TableData>
-                <TableData>No</TableData>
-                <TableData />
-                <TableData>The theme to be used for the application.</TableData>
+                <TableData label="Name">theme</TableData>
+                <TableData label="Type">object</TableData>
+                <TableData label="Required">No</TableData>
+                <TableData label="Default" />
+                <TableData label="Description">The theme to be used for the application.</TableData>
               </TableRow>
             </TableBody>
           </Table>

@@ -25,11 +25,11 @@ const ParagraphFragment = () => {
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableData>children</TableData>
-            <TableData>string</TableData>
-            <TableData>No</TableData>
-            <TableData />
-            <TableData>The contents of the Paragraph.</TableData>
+            <TableData label="Name">children</TableData>
+            <TableData label="Type">string</TableData>
+            <TableData label="Required">No</TableData>
+            <TableData label="Default" />
+            <TableData label="Description">The contents of the Paragraph.</TableData>
           </TableRow>
         </TableBody>
       </Table>

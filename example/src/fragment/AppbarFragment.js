@@ -69,32 +69,32 @@ const AppbarFragment = (props) => {
             </TableHeader>
             <TableBody>
               <TableRow>
-                <TableData>backgroundColor</TableData>
-                <TableData>string</TableData>
-                <TableData>No</TableData>
-                <TableData>"#000000"</TableData>
-                <TableData>The background color of the Appbar</TableData>
+                <TableData label="Name">backgroundColor</TableData>
+                <TableData label="Type">string</TableData>
+                <TableData label="Required">No</TableData>
+                <TableData label="Default">"#000000"</TableData>
+                <TableData label="Description">The background color of the Appbar</TableData>
               </TableRow>
               <TableRow>
-                <TableData>children</TableData>
-                <TableData>node</TableData>
-                <TableData>No</TableData>
-                <TableData />
-                <TableData>The contents of the Appbar</TableData>
+                <TableData label="Name">children</TableData>
+                <TableData label="Type">node</TableData>
+                <TableData label="Required">No</TableData>
+                <TableData label="Default" />
+                <TableData label="Description">The contents of the Appbar</TableData>
               </TableRow>
               <TableRow>
-                <TableData>foregroundColor</TableData>
-                <TableData>string</TableData>
-                <TableData>No</TableData>
-                <TableData>"#ffffff"</TableData>
-                <TableData>The foreground color of the Appbar</TableData>
+                <TableData label="Name">foregroundColor</TableData>
+                <TableData label="Type">string</TableData>
+                <TableData label="Required">No</TableData>
+                <TableData label="Default">"#ffffff"</TableData>
+                <TableData label="Description">The foreground color of the Appbar</TableData>
               </TableRow>
               <TableRow>
-                <TableData>height</TableData>
-                <TableData>number</TableData>
-                <TableData>No</TableData>
-                <TableData />
-                <TableData>The contents of the Appbar</TableData>
+                <TableData label="Name">height</TableData>
+                <TableData label="Type">number</TableData>
+                <TableData label="Required">No</TableData>
+                <TableData label="Default" />
+                <TableData label="Description">The contents of the Appbar</TableData>
               </TableRow>
             </TableBody>
           </Table>
@@ -137,11 +137,11 @@ const AppbarFragment = (props) => {
               </TableHeader>
               <TableBody>
                 <TableRow>
-                  <TableData>children</TableData>
-                  <TableData>string</TableData>
-                  <TableData>No</TableData>
-                  <TableData />
-                  <TableData>The title.</TableData>
+                  <TableData label="Name">children</TableData>
+                  <TableData label="Type">string</TableData>
+                  <TableData label="Required">No</TableData>
+                  <TableData label="Default" />
+                  <TableData label="Description">The title.</TableData>
                 </TableRow>
               </TableBody>
             </Table>
@@ -169,11 +169,11 @@ const AppbarFragment = (props) => {
               </TableHeader>
               <TableBody>
                 <TableRow>
-                  <TableData>children</TableData>
-                  <TableData>node</TableData>
-                  <TableData>No</TableData>
-                  <TableData />
-                  <TableData>The contents of the AppTitleContainer. See Child Components below.</TableData>
+                  <TableData label="Name">children</TableData>
+                  <TableData label="Type">node</TableData>
+                  <TableData label="Required">No</TableData>
+                  <TableData label="Default" />
+                  <TableData label="Description">The contents of the AppTitleContainer. See Child Components below.</TableData>
                 </TableRow>
               </TableBody>
             </Table>
@@ -215,11 +215,11 @@ const AppbarFragment = (props) => {
               </TableHeader>
               <TableBody>
                 <TableRow>
-                  <TableData>children</TableData>
-                  <TableData>string</TableData>
-                  <TableData>No</TableData>
-                  <TableData />
-                  <TableData>The material icon to be used for the AppbarToggleButton.</TableData>
+                  <TableData label="Name">children</TableData>
+                  <TableData label="Type">string</TableData>
+                  <TableData label="Required">No</TableData>
+                  <TableData label="Default" />
+                  <TableData label="Description">The material icon to be used for the AppbarToggleButton.</TableData>
                 </TableRow>
               </TableBody>
             </Table>
@@ -246,11 +246,11 @@ const AppbarFragment = (props) => {
               </TableHeader>
               <TableBody>
                 <TableRow>
-                  <TableData>children</TableData>
-                  <TableData>node</TableData>
-                  <TableData>No</TableData>
-                  <TableData />
-                  <TableData>The contents of the AppbarToolbar. See Child Components below.</TableData>
+                  <TableData label="Name">children</TableData>
+                  <TableData label="Type">node</TableData>
+                  <TableData label="Required">No</TableData>
+                  <TableData label="Default" />
+                  <TableData label="Description">The contents of the AppbarToolbar. See Child Components below.</TableData>
                 </TableRow>
               </TableBody>
             </Table>

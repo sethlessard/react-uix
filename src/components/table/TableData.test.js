@@ -11,7 +11,7 @@ const mockStore = configureStore([]);
 const getTree = (store) => {
   return renderer.create((
     <Provider store={store}>
-      <TableData />
+      <TableData label="Default" />
     </Provider>
   )).toJSON();
 }

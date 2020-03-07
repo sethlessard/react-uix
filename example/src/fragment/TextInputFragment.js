@@ -35,7 +35,7 @@ const TextInputFragment = ({ style: compStyle }) => {
             {/* <TableData>children</TableData>
                   <TableData>string</TableData>
                   <TableData>No</TableData>
-                  <TableData />
+                  <TableData label="Default" />
                   <TableData>The text.</TableData> */}
           </TableRow>
         </TableBody>

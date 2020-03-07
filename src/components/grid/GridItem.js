@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import media from "../../style/media";
 
 const Wrapper = styled.div`
   float: left;
@@ -10,30 +11,30 @@ const Wrapper = styled.div`
   padding-right: .25em;
   width: calc(100% / ${props => props.numColumns} - 8px);
 
-  @media(max-width: 720px) {
+  ${media.phone`
     width: 100%;
     padding-left: 0;
     padding-right: 0;
-  }
+    float: none;
+  `}
 `;
 const ItemLeft = styled(Wrapper)`
   padding-right: .5em;
   padding-left: 0;
 
-  @media(max-width: 720px) {
+  ${media.phone`
     padding-left: 0;
     padding-right: 0;
-  }
+  `}
 `;
 const ItemRight = styled(Wrapper)`
   padding-left: .5em;
   padding-right: 0;
 
-  @media(max-width: 720px) {
+  ${media.phone`
     padding-left: 0;
     padding-right: 0;
-  }
-
+  `}
 `;
 
 const GridItem = ({ children, gridIndex, numColumns = 4, style: compStyle }) => {

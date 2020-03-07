@@ -32,11 +32,11 @@ const TextAreaFragment = (props) => {
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableData>children</TableData>
-            <TableData>string</TableData>
-            <TableData>Yes</TableData>
-            <TableData />
-            <TableData>The placeholder for the TextArea.</TableData>
+            <TableData label="Name">children</TableData>
+            <TableData label="Type">string</TableData>
+            <TableData label="Required">Yes</TableData>
+            <TableData label="Default" />
+            <TableData label="Description">The placeholder for the TextArea.</TableData>
           </TableRow>
         </TableBody>
       </Table>

@@ -69,10 +69,7 @@ class Appbar extends Component {
 }
 
 Appbar.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node)
-  ]),
+  children: PropTypes.node,
   height: PropTypes.number,
   demo: PropTypes.bool,
   backgroundColor: PropTypes.string,

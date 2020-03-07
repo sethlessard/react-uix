@@ -44,18 +44,18 @@ const HeadingFragment = () => {
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableData>children</TableData>
-            <TableData>string</TableData>
-            <TableData>No</TableData>
-            <TableData />
-            <TableData>The contents of the Heading.</TableData>
+            <TableData label="Name">children</TableData>
+            <TableData label="Type">string</TableData>
+            <TableData label="Required">No</TableData>
+            <TableData label="Default" />
+            <TableData label="Description">The contents of the Heading.</TableData>
           </TableRow>
           <TableRow>
-            <TableData>h</TableData>
-            <TableData>number</TableData>
-            <TableData>Yes</TableData>
-            <TableData />
-            <TableData>The Heading level.</TableData>
+            <TableData label="Name">h</TableData>
+            <TableData label="Type">number</TableData>
+            <TableData label="Required">Yes</TableData>
+            <TableData label="Default" />
+            <TableData label="Description">The Heading level.</TableData>
           </TableRow>
         </TableBody>
       </Table>

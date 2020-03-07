@@ -53,25 +53,25 @@ const DropdownButtonFragment = (props) => {
           </TableHeader>
           <TableBody>
             <TableRow>
-              <TableData>children</TableData>
-              <TableData>node</TableData>
-              <TableData>No</TableData>
-              <TableData />
-              <TableData>The contents of the DropdownButton.</TableData>
+              <TableData label="Name">children</TableData>
+              <TableData label="Type">node</TableData>
+              <TableData label="Required">No</TableData>
+              <TableData label="Default" />
+              <TableData label="Description">The contents of the DropdownButton.</TableData>
             </TableRow>
             <TableRow>
-              <TableData>icon</TableData>
-              <TableData><Link to="/component/IconButton">IconButton</Link></TableData>
-              <TableData>No</TableData>
-              <TableData />
-              <TableData>The contents of the DropdownButton.</TableData>
+              <TableData label="Name">icon</TableData>
+              <TableData label="Type"><Link to="/component/IconButton">IconButton</Link></TableData>
+              <TableData label="Required">No</TableData>
+              <TableData label="Default" />
+              <TableData label="Description">The contents of the DropdownButton.</TableData>
             </TableRow>
             <TableRow>
-              <TableData>style</TableData>
-              <TableData>object</TableData>
-              <TableData>No</TableData>
-              <TableData />
-              <TableData>The style of the DropdownButton.</TableData>
+              <TableData label="Name">style</TableData>
+              <TableData label="Type">object</TableData>
+              <TableData label="Required">No</TableData>
+              <TableData label="Default" />
+              <TableData label="Description">The style of the DropdownButton.</TableData>
             </TableRow>
           </TableBody>
         </Table>
@@ -107,25 +107,25 @@ const DropdownButtonFragment = (props) => {
             </TableHeader>
             <TableBody>
               <TableRow>
-                <TableData>children</TableData>
-                <TableData>node</TableData>
-                <TableData>No</TableData>
-                <TableData />
-                <TableData>The contents of the DropdownButton.</TableData>
+                <TableData label="Name">children</TableData>
+                <TableData label="Type">node</TableData>
+                <TableData label="Required">No</TableData>
+                <TableData label="Default" />
+                <TableData label="Description">The contents of the DropdownButton.</TableData>
               </TableRow>
               <TableRow>
-                <TableData>icon</TableData>
-                <TableData><Link to="/component/Icon">Icon</Link></TableData>
-                <TableData>No</TableData>
-                <TableData />
-                <TableData>The contents of the DropdownButton.</TableData>
+                <TableData label="Name">icon</TableData>
+                <TableData label="Type"><Link to="/component/Icon">Icon</Link></TableData>
+                <TableData label="Required">No</TableData>
+                <TableData label="Default" />
+                <TableData label="Description">The contents of the DropdownButton.</TableData>
               </TableRow>
               <TableRow>
-                <TableData>style</TableData>
-                <TableData>object</TableData>
-                <TableData>No</TableData>
-                <TableData />
-                <TableData>The style of the DropdownButton.</TableData>
+                <TableData label="Name">style</TableData>
+                <TableData label="Type">object</TableData>
+                <TableData label="Required">No</TableData>
+                <TableData label="Default" />
+                <TableData label="Description">The style of the DropdownButton.</TableData>
               </TableRow>
             </TableBody>
           </Table>
@@ -154,18 +154,18 @@ const DropdownButtonFragment = (props) => {
             </TableHeader>
             <TableBody>
               <TableRow>
-                <TableData>children</TableData>
-                <TableData>node</TableData>
-                <TableData>No</TableData>
-                <TableData />
-                <TableData>The contents of the DropdownItem. See Child Components below.</TableData>
+                <TableData label="Name">children</TableData>
+                <TableData label="Type">node</TableData>
+                <TableData label="Required">No</TableData>
+                <TableData label="Default" />
+                <TableData label="Description">The contents of the DropdownItem. See Child Components below.</TableData>
               </TableRow>
               <TableRow>
-                <TableData>foregroundColor</TableData>
-                <TableData>string</TableData>
-                <TableData>No</TableData>
-                <TableData />
-                <TableData>The foreground color of the DropdownItem.</TableData>
+                <TableData label="Name">foregroundColor</TableData>
+                <TableData label="Type">string</TableData>
+                <TableData label="Required">No</TableData>
+                <TableData label="Default" />
+                <TableData label="Description">The foreground color of the DropdownItem.</TableData>
               </TableRow>
             </TableBody>
           </Table>
@@ -201,11 +201,11 @@ const DropdownButtonFragment = (props) => {
             </TableHeader>
             <TableBody>
               <TableRow>
-                <TableData>children</TableData>
-                <TableData>string</TableData>
-                <TableData>No</TableData>
-                <TableData />
-                <TableData>The text displayed by the DropdownText.</TableData>
+                <TableData label="Name">children</TableData>
+                <TableData label="Type">string</TableData>
+                <TableData label="Required">No</TableData>
+                <TableData label="Default" />
+                <TableData label="Description">The text displayed by the DropdownText.</TableData>
               </TableRow>
             </TableBody>
           </Table>
