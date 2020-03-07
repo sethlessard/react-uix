@@ -25,7 +25,7 @@ const PaperFragment = () => {
       </Example>
 
       <PaddedHeading h={4}>Usage</PaddedHeading>
-      <Code foregroundColor="#fff" text={`import { Paper } from "react-ui";`} />
+      <Code foregroundColor="#fff" text={`import { Paper } from "react-uix";`} />
 
       <PaddedHeading h={4}>Props</PaddedHeading>
       <Table>

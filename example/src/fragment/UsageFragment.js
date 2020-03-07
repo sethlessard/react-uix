@@ -7,25 +7,34 @@ import React, { Component } from "react";
 import { App, Appbar, AppContent, AppTitle, AppTitleContainer, Button } from "react-uix";
 
 const Example = () => {
-\treturn (
-\t\t<App>
-\t\t\t<Appbar>
-\t\t\t\t<AppTitleContainer>
-\t\t\t\t\t<AppTitle>App</AppTitle>
-\t\t\t\t</AppTitleContainer>
-\t\t\t</Appbar>
-\t\t\t<AppContent>
-\t\t\t\t<Button onClick={() => alert("Button Clicked!")}>Button</Button>
-\t\t\t</AppContent>
-\t\t</App>
-\t);
+  return (
+    <App>
+      <Appbar>
+        <AppTitleContainer>
+          <AppTitle>App</AppTitle>
+        </AppTitleContainer>
+      </Appbar>
+      <AppContent>
+        <Button onClick={() => alert("Button Clicked!")}>Button</Button>
+      </AppContent>
+    </App>
+  );
 };
 
 export default Example;
 `;
 
 const THEMEING_EXAMPLE = `
-<App primaryColor="#000000" secondaryColor="#111111" foregroundColor="#ffffff">
+const theme = {
+  colorPrimary: "#2c3e50",
+  colorSecondary: "#000000",
+  text: {
+    colorOnLight: "#111",
+    colorOnDark: "#fff"
+  }
+};
+
+<App theme={theme}>
 \t...
 </App>
 `;

@@ -15,7 +15,7 @@ const CardFragment = () => {
         </Example>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={`import { Card } from "react-ui";`} />
+        <Code foregroundColor="#fff" text={`import { Card } from "react-uix";`} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Table>

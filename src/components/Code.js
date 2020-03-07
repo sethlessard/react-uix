@@ -43,15 +43,16 @@ const CopyContainer = styled.div`
 const parseCode = (code) => {
   const html = [];
   let token = "";
+  code = code.trim();
   for (let i = 0; i < code.length; i++) {
     const c = code.charAt(i);
     switch (c) {
-      case "\t":
+      case " ":
         if (token.length > 0) {
           html.push(token);
           token = "";
         }
-        html.push(`\u00A0\u00A0`); // 2 spaces
+        html.push(`\u00A0`);
         break;
       case "\n":
         if (token.length > 0) {
