@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import styled from "styled-components";
 
 import {
   App,
@@ -71,6 +72,20 @@ import TextInputFragment from './fragment/TextInputFragment';
 // const COLOR_PRIMARY = "#2c3e50";
 // const COLOR_PRIMARY = "#1abc9c";
 
+const NSLink = styled(Link)`
+  text-decoration: none;
+  color: ${props => props.color};
+
+  &:focus,
+  &:hover,
+  &:visited,
+  &:active,
+  &:link {
+    text-decoration: none;
+    color: ${props => props.color};
+  }
+`;
+
 const theme = {
   colorPrimary: "#2c3e50",
   colorSecondary: "#000000",
@@ -131,67 +146,67 @@ class UIApp extends Component {
             <NavHeader />
             <NavContent>
               <NavGroup>
-                <Link to="/" style={style.navLink}><NavItem><NavItemText>Home</NavItemText></NavItem></Link>
-                <Link to="/install" style={style.navLink}><NavItem><NavItemText>Installation</NavItemText></NavItem></Link>
-                <Link to="/usage" style={style.navLink}><NavItem><NavItemText>Getting Started</NavItemText></NavItem></Link>
-                <Link to="/examples" style={style.navLink}><NavItem><NavItemText>Example Projects</NavItemText></NavItem></Link>
+                <NSLink color={theme.text.colorOnLight} to="/"><NavItem><NavItemText>Home</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/install"><NavItem><NavItemText>Installation</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/usage"><NavItem><NavItemText>Getting Started</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/examples"><NavItem><NavItemText>Example Projects</NavItemText></NavItem></NSLink>
               </NavGroup>
 
               <NavGroup>
                 <NavSubheader>App</NavSubheader>
-                <Link to="/component/App" style={style.navLink}><NavItem><NavItemText>App</NavItemText></NavItem></Link>
+                <NSLink color={theme.text.colorOnLight} to="/component/App"><NavItem><NavItemText>App</NavItemText></NavItem></NSLink>
               </NavGroup>
 
               <NavGroup>
                 <NavSubheader>Appbar</NavSubheader>
-                <Link to="/component/Appbar" style={style.navLink}><NavItem><NavItemText>Appbar</NavItemText></NavItem></Link>
+                <NSLink color={theme.text.colorOnLight} to="/component/Appbar"><NavItem><NavItemText>Appbar</NavItemText></NavItem></NSLink>
               </NavGroup>
 
               <NavGroup>
                 <NavSubheader>Buttons</NavSubheader>
-                <Link to="/component/Button" style={style.navLink}><NavItem><NavItemText>Button</NavItemText></NavItem></Link>
-                <Link to="/component/DropdownButton" style={style.navLink}><NavItem><NavItemText>DropdownButton</NavItemText></NavItem></Link>
-                <Link to="/component/IconButton" style={style.navLink}><NavItem><NavItemText>IconButton</NavItemText></NavItem></Link>
+                <NSLink color={theme.text.colorOnLight} to="/component/Button"><NavItem><NavItemText>Button</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/DropdownButton"><NavItem><NavItemText>DropdownButton</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/IconButton"><NavItem><NavItemText>IconButton</NavItemText></NavItem></NSLink>
               </NavGroup>
 
               <NavGroup>
                 <NavSubheader>Icon</NavSubheader>
-                <Link to="/component/Icon" style={style.navLink}><NavItem><NavItemText>Icon</NavItemText></NavItem></Link>
+                <NSLink color={theme.text.colorOnLight} to="/component/Icon"><NavItem><NavItemText>Icon</NavItemText></NavItem></NSLink>
               </NavGroup>
 
               <NavGroup>
                 <NavSubheader>Inputs</NavSubheader>
-                <Link to="/component/Checkbox" style={style.navLink}><NavItem><NavItemText>Checkbox</NavItemText></NavItem></Link>
-                <Link to="/component/TextInput" style={style.navLink}><NavItem><NavItemText>Text Input</NavItemText></NavItem></Link>
-                <Link to="/component/Switch" style={style.navLink}><NavItem><NavItemText>Switch</NavItemText></NavItem></Link>
+                <NSLink color={theme.text.colorOnLight} to="/component/Checkbox"><NavItem><NavItemText>Checkbox</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/TextInput"><NavItem><NavItemText>Text Input</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/Switch"><NavItem><NavItemText>Switch</NavItemText></NavItem></NSLink>
               </NavGroup>
 
               <NavGroup>
                 <NavSubheader>Layout</NavSubheader>
-                <Link to="/component/Grid" style={style.navLink}><NavItem><NavItemText>Grid</NavItemText></NavItem></Link>
-                <Link to="/component/Row" style={style.navLink}><NavItem><NavItemText>Row</NavItemText></NavItem></Link>
-                <Link to="/component/Table" style={style.navLink}><NavItem><NavItemText>Table</NavItemText></NavItem></Link>
+                <NSLink color={theme.text.colorOnLight} to="/component/Grid"><NavItem><NavItemText>Grid</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/Row"><NavItem><NavItemText>Row</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/Table"><NavItem><NavItemText>Table</NavItemText></NavItem></NSLink>
               </NavGroup>
 
               <NavGroup>
                 <NavSubheader>Navigation</NavSubheader>
-                <Link to="/component/BottomNavigation" style={style.navLink}><NavItem><NavItemText>BottomNavigation</NavItemText></NavItem></Link>
-                <Link to="/component/NavDrawer" style={style.navLink}><NavItem><NavItemText>NavDrawer</NavItemText></NavItem></Link>
+                <NSLink color={theme.text.colorOnLight} to="/component/BottomNavigation"><NavItem><NavItemText>BottomNavigation</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/NavDrawer"><NavItem><NavItemText>NavDrawer</NavItemText></NavItem></NSLink>
               </NavGroup>
 
               <NavGroup>
                 <NavSubheader>Surfaces</NavSubheader>
-                <Link to="/component/Card" style={style.navLink}><NavItem><NavItemText>Card</NavItemText></NavItem></Link>
-                <Link to="/component/Paper" style={style.navLink}><NavItem><NavItemText>Paper</NavItemText></NavItem></Link>
+                <NSLink color={theme.text.colorOnLight} to="/component/Card"><NavItem><NavItemText>Card</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/Paper"><NavItem><NavItemText>Paper</NavItemText></NavItem></NSLink>
               </NavGroup>
 
               <NavGroup>
                 <NavSubheader>Text</NavSubheader>
-                <Link to="/component/Heading" style={style.navLink}><NavItem><NavItemText>Heading</NavItemText></NavItem></Link>
-                <Link to="/component/Paragraph" style={style.navLink}><NavItem><NavItemText>Paragraph</NavItemText></NavItem></Link>
-                <Link to="/component/Text" style={style.navLink}><NavItem><NavItemText>Text</NavItemText></NavItem></Link>
-                <Link to="/component/TextArea" style={style.navLink}><NavItem><NavItemText>TextArea</NavItemText></NavItem></Link>
-                <Link to="/component/Toast" style={style.navLink}><NavItem><NavItemText>Toast</NavItemText></NavItem></Link>
+                <NSLink color={theme.text.colorOnLight} to="/component/Heading"><NavItem><NavItemText>Heading</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/Paragraph"><NavItem><NavItemText>Paragraph</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/Text"><NavItem><NavItemText>Text</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/TextArea"><NavItem><NavItemText>TextArea</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/Toast"><NavItem><NavItemText>Toast</NavItemText></NavItem></NSLink>
               </NavGroup>
             </NavContent>
           </NavDrawer>
@@ -233,18 +248,24 @@ class UIApp extends Component {
             <Route path="/component/Toast" component={ToastFragment} />
           </AppContent>
           <BottomNavigation>
-            <BottomNavItem>
-              <BottomNavItemIcon>home</BottomNavItemIcon>
-              <BottomNavItemText>Home</BottomNavItemText>
-            </BottomNavItem>
-            <BottomNavItem>
-              <BottomNavItemIcon>build</BottomNavItemIcon>
-              <BottomNavItemText>Install</BottomNavItemText>
-            </BottomNavItem>
-            <BottomNavItem>
-              <BottomNavItemIcon>info_outline</BottomNavItemIcon>
-              <BottomNavItemText>Get Started</BottomNavItemText>
-            </BottomNavItem>
+            <NSLink to="/" color={theme.text.colorOnDark}>
+              <BottomNavItem>
+                <BottomNavItemIcon>home</BottomNavItemIcon>
+                <BottomNavItemText>Home</BottomNavItemText>
+              </BottomNavItem>
+            </NSLink>
+            <NSLink to="/install" color={theme.text.colorOnDark}>
+              <BottomNavItem>
+                <BottomNavItemIcon>build</BottomNavItemIcon>
+                <BottomNavItemText>Install</BottomNavItemText>
+              </BottomNavItem>
+            </NSLink>
+            <NSLink to="/usage" color={theme.text.colorOnDark}>
+              <BottomNavItem>
+                <BottomNavItemIcon>info_outline</BottomNavItemIcon>
+                <BottomNavItemText>Get Started</BottomNavItemText>
+              </BottomNavItem>
+            </NSLink>
           </BottomNavigation>
         </Router>
       </App>
