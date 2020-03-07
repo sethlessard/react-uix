@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   padding: 0 2em 0 0;
-  display: flex;
+  display: inline-flex;
 `;
 
 const AppbarToolbar = (props) => {

@@ -30,5 +30,11 @@ describe("AppbarToolbar", () => {
     expect(AppbarToolbar).toBeTruthy();
   });
 
-  // TODO: AppbarToolbar tests
+  /**
+   * It should have a display of inline-flex so the component does not take
+   * up more horizontal space than necessary.
+   */
+  it("Should have a display of 'inline-flex'", () => {
+    expect(getTree(store)).toHaveStyleRule("display", "inline-flex");
+  });
 });

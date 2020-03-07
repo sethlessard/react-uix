@@ -30,5 +30,27 @@ describe("AppTitleContainer", () => {
     expect(AppTitleContainer).toBeTruthy();
   });
 
-  // TODO: AppTitleContainer tests
+  /**
+   * margin-right should be set to "auto" so that the
+   * title container is pushed to the left side of the screen.
+   */
+  it("Should have a margin-right of 'auto'", () => {
+    expect(getTree(store)).toHaveStyleRule("margin-right", "auto");
+  });
+
+  /**
+   * display should be set to "inline-flex" so that the title container
+   * does not take up more horizontal space than necessary.
+   */
+  it("Should have a display of 'inline-flex'", () => {
+    expect(getTree(store)).toHaveStyleRule("display", "inline-flex");
+  });
+
+  /**
+   * align-items should be set to 'center' to vertically center the title
+   * and any menu buttons.
+   */
+  it("align-items should be set to 'center'", () => {
+    expect(getTree(store)).toHaveStyleRule("align-items", "center");
+  });
 });

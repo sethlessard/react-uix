@@ -29,6 +29,4 @@ describe("BottomNavItemIcon", () => {
   it("Should be truthy", () => {
     expect(BottomNavItemIcon).toBeTruthy();
   });
-
-  // TODO: BottomNavItemIcon tests
 });

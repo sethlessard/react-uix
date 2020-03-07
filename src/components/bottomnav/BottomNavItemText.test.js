@@ -8,16 +8,27 @@ import BottomNavItemText from "./BottomNavItemText";
 
 const mockStore = configureStore([]);
 
-const getTree = (store) => {
+const getTree = (store, text) => {
   return renderer.create((
     <Provider store={store}>
-      <BottomNavItemText />
+      <BottomNavItemText>{ text }</BottomNavItemText>
     </Provider>
   )).toJSON();
 }
 
 describe("BottomNavItemText", () => {
-  let defs = {};
+  let defs = {
+    ui: {
+      theme: {
+        colorPrimary: "#000",
+        colorSecondary: "#fff",
+        text: {
+          colorOnDark: "#fff",
+          colorOnLight: "#000"
+        }
+      }
+    }
+  };
   let store;
   beforeEach(() => {
     store = mockStore(defs);
@@ -30,5 +41,10 @@ describe("BottomNavItemText", () => {
     expect(BottomNavItemText).toBeTruthy();
   });
 
-  // TODO: BottomNavItemText tests
+  /**
+   * It should contain the correct text when passed
+   */
+  it("Should contain the correct text", () => {
+    expect(getTree(store, "Test").children[0].children[0].children[0]).toEqual("Test")
+  });
 });

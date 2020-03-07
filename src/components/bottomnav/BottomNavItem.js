@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 
 const mapStateToProps = (state, ownProps) => ({
-  foregroundColor: ownProps.foregroundColor || state.ui.foregroundColor,
+  foregroundColor: ownProps.foregroundColor || state.ui.theme.text.colorOnDark,
   height: state.ui.bottomNavHeight
 });
 
@@ -35,6 +35,7 @@ const BottomNavItem = ({ children, foregroundColor, height, onClick, style }) =>
 
 BottomNavItem.propTypes = {
   children: PropTypes.node,
+  height: PropTypes.number,
   foregroundColor: PropTypes.string,
   onClick: PropTypes.func
 };

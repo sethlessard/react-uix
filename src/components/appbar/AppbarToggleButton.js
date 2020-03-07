@@ -19,22 +19,13 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const Wrapper = styled.div`
-  visibility: hidden;
-  opacity: 0;
   cursor: pointer;
-  transition: opacity 0.4s;
-  pointer-events: none;
 `;
 
-const AppbarToggleButton = ({ children, color, colorPrimary, toggleNavigationDrawer, style: compStyle, visible = true }) => {
+const AppbarToggleButton = ({ children, color, colorPrimary, toggleNavigationDrawer, style: compStyle }) => {
   const style = {
     button: {}
   };
-  if (visible) {
-    style.button.visibility = "visible";
-    style.button.opacity = 1;
-    style.button.pointerEvents = "all";
-  }
   Object.assign(style.button, compStyle);
   return (
     <Wrapper
@@ -48,8 +39,7 @@ const AppbarToggleButton = ({ children, color, colorPrimary, toggleNavigationDra
 
 AppbarToggleButton.propTypes = {
   children: PropTypes.string,
-  color: PropTypes.string,
-  visible: PropTypes.bool
+  color: PropTypes.string
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppbarToggleButton);

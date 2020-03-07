@@ -46,6 +46,4 @@ describe("AppTitle", () => {
     const tree = getTree(store, "title");
     expect(tree).toHaveStyleRule("display", "inline");
   });
-
-  // TODO: AppTitle tests
 });
