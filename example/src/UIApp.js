@@ -165,8 +165,8 @@ class UIApp extends Component {
               <NavGroup>
                 <NavSubheader>Buttons</NavSubheader>
                 <NSLink color={theme.text.colorOnLight} to="/component/Button"><NavItem><NavItemText>Button</NavItemText></NavItem></NSLink>
-                <NSLink color={theme.text.colorOnLight} to="/component/DropdownButton"><NavItem><NavItemText>DropdownButton</NavItemText></NavItem></NSLink>
-                <NSLink color={theme.text.colorOnLight} to="/component/IconButton"><NavItem><NavItemText>IconButton</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/DropdownButton"><NavItem><NavItemText>Dropdown Button</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/IconButton"><NavItem><NavItemText>Icon Button</NavItemText></NavItem></NSLink>
               </NavGroup>
 
               <NavGroup>
@@ -190,8 +190,8 @@ class UIApp extends Component {
 
               <NavGroup>
                 <NavSubheader>Navigation</NavSubheader>
-                <NSLink color={theme.text.colorOnLight} to="/component/BottomNavigation"><NavItem><NavItemText>BottomNavigation</NavItemText></NavItem></NSLink>
-                <NSLink color={theme.text.colorOnLight} to="/component/NavDrawer"><NavItem><NavItemText>NavDrawer</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/BottomNavigation"><NavItem><NavItemText>Bottom Navigation</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/NavDrawer"><NavItem><NavItemText>Navigation Drawer</NavItemText></NavItem></NSLink>
               </NavGroup>
 
               <NavGroup>
@@ -205,7 +205,7 @@ class UIApp extends Component {
                 <NSLink color={theme.text.colorOnLight} to="/component/Heading"><NavItem><NavItemText>Heading</NavItemText></NavItem></NSLink>
                 <NSLink color={theme.text.colorOnLight} to="/component/Paragraph"><NavItem><NavItemText>Paragraph</NavItemText></NavItem></NSLink>
                 <NSLink color={theme.text.colorOnLight} to="/component/Text"><NavItem><NavItemText>Text</NavItemText></NavItem></NSLink>
-                <NSLink color={theme.text.colorOnLight} to="/component/TextArea"><NavItem><NavItemText>TextArea</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/TextArea"><NavItem><NavItemText>Text Area</NavItemText></NavItem></NSLink>
                 <NSLink color={theme.text.colorOnLight} to="/component/Toast"><NavItem><NavItemText>Toast</NavItemText></NavItem></NSLink>
               </NavGroup>
             </NavContent>
