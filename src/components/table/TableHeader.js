@@ -1,19 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
+import media from '../../style/media';
 
 const Wrapper = styled.thead`
-
-  @media screen and (max-width: 720px) {
-    border: none;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
+  ${media.phone`
+    display: none;
+  `}
 `;
 
 const TableHeader = (props) => {

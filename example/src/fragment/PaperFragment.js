@@ -40,18 +40,18 @@ const PaperFragment = () => {
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableData>children</TableData>
-            <TableData>node</TableData>
-            <TableData>No</TableData>
+            <TableData label="Name">children</TableData>
+            <TableData label="Type">node</TableData>
+            <TableData label="Required">No</TableData>
             <TableData />
-            <TableData>The content of the Paper</TableData>
+            <TableData label="Description">The content of the Paper</TableData>
           </TableRow>
           <TableRow>
-            <TableData>style</TableData>
-            <TableData>object</TableData>
-            <TableData>No</TableData>
+            <TableData label="Name">style</TableData>
+            <TableData label="Type">object</TableData>
+            <TableData label="Required">No</TableData>
             <TableData />
-            <TableData>CSS styles for the Paper</TableData>
+            <TableData label="Description">CSS styles for the Paper</TableData>
           </TableRow>
         </TableBody>
       </Table>

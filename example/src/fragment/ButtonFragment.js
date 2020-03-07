@@ -36,25 +36,25 @@ const ButtonFragment = () => {
           </TableHeader>
           <TableBody>
             <TableRow>
-              <TableData>backgroundColor</TableData>
-              <TableData>string</TableData>
-              <TableData>No</TableData>
-              <TableData />
-              <TableData>The background color.</TableData>
+              <TableData label="Name">backgroundColor</TableData>
+              <TableData label="Type">string</TableData>
+              <TableData label="Required">No</TableData>
+              <TableData label="Default" />
+              <TableData label="Description">The background color.</TableData>
             </TableRow>
             <TableRow>
-              <TableData>children</TableData>
-              <TableData>string</TableData>
-              <TableData>No</TableData>
-              <TableData />
-              <TableData>The text of the Button.</TableData>
+              <TableData label="Name">children</TableData>
+              <TableData label="Type">string</TableData>
+              <TableData label="Required">No</TableData>
+              <TableData label="Default" />
+              <TableData label="Description">The text of the Button.</TableData>
             </TableRow>
             <TableRow>
-              <TableData>foregroundColor</TableData>
-              <TableData>string</TableData>
-              <TableData>No</TableData>
-              <TableData />
-              <TableData>The text color.</TableData>
+              <TableData label="Name">foregroundColor</TableData>
+              <TableData label="Type">string</TableData>
+              <TableData label="Required">No</TableData>
+              <TableData label="Default" />
+              <TableData label="Description">The text color.</TableData>
             </TableRow>
           </TableBody>
         </Table>

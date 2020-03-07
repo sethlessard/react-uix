@@ -32,18 +32,18 @@ const IconFragment = () => {
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableData>children</TableData>
-            <TableData>string</TableData>
-            <TableData>No</TableData>
+            <TableData label="Name">children</TableData>
+            <TableData label="Type">string</TableData>
+            <TableData label="Required">No</TableData>
             <TableData />
-            <TableData>The icon name.</TableData>
+            <TableData label="Description">The icon name.</TableData>
           </TableRow>
           <TableRow>
-            <TableData>color</TableData>
-            <TableData>string</TableData>
-            <TableData>No</TableData>
+            <TableData label="Name">color</TableData>
+            <TableData label="Type">string</TableData>
+            <TableData label="Required">No</TableData>
             <TableData />
-            <TableData>The color of the Icon.</TableData>
+            <TableData label="Description">The color of the Icon.</TableData>
           </TableRow>
         </TableBody>
       </Table>

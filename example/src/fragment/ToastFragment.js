@@ -25,11 +25,11 @@ const ToastFragment = (props) => {
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableData>children</TableData>
-            <TableData>string</TableData>
-            <TableData>No</TableData>
+            <TableData label="Name">children</TableData>
+            <TableData label="Type">string</TableData>
+            <TableData label="Required">No</TableData>
             <TableData />
-            <TableData>The text.</TableData>
+            <TableData label="Description">The text.</TableData>
           </TableRow>
         </TableBody>
       </Table>

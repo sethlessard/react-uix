@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
+import media from "../../style/media";
 
 const Wrapper = styled.tr`
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  padding: .35rem;
   background-color: ${props => props.backgroundColor || "#fff"};
   color: ${props => props.foregroundColor || "#000"};
 
-  @media screen and (max-width: 720px) {
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    padding: .35rem;
-  }
+
+  ${media.phone`
+    border: none;
+    padding: 1em 0;
+    display: block;
+  `}
 `;
 
 const TableRow = ({ backgroundColor, children, foregroundColor, style: compStyle }) => {

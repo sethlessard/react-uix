@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
 import Text from "../Text";
+import media from '../../style/media';
 
 const Wrapper = styled.td`
   padding: .625em;
@@ -10,14 +11,13 @@ const Wrapper = styled.td`
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
 
-  @media screen and (max-width: 720px) {
+  ${media.phone`
     border-bottom: 1px solid #ddd;
     display: block;
-    font-size: .8em;
     text-align: right;
 
     &:before {
-      content: attr(data-label);
+      content: "${props => props.label}";
       float: left;
       font-weight: bold;
       text-transform: uppercase;
@@ -26,20 +26,19 @@ const Wrapper = styled.td`
     &:last-child {
       border-bottom: 0;
     }
-  }
+  `}
 `;
 
 const TableData = (props) => {
+  const text = (props.children) ? props.children : "\u00A0";
   return (
-    <Wrapper><Text fontSize=".65rem">{props.children}</Text></Wrapper>
+    <Wrapper label={props.label}><Text fontSize=".65rem">{text}</Text></Wrapper>
   );
 };
 
 TableData.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node)
-  ])
+  children: PropTypes.node,
+  label: PropTypes.string
 };
 
 export default TableData;

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
+import media from '../../style/media';
 
 const Wrapper = styled.table`
   border-collapse: collapse;
@@ -9,9 +10,9 @@ const Wrapper = styled.table`
   width: 100%;
   table-layout: fixed;
 
-  @media screen and (max-width: 720px) {
-    border: 0;
-  }
+  ${media.phone`
+    border: 0
+  `}
 `;
 
 const Table = (props) => {

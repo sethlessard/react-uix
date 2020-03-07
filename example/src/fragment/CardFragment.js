@@ -30,25 +30,25 @@ const CardFragment = () => {
           </TableHeader>
           <TableBody>
             <TableRow>
-              <TableData>children</TableData>
-              <TableData>node</TableData>
-              <TableData>No</TableData>
-              <TableData />
-              <TableData>The content of the Paper</TableData>
+              <TableData label="Name">children</TableData>
+              <TableData label="Type">node</TableData>
+              <TableData label="Required">No</TableData>
+              <TableData label="Default" />
+              <TableData label="Description">The content of the Paper</TableData>
             </TableRow>
             <TableRow>
-              <TableData>style</TableData>
-              <TableData>object</TableData>
-              <TableData>No</TableData>
-              <TableData />
-              <TableData>CSS styles for the Paper</TableData>
+              <TableData label="Name">style</TableData>
+              <TableData label="Type">object</TableData>
+              <TableData label="Required">No</TableData>
+              <TableData label="Default" />
+              <TableData label="Description">CSS styles for the Paper</TableData>
             </TableRow>
             <TableRow>
-              <TableData>z</TableData>
-              <TableData>number</TableData>
-              <TableData>No</TableData>
-              <TableData>1</TableData>
-              <TableData>The elevation level of the Card. 1-5 are permissiable options.</TableData>
+              <TableData label="Name">z</TableData>
+              <TableData label="Type">number</TableData>
+              <TableData label="Required">No</TableData>
+              <TableData label="Default">1</TableData>
+              <TableData label="Description">The elevation level of the Card. 1-5 are permissiable options.</TableData>
             </TableRow>
           </TableBody>
         </Table>

@@ -19,14 +19,14 @@ const TableFragment = (props) => {
           </TableHeader>
           <TableBody>
             <TableRow>
-              <TableData>Seth</TableData>
-              <TableData>3600</TableData>
-              <TableData>5999</TableData>
+              <TableData label="Name">Seth</TableData>
+              <TableData label="Age">3600</TableData>
+              <TableData label="Height">5999</TableData>
             </TableRow>
             <TableRow>
-              <TableData>Seth</TableData>
-              <TableData>3600</TableData>
-              <TableData>5999</TableData>
+              <TableData label="Name">Seth</TableData>
+              <TableData label="Age">3600</TableData>
+              <TableData label="Height">5999</TableData>
             </TableRow>
           </TableBody>
         </Table>
@@ -47,16 +47,16 @@ const TableFragment = (props) => {
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableData>children</TableData>
-            <TableData>node</TableData>
+            <TableData label="Name">children</TableData>
+            <TableData label="Type">node</TableData>
             <TableData />
-            <TableData>The contents of the Table. See Child Components below.</TableData>
+            <TableData label="Description">The contents of the Table. See Child Components below.</TableData>
           </TableRow>
           <TableRow>
-            <TableData>style</TableData>
-            <TableData>object</TableData>
+            <TableData label="Name">style</TableData>
+            <TableData label="Type">object</TableData>
             <TableData />
-            <TableData>CSS styles for the Table</TableData>
+            <TableData label="Description">CSS styles for the Table</TableData>
           </TableRow>
         </TableBody>
       </Table>

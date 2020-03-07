@@ -32,11 +32,11 @@ const CheckboxFragment = (props) => {
           </TableHeader>
           <TableBody>
             <TableRow>
-              <TableData>children</TableData>
-              <TableData>string</TableData>
-              <TableData>No</TableData>
-              <TableData />
-              <TableData>The text to display alongside the Checkbox.</TableData>
+              <TableData label="Name">children</TableData>
+              <TableData label="Type">string</TableData>
+              <TableData label="Required">No</TableData>
+              <TableData label="Default" />
+              <TableData label="Description">The text to display alongside the Checkbox.</TableData>
             </TableRow>
           </TableBody>
         </Table>
