@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const Wrapper = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   z-index: 2;

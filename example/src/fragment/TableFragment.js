@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Fragment from "./Fragment";
-import { PaddedHeading, Table, TableHeader, TableBody, TableRow, HeaderCell, TableData, Paragraph, Code, List, ListItem } from "react-uix";
+import { PaddedHeading, Table, TableHeader, TableBody, TableRow, HeaderCell, TableData, Paragraph, Code, List, ListItem, Text } from "react-uix";
 import { Example } from "../component";
 
 const TableFragment = (props) => {
@@ -50,7 +50,7 @@ const TableFragment = (props) => {
             <TableData>children</TableData>
             <TableData>node</TableData>
             <TableData />
-            <TableData>The contents of the Table. See Direct Subcomponents below.</TableData>
+            <TableData>The contents of the Table. See Child Components below.</TableData>
           </TableRow>
           <TableRow>
             <TableData>style</TableData>
@@ -61,11 +61,11 @@ const TableFragment = (props) => {
         </TableBody>
       </Table>
 
-      <PaddedHeading h={6}>Direct Subcomponents</PaddedHeading>
-      <Paragraph>The Table component has the following direct subcomponents:</Paragraph>
+      <PaddedHeading h={6}>Child Components</PaddedHeading>
+      <Paragraph>The Table component has the following child components:</Paragraph>
       <List>
-        <ListItem>TableHeader</ListItem>
-        <ListItem>TableBody</ListItem>
+        <ListItem><Text fontSize=".7rem">TableHeader</Text></ListItem>
+        <ListItem><Text fontSize=".7rem">TableBody</Text></ListItem>
       </List>
     </Fragment>
   );

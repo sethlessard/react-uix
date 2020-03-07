@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { updateAppContentScrollableComponent } from '../redux/actions/ui';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -11,6 +12,10 @@ const mapStateToProps = (state, ownProps) => {
     bottomNavHeight: state.ui.bottomNavHeight
   };
 };
+
+const mapDispatchToProps = (dispatch) => ({
+  updateAppContentScrollableComponent: (ref) => dispatch(updateAppContentScrollableComponent(ref))
+});
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -32,6 +37,9 @@ const Content = styled.div`
   overflow-x: hidden;
   background-color: #ecf0f1;
   -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 const Padding = styled.div`
   width: 100vw;
@@ -42,6 +50,7 @@ class AppContent extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.refScrollableContent = React.createRef();
     this.calcHeight = this.calcHeight.bind(this);
   }
 
@@ -59,6 +68,11 @@ class AppContent extends Component {
     return height;
   }
 
+  componentDidMount() {
+    const { updateAppContentScrollableComponent } = this.props;
+    updateAppContentScrollableComponent(this.refScrollableContent);
+  }
+
   render() {
     const { appbarDefined, appbarHeight } = this.props;
     const height = this.calcHeight();
@@ -74,7 +88,7 @@ class AppContent extends Component {
         style={style.appContent}
       >
         <Relative height={height} style={style.relative}>
-          <Content height={height} style={style.content}>
+          <Content height={height} style={style.content} ref={this.refScrollableContent}>
             {this.props.children}
             <Padding />
           </Content>
@@ -91,4 +105,4 @@ AppContent.propTypes = {
   ])
 };
 
-export default connect(mapStateToProps)(AppContent);
+export default connect(mapStateToProps, mapDispatchToProps)(AppContent);

@@ -19,7 +19,8 @@ import {
   Code,
   List,
   ListItem,
-  Paragraph
+  Paragraph,
+  Text
 } from "react-uix";
 import { Example } from "../component";
 
@@ -75,12 +76,12 @@ const DropdownButtonFragment = (props) => {
           </TableBody>
         </Table>
 
-        <PaddedHeading h={6}>Direct Subcomponents</PaddedHeading>
+        <PaddedHeading h={6}>Child Components</PaddedHeading>
         <Paragraph>
-          The DropdownButton components has the following direct subcomponents:
+          The DropdownButton components has the following child components:
         </Paragraph>
         <List>
-          <ListItem>DropdownItem</ListItem>
+          <ListItem><Text fontSize=".7rem">DropdownItem</Text></ListItem>
         </List>
       </Fragment>
 
@@ -157,7 +158,7 @@ const DropdownButtonFragment = (props) => {
                 <TableData>node</TableData>
                 <TableData>No</TableData>
                 <TableData />
-                <TableData>The contents of the DropdownItem. See Direct Subcomponents below.</TableData>
+                <TableData>The contents of the DropdownItem. See Child Components below.</TableData>
               </TableRow>
               <TableRow>
                 <TableData>foregroundColor</TableData>
@@ -170,11 +171,11 @@ const DropdownButtonFragment = (props) => {
           </Table>
         </Paragraph>
 
-        <PaddedHeading h={6}>Direct Subcomponents</PaddedHeading>
-        <Paragraph>The DropdownItem component has the following direct subcomponents:</Paragraph>
+        <PaddedHeading h={6}>Child Components</PaddedHeading>
+        <Paragraph>The DropdownItem component has the following child components:</Paragraph>
         <List>
-          <ListItem>DropdownIcon</ListItem>
-          <ListItem>DropdownText</ListItem>
+          <ListItem><Text fontSize=".7rem">DropdownIcon</Text></ListItem>
+          <ListItem><Text fontSize=".7rem">DropdownText</Text></ListItem>
         </List>
       </Fragment>
 

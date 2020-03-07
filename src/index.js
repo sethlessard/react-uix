@@ -86,6 +86,7 @@ import Paper from "./components/Paper";
 import PaddedHeading from "./components/PaddedHeading";
 import Paragraph from "./components/Paragraph";
 import Row from "./components/Row";
+import ScrollToTop from "./components/ScrollToTop";
 import Subtitle from "./components/Subtitle";
 import Switch from "./components/Switch";
 import Text from "./components/Text";
@@ -169,6 +170,7 @@ export {
   PaddedHeading,
   Paragraph,
   Row,
+  ScrollToTop,
   Subtitle,
   Switch,
   Text,

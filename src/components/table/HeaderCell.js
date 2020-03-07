@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
+import Text from "../Text";
 
 const Wrapper = styled.th`
   padding: .625rem;
@@ -14,7 +15,13 @@ const Wrapper = styled.th`
 
 const HeaderCell = (props) => {
   return (
-    <Wrapper>{props.children}</Wrapper>
+    <Wrapper>
+      <Text
+        fontWeight="bold"
+      >
+        {props.children}
+      </Text>
+    </Wrapper>
   );
 };
 

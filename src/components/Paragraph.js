@@ -12,20 +12,28 @@ const Wrapper = styled.div`
   padding: .5em 0;
 `;
 
-const Paragraph = ({ children, color, style: compStyle }) => {
+const Paragraph = ({ children, color, fontSize, fontWeight, style: compStyle }) => {
   const style = {
     Paragraph: {}
   };
   Object.assign(style.Paragraph, compStyle);
   return (
     <Wrapper className="Paragraph" style={style.Paragraph}>
-      <Text color={color}>{children}</Text>
+      <Text
+        color={color}
+        fontSize={fontSize}
+        fontWeight={fontWeight}
+      >
+        {children}
+      </Text>
     </Wrapper>
   );
 };
 
 Paragraph.propTypes = {
-  color: PropTypes.string
+  color: PropTypes.string,
+  fontSize: PropTypes.string,
+  fontWeight: PropTypes.string
 };
 
 export default connect(mapStateToProps)(Paragraph);

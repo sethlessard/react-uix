@@ -26,6 +26,8 @@ const mapStateToProps = (state, ownProps) => ({
 const Wrapper = styled.div`
   margin: 0;
   padding: 0;
+  height: ${props => props.size};
+  width: ${props => props.size};
 `;
 
 const I = styled.i`
@@ -43,7 +45,7 @@ const Icon = ({ accent, children, color, size = "1rem", style: compStyle }) => {
 
   Object.assign(style.icon, compStyle);
   return (
-    <Wrapper>
+    <Wrapper size={size}>
       <I color={color} size={size} className="material-icons">{children}</I>
     </Wrapper>
   );

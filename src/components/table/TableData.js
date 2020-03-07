@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
+import Text from "../Text";
 
 const Wrapper = styled.td`
   padding: .625em;
@@ -30,7 +31,7 @@ const Wrapper = styled.td`
 
 const TableData = (props) => {
   return (
-    <Wrapper>{props.children}</Wrapper>
+    <Wrapper><Text fontSize=".65rem">{props.children}</Text></Wrapper>
   );
 };
 

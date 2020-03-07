@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import { updateNavDrawerDefined, updateNavDrawerOpen, updateNavDrawerWidth } from '../../redux/actions/ui';
+import { updateNavDrawerDefined, updateNavDrawerOpen, updateNavDrawerWidth, updateNavDrawerClosingFromToggleButton } from '../../redux/actions/ui';
 import { connect } from 'react-redux';
 import styled from "styled-components";
 
@@ -17,6 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
+  updateNavDrawerClosingFromToggleButton: (toggle) => dispatch(updateNavDrawerClosingFromToggleButton(toggle)),
   updateNavDrawerDefined: (defined) => dispatch(updateNavDrawerDefined(defined)),
   updateNavDrawerOpen: (open) => dispatch(updateNavDrawerOpen(open)),
   updateNavDrawerWidth: (width) => dispatch(updateNavDrawerWidth(width))
@@ -75,13 +76,14 @@ class NavDrawer extends Component {
   }
 
   handleClickOutside(event) {
-    const { navDrawerClosingFromToggleButton, navDrawerOpen, updateNavDrawerOpen } = this.props;
+    const { navDrawerClosingFromToggleButton, navDrawerOpen, updateNavDrawerClosingFromToggleButton, updateNavDrawerOpen } = this.props;
     if (navDrawerOpen &&
       event &&
       this.ref &&
       !navDrawerClosingFromToggleButton &&
       !this.ref.current.contains(event.target)) {
       updateNavDrawerOpen(false);
+      updateNavDrawerClosingFromToggleButton(false);
     }
   }
 

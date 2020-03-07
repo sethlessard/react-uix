@@ -8,7 +8,9 @@ import {
   UPDATE_BOTTOMNAV_HEIGHT,
   UPDATE_NAVDRAWER_DEFINED,
   UPDATE_NAVDRAWER_WIDTH,
-  UPDATE_THEME
+  UPDATE_THEME,
+  UPDATE_APPCONTENT_SCROLLABLE_COMPONENT,
+  UPDATE_NAVDRAWER_CLOSING_FROM_TOGGLE_BUTTON
 } from "../actions/ui";
 
 const ui = (state = {
@@ -22,6 +24,7 @@ const ui = (state = {
   },
   appbarDefined: false,
   appbarHeight: 0,
+  appContentScrollableComponent: null,
   bottomNavDefined: false,
   bottomNavHeight: 0,
   navDrawerClosingFromToggleButton: false,
@@ -30,13 +33,15 @@ const ui = (state = {
   navDrawerWidth: 0
 }, action) => {
   const newState = Object.assign({}, state);
-  console.log(JSON.stringify(action));
+  // console.log(JSON.stringify(action));
   switch (action.type) {
     case UPDATE_THEME: newState.theme = action.theme; break;
     case UPDATE_APPBAR_DEFINED: newState.appbarDefined = action.appbarDefined; break;
     case UPDATE_APPBAR_HEIGHT: newState.appbarHeight = action.appbarHeight; break;
+    case UPDATE_APPCONTENT_SCROLLABLE_COMPONENT: newState.appContentScrollableComponent = action.appContentScrollableComponent; break;
     case UPDATE_BOTTOMNAV_DEFINED: newState.bottomNavDefined = action.bottomNavDefined; break;
     case UPDATE_BOTTOMNAV_HEIGHT: newState.bottomNavHeight = action.bottomNavHeight; break;
+    case UPDATE_NAVDRAWER_CLOSING_FROM_TOGGLE_BUTTON: newState.navDrawerClosingFromToggleButton = action.navDrawerClosingFromToggleButton; break;
     case UPDATE_NAVDRAWER_DEFINED: newState.navDrawerDefined = action.navDrawerDefined; break;
     case UPDATE_NAVDRAWER_OPEN: newState.navDrawerOpen = action.navDrawerOpen; break;
     case UPDATE_NAVDRAWER_WIDTH: newState.navDrawerOpen = action.navDrawerOpen; break;
