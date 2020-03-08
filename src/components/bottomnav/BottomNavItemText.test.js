@@ -45,6 +45,6 @@ describe("BottomNavItemText", () => {
    * It should contain the correct text when passed
    */
   it("Should contain the correct text", () => {
-    expect(getTree(store, "Test").children[0].children[0].children[0]).toEqual("Test")
+    expect(getTree(store, "Test").children[0].children[0]).toEqual("Test")
   });
 });
