@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import styled from "styled-components";
 
 import {
@@ -211,41 +211,42 @@ class UIApp extends Component {
             </NavContent>
           </NavDrawer>
           <AppContent navDrawerOpen={this.state.navDrawerOpen}>
+            <Switch>
+              <Route exact path="/" component={HomeFragment} />
+              <Route path="/install" component={InstallationFragment} />
+              <Route path="/usage" component={UsageFragment} />
+              <Route path="/examples" component={ExamplesFragment} />
 
-            <Route exact path="/" component={HomeFragment} />
-            <Route path="/install" component={InstallationFragment} />
-            <Route path="/usage" component={UsageFragment} />
-            <Route path="/examples" component={ExamplesFragment} />
+              <Route path="/component/App" component={AppFragment} />
 
-            <Route path="/component/App" component={AppFragment} />
+              <Route path="/component/Appbar" component={AppbarFragment} />
 
-            <Route path="/component/Appbar" component={AppbarFragment} />
+              <Route path="/component/Button" component={ButtonFragment} />
+              <Route path="/component/DropdownButton" component={DropdownButtonFragment} />
+              <Route path="/component/IconButton" component={IconButtonFragment} />
 
-            <Route path="/component/Button" component={ButtonFragment} />
-            <Route path="/component/DropdownButton" component={DropdownButtonFragment} />
-            <Route path="/component/IconButton" component={IconButtonFragment} />
+              <Route path="/component/Icon" component={IconFragment} />
 
-            <Route path="/component/Icon" component={IconFragment} />
+              <Route path="/component/Checkbox" component={CheckboxFragment} />
+              <Route path="/component/TextInput" component={TextInputFragment} />
+              <Route path="/component/Switch" component={SwitchFragment} />
 
-            <Route path="/component/Checkbox" component={CheckboxFragment} />
-            <Route path="/component/TextInput" component={TextInputFragment} />
-            <Route path="/component/Switch" component={SwitchFragment} />
+              <Route path="/component/BottomNavigation" component={BottomNavigationFragment} />
+              <Route path="/component/NavDrawer" component={NavDrawerFragment} />
 
-            <Route path="/component/BottomNavigation" component={BottomNavigationFragment} />
-            <Route path="/component/NavDrawer" component={NavDrawerFragment} />
+              <Route path="/component/Grid" component={GridFragment} />
+              <Route path="/component/Row" component={RowFragment} />
+              <Route path="/component/Table" component={TableFragment} />
 
-            <Route path="/component/Grid" component={GridFragment} />
-            <Route path="/component/Row" component={RowFragment} />
-            <Route path="/component/Table" component={TableFragment} />
+              <Route path="/component/Card" component={CardFragment} />
+              <Route path="/component/Paper" component={PaperFragment} />
 
-            <Route path="/component/Card" component={CardFragment} />
-            <Route path="/component/Paper" component={PaperFragment} />
-
-            <Route path="/component/Heading" component={HeadingFragment} />
-            <Route path="/component/Paragraph" component={ParagraphFragment} />
-            <Route path="/component/Text" component={TextFragment} />
-            <Route path="/component/TextArea" component={TextAreaFragment} />
-            <Route path="/component/Toast" component={ToastFragment} />
+              <Route path="/component/Heading" component={HeadingFragment} />
+              <Route path="/component/Paragraph" component={ParagraphFragment} />
+              <Route path="/component/Text" component={TextFragment} />
+              <Route path="/component/TextArea" component={TextAreaFragment} />
+              <Route path="/component/Toast" component={ToastFragment} />
+            </Switch>
           </AppContent>
           <BottomNavigation>
             <NSLink to="/" color={theme.text.colorOnDark}>
