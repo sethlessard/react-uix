@@ -13,6 +13,9 @@ const Span = styled.span`
   display: block;
   font-family: 'Roboto', sans-serif;
   font-size: ${props => props.fontSize};
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 `;
 
 const Text = ({ children, color, fontSize = ".8rem", fontWeight = "400", foregroundColor, style: compStyle }) => {

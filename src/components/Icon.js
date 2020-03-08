@@ -33,6 +33,9 @@ const Wrapper = styled.div`
 const I = styled.i`
   color: ${props => props.color};
   font-size: ${props => props.size};
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 `;
 
 const Icon = ({ accent, children, color, size = "1rem", style: compStyle }) => {
