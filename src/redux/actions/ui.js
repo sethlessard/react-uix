@@ -8,6 +8,8 @@ export const UPDATE_NAVDRAWER_CLOSING_FROM_TOGGLE_BUTTON = "UPDATE_NAVDRAWER_CLO
 export const UPDATE_NAVDRAWER_DEFINED = "UPDATE_NAVDRAWER_DEFINED";
 export const UPDATE_NAVDRAWER_OPEN = "UPDATE_NAVDRAWER_OPEN";
 export const UPDATE_NAVDRAWER_WIDTH = "UPDATE_NAVDRAWER_WIDTH";
+export const UPDATE_WINDOW_HEIGHT = "UPDATE_WINDOW_HEIGHT";
+export const UPDATE_WINDOW_WIDTH = "UPDATE_WINDOW_WIDTH";
 
 /**
  * Toggle to the navigation drawer open/closed.
@@ -111,4 +113,22 @@ export const updateNavDrawerWidth = (navDrawerWidth = 0) => ({
 export const updateTheme = (theme) => ({
   type: UPDATE_THEME,
   theme
+});
+
+/**
+ * Update the height of the window.
+ * @param {number} windowHeight the window height.
+ */
+export const updateWindowHeight = (windowHeight) => ({
+  type: UPDATE_WINDOW_HEIGHT,
+  windowHeight
+});
+
+/**
+ * Update the width of the window.
+ * @param {number} windowWidth the window width.
+ */
+export const updateWindowWidth = (windowWidth) => ({
+  type: UPDATE_WINDOW_WIDTH,
+  windowWidth
 });

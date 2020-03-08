@@ -248,7 +248,7 @@ class UIApp extends Component {
               <Route path="/component/Toast" component={ToastFragment} />
             </Switch>
           </AppContent>
-          <BottomNavigation>
+          <BottomNavigation mobileOnly>
             <NSLink to="/" color={theme.text.colorOnDark}>
               <BottomNavItem>
                 <BottomNavItemIcon>home</BottomNavItemIcon>

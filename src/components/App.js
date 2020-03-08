@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import configureUIStore, { history } from "../redux/configureUIStore";
-import { updateTheme } from "../redux/actions/ui";
+import { updateTheme, updateWindowHeight, updateWindowWidth } from "../redux/actions/ui";
 // import PropTypes from 'prop-types';
 import styled from "styled-components";
 
@@ -17,9 +17,20 @@ const Wrapper = styled.div`
 `;
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this._handleWindowResize = this._handleWindowResize.bind(this);
+  }
+
   componentDidMount() {
     const { theme } = this.props;
     if (theme) uiStore.dispatch(updateTheme(theme));
+    window.addEventListener("resize", this._handleWindowResize);
+    this._handleWindowResize();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this._handleWindowResize);
   }
 
   render() {
@@ -31,6 +42,11 @@ class App extends Component {
         </Provider>
       </Wrapper>
     );
+  }
+
+  _handleWindowResize() {
+    uiStore.dispatch(updateWindowHeight(window.innerHeight));
+    uiStore.dispatch(updateWindowWidth(window.innerWidth));
   }
 }
 

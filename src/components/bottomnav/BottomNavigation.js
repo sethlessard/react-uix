@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import styled from "styled-components";
+import { sizes } from "../../style/media";
 
 import {
   updateBottomNavDefined,
@@ -11,7 +12,9 @@ import DropShadow from '../DropShadow';
 
 const mapStateToProps = (state, ownProps) => ({
   foregroundColor: ownProps.foregroundColor || state.ui.theme.text.colorOnDark,
-  backgroundColor: ownProps.backgroundColor || state.ui.theme.colorPrimary
+  backgroundColor: ownProps.backgroundColor || state.ui.theme.colorPrimary,
+  windowHeight: state.ui.windowHeight,
+  windowWidth: state.ui.windowWidth
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -46,22 +49,39 @@ class BottomNavigation extends Component {
   }
 
   componentDidMount() {
-    const { demo, height = 62, updateBottomNavDefined, updateBottomNavHeight } = this.props;
+    const { demo, height = 62, mobileOnly, updateBottomNavDefined, updateBottomNavHeight, windowWidth } = this.props;
+
     if (!demo) {
-      updateBottomNavDefined(true);
-      updateBottomNavHeight(height);
+      if (mobileOnly) {
+        if (windowWidth <= sizes.tablet) {
+          updateBottomNavDefined(true);
+          updateBottomNavHeight(height);
+        }
+      } else {
+        updateBottomNavDefined(true);
+        updateBottomNavHeight(height);
+      }
     }
   }
 
   render() {
-    const { children, backgroundColor, foregroundColor, height = 62 } = this.props;
+    const { children, backgroundColor, foregroundColor, height = 62, mobileOnly, windowWidth } = this.props;
     const style = {
       bottomNavigation: {}
     };
 
+    if (mobileOnly) {
+      if (windowWidth > sizes.tablet) {
+        return <div style={{ diplay: "none" }} />;
+      }
+    }
     return (
-      <Wrapper backgroundColor={backgroundColor} height={height} style={style.bottomNavigation}>
-        <DropShadow style={{zIndex: 2}} z={5}>
+      <Wrapper
+        backgroundColor={backgroundColor}
+        height={height}
+        style={style.bottomNavigation}
+      >
+        <DropShadow z={5}>
           <Content foregroundColor={foregroundColor}>
             {children}
           </Content>
@@ -74,6 +94,7 @@ class BottomNavigation extends Component {
 BottomNavigation.propTypes = {
   backgroundColor: PropTypes.string,
   foregroundColor: PropTypes.string,
+  mobileOnly: PropTypes.bool,
   demo: PropTypes.bool,
   height: PropTypes.number,
   children: PropTypes.node
