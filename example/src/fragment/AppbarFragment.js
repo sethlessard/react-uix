@@ -19,7 +19,8 @@ import {
   ListItem,
   PaddedHeading,
   ScrollToTop,
-  Text
+  Text,
+  Spacer
 } from "react-uix";
 
 import Fragment from './Fragment';
@@ -109,8 +110,8 @@ const AppbarFragment = (props) => {
             <ListItem><Text fontSize=".7rem">AppbarToolbar</Text></ListItem>
           </List>
         </Fragment>
-
-        <Fragment style={{ margin: "1rem 0" }} title="AppTitle">
+        <Spacer size="2em" />
+        <Fragment title="AppTitle">
           <Paragraph>
             The AppTitle component defines a title in the Appbar.
           </Paragraph>
@@ -147,8 +148,8 @@ const AppbarFragment = (props) => {
             </Table>
           </Paragraph>
         </Fragment>
-
-        <Fragment style={{ margin: "1rem 0" }} title="AppTitleContainer">
+        <Spacer size="2em" />
+        <Fragment title="AppTitleContainer">
           <Paragraph>
             The AppTitleContainer component is used to position both the AppTitle and AppbarToggleButton components
             in the Appbar.
@@ -187,8 +188,8 @@ const AppbarFragment = (props) => {
             <ListItem><Text fontSize=".7rem">AppbarToggleButton</Text></ListItem>
           </List>
         </Fragment>
-
-        <Fragment style={{ margin: "1rem 0" }} title="AppbarToggleButton">
+        <Spacer size="2em" />
+        <Fragment title="AppbarToggleButton">
           <Paragraph>
             The AppbarToggleButton component is used to position a toggle button within the Appbar.
           </Paragraph>
@@ -225,8 +226,8 @@ const AppbarFragment = (props) => {
             </Table>
           </Paragraph>
         </Fragment>
-
-        <Fragment style={{ margin: "1rem 0" }} title="AppbarToolbar">
+        <Spacer size="2em" />
+        <Fragment title="AppbarToolbar">
           <Paragraph>
             The AppbarToolbar component is used to position elements on the right side of the Appbar.
           </Paragraph>

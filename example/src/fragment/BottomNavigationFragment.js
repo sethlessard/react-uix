@@ -1,7 +1,7 @@
 import React from 'react';
 import Fragment from './Fragment';
 import { Link } from "react-router-dom";
-import { PaddedHeading, BottomNavigation, BottomNavItem, Code, Paragraph, Table, TableHeader, TableData, TableRow, HeaderCell, TableBody, List, ListItem, ScrollToTop, Text } from 'react-uix';
+import { PaddedHeading, BottomNavigation, BottomNavItem, Spacer, Code, Paragraph, Table, TableHeader, TableData, TableRow, HeaderCell, TableBody, List, ListItem, ScrollToTop, Text } from 'react-uix';
 import { Example } from '../component';
 
 const BottomNavigationFragment = (props) => {
@@ -83,8 +83,8 @@ const BottomNavigationFragment = (props) => {
             <ListItem><Text fontSize=".7rem">BottomNavItem</Text></ListItem>
           </List>
         </Fragment>
-
-        <Fragment style={{ margin: "1rem auto 0 auto" }}>
+        <Spacer size="2em" />
+        <Fragment>
           <PaddedHeading h={5}>BottomNavItem</PaddedHeading>
           <Paragraph>The BottomNavItem component is used to implement a button within a BottomNavigation component.</Paragraph>
 

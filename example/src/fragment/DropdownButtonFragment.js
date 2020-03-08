@@ -19,7 +19,8 @@ import {
   List,
   ListItem,
   Paragraph,
-  Text
+  Text,
+  Spacer
 } from "react-uix";
 import { Example } from "../component";
 
@@ -83,8 +84,8 @@ const DropdownButtonFragment = (props) => {
           <ListItem><Text fontSize=".7rem">DropdownItem</Text></ListItem>
         </List>
       </Fragment>
-
-      <Fragment style={{ margin: "1rem auto 0 auto" }} title="DropdownIcon">
+      <Spacer size="2em" />
+      <Fragment title="DropdownIcon">
         <Paragraph>
           The DropdownIcon component positions an Icon component within a DropdownItem.
         </Paragraph>
@@ -130,8 +131,8 @@ const DropdownButtonFragment = (props) => {
           </Table>
         </Paragraph>
       </Fragment>
-
-      <Fragment style={{ margin: "1rem auto 0 auto" }} title="DropdownItem">
+      <Spacer size="2em" />
+      <Fragment title="DropdownItem">
         <Paragraph>
           DropdownItem.
         </Paragraph>
@@ -177,8 +178,8 @@ const DropdownButtonFragment = (props) => {
           <ListItem><Text fontSize=".7rem">DropdownText</Text></ListItem>
         </List>
       </Fragment>
-
-      <Fragment style={{ margin: "1rem auto 0 auto" }} title="DropdownText">
+      <Spacer size="2em" />
+      <Fragment title="DropdownText">
         <Paragraph>
           DropdownText.
         </Paragraph>

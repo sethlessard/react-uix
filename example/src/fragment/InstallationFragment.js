@@ -1,6 +1,6 @@
 import React from 'react';
 import Fragment from './Fragment';
-import { Code, Grid, Paragraph, ScrollToTop } from 'react-uix';
+import { Code, Grid, Paragraph, ScrollToTop, Spacer } from 'react-uix';
 
 const MATERIAL_ICON = `<link href="https://fonts.googleapis.com/ icon?family=Material+Icons" rel="stylesheet" />`;
 const ROBOTO = `<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">`;
@@ -22,11 +22,13 @@ const InstallationFragment = () => {
             </div>
           </Grid>
         </Fragment>
-        <Fragment style={{ margin: "2em 0 0 0" }} title="Material Icon Font">
+        <Spacer size="2em" />
+        <Fragment title="Material Icon Font">
           <Paragraph>In order to use the Material Icon font, you must include this css file in your HTML file:</Paragraph>
           <Code foregroundColor="#fff" text={MATERIAL_ICON} />
         </Fragment>
-        <Fragment style={{ margin: "2em 0 0 0" }} title="Roboto Font">
+        <Spacer size="2em" />
+        <Fragment title="Roboto Font">
           <Paragraph>It is recommended to use the Roboto font supplied by Google Fonts with react-uix.</Paragraph>
           <Code foregroundColor="#fff" text={ROBOTO} />
         </Fragment>
