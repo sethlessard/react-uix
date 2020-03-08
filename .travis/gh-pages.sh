@@ -4,11 +4,14 @@ set -o errexit
 
 if [ "$TRAVIS_BRANCH" != "master" ]; then exit 0; fi
 
+npm install
+
 pushd example/
 
 git config --global user.email "travis@travis-ci.com"
 git config --global user.name "Travis CI"
 
+npm install
 npm run build
 
 pushd build/
