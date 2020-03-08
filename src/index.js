@@ -87,6 +87,7 @@ import PaddedHeading from "./components/PaddedHeading";
 import Paragraph from "./components/Paragraph";
 import Row from "./components/Row";
 import ScrollToTop from "./components/ScrollToTop";
+import Spacer from "./components/Spacer";
 import Subtitle from "./components/Subtitle";
 import Switch from "./components/Switch";
 import Text from "./components/Text";
@@ -171,6 +172,7 @@ export {
   Paragraph,
   Row,
   ScrollToTop,
+  Spacer,
   Subtitle,
   Switch,
   Text,
