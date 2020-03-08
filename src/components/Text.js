@@ -16,9 +16,11 @@ const Span = styled.span`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  width: 100%;
+  ${props => props.center ? "text-align: center;" : ""}
 `;
 
-const Text = ({ children, color, fontSize = ".8rem", fontWeight = "400", foregroundColor, style: compStyle }) => {
+const Text = ({ children, center, color, fontSize = ".8rem", fontWeight = "400", foregroundColor, style: compStyle }) => {
   const style = {
     text: {
       color: color || foregroundColor
@@ -27,19 +29,19 @@ const Text = ({ children, color, fontSize = ".8rem", fontWeight = "400", foregro
 
   Object.assign(style.text, compStyle);
   return (
-    <div>
-      <Span
-        fontSize={fontSize}
-        fontWeight={fontWeight}
-        style={style.text}
-      >
-        {children}
-      </Span>
-    </div>
+    <Span
+      center={center}
+      fontSize={fontSize}
+      fontWeight={fontWeight}
+      style={style.text}
+    >
+      {children}
+    </Span>
   );
 };
 
 Text.propTypes = {
+  center: PropTypes.bool,
   color: PropTypes.string,
   fontSize: PropTypes.string,
   fontWeight: PropTypes.string

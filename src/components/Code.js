@@ -36,6 +36,7 @@ const Span = styled.span`
 const CopyContainer = styled.div`
   display: inline-block;
   cursor: pointer;
+  padding: .5em;
 `;
 
 const parseCode = (code) => {
@@ -89,6 +90,7 @@ const Code = ({ backgroundColor, foregroundColor, style: compStyle, text }) => {
             copy(text);
           }}
           color={foregroundColor}
+          refBackgroundColor={backgroundColor}
         >
           assignment
         </IconButton>

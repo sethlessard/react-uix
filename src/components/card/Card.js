@@ -20,15 +20,13 @@ const Card = ({ backgroundColor, children, spanRow = false, style: compStyle, z 
   if (compStyle && compStyle.height) style.paper.height = compStyle.height;
   if (compStyle && compStyle.width) style.paper.width = compStyle.width;
   return (
-    <Wrapper>
+    <Wrapper style={style.card}>
       <DropShadow z={z}>
         <Paper style={style.paper} backgroundColor={backgroundColor}>
           {spanRow &&
-            <Row>{children}</Row>
-          }
+            <Row>{children}</Row>}
           {!spanRow &&
-            children
-          }
+            children}
         </Paper>
       </DropShadow>
     </Wrapper>
