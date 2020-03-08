@@ -4,6 +4,7 @@ set -o errexit
 
 if [ "$TRAVIS_BRANCH" != "master" ]; then exit 0; fi
 
+rm -fr package-lock.json
 npm install
 
 pushd example/
@@ -11,6 +12,7 @@ pushd example/
 git config --global user.email "travis@travis-ci.com"
 git config --global user.name "Travis CI"
 
+rm -fr package-lock.json
 npm install
 npm run build
 
