@@ -8,6 +8,7 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
+  "homepage": "https://sethlessard.github.io/react-uix/",
   "engines": {
     "node": ">=8",
     "npm": ">=5"
