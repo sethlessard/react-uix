@@ -18,7 +18,7 @@ const TextArea = ({ children, height = "100%", resizable = false, width = "100%"
     style.textArea.resize = "none";
   }
   return (
-    <div style={style.container}><textarea style={style.textArea}>{children}</textarea></div>
+    <div style={style.container}><textarea placeholder={children} style={style.textArea} /></div>
   );
 };
 
