@@ -10,6 +10,9 @@ import pkg from './package.json';
 
 export default {
   input: 'src/index.js',
+  external: [
+    'styled-components'
+  ],
   output: [
     {
       file: pkg.main,
@@ -36,6 +39,7 @@ export default {
     resolve(),
     commonjs({
       include: 'node_modules/**',
+      exclude: 'node_modules/styled-components/node-modules/**',
       namedExports: {
         'node_modules/react-is/index.js': ['isValidElementType', 'isContextConsumer', 'isElement']
       }
