@@ -32,7 +32,7 @@ const AppbarToggleButton = ({ children, color, colorPrimary, toggleNavigationDra
       style={style.button}
       onClick={() => toggleNavigationDrawer()}
     >
-      <IconButton color={color} refBackgroundColor={colorPrimary}>{children}</IconButton>
+      <IconButton color={color} size="1.5rem" refBackgroundColor={colorPrimary}>{children}</IconButton>
     </Wrapper>
   );
 };
