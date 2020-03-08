@@ -7,7 +7,6 @@ import {
   PaddedHeading,
   DropdownButton,
   DropdownButtonText,
-  IconButton,
   DropdownButtonItem,
   DropdownButtonIcon,
   Table,
@@ -29,7 +28,7 @@ const DropdownButtonFragment = (props) => {
     <div>
       <Fragment title="Dropdown Button">
         <Example>
-          <DropdownButton icon={<IconButton>more_vert</IconButton>}>
+          <DropdownButton icon="more_vert">
             <DropdownButtonItem>
               <DropdownButtonIcon>account_circle</DropdownButtonIcon>
               <DropdownButtonText>Account</DropdownButtonText>

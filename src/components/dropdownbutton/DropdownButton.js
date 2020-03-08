@@ -1,7 +1,41 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
 import IconButton from "../IconButton";
+
+const Wrapper = styled.div`
+  cursor: pointer;
+  position: relative;
+`;
+const Content = styled.div`
+  position: absolute;
+  visibility: ${props => (props.visible) ? "visible" : "hidden"};
+  opacity: ${props => (props.visible) ? 1 : 0};
+  width: 160px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  z-index: 30;
+  top: 30;
+  transform: translate(-80%, 0);
+  border-radius: 4px;
+  background-color: #fff;
+  transition: opacity .2s ease-in-out;
+  cursor-events: all;
+`;
+const Arrow = styled.div`
+  position: absolute;
+  top: 35;
+  left: 21;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-bottom-color: #fff;
+  border-top: 0;
+  margin-left: -10px;
+  margin-top: -10px;
+  visibility: ${props => (props.visible) ? "visible" : "hidden"};
+  opacity: ${props => (props.visible) ? 1 : 0};
+`;
 
 class DropdownButton extends Component {
   constructor(props) {
@@ -28,59 +62,20 @@ class DropdownButton extends Component {
   }
 
   render() {
-    const { icon, color, children, refBackgroundColor, style } = this.props;
-    let compStyle = {
-      dropdownButton: {
-        cursor: "pointer",
-        position: "relative"
-      },
-      content: {
-        visibility: "hidden",
-        position: "absolute",
-        width: 160,
-        boxShadow: "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
-        zIndex: 2,
-        top: 30,
-        transform: "translate(-80%, 0)",
-        borderRadius: 4,
-        backgroundColor: "#ffffff",
-        opacity: 0,
-        transition: "opacity .2s ease-in-out",
-        cursorEvents: "all"
-      },
-      arrow: {
-        content: "",
-        position: "absolute",
-        top: 35,
-        left: 21,
-        width: 0,
-        height: 0,
-        border: "5px solid transparent",
-        borderBottomColor: "#ffffff",
-        borderTop: 0,
-        marginLeft: -10,
-        marginTop: -10,
-        visibility: "hidden",
-        opacity: 0,
-        transition: "opacity .2s ease-in-out"
-      }
+    const { icon, color, children, refBackgroundColor, style: compStyle } = this.props;
+    const { visible } = this.state;
+    const style = {
+      dropdownButton: {}
     };
-    Object.assign(compStyle.dropdownButton, style);
-
-    if (this.state.visible) {
-      compStyle.content.visibility = "visible";
-      compStyle.arrow.visibility = "visible";
-      compStyle.content.opacity = 1;
-      compStyle.arrow.opacity = 1;
-    }
+    Object.assign(style.dropdownButton, compStyle);
     return (
-      <div style={compStyle.dropdownButton} onClick={() => this.toggleVisibility()}>
+      <Wrapper style={style.dropdownButton} onClick={() => this.toggleVisibility()}>
         <IconButton color={color} refBackgroundColor={refBackgroundColor} size={this.props.iconSize}>{icon}</IconButton>
-        <div style={compStyle.content} ref={this.dialogRef} onMouseLeave={() => this.setInvisible()}>
+        <Arrow visible={visible} />
+        <Content visible={visible} ref={this.dialogRef} onMouseLeave={() => this.setInvisible()}>
           {children}
-        </div>
-        <div style={compStyle.arrow} />
-      </div>
+        </Content>
+      </Wrapper>
     );
   }
 
