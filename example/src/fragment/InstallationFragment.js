@@ -13,11 +13,11 @@ const InstallationFragment = () => {
           <Paragraph>react-uix is available as an <a href="https://www.npmjs.com/package/react-uix" target="__blank">npm package</a>.</Paragraph>
           <Grid columns={2}>
             <div>
-              <Paragraph>You can install react-uix with npm:</Paragraph>
+              <Paragraph>npm:</Paragraph>
               <Code foregroundColor="#fff" text="npm install -E react-uix" />
             </div>
             <div>
-              <Paragraph>Or with Yarn:</Paragraph>
+              <Paragraph>Yarn:</Paragraph>
               <Code foregroundColor="#fff" text="yarn add -E react-uix" />
             </div>
           </Grid>

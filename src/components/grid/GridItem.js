@@ -12,7 +12,8 @@ const Wrapper = styled.div`
   width: calc(100% / ${props => props.numColumns} - 8px);
 
   ${media.phone`
-    width: 100%;
+    display: block;
+    width: auto;
     padding-left: 0;
     padding-right: 0;
     float: none;

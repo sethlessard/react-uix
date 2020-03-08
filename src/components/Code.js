@@ -16,10 +16,8 @@ const Wrapper = styled.div`
   color: ${props => props.foregroundColor || "#fff"};
   padding: 1em 0;
   border-radius: 4px;
-  display: block;
-`;
-const Content = styled.div`
   display: flex;
+  width: auto;
   justify-content: space-between;
   align-items: center;
 `;
@@ -82,21 +80,19 @@ const Code = ({ backgroundColor, foregroundColor, style: compStyle, text }) => {
       backgroundColor={backgroundColor}
       foregroundColor={foregroundColor}
     >
-      <Content>
-        <Span>
-          {parseCode(text)}
-        </Span>
-        <CopyContainer>
-          <IconButton
-            onClick={() => {
-              copy(text);
-            }}
-            color={foregroundColor}
-          >
-            assignment
-          </IconButton>
-        </CopyContainer>
-      </Content>
+      <Span>
+        {parseCode(text)}
+      </Span>
+      <CopyContainer>
+        <IconButton
+          onClick={() => {
+            copy(text);
+          }}
+          color={foregroundColor}
+        >
+          assignment
+        </IconButton>
+      </CopyContainer>
     </Wrapper>
   );
 };

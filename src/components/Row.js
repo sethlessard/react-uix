@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   display: block;
   margin-left: auto;
   margin-right: auto;
-  min-width: 300px;
+  min-width: 120px;
   max-width: 920px;
   overflow: none;
   clear: both;
