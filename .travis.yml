@@ -7,7 +7,7 @@ script:
 - npm test
 - npm run build
 after_success:
-- chmod +x ./travis/gh-pages.sh
+- chmod +x ./.travis/gh-pages.sh
 - ./.travis/gh-pages.sh
 deploy:
   provider: npm
