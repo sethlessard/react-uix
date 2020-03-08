@@ -68,6 +68,14 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "React",
+    "ReactJS",
+    "UI Components",
+    "Material",
+    "UI",
+    "Theme"
+  ],
   "dependencies": {
     "connected-react-router": "6.7.0",
     "copy-to-clipboard": "3.2.1",
