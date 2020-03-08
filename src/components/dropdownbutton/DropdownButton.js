@@ -31,6 +31,7 @@ const Arrow = styled.div`
   border: 5px solid transparent;
   border-bottom-color: #fff;
   border-top: 0;
+  z-index: 3;
   margin-left: -10px;
   margin-top: -10px;
   transition: opacity .2s ease-in-out;
