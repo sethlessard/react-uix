@@ -39,7 +39,7 @@ class IconButton extends Component {
     }
 
     return (
-      <Wrapper style={style.iconButton} onClick={onClick} onMouseDown={() => this.togglePress()} onMouseUp={() => this.togglePress()}>
+      <Wrapper style={style.iconButton} onClick={onClick} onMouseLeave={() => this.setState({pressed: false})} onMouseDown={() => this.togglePress()} onMouseUp={() => this.togglePress()}>
         <Icon color={color} refBackgroundColor={refBackgroundColor} size={size}>{children}</Icon>
       </Wrapper>
     );
