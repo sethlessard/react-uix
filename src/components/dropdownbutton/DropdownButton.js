@@ -14,8 +14,8 @@ const Content = styled.div`
   opacity: ${props => (props.visible) ? 1 : 0};
   width: 160px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  z-index: 30;
-  top: 30;
+  z-index: 3;
+  top: 40px;
   transform: translate(-80%, 0);
   border-radius: 4px;
   background-color: #fff;
@@ -24,8 +24,8 @@ const Content = styled.div`
 `;
 const Arrow = styled.div`
   position: absolute;
-  top: 35;
-  left: 21;
+  top: 45px;
+  left: 21px;
   width: 0;
   height: 0;
   border: 5px solid transparent;
@@ -33,6 +33,7 @@ const Arrow = styled.div`
   border-top: 0;
   margin-left: -10px;
   margin-top: -10px;
+  transition: opacity .2s ease-in-out;
   visibility: ${props => (props.visible) ? "visible" : "hidden"};
   opacity: ${props => (props.visible) ? 1 : 0};
 `;
