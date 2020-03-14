@@ -3,8 +3,8 @@ node_js:
 - 13
 
 branches:
-  except:
-  - gh-pages
+  only:
+  - master
 
 script:
 - npm test
