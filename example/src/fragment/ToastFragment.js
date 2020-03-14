@@ -4,7 +4,7 @@ import { PaddedHeading, Paragraph, Code, Table, TableHeader, TableRow, HeaderCel
 
 const ToastFragment = (props) => {
   return (
-    <Fragment title="toast">
+    <Fragment title="Toast">
       <Paragraph>
         The Toast component is used to display a toast-type notification to the user.
       </Paragraph>
