@@ -65,7 +65,7 @@
     "rollup-plugin-commonjs": "9.3.4",
     "rollup-plugin-node-resolve": "3.3.0",
     "rollup-plugin-peer-deps-external": "2.2.0",
-    "rollup-plugin-postcss": "2.3.0",
+    "rollup-plugin-postcss": "2.4.1",
     "rollup-plugin-url": "3.0.1",
     "seamless-immutable": "7.1.4",
     "tinycolor2": "1.4.1",
