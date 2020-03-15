@@ -83,7 +83,7 @@
     "Theme"
   ],
   "dependencies": {
-    "connected-react-router": "6.7.0",
+    "connected-react-router": "6.8.0",
     "react-redux": "7.2.0",
     "copy-to-clipboard": "3.3.1",
     "react-router-dom": "5.1.2",
