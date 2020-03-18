@@ -31,7 +31,7 @@ const TextInput = ({ onChange, placeholder, primaryColor, style: compStyle }) =>
   // if onChange is not defined, give it a default handler.
   if (!onChange) onChange = (_) => {};
   return (
-    <Wrapper>
+    <Wrapper style={style.textInput}>
       <Input primaryColor={primaryColor} placeholder={placeholder} onChange={(event) => onChange(event.target.value)} type="text" />
     </Wrapper>
   );
