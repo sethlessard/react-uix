@@ -23,19 +23,22 @@ const mapStateToProps = (state) => ({
   primaryColor: state.ui.theme.colorPrimary
 });
 
-const TextInput = ({ placeholder, primaryColor, style: compStyle }) => {
+const TextInput = ({ onChange, placeholder, primaryColor, style: compStyle }) => {
   const style = {
     textInput: {}
   };
   Object.assign(style.textInput, compStyle);
+  // if onChange is not defined, give it a default handler.
+  if (!onChange) onChange = (_) => {};
   return (
     <Wrapper>
-      <Input primaryColor={primaryColor} placeholder={placeholder} type="text" />
+      <Input primaryColor={primaryColor} placeholder={placeholder} onChange={(event) => onChange(event.target.value)} type="text" />
     </Wrapper>
   );
 };
 
 TextInput.propTypes = {
+  onChange: PropTypes.func,
   placeholder: PropTypes.string
 };
 
