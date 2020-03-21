@@ -64,6 +64,18 @@ class BottomNavigation extends Component {
     }
   }
 
+  componentDidUpdate() {
+    const { mobileOnly, windowWidth, updateBottomNavDefined, updateBottomNavHeight } = this.props;
+
+    if (mobileOnly) {
+      if (windowWidth > sizes.tablet) {
+        // no longer displaying the Bottom Nav
+        updateBottomNavDefined(false);
+        updateBottomNavHeight(0);
+      }
+    }
+  }
+
   render() {
     const { children, backgroundColor, foregroundColor, height = 62, mobileOnly, windowWidth } = this.props;
     const style = {
