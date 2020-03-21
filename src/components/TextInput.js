@@ -25,14 +25,16 @@ const mapStateToProps = (state) => ({
 
 const TextInput = ({ onChange, placeholder, primaryColor, style: compStyle }) => {
   const style = {
+    wrapper: {},
     textInput: {}
   };
-  Object.assign(style.textInput, compStyle);
+  Object.assign(style.wrapper, compStyle);
   // if onChange is not defined, give it a default handler.
   if (!onChange) onChange = (_) => {};
+  if (compStyle.width) style.textInput.width = compStyle.width;
   return (
-    <Wrapper style={style.textInput}>
-      <Input primaryColor={primaryColor} placeholder={placeholder} onChange={(event) => onChange(event.target.value)} type="text" />
+    <Wrapper style={style.wrapper}>
+      <Input primaryColor={primaryColor} placeholder={placeholder} onChange={(event) => onChange(event.target.value)} style={style.textInput} type="text" />
     </Wrapper>
   );
 };
