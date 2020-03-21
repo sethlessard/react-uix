@@ -1,6 +1,6 @@
 import React from 'react';
 import Fragment from './Fragment';
-import { Heading, Paragraph, Code, Table, TableHeader, TableRow, TableBody, TableData, HeaderCell } from 'react-uix';
+import { Heading, Paragraph, Code, Table, TableHeader, TableRow, TableBody, TableData, HeaderCell } from '@react-uix/web';
 import { Example } from "../component";
 
 const HeadingFragment = () => {
@@ -29,7 +29,7 @@ const HeadingFragment = () => {
       </Example>
 
       <Heading h={6}>Usage</Heading>
-      <Code foregroundColor="#fff" text={`import { Heading } from "react-uix";`} />
+      <Code foregroundColor="#fff" text={`import { Heading } from "@react-uix/web";`} />
 
       <Heading h={6}>Props</Heading>
       <Table>

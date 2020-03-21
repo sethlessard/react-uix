@@ -1,7 +1,7 @@
 import React from "react";
 // import PropTypes from "prop-types";
 import Fragment from "./Fragment";
-import { PaddedHeading, Code, Paragraph, Switch, Table, TableHeader, TableBody, TableRow, HeaderCell, TableData } from "react-uix";
+import { PaddedHeading, Code, Paragraph, Switch, Table, TableHeader, TableBody, TableRow, HeaderCell, TableData } from "@react-uix/web";
 import { Example } from "../component";
 
 const SwitchFragment = ({ children, style: compStyle }) => {
@@ -18,7 +18,7 @@ const SwitchFragment = ({ children, style: compStyle }) => {
       </Example>
 
       <PaddedHeading h={6}>Usage</PaddedHeading>
-      <Code foregroundColor="#fff" text={`import { Switch } from "react-uix";`} />
+      <Code foregroundColor="#fff" text={`import { Switch } from "@react-uix/web";`} />
 
       <PaddedHeading h={6}>Props</PaddedHeading>
       <Table>

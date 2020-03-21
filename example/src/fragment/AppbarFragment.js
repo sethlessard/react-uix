@@ -21,7 +21,7 @@ import {
   ScrollToTop,
   Text,
   Spacer
-} from "react-uix";
+} from "@react-uix/web";
 
 import Fragment from './Fragment';
 import { Example } from "../component";
@@ -55,7 +55,7 @@ const AppbarFragment = (props) => {
           </Example>
           <PaddedHeading h={6}>Usage</PaddedHeading>
           <Paragraph>
-            <Code foregroundColor="#fff" text={`import { Appbar } from "react-uix";`} />
+            <Code foregroundColor="#fff" text={`import { Appbar } from "@react-uix/web";`} />
           </Paragraph>
           <PaddedHeading h={6}>Props</PaddedHeading>
           <Table>
@@ -123,7 +123,7 @@ const AppbarFragment = (props) => {
             </Appbar>
           </Example>
           <PaddedHeading h={6}>Usage</PaddedHeading>
-          <Code foregroundColor="#fff" text={`import { AppTitle } from "react-uix";`} />
+          <Code foregroundColor="#fff" text={`import { AppTitle } from "@react-uix/web";`} />
           <PaddedHeading h={6}>Props</PaddedHeading>
           <Paragraph>
             <Table>
@@ -155,7 +155,7 @@ const AppbarFragment = (props) => {
             in the Appbar.
           </Paragraph>
           <PaddedHeading h={6}>Usage</PaddedHeading>
-          <Code foregroundColor="#fff" text={`import { AppTitleContainer } from "react-uix";`} />
+          <Code foregroundColor="#fff" text={`import { AppTitleContainer } from "@react-uix/web";`} />
           <PaddedHeading h={6}>Props</PaddedHeading>
           <Paragraph>
             <Table>
@@ -201,7 +201,7 @@ const AppbarFragment = (props) => {
             </Appbar>
           </Example>
           <PaddedHeading h={6}>Usage</PaddedHeading>
-          <Code foregroundColor="#fff" text={`import { AppbarToggleButton } from "react-uix";`} />
+          <Code foregroundColor="#fff" text={`import { AppbarToggleButton } from "@react-uix/web";`} />
           <PaddedHeading h={6}>Props</PaddedHeading>
           <Paragraph>
             <Table>
@@ -232,7 +232,7 @@ const AppbarFragment = (props) => {
             The AppbarToolbar component is used to position elements on the right side of the Appbar.
           </Paragraph>
           <PaddedHeading h={6}>Usage</PaddedHeading>
-          <Code foregroundColor="#fff" text={`import { AppbarToolbar } from "react-uix";`} />
+          <Code foregroundColor="#fff" text={`import { AppbarToolbar } from "@react-uix/web";`} />
           <PaddedHeading h={6}>Props</PaddedHeading>
           <Paragraph>
             <Table>

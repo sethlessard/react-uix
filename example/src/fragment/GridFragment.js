@@ -1,6 +1,6 @@
 import React from 'react';
 import Fragment from './Fragment';
-import { Card, CardBody, Grid, Row, Text, Toolbar, ToolbarTitle, Spacer } from 'react-uix';
+import { Card, CardBody, Grid, Row, Text, Toolbar, ToolbarTitle, Spacer } from '@react-uix/web';
 
 const generateItems = (numItems) => {
   const items = [];

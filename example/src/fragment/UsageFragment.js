@@ -1,10 +1,10 @@
 import React from 'react';
-import { Paragraph, Code, ScrollToTop, Spacer } from 'react-uix';
+import { Paragraph, Code, ScrollToTop, Spacer } from '@react-uix/web';
 import Fragment from './Fragment';
 
 const EXAMPLE = `
 import React, { Component } from "react";
-import { App, Appbar, AppContent, AppTitle, AppTitleContainer, Button } from "react-uix";
+import { App, Appbar, AppContent, AppTitle, AppTitleContainer, Button } from "@react-uix/web";
 
 const Example = () => {
   return (
@@ -44,14 +44,14 @@ const UsageFragment = () => {
     <div>
       <ScrollToTop>
         <Fragment title="Getting Started">
-          <Code foregroundColor="#fff" text={`import { App } from "react-uix";`} />
+          <Code foregroundColor="#fff" text={`import { App } from "@react-uix/web";`} />
           <Paragraph>
             All UiX components can work in isolation. All components can be styled with 'backgroundColor' and 'foregroundColor' properties.
           </Paragraph>
           <Code foregroundColor="#fff" text={EXAMPLE} />
         </Fragment>
         <Spacer size="2em" />
-        <Fragment title="Themeing">
+        <Fragment title="Theme">
           <Paragraph>
             In order to theme your application, you must wrap it with an App component. You can describe your application's primary color using
             the 'primaryColor' prop of the App component. You can also describe the secondary and foreground colors for your application using

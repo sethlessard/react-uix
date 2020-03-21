@@ -21,7 +21,7 @@ import {
   Paragraph,
   Text,
   Spacer
-} from "react-uix";
+} from "@react-uix/web";
 import { Example } from "../component";
 
 const DropdownButtonFragment = (props) => {
@@ -38,7 +38,7 @@ const DropdownButtonFragment = (props) => {
         </Example>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={`import { DropdownButton } from "react-uix";`} />
+        <Code foregroundColor="#fff" text={`import { DropdownButton } from "@react-uix/web";`} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Table>
@@ -91,7 +91,7 @@ const DropdownButtonFragment = (props) => {
         </Paragraph>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={`import { DropdownIcon } from "react-uix";`} />
+        <Code foregroundColor="#fff" text={`import { DropdownIcon } from "@react-uix/web";`} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Paragraph>
@@ -138,7 +138,7 @@ const DropdownButtonFragment = (props) => {
         </Paragraph>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={`import { DropdownItem } from "react-uix";`} />
+        <Code foregroundColor="#fff" text={`import { DropdownItem } from "@react-uix/web";`} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Paragraph>
@@ -185,7 +185,7 @@ const DropdownButtonFragment = (props) => {
         </Paragraph>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={`import { DropdownText } from "react-uix";`} />
+        <Code foregroundColor="#fff" text={`import { DropdownText } from "@react-uix/web";`} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Paragraph>

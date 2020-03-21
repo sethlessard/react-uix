@@ -1,6 +1,6 @@
 import React from 'react';
 import Fragment from './Fragment';
-import { PaddedHeading, Paragraph, Table, TableHeader, TableBody, TableRow, HeaderCell, TableData, Code, ScrollToTop } from 'react-uix';
+import { PaddedHeading, Paragraph, Table, TableHeader, TableBody, TableRow, HeaderCell, TableData, Code, ScrollToTop } from '@react-uix/web';
 
 const AppFragment = () => {
   return (
@@ -11,7 +11,7 @@ const AppFragment = () => {
             The App component is used to provide initial layout as well as global themeing for your application.
           </Paragraph>
           <PaddedHeading h={6}>Usage</PaddedHeading>
-          <Code foregroundColor="#fff" text={`import { App } from "react-uix";`} />
+          <Code foregroundColor="#fff" text={`import { App } from "@react-uix/web";`} />
           <PaddedHeading h={6}>Props</PaddedHeading>
           <Table>
             <TableHeader>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Fragment from "./Fragment";
-import { PaddedHeading, Table, TableHeader, TableBody, TableRow, HeaderCell, TableData, Paragraph, Code, List, ListItem, Text } from "react-uix";
+import { PaddedHeading, Table, TableHeader, TableBody, TableRow, HeaderCell, TableData, Paragraph, Code, List, ListItem, Text } from "@react-uix/web";
 import { Example } from "../component";
 
 const TableFragment = (props) => {
@@ -33,7 +33,7 @@ const TableFragment = (props) => {
       </Example>
 
       <PaddedHeading h={6}>Usage</PaddedHeading>
-      <Code foregroundColor="#fff" text={`import { Table } from "react-uix";`} />
+      <Code foregroundColor="#fff" text={`import { Table } from "@react-uix/web";`} />
 
       <PaddedHeading h={6}>Props</PaddedHeading>
       <Table>

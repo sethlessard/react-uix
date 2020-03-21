@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { DropShadow, Heading, Paper, Row } from 'react-uix';
+import { DropShadow, Heading, Paper, Row } from '@react-uix/web';
 import styled from "styled-components";
 
 const Wrapper = styled.div`

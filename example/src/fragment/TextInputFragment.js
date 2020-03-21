@@ -1,6 +1,6 @@
 import React from "react";
 import Fragment from "./Fragment";
-import { Paragraph, TextInput, PaddedHeading, Table, TableBody, TableHeader, TableRow, HeaderCell, Code } from "react-uix";
+import { Paragraph, TextInput, PaddedHeading, Table, TableBody, TableHeader, TableRow, HeaderCell, Code } from "@react-uix/web";
 import { Example } from "../component";
 
 const TextInputFragment = ({ style: compStyle }) => {
@@ -17,7 +17,7 @@ const TextInputFragment = ({ style: compStyle }) => {
       </Example>
 
       <PaddedHeading h={6}>Usage</PaddedHeading>
-      <Code foregroundColor="#fff" text={`import { TextInput } from "react-uix";`} />
+      <Code foregroundColor="#fff" text={`import { TextInput } from "@react-uix/web";`} />
 
       <PaddedHeading h={6}>Props</PaddedHeading>
       <Table>

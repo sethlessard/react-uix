@@ -1,7 +1,7 @@
 import React from 'react';
 import Fragment from './Fragment';
 import { Example } from '../component';
-import { Paragraph, Card, Code, PaddedHeading, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData, ScrollToTop, Text, Grid } from 'react-uix';
+import { Paragraph, Card, Code, PaddedHeading, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData, ScrollToTop, Text, Grid } from '@react-uix/web';
 
 const EXAMPLE = `
 
@@ -101,7 +101,7 @@ const CardFragment = () => {
         <Code text={EXAMPLE} />
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={`import { Card } from "react-uix";`} />
+        <Code foregroundColor="#fff" text={`import { Card } from "@react-uix/web";`} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Table>

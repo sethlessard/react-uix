@@ -9,7 +9,7 @@
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
     "react-scripts": "file:../node_modules/react-scripts",
-    "react-uix": "file:..",
+    "@react-uix/web": "file:..",
     "styled-components": "file:../node_modules/styled-components",
     "uuid": "7.0.2"
   },

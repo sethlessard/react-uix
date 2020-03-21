@@ -1,6 +1,6 @@
 import React from 'react';
 import Fragment from './Fragment';
-import { PaddedHeading, Paragraph, Icon, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData } from 'react-uix';
+import { PaddedHeading, Paragraph, Icon, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData } from '@react-uix/web';
 import { Example } from "../component";
 
 const IconFragment = () => {
@@ -17,7 +17,7 @@ const IconFragment = () => {
       </Example>
 
       <PaddedHeading h={6}>Usage</PaddedHeading>
-      <Code foregroundColor="#fff" text={`import { Icon } from "react-uix";`} />
+      <Code foregroundColor="#fff" text={`import { Icon } from "@react-uix/web";`} />
 
       <PaddedHeading h={6}>Props</PaddedHeading>
       <Table>

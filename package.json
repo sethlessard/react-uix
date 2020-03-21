@@ -1,6 +1,6 @@
 {
-  "name": "react-uix",
-  "version": "0.1.9",
+  "name": "@react-uix/web",
+  "version": "0.0.1",
   "description": "React UiX components",
   "author": "sethlessard",
   "license": "MIT",
@@ -74,6 +74,7 @@
   "files": [
     "dist"
   ],
+  "private": false,
   "keywords": [
     "React",
     "ReactJS",

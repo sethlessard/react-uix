@@ -2,7 +2,7 @@ import React from 'react';
 
 import Fragment from "./Fragment";
 import { Example } from "../component";
-import { Checkbox, PaddedHeading, Paragraph, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData, ScrollToTop } from "react-uix";
+import { Checkbox, PaddedHeading, Paragraph, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData, ScrollToTop } from "@react-uix/web";
 
 const onChecked = (checked) => {
   alert(`onChecked! Value: ${checked}`);
@@ -21,7 +21,7 @@ const CheckboxFragment = (props) => {
         </Example>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={`import { Checkbox } from "react-uix";`} />
+        <Code foregroundColor="#fff" text={`import { Checkbox } from "@react-uix/web";`} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Table>

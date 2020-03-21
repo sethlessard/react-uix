@@ -1,6 +1,6 @@
 import React from 'react';
 import Fragment from './Fragment';
-import { PaddedHeading, Paragraph, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData } from 'react-uix';
+import { PaddedHeading, Paragraph, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData } from '@react-uix/web';
 
 const ToastFragment = (props) => {
   return (
@@ -10,7 +10,7 @@ const ToastFragment = (props) => {
       </Paragraph>
 
       <PaddedHeading h={6}>Usage</PaddedHeading>
-      <Code foregroundColor="#fff" text={`import { Toast } from "react-uix";`} />
+      <Code foregroundColor="#fff" text={`import { Toast } from "@react-uix/web";`} />
 
       <PaddedHeading h={6}>Props</PaddedHeading>
       <Table>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Fragment from './Fragment';
-import { PaddedHeading, Paragraph, Button, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData, ScrollToTop } from 'react-uix';
+import { PaddedHeading, Paragraph, Button, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData, ScrollToTop } from '@react-uix/web';
 import { Example } from '../component';
 
 const ButtonFragment = () => {
@@ -21,7 +21,7 @@ const ButtonFragment = () => {
         </Example>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={`import { Button } from "react-uix";`} />
+        <Code foregroundColor="#fff" text={`import { Button } from "@react-uix/web";`} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Table>

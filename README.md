@@ -2,12 +2,12 @@
 
 > React UiX components
 
-[![Build Status](https://travis-ci.com/sethlessard/react-uix.svg?branch=master)](https://travis-ci.com/sethlessard/react-uix) [![NPM](https://img.shields.io/npm/v/react-uix.svg)](https://www.npmjs.com/package/react-uix) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Build Status](https://travis-ci.com/sethlessard/react-uix.svg?branch=master)](https://travis-ci.com/sethlessard/react-uix) [![NPM](https://img.shields.io/npm/v/@react-uix/web.svg)](https://www.npmjs.com/package/@react-uix/web) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save react-uix
+npm install --save @react-uix
 ```
 
 ## Usage

@@ -25,7 +25,7 @@ import {
   BottomNavItem,
   BottomNavItemIcon,
   BottomNavItemText
-} from "react-uix";
+} from "@react-uix/web";
 
 // import {
 //   LDSRipple

@@ -1,7 +1,7 @@
 import React from 'react';
 import Fragment from './Fragment';
 import { Link } from "react-router-dom";
-import { PaddedHeading, BottomNavigation, BottomNavItem, Spacer, Code, Paragraph, Table, TableHeader, TableData, TableRow, HeaderCell, TableBody, List, ListItem, ScrollToTop, Text } from 'react-uix';
+import { PaddedHeading, BottomNavigation, BottomNavItem, Spacer, Code, Paragraph, Table, TableHeader, TableData, TableRow, HeaderCell, TableBody, List, ListItem, ScrollToTop, Text } from '@react-uix/web';
 import { Example } from '../component';
 
 const BottomNavigationFragment = (props) => {
@@ -31,7 +31,7 @@ const BottomNavigationFragment = (props) => {
 
           <PaddedHeading h={6}>Usage</PaddedHeading>
           <Paragraph>
-            <Code foregroundColor="#fff" text={`import { BottomNavigation } from "react-uix";`} />
+            <Code foregroundColor="#fff" text={`import { BottomNavigation } from "@react-uix/web";`} />
           </Paragraph>
 
           <PaddedHeading h={6}>Props</PaddedHeading>
@@ -90,7 +90,7 @@ const BottomNavigationFragment = (props) => {
 
           <PaddedHeading h={6}>Usage</PaddedHeading>
           <Paragraph>
-            <Code foregroundColor="#fff" text={`import { BottomNavItem } from "react-uix";`} />
+            <Code foregroundColor="#fff" text={`import { BottomNavItem } from "@react-uix/web";`} />
           </Paragraph>
 
           <PaddedHeading h={6}>Props</PaddedHeading>
