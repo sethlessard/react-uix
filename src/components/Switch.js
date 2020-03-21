@@ -1,94 +1,92 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
+import { connect } from "react-redux";
+import uuid from "uuid/v4";
 
-const Wrapper = styled.label`
-  z-index: 0;
+import Spacer from "./Spacer";
+
+const mapStateToProps = (state) => ({
+  colorPrimary: state.ui.theme.colorPrimary
+});
+
+// adapted from: https://codeburst.io/pure-css3-input-as-the-ios-checkbox-8b6347d5cefb
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const LabelWrapper = styled.div`
+`;
+const Label = styled.label`
+  font-family: 'Roboto', sans-serif;
+  display: inline-block;
+`;
+const SwitchWrapper = styled.div`
+`;
+const InputSwitch = styled.input`
   position: relative;
-  display: inline-block;
-  color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.87);
-  font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
-  font-size: 16px;
-  line-height: 1.5;
-`;
-const Track = styled.div`
-  float: right;
-  display: inline-block;
-  margin: 5px 0 5px 10px;
-  border-radius: 7px;
-  width: 36px;
-  height: 14px;
-  background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
-  vertical-align: top;
-  transition: background-color 0.2s, opacity 0.2s;
-`;
-const Sw = styled.input`
-  appearance: none;
-  -moz-appearance: none;
   -webkit-appearance: none;
-  z-index: -1;
-  position: absolute;
-  right: 6px;
-  top: -8px;
-  display: block;
-  margin: 0;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+  appearane: none;
   outline: none;
-  opacity: 0;
-  transform: scale(1);
-  pointer-events: none;
-  transition: opacity 0.3s 0.1s, transform 0.2s 0.1s;
+  width: 50px;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid ${props => props.colorPrimary};
+  border-radius: 50px;
+  box-shadow: inset -20px 0 0 0 #fff;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    background: transparent;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    box-shadow: 2px 4px 6px rgba(0,0,0,0.2);
+  }
 
   &:checked {
-    right: -10px;
-    background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+    box-shadow: inset 20px 0 0 0 ${props => props.colorPrimary};
   }
 
-  &:hover { opacity: 0.04; }
-  &:focus { opacity: 0.12; }
-  &:active {
-    opacity: 1;
-    transform: scale(0);
-    transition: transform 0s, opacity 0s;
+  &:checked:after {
+    transition: left 0.2s ease-out;
+    left: 20px;
+    box-shadow: -2px 4px 3px rgba(0, 0, 0, 0.05);
   }
 `;
-const Span = styled.span`
-  display: inline-block;
-  width: 100%;
-  cursor: pointer;
-`;
-const Thumb = styled.div`
-  position: absolute;
-  top: 2px;
-  right: 16px;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  transition: background-color 0.2s, transform 0.2s;
-`;
 
-const Switch = ({ children, style: compStyle }) => {
+const Switch = ({ children, colorPrimary, onChecked, style: compStyle }) => {
   const style = {
     Switch: {}
   };
   Object.assign(style.Switch, compStyle);
+  const id = uuid();
   return (
     <Wrapper style={style.Switch}>
-      <Track />
-      <Sw type="checkbox" id={`lb-${children}`} />
-      <Span>{children}</Span>
-      <Thumb />
+      { children &&
+        <LabelWrapper>
+          <Label htmlFor={`switch-${id}`}>{ children }</Label>
+          <Spacer horizontal={true} size="1em" />
+        </LabelWrapper>
+      }
+      <SwitchWrapper>
+        <InputSwitch
+          colorPrimary={colorPrimary}
+          id={`switch-${id}`}
+          type="checkbox"
+          onChange={(event) => onChecked && onChecked(event.target.checked)}
+        />
+      </SwitchWrapper>
     </Wrapper>
   );
 };
 
 Switch.propTypes = {
-  children: PropTypes.string
+  children: PropTypes.string,
+  onChecked: PropTypes.func
 };
 
-export default Switch;
+export default connect(mapStateToProps)(Switch);

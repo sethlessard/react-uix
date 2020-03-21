@@ -42,6 +42,13 @@ const CheckboxFragment = (props) => {
               <TableData label="Default" />
               <TableData label="Description">The text to display alongside the Checkbox.</TableData>
             </TableRow>
+            <TableRow>
+              <TableData label="Name">onChecked</TableData>
+              <TableData label="Type">(checked: boolean) => void</TableData>
+              <TableData label="Required">No</TableData>
+              <TableData label="Default" />
+              <TableData label="Description">The function handler that is called when the checkbox is checked.</TableData>
+            </TableRow>
           </TableBody>
         </Table>
       </Fragment>
