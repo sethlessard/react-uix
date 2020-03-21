@@ -5,17 +5,14 @@ import styled from "styled-components";
 
 import IconButton from "../IconButton";
 
-import { toggleNavigationDrawer, updateNavDrawerClosingFromToggleButton } from "../../redux/actions/ui";
+import { toggleNavigationDrawer } from "../../redux/actions/ui";
 
 const mapStateToProps = (state) => ({
   colorPrimary: state.ui.theme.colorPrimary
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  toggleNavigationDrawer: () => {
-    dispatch(updateNavDrawerClosingFromToggleButton(true))
-    dispatch(toggleNavigationDrawer())
-  }
+  toggleNavigationDrawer: () => dispatch(toggleNavigationDrawer())
 });
 
 const Wrapper = styled.div`

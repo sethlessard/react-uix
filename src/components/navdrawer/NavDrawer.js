@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import { updateNavDrawerDefined, updateNavDrawerOpen, updateNavDrawerWidth, updateNavDrawerClosingFromToggleButton } from '../../redux/actions/ui';
+import { updateNavDrawerDefined, updateNavDrawerOpen, updateNavDrawerWidth } from '../../redux/actions/ui';
 import { connect } from 'react-redux';
 import styled from "styled-components";
 
@@ -11,13 +11,11 @@ const mapStateToProps = (state, ownProps) => {
     bottomNavDefined: state.ui.bottomNavDefined,
     bottomNavHeight: state.ui.bottomNavHeight,
     navDrawerOpen: state.ui.navDrawerOpen,
-    navDrawerClosingFromToggleButton: state.ui.navDrawerClosingFromToggleButton,
     width: ownProps.width || 240
   };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  updateNavDrawerClosingFromToggleButton: (toggle) => dispatch(updateNavDrawerClosingFromToggleButton(toggle)),
   updateNavDrawerDefined: (defined) => dispatch(updateNavDrawerDefined(defined)),
   updateNavDrawerOpen: (open) => dispatch(updateNavDrawerOpen(open)),
   updateNavDrawerWidth: (width) => dispatch(updateNavDrawerWidth(width))
@@ -49,10 +47,6 @@ class NavDrawer extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.ref = React.createRef();
-
-    // binding
-    this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
   componentDidMount() {
@@ -63,32 +57,9 @@ class NavDrawer extends Component {
       updateNavDrawerWidth,
       width
     } = this.props;
-    window.addEventListener("mousedown", this.handleClickOutside);
-    window.addEventListener("touchend", this.handleClickOutside);
     updateNavDrawerDefined(true);
     updateNavDrawerOpen(openByDefault);
     updateNavDrawerWidth(width);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("mousedown", this.handleClickOutside);
-    window.removeEventListener("touchEn", this.handleClickOutside);
-  }
-
-  handleClickOutside(event) {
-    const { navDrawerClosingFromToggleButton, navDrawerOpen, updateNavDrawerClosingFromToggleButton, updateNavDrawerOpen } = this.props;
-    if (navDrawerOpen &&
-      event &&
-      this.ref &&
-      !navDrawerClosingFromToggleButton &&
-      !this.ref.current.contains(event.target)) {
-      updateNavDrawerOpen(false);
-      updateNavDrawerClosingFromToggleButton(false);
-    }
-  }
-
-  setRef(ref) {
-    this.ref = ref;
   }
 
   render() {
@@ -105,7 +76,6 @@ class NavDrawer extends Component {
         bottomNavHeight={bottomNavHeight}
         style={style.navDrawer}
         open={navDrawerOpen}
-        ref={this.ref}
         width={width}
       >
         {children}

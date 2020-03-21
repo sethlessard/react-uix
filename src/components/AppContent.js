@@ -2,19 +2,21 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { updateAppContentScrollableComponent } from '../redux/actions/ui';
+import { updateAppContentScrollableComponent, updateNavDrawerOpen } from '../redux/actions/ui';
 
 const mapStateToProps = (state, ownProps) => {
   return {
     appbarDefined: state.ui.appbarDefined,
     appbarHeight: state.ui.appbarHeight,
     bottomNavDefined: state.ui.bottomNavDefined,
-    bottomNavHeight: state.ui.bottomNavHeight
+    bottomNavHeight: state.ui.bottomNavHeight,
+    navDrawerOpen: state.ui.navDrawerOpen
   };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  updateAppContentScrollableComponent: (ref) => dispatch(updateAppContentScrollableComponent(ref))
+  updateAppContentScrollableComponent: (ref) => dispatch(updateAppContentScrollableComponent(ref)),
+  updateNavDrawerOpen: (value) => dispatch(updateNavDrawerOpen(value))
 });
 
 const Wrapper = styled.div`
@@ -51,7 +53,10 @@ class AppContent extends Component {
     super(props);
     this.state = {};
     this.refScrollableContent = React.createRef();
+    this.refWrapper = React.createRef();
+
     this.calcHeight = this.calcHeight.bind(this);
+    this.handleClickInside = this.handleClickInside.bind(this);
   }
 
   calcHeight() {
@@ -73,6 +78,13 @@ class AppContent extends Component {
     updateAppContentScrollableComponent(this.refScrollableContent);
   }
 
+  handleClickInside(_) {
+    const { navDrawerOpen, updateNavDrawerOpen } = this.props;
+
+    // if the navigation drawer is open, close it
+    if (navDrawerOpen) { updateNavDrawerOpen(false); }
+  }
+
   render() {
     const { appbarDefined, appbarHeight } = this.props;
     const height = this.calcHeight();
@@ -85,6 +97,7 @@ class AppContent extends Component {
         appbarDefined={appbarDefined}
         appbarHeight={appbarHeight}
         height={height}
+        onClick={this.handleClickInside}
         style={style.appContent}
       >
         <Relative height={height} style={style.relative}>
