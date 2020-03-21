@@ -14,9 +14,6 @@ const ButtonFragment = () => {
           <Button>Button</Button>
         </Example>
         <Example>
-          <Button>Another Button</Button>
-        </Example>
-        <Example>
           <Button backgroundColor="#000000">Dark Button</Button>
         </Example>
 
