@@ -21,6 +21,7 @@ const CB = styled.input`
 
   margin: 0 1em 0 0;
   cursor: pointer;
+  outline: none;
 
   &:focus {
     outline: none;
@@ -49,13 +50,11 @@ const CB = styled.input`
     border-right-style: none;
   }
 
-  &:checked {
-    background-color: unset;
-  }
+  background-color: unset;
 `;
 const Message = styled.span`
   font-size: .8rem;
-  margin: 0 0 0 1em;
+  margin: 0 0 0 .25em;
   font-family: 'Roboto', sans-serif;
 `;
 
@@ -68,13 +67,19 @@ class Checkbox extends Component {
   }
 
   render() {
-    const { children, color } = this.props;
+    const { children, color, onChecked } = this.props;
     const style = {
       checkbox: {}
     };
     return (
       <Wrapper style={style.checkbox}>
-        <CB color={color} type="checkbox" style={style.input} placeholder="checkbox" />
+        <CB
+          color={color}
+          type="checkbox"
+          style={style.input}
+          placeholder="checkbox"
+          onChange={(event) => onChecked && onChecked(event.target.checked)}
+        />
         {children &&
           <Message style={style.span}>{children}</Message>
         }
@@ -85,7 +90,8 @@ class Checkbox extends Component {
 
 Checkbox.propTypes = {
   children: PropTypes.string,
-  color: PropTypes.string
+  color: PropTypes.string,
+  onChecked: PropTypes.func
 };
 
 export default connect(mapStateToProps)(Checkbox);

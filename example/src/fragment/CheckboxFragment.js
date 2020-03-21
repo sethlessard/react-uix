@@ -4,6 +4,10 @@ import Fragment from "./Fragment";
 import { Example } from "../component";
 import { Checkbox, PaddedHeading, Paragraph, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData, ScrollToTop } from "react-uix";
 
+const onChecked = (checked) => {
+  alert(`onChecked! Value: ${checked}`);
+}
+
 const CheckboxFragment = (props) => {
   return (
     <ScrollToTop>
@@ -12,8 +16,8 @@ const CheckboxFragment = (props) => {
           The Checkbox component is used to implement a checkbox.
         </Paragraph>
         <Example>
-          <Checkbox>Checkbox</Checkbox>
-          <Checkbox>Another checkbox</Checkbox>
+          <Checkbox onChecked={onChecked}>Checkbox</Checkbox>
+          <Checkbox onChecked={onChecked}>Another checkbox</Checkbox>
         </Example>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
