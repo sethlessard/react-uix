@@ -87,7 +87,7 @@ const NSLink = styled(Link)`
 `;
 
 const theme = {
-  colorPrimary: "#16a085",
+  colorPrimary: "#e74c3c",
   colorSecondary: "#000000",
   text: {
     colorOnLight: "#111",
