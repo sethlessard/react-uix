@@ -31,7 +31,7 @@ const TextInput = ({ onChange, placeholder, primaryColor, style: compStyle }) =>
   Object.assign(style.wrapper, compStyle);
   // if onChange is not defined, give it a default handler.
   if (!onChange) onChange = (_) => {};
-  if (compStyle.width) style.textInput.width = compStyle.width;
+  if (compStyle && compStyle.width) style.textInput.width = compStyle.width;
   return (
     <Wrapper style={style.wrapper}>
       <Input primaryColor={primaryColor} placeholder={placeholder} onChange={(event) => onChange(event.target.value)} style={style.textInput} type="text" />
@@ -41,7 +41,8 @@ const TextInput = ({ onChange, placeholder, primaryColor, style: compStyle }) =>
 
 TextInput.propTypes = {
   onChange: PropTypes.func,
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
 export default connect(mapStateToProps)(TextInput);
