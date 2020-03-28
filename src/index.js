@@ -76,6 +76,7 @@ import AppContent from "./components/AppContent";
 import Button from "./components/Button";
 import Checkbox from "./components/Checkbox";
 import Code from "./components/Code";
+import ColorPicker from "./components/ColorPicker";
 import DropShadow from "./components/DropShadow";
 import FlexBox from "./components/FlexBox";
 import Heading from "./components/Heading";
@@ -160,6 +161,7 @@ export {
   AppContent,
   Button,
   Checkbox,
+  ColorPicker,
   FlexBox,
   Code,
   DropShadow,

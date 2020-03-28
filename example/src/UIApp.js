@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { HashRouter as Router, Route, Link, Switch } from "react-router-dom";
 import styled from "styled-components";
@@ -55,9 +56,10 @@ import {
   SwitchFragment,
   TextFragment,
   TextAreaFragment,
-  ToastFragment
+  ToastFragment,
+  TextInputFragment,
+  ColorPickerFragment
 } from "./fragment";
-import TextInputFragment from './fragment/TextInputFragment';
 
 // const COLOR_PRIMARY = "#6c5ce7";
 // const COLOR_PRIMARY = "#16a085";
@@ -177,6 +179,7 @@ class UIApp extends Component {
               <NavGroup>
                 <NavSubheader>Inputs</NavSubheader>
                 <NSLink color={theme.text.colorOnLight} to="/component/Checkbox"><NavItem><NavItemText>Checkbox</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/ColorPicker"><NavItem><NavItemText>Color Picker</NavItemText></NavItem></NSLink>
                 <NSLink color={theme.text.colorOnLight} to="/component/TextInput"><NavItem><NavItemText>Text Input</NavItemText></NavItem></NSLink>
                 <NSLink color={theme.text.colorOnLight} to="/component/Switch"><NavItem><NavItemText>Switch</NavItemText></NavItem></NSLink>
               </NavGroup>
@@ -228,6 +231,7 @@ class UIApp extends Component {
               <Route path="/component/Icon" component={IconFragment} />
 
               <Route path="/component/Checkbox" component={CheckboxFragment} />
+              <Route path="/component/ColorPicker" component={ColorPickerFragment} />
               <Route path="/component/TextInput" component={TextInputFragment} />
               <Route path="/component/Switch" component={SwitchFragment} />
 
