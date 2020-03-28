@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
 import { connect } from "react-redux";
@@ -22,6 +22,7 @@ const Label = styled.label`
   display: inline-block;
 `;
 const SwitchWrapper = styled.div`
+  position: relative;
 `;
 const InputSwitch = styled.input`
   position: relative;
@@ -33,57 +34,69 @@ const InputSwitch = styled.input`
   background-color: #fff;
   border: 1px solid ${props => props.colorPrimary};
   border-radius: 50px;
+  transition: box-shadow 0.3s ease-in-out;
   box-shadow: inset -20px 0 0 0 #fff;
-
-  &:after {
-    content: "";
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    background: transparent;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    box-shadow: 2px 4px 6px rgba(0,0,0,0.2);
-    transition: left 0.2s ease-in-out;
-  }
 
   &:checked {
     box-shadow: inset 20px 0 0 0 ${props => props.colorPrimary};
   }
+`;
+const Knob = styled.div`
+  position: absolute;
+  transition: left 0.3s ease-in-out;
+  display: inline-block;
+  top: 5px;
+  left: ${props => (props.on === "true") ? "25px" : "5px"};
+  background: transparent;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  box-shadow: ${props => (props.on === "true") ? "-2px 4px 3px rgba(0,0,0,0.05)" : "2px 4px 6px rgba(0,0,0,0.2)"};
 
-  &:checked:after {
-    left: 20px;
-    box-shadow: -2px 4px 3px rgba(0, 0, 0, 0.05);
-    transition: left 0.2s ease-in-out;
-  }
+  pointer-events: none;
 `;
 
-const Switch = ({ children, colorPrimary, onChecked, style: compStyle }) => {
-  const style = {
-    Switch: {}
-  };
-  Object.assign(style.Switch, compStyle);
-  const id = uuid();
-  return (
-    <Wrapper style={style.Switch}>
-      { children &&
-        <LabelWrapper>
-          <Label htmlFor={`switch-${id}`}>{ children }</Label>
-          <Spacer horizontal={true} size="1em" />
-        </LabelWrapper>
-      }
-      <SwitchWrapper>
-        <InputSwitch
-          colorPrimary={colorPrimary}
-          id={`switch-${id}`}
-          type="checkbox"
-          onChange={(event) => onChecked && onChecked(event.target.checked)}
-        />
-      </SwitchWrapper>
-    </Wrapper>
-  );
-};
+class Switch extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      checked: false
+    }
+  }
+
+  render() {
+    const { children, colorPrimary, onChecked, style: compStyle } = this.props;
+    const style = {
+      Switch: {}
+    };
+    Object.assign(style.Switch, compStyle);
+    const id = uuid();
+    return (
+      <Wrapper style={style.Switch}>
+        { children &&
+          <LabelWrapper>
+            <Label htmlFor={`switch-${id}`}>{ children }</Label>
+            <Spacer horizontal={true} size="1em" />
+          </LabelWrapper>
+        }
+        <SwitchWrapper>
+          <InputSwitch
+            colorPrimary={colorPrimary}
+            id={`switch-${id}`}
+            type="checkbox"
+            onChange={(event) => {
+              const checked = event.target.checked;
+              this.setState({ checked });
+              onChecked && onChecked(checked);
+            }}
+          />
+          <Knob on={this.state.checked.toString()} />
+        </SwitchWrapper>
+      </Wrapper>
+    );
+  }
+}
 
 Switch.propTypes = {
   children: PropTypes.string,
