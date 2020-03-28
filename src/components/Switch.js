@@ -45,6 +45,7 @@ const InputSwitch = styled.input`
     height: 26px;
     border-radius: 50%;
     box-shadow: 2px 4px 6px rgba(0,0,0,0.2);
+    transition: left 0.2s ease-in-out;
   }
 
   &:checked {
@@ -52,9 +53,9 @@ const InputSwitch = styled.input`
   }
 
   &:checked:after {
-    transition: left 0.2s ease-out;
     left: 20px;
     box-shadow: -2px 4px 3px rgba(0, 0, 0, 0.05);
+    transition: left 0.2s ease-in-out;
   }
 `;
 
