@@ -57,7 +57,6 @@ const Knob = styled.div`
 `;
 
 class Switch extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -74,12 +73,11 @@ class Switch extends Component {
     const id = uuid();
     return (
       <Wrapper style={style.Switch}>
-        { children &&
+        {children &&
           <LabelWrapper>
-            <Label htmlFor={`switch-${id}`}>{ children }</Label>
+            <Label htmlFor={`switch-${id}`}>{children}</Label>
             <Spacer horizontal={true} size="1em" />
-          </LabelWrapper>
-        }
+          </LabelWrapper>}
         <SwitchWrapper>
           <InputSwitch
             colorPrimary={colorPrimary}

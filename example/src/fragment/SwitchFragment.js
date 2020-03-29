@@ -4,6 +4,24 @@ import Fragment from "./Fragment";
 import { PaddedHeading, Code, Paragraph, Switch, Table, TableHeader, TableBody, TableRow, HeaderCell, TableData } from "@react-uix/web";
 import { Example } from "../component";
 
+const USAGE = `
+import { Switch } from "@react-uix/web";
+
+...
+
+/**
+ * Called when the switch is flipped.
+ * @param {boolean} checked whether or not the switch is checked.
+ */
+const onChecked = (checked) => {
+  alert(\`Is checked: \${checked}\`);
+};
+
+<Switch onChecked={onChecked}>
+  This is the Switch's label.
+</Switch>
+`;
+
 const SwitchFragment = ({ children, style: compStyle }) => {
   const style = {
     SwitchFragment: {}
@@ -18,7 +36,7 @@ const SwitchFragment = ({ children, style: compStyle }) => {
       </Example>
 
       <PaddedHeading h={6}>Usage</PaddedHeading>
-      <Code foregroundColor="#fff" text={`import { Switch } from "@react-uix/web";`} />
+      <Code foregroundColor="#fff" text={USAGE} />
 
       <PaddedHeading h={6}>Props</PaddedHeading>
       <Table>
