@@ -3,6 +3,26 @@ import Fragment from "./Fragment";
 import { Paragraph, TextInput, PaddedHeading, Table, TableBody, TableData, TableHeader, TableRow, HeaderCell, Code } from "@react-uix/web";
 import { Example } from "../component";
 
+const USAGE = `
+import { TextInput } from "@react-uix/web";
+
+...
+
+/**
+ * Called when the TextInput's value is changed.
+ * @param {string} value the value of the TextInput.
+ */
+const onChange = (value) => {
+  alert(value);
+};
+
+<TextInput
+  fontSize="1.25rem"
+  onChange={onChange}
+  placeholder="placeholder"
+/>
+`;
+
 const TextInputFragment = ({ style: compStyle }) => {
   const style = {
     TextInputFragment: {}
@@ -17,7 +37,7 @@ const TextInputFragment = ({ style: compStyle }) => {
       </Example>
 
       <PaddedHeading h={6}>Usage</PaddedHeading>
-      <Code foregroundColor="#fff" text={`import { TextInput } from "@react-uix/web";`} />
+      <Code foregroundColor="#fff" text={USAGE} />
 
       <PaddedHeading h={6}>Props</PaddedHeading>
       <Table>
@@ -31,6 +51,13 @@ const TextInputFragment = ({ style: compStyle }) => {
           </TableRow>
         </TableHeader>
         <TableBody>
+          <TableRow>
+            <TableData label="Name">fontSize</TableData>
+            <TableData label="Type">The font size.</TableData>
+            <TableData label="Required">No</TableData>
+            <TableData label="Default">1rem</TableData>
+            <TableData label="Description">The font size of the TextInput.</TableData>
+          </TableRow>
           <TableRow>
             <TableData label="Name">onChange</TableData>
             <TableData label="Type">(value: string) => void</TableData>
