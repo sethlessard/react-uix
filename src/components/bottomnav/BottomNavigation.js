@@ -23,8 +23,12 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const Wrapper = styled.div`
-  position: fixed;
-  bottom: 0;
+  ${props => (props.demo) ? `
+    position: relative;
+  ` : `
+    position: fixed;
+    bottom: 0;
+  `}
   width: 100%;
   z-index: 2;
   height: ${props => props.height}px;
@@ -52,12 +56,7 @@ class BottomNavigation extends Component {
     const { demo, height = 62, mobileOnly, updateBottomNavDefined, updateBottomNavHeight, windowWidth } = this.props;
 
     if (!demo) {
-      if (mobileOnly) {
-        if (windowWidth <= sizes.tablet) {
-          updateBottomNavDefined(true);
-          updateBottomNavHeight(height);
-        }
-      } else {
+      if ((mobileOnly && (windowWidth <= sizes.tablet)) || !mobileOnly) {
         updateBottomNavDefined(true);
         updateBottomNavHeight(height);
       }
@@ -65,24 +64,22 @@ class BottomNavigation extends Component {
   }
 
   componentDidUpdate() {
-    const { mobileOnly, windowWidth, updateBottomNavDefined, updateBottomNavHeight } = this.props;
+    const { demo, mobileOnly, windowWidth, updateBottomNavDefined, updateBottomNavHeight } = this.props;
 
-    if (mobileOnly) {
-      if (windowWidth > sizes.tablet) {
-        // no longer displaying the Bottom Nav
-        updateBottomNavDefined(false);
-        updateBottomNavHeight(0);
-      }
+    if (!demo && (mobileOnly && windowWidth > sizes.tablet)) {
+      // no longer displaying the Bottom Nav
+      updateBottomNavDefined(false);
+      updateBottomNavHeight(0);
     }
   }
 
   render() {
-    const { children, backgroundColor, foregroundColor, height = 62, mobileOnly, windowWidth } = this.props;
+    const { backgroundColor, children, demo, foregroundColor, height = 62, mobileOnly, windowWidth } = this.props;
     const style = {
       bottomNavigation: {}
     };
 
-    if (mobileOnly) {
+    if (!demo && mobileOnly) {
       if (windowWidth > sizes.tablet) {
         return <div style={{ diplay: "none" }} />;
       }
@@ -90,6 +87,7 @@ class BottomNavigation extends Component {
     return (
       <Wrapper
         backgroundColor={backgroundColor}
+        demo={demo}
         height={height}
         style={style.bottomNavigation}
       >

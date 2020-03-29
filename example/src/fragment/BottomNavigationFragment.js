@@ -1,7 +1,7 @@
 import React from 'react';
 import Fragment from './Fragment';
 import { Link } from "react-router-dom";
-import { PaddedHeading, BottomNavigation, BottomNavItem, Spacer, Code, Paragraph, Table, TableHeader, TableData, TableRow, HeaderCell, TableBody, List, ListItem, ScrollToTop, Text, Page } from '@react-uix/web';
+import { PaddedHeading, BottomNavigation, BottomNavItem, Spacer, Code, Paragraph, Table, TableHeader, TableData, TableRow, HeaderCell, TableBody, List, ListItem, ScrollToTop, Text, Page, BottomNavItemIcon, BottomNavItemText } from '@react-uix/web';
 import { Example } from '../component';
 
 const BottomNavigationFragment = (props) => {
@@ -12,18 +12,36 @@ const BottomNavigationFragment = (props) => {
           <Paragraph>The BottomNavigation component is used to implement a bottom navagation functionality within an app.</Paragraph>
           <Example>
             <BottomNavigation demo={true}>
-              <BottomNavItem icon="home">Home</BottomNavItem>
-              <BottomNavItem icon="account_circle">Account</BottomNavItem>
-              <BottomNavItem icon="settings">Settings</BottomNavItem>
+              <BottomNavItem>
+                <BottomNavItemIcon>home</BottomNavItemIcon>
+                <BottomNavItemText>Home</BottomNavItemText>
+              </BottomNavItem>
+              <BottomNavItem>
+                <BottomNavItemIcon>account_circle</BottomNavItemIcon>
+                <BottomNavItemText>Account</BottomNavItemText>
+              </BottomNavItem>
+              <BottomNavItem>
+                <BottomNavItemIcon>settings</BottomNavItemIcon>
+                <BottomNavItemText>Settings</BottomNavItemText>
+              </BottomNavItem>
             </BottomNavigation>
           </Example>
 
           <Paragraph>The BottomNavigation component can be styled with the backgroundColor and color properties.</Paragraph>
           <Example>
             <BottomNavigation backgroundColor="#ffffff" demo={true}>
-              <BottomNavItem color="#000000" icon="home">Home</BottomNavItem>
-              <BottomNavItem color="#000000" icon="account_circle">Account</BottomNavItem>
-              <BottomNavItem color="#000000" icon="settings">Settings</BottomNavItem>
+              <BottomNavItem foregroundColor="#000">
+                <BottomNavItemIcon color="#000">home</BottomNavItemIcon>
+                <BottomNavItemText>Home</BottomNavItemText>
+              </BottomNavItem>
+              <BottomNavItem foregroundColor="#000">
+                <BottomNavItemIcon color="#000">account_circle</BottomNavItemIcon>
+                <BottomNavItemText>Account</BottomNavItemText>
+              </BottomNavItem>
+              <BottomNavItem foregroundColor="#000">
+                <BottomNavItemIcon color="#000">settings</BottomNavItemIcon>
+                <BottomNavItemText>Settings</BottomNavItemText>
+              </BottomNavItem>
             </BottomNavigation>
           </Example>
 
