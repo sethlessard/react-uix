@@ -14,6 +14,7 @@ import IconButtonFragment from "./IconButtonFragment";
 import IconFragment from "./IconFragment";
 import InstallationFragment from "./InstallationFragment";
 import NavDrawerFragment from "./NavDrawerFragment";
+import PageFragment from "./PageFragment";
 import PaperFragment from "./PaperFragment";
 import ParagraphFragment from "./ParagraphFragment";
 import RowFragment from "./RowFragment";
@@ -42,6 +43,7 @@ export {
   IconFragment,
   InstallationFragment,
   NavDrawerFragment,
+  PageFragment,
   PaperFragment,
   ParagraphFragment,
   RowFragment,

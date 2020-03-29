@@ -1,6 +1,6 @@
 import React from 'react';
 import Fragment from './Fragment';
-import { Card, CardBody, Grid, Row, Text, Toolbar, ToolbarTitle, Spacer } from '@react-uix/web';
+import { Card, CardBody, Grid, Row, Text, Toolbar, ToolbarTitle, Spacer, Page } from '@react-uix/web';
 
 const generateItems = (numItems) => {
   const items = [];
@@ -12,7 +12,7 @@ const generateItems = (numItems) => {
 
 const GridFragment = () => {
   return (
-    <div>
+    <Page>
       <Fragment title="Grid" />
       <Spacer />
       <Row><Toolbar><ToolbarTitle>2 Columns</ToolbarTitle></Toolbar></Row>
@@ -58,7 +58,7 @@ const GridFragment = () => {
       <Row><Toolbar><ToolbarTitle>12 Columns</ToolbarTitle></Toolbar></Row>
       <Grid columns={12}>{generateItems(25)}</Grid>
       <Spacer size="2em" />
-    </div>
+    </Page>
   );
 };
 

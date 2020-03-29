@@ -1,17 +1,26 @@
-import React from 'react';
-import Fragment from './Fragment';
-import { PaddedHeading, Paragraph, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData, Page } from '@react-uix/web';
+import React from "react";
+import { Page, Paragraph, PaddedHeading, Code, Table, TableRow, TableHeader, TableBody, TableData, HeaderCell } from "@react-uix/web";
+import Fragment from "./Fragment";
 
-const ParagraphFragment = () => {
+const USAGE = `
+import { Page } from "@react-uix/web";
+
+...
+
+<Page>
+  ...
+</Page>
+`;
+
+const PageFragment = () => {
   return (
     <Page>
-      <Fragment title="Paragraph">
-        <Paragraph>
-          The Paragraph component is used to implement a Paragraph.
-        </Paragraph>
+      <Fragment title="Page">
+        <Paragraph>The Page component can be used to define a Page within an Application.</Paragraph>
+        <Paragraph>A Page object brings animations to the UI when the page is loaded/unloaded.</Paragraph>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={`import { Paragraph } from "@react-uix/web";`} />
+        <Code text={USAGE} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Table>
@@ -27,10 +36,10 @@ const ParagraphFragment = () => {
           <TableBody>
             <TableRow>
               <TableData label="Name">children</TableData>
-              <TableData label="Type">string</TableData>
+              <TableData label="Type">node</TableData>
               <TableData label="Required">No</TableData>
               <TableData label="Default" />
-              <TableData label="Description">The contents of the Paragraph.</TableData>
+              <TableData label="Description">The contents of the Page.</TableData>
             </TableRow>
           </TableBody>
         </Table>
@@ -39,4 +48,6 @@ const ParagraphFragment = () => {
   );
 };
 
-export default ParagraphFragment;
+PageFragment.propTypes = {};
+
+export default PageFragment;

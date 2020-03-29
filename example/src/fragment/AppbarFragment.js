@@ -20,7 +20,8 @@ import {
   PaddedHeading,
   ScrollToTop,
   Text,
-  Spacer
+  Spacer,
+  Page
 } from "@react-uix/web";
 
 import Fragment from './Fragment';
@@ -28,7 +29,7 @@ import { Example } from "../component";
 
 const AppbarFragment = (props) => {
   return (
-    <div>
+    <Page>
       <ScrollToTop>
         <Fragment title="Appbar">
           <Paragraph>The Appbar component is used to create an Application Bar.</Paragraph>
@@ -266,7 +267,7 @@ const AppbarFragment = (props) => {
           </List>
         </Fragment>
       </ScrollToTop>
-    </div>
+    </Page>
   );
 };
 

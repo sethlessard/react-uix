@@ -1,13 +1,13 @@
 import React from 'react';
 import Fragment from './Fragment';
-import { Code, Grid, Paragraph, ScrollToTop, Spacer } from '@react-uix/web';
+import { Code, Grid, Paragraph, ScrollToTop, Spacer, Page } from '@react-uix/web';
 
 const MATERIAL_ICON = `<link href="https://fonts.googleapis.com/ icon?family=Material+Icons" rel="stylesheet" />`;
 const ROBOTO = `<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">`;
 
 const InstallationFragment = () => {
   return (
-    <div>
+    <Page>
       <ScrollToTop>
         <Fragment title="Installation">
           <Paragraph>@react-uix/web is available as an <a href="https://www.npmjs.com/package/@react-uix/web" target="__blank">npm package</a>.</Paragraph>
@@ -33,7 +33,7 @@ const InstallationFragment = () => {
           <Code foregroundColor="#fff" text={ROBOTO} />
         </Fragment>
       </ScrollToTop>
-    </div>
+    </Page>
   );
 };
 

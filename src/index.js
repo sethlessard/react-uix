@@ -83,6 +83,7 @@ import Heading from "./components/Heading";
 import Icon from "./components/Icon";
 import IconButton from "./components/IconButton";
 import Image from "./components/Image";
+import Page from "./components/Page";
 import Paper from "./components/Paper";
 import PaddedHeading from "./components/PaddedHeading";
 import Paragraph from "./components/Paragraph";
@@ -169,6 +170,7 @@ export {
   Icon,
   IconButton,
   Image,
+  Page,
   Paper,
   PaddedHeading,
   Paragraph,

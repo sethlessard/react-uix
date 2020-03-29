@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paragraph, Code, ScrollToTop, Spacer } from '@react-uix/web';
+import { Paragraph, Code, ScrollToTop, Spacer, Page } from '@react-uix/web';
 import Fragment from './Fragment';
 
 const EXAMPLE = `
@@ -41,7 +41,7 @@ const theme = {
 
 const UsageFragment = () => {
   return (
-    <div>
+    <Page>
       <ScrollToTop>
         <Fragment title="Getting Started">
           <Code foregroundColor="#fff" text={`import { App } from "@react-uix/web";`} />
@@ -64,7 +64,7 @@ const UsageFragment = () => {
           </Paragraph>
         </Fragment>
       </ScrollToTop>
-    </div>
+    </Page>
   );
 };
 

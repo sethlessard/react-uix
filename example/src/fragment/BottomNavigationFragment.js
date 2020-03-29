@@ -1,12 +1,12 @@
 import React from 'react';
 import Fragment from './Fragment';
 import { Link } from "react-router-dom";
-import { PaddedHeading, BottomNavigation, BottomNavItem, Spacer, Code, Paragraph, Table, TableHeader, TableData, TableRow, HeaderCell, TableBody, List, ListItem, ScrollToTop, Text } from '@react-uix/web';
+import { PaddedHeading, BottomNavigation, BottomNavItem, Spacer, Code, Paragraph, Table, TableHeader, TableData, TableRow, HeaderCell, TableBody, List, ListItem, ScrollToTop, Text, Page } from '@react-uix/web';
 import { Example } from '../component';
 
 const BottomNavigationFragment = (props) => {
   return (
-    <div>
+    <Page>
       <ScrollToTop>
         <Fragment title="Bottom Navigation">
           <Paragraph>The BottomNavigation component is used to implement a bottom navagation functionality within an app.</Paragraph>
@@ -137,7 +137,7 @@ const BottomNavigationFragment = (props) => {
           </Table>
         </Fragment>
       </ScrollToTop>
-    </div>
+    </Page>
   );
 };
 

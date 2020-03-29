@@ -9,7 +9,8 @@ import {
   TableHeader,
   TableRow,
   HeaderCell,
-  Code
+  Code,
+  Page
 } from "@react-uix/web";
 
 import Example from "../component/Example";
@@ -29,7 +30,7 @@ const ColorPickerFragment = ({ style: compStyle }) => {
   };
   Object.assign(style.ColorPickerFragment, compStyle);
   return (
-    <div>
+    <Page>
       <Fragment title="Color Picker">
         <Paragraph>The color picker component can be used to pick colors.</Paragraph>
         <Example>
@@ -66,7 +67,7 @@ const ColorPickerFragment = ({ style: compStyle }) => {
           </TableBody>
         </Table>
       </Fragment>
-    </div>
+    </Page>
   );
 };
 

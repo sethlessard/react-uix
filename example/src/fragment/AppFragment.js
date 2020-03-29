@@ -1,10 +1,10 @@
 import React from 'react';
 import Fragment from './Fragment';
-import { PaddedHeading, Paragraph, Table, TableHeader, TableBody, TableRow, HeaderCell, TableData, Code, ScrollToTop } from '@react-uix/web';
+import { PaddedHeading, Paragraph, Table, TableHeader, TableBody, TableRow, HeaderCell, TableData, Code, ScrollToTop, Page } from '@react-uix/web';
 
 const AppFragment = () => {
   return (
-    <div>
+    <Page>
       <ScrollToTop>
         <Fragment title="App">
           <Paragraph>
@@ -42,7 +42,7 @@ const AppFragment = () => {
           </Table>
         </Fragment>
       </ScrollToTop>
-    </div>
+    </Page>
   );
 };
 

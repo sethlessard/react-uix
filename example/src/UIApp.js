@@ -58,7 +58,8 @@ import {
   TextAreaFragment,
   ToastFragment,
   TextInputFragment,
-  ColorPickerFragment
+  ColorPickerFragment,
+  PageFragment
 } from "./fragment";
 
 // const COLOR_PRIMARY = "#6c5ce7";
@@ -200,6 +201,7 @@ class UIApp extends Component {
               <NavGroup>
                 <NavSubheader>Surfaces</NavSubheader>
                 <NSLink color={theme.text.colorOnLight} to="/component/Card"><NavItem><NavItemText>Card</NavItemText></NavItem></NSLink>
+                <NSLink color={theme.text.colorOnLight} to="/component/Page"><NavItem><NavItemText>Page</NavItemText></NavItem></NSLink>
                 <NSLink color={theme.text.colorOnLight} to="/component/Paper"><NavItem><NavItemText>Paper</NavItemText></NavItem></NSLink>
               </NavGroup>
 
@@ -243,6 +245,7 @@ class UIApp extends Component {
               <Route path="/component/Table" component={TableFragment} />
 
               <Route path="/component/Card" component={CardFragment} />
+              <Route path="/component/Page" component={PageFragment} />
               <Route path="/component/Paper" component={PaperFragment} />
 
               <Route path="/component/Heading" component={HeadingFragment} />

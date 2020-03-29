@@ -20,13 +20,14 @@ import {
   ListItem,
   Paragraph,
   Text,
-  Spacer
+  Spacer,
+  Page
 } from "@react-uix/web";
 import { Example } from "../component";
 
 const DropdownButtonFragment = (props) => {
   return (
-    <div>
+    <Page>
       <Fragment title="Dropdown Button">
         <Example>
           <DropdownButton icon="more_vert">
@@ -211,7 +212,7 @@ const DropdownButtonFragment = (props) => {
           </Table>
         </Paragraph>
       </Fragment>
-    </div>
+    </Page>
   );
 };
 
