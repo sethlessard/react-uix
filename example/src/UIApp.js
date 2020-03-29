@@ -274,6 +274,12 @@ class UIApp extends Component {
                 <BottomNavItemText>Usage</BottomNavItemText>
               </BottomNavItem>
             </NSLink>
+            <NSLink to="/examples" color={theme.text.colorOnDark}>
+              <BottomNavItem>
+                <BottomNavItemIcon>code</BottomNavItemIcon>
+                <BottomNavItemText>Examples</BottomNavItemText>
+              </BottomNavItem>
+            </NSLink>
           </BottomNavigation>
         </Router>
       </App>
