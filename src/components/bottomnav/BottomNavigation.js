@@ -38,7 +38,7 @@ const Wrapper = styled.div`
 `;
 const Content = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   min-width: 300px;
   max-width: 920px;

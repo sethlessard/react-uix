@@ -1,7 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
-import Text from "../Text";
+const Wrapper = styled.div`
+
+`;
+const Text = styled.span`
+  font-family: "Roboto", sans-serif;
+`;
 
 const BottomNavItemText = ({ children, style: compStyle }) => {
   const style = {
@@ -9,9 +15,9 @@ const BottomNavItemText = ({ children, style: compStyle }) => {
   };
   Object.assign(style.BottomNavItemText, compStyle);
   return (
-    <div className="BottomNavItemText" style={style.BottomNavItemText}>
-      <Text>{ children }</Text>
-    </div>
+    <Wrapper style={style.BottomNavItemText}>
+      <Text>{children}</Text>
+    </Wrapper>
   );
 };
 

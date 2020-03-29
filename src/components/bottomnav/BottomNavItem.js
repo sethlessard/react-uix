@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const Wrapper = styled.div`
   display: flex;
-  max-width: 85px;
+  max-width: 50px;
   flex-direction: column;
   align-items: center;
   justify-content: center;

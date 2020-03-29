@@ -271,7 +271,7 @@ class UIApp extends Component {
             <NSLink to="/usage" color={theme.text.colorOnDark}>
               <BottomNavItem>
                 <BottomNavItemIcon>info_outline</BottomNavItemIcon>
-                <BottomNavItemText>Get Started</BottomNavItemText>
+                <BottomNavItemText>Usage</BottomNavItemText>
               </BottomNavItem>
             </NSLink>
           </BottomNavigation>

@@ -45,7 +45,7 @@ const Content = styled.div`
 `;
 const Padding = styled.div`
   width: 100vw;
-  height: 6em;
+  height: 12em;
 `;
 
 class AppContent extends Component {
