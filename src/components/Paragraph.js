@@ -3,14 +3,13 @@ import PropTypes from "prop-types";
 import Text from "./Text";
 import { connect } from "react-redux";
 import styled from "styled-components";
+import { ParagraphWrapper } from "@react-uix/styles";
 
 const mapStateToProps = (state, ownProps) => ({
   color: ownProps.color || state.ui.foregroundColor
 });
 
-const Wrapper = styled.div`
-  padding: .5em 0;
-`;
+const Wrapper = styled.div`${ParagraphWrapper}`;
 
 const Paragraph = ({ children, color, fontSize, fontWeight, style: compStyle }) => {
   const style = {
@@ -18,7 +17,7 @@ const Paragraph = ({ children, color, fontSize, fontWeight, style: compStyle }) 
   };
   Object.assign(style.Paragraph, compStyle);
   return (
-    <Wrapper className="Paragraph" style={style.Paragraph}>
+    <Wrapper style={style.Paragraph}>
       <Text
         color={color}
         fontSize={fontSize}

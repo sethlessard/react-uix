@@ -2,21 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { connect } from "react-redux";
+import { ColorPickerWrapper, ColorPickerInput } from "@react-uix/styles";
 
-const Wrapper = styled.div`
-`;
-const StyledInput = styled.input`
-  border: none;
-  padding: .25em;
-  outline: none;
-  background-color: transparent;
-  border-radius: 50px;
-
-  &:active,
-  &:hover {
-    outline: none;
-  }
-`;
+const Wrapper = styled.div`${ColorPickerWrapper}`;
+const StyledInput = styled.input`${ColorPickerInput}`;
 
 // TODO: make a js color picker
 

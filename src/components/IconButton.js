@@ -2,21 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import Icon from "./Icon";
 import styled from "styled-components";
+import { IconButtonWrapper } from "@react-uix/styles";
 
-const Wrapper = styled.div`
-  position: relative;
-  border: none;
-  border-radius: 4px;
-  vertical-align: center;
-  text-align: center;
-  padding: .5em;
-  overflow: hidden;
-  outline: none;
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-`;
+const Wrapper = styled.div`${IconButtonWrapper}`;
 
 class IconButton extends Component {
   constructor(props) {

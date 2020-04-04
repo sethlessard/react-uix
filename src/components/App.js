@@ -6,15 +6,11 @@ import configureUIStore, { history } from "../redux/configureUIStore";
 import { updateTheme, updateWindowHeight, updateWindowWidth } from "../redux/actions/ui";
 // import PropTypes from 'prop-types';
 import styled from "styled-components";
+import { AppWrapper } from "@react-uix/styles";
 
 const uiStore = configureUIStore();
 
-const Wrapper = styled.div`
-  height: 100vh;
-  width: 100vw;
-  position: relative;
-  font-size: 16px;
-`;
+const Wrapper = styled.div`${AppWrapper}`;
 
 class App extends Component {
   constructor(props) {

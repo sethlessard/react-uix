@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from "styled-components";
 import { connect } from "react-redux";
 import uuid from "uuid/v4";
+import { SwitchWrapper, SwitchLabelWrapper, SwitchLabelContainerWrapper, SwitchContainerWrapper, SwitchInput, SwitchKnob } from "@react-uix/styles";
 
 import Spacer from "./Spacer";
 
@@ -11,50 +12,12 @@ const mapStateToProps = (state) => ({
 });
 
 // adapted from: https://codeburst.io/pure-css3-input-as-the-ios-checkbox-8b6347d5cefb
-const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-`;
-const LabelWrapper = styled.div`
-`;
-const Label = styled.label`
-  font-family: 'Roboto', sans-serif;
-  display: inline-block;
-`;
-const SwitchWrapper = styled.div`
-  position: relative;
-`;
-const InputSwitch = styled.input`
-  position: relative;
-  -webkit-appearance: none;
-  appearane: none;
-  outline: none;
-  width: 50px;
-  height: 30px;
-  background-color: #fff;
-  border: 1px solid ${props => props.colorPrimary};
-  border-radius: 50px;
-  transition: box-shadow 0.3s ease-in-out;
-  box-shadow: inset -20px 0 0 0 #fff;
-
-  &:checked {
-    box-shadow: inset 20px 0 0 0 ${props => props.colorPrimary};
-  }
-`;
-const Knob = styled.div`
-  position: absolute;
-  transition: left 0.3s ease-in-out;
-  display: inline-block;
-  top: 5px;
-  left: ${props => (props.on === "true") ? "25px" : "5px"};
-  background: transparent;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  box-shadow: ${props => (props.on === "true") ? "-2px 4px 3px rgba(0,0,0,0.05)" : "2px 4px 6px rgba(0,0,0,0.2)"};
-
-  pointer-events: none;
-`;
+const Wrapper = styled.div`${SwitchWrapper}`;
+const LabelContainer = styled.div`${SwitchLabelContainerWrapper}`;
+const Label = styled.label`${SwitchLabelWrapper}`;
+const SwitchContainer = styled.div`${SwitchContainerWrapper}`;
+const InputSwitch = styled.input`${SwitchInput}`;
+const Knob = styled.div`${SwitchKnob}`;
 
 class Switch extends Component {
   constructor(props) {
@@ -74,11 +37,11 @@ class Switch extends Component {
     return (
       <Wrapper style={style.Switch}>
         {children &&
-          <LabelWrapper>
+          <LabelContainer>
             <Label htmlFor={`switch-${id}`}>{children}</Label>
             <Spacer horizontal={true} size="1em" />
-          </LabelWrapper>}
-        <SwitchWrapper>
+          </LabelContainer>}
+        <SwitchContainer>
           <InputSwitch
             colorPrimary={colorPrimary}
             id={`switch-${id}`}
@@ -90,7 +53,7 @@ class Switch extends Component {
             }}
           />
           <Knob on={this.state.checked.toString()} />
-        </SwitchWrapper>
+        </SwitchContainer>
       </Wrapper>
     );
   }

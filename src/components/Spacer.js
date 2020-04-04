@@ -1,12 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { SpacerWrapper } from "@react-uix/styles";
 
-const Wrapper = styled.div`
-  display: ${props => (props.horizontal) ? "inline-block" : "block"};
-  height: ${props => (props.horizontal) ? "auto" : props.size};
-  width: ${props => (props.horizontal) ? props.size : "auto"};
-`;
+const Wrapper = styled.div`${SpacerWrapper}`;
 
 const Spacer = ({ children, horizontal = false, size = "1em", style: compStyle }) => {
   const style = {

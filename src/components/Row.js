@@ -1,19 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
+import { RowWrapper, RowContents } from "@react-uix/styles";
 
-const Wrapper = styled.div`
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  min-width: 120px;
-  max-width: 920px;
-  overflow: none;
-  clear: both;
-  height: auto;
-`;
-const Contents = styled.div`
-`;
+const Wrapper = styled.div`${RowWrapper}`;
+const Contents = styled.div`${RowContents}`;
 
 const Row = ({ children, style: compStyle }) => {
   const style = {

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import styled from "styled-components";
 import copy from "copy-to-clipboard";
+import { CodeWrapper, CodeSpan, CodeCopyContainer } from "@react-uix/styles";
 
 import IconButton from "./IconButton";
 
@@ -11,33 +12,9 @@ const mapStateToProps = (state, ownProps) => ({
   backgroundColor: ownProps.backgroundColor || "#33495e"
 });
 
-const Wrapper = styled.div`
-  background-color: ${props => props.backgroundColor};
-  color: ${props => props.foregroundColor || "#fff"};
-  padding: 1em 0;
-  border-radius: 4px;
-  display: flex;
-  width: auto;
-  justify-content: space-between;
-  align-items: center;
-`;
-const Span = styled.span`
-  padding: 0 0 0 1em;
-  display: inline-block;
-  word-wrap: break-word;
-  font-family: monospace;
-  font-size: .8rem;
-  line-height: 1rem;
-  overflow-x: scroll;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-`;
-const CopyContainer = styled.div`
-  display: inline-block;
-  cursor: pointer;
-  padding: .5em;
-`;
+const Wrapper = styled.div`${CodeWrapper}`;
+const Span = styled.span`${CodeSpan}`;
+const CopyContainer = styled.div`${CodeCopyContainer}`;
 
 const parseCode = (code) => {
   const html = [];

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import tinycolor from "tinycolor2";
+import { IconWrapper, IconI } from "@react-uix/styles";
 
 /**
  * Calculate the color of the Icon.
@@ -23,20 +24,8 @@ const mapStateToProps = (state, ownProps) => ({
   color: calcColor(state, ownProps)
 });
 
-const Wrapper = styled.div`
-  margin: 0;
-  padding: 0;
-  height: ${props => props.size};
-  width: ${props => props.size};
-`;
-
-const I = styled.i`
-  color: ${props => props.color};
-  font-size: ${props => props.size};
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-`;
+const Wrapper = styled.div`${IconWrapper}`;
+const I = styled.i`${IconI}`;
 
 const Icon = ({ accent, children, color, size = "1rem", style: compStyle }) => {
   const style = {

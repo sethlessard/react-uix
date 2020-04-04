@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { updateAppContentScrollableComponent, updateNavDrawerOpen } from '../redux/actions/ui';
+import { AppContentWrapper, AppContentRelative, AppContentContent, AppContentPadding } from "@react-uix/styles";
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -19,34 +20,10 @@ const mapDispatchToProps = (dispatch) => ({
   updateNavDrawerOpen: (value) => dispatch(updateNavDrawerOpen(value))
 });
 
-const Wrapper = styled.div`
-  width: 100vw;
-  position: fixed;
-  z-index: 0;
-  left: 0;
-  top: ${props => (props.appbarDefined) ? props.appbarHeight : 0}px;
-  height: ${props => props.height};
-`;
-const Relative = styled.div`
-  position: relative;
-  width: 100vw;
-  height: ${props => props.height};
-`;
-const Content = styled.div`
-  height: ${props => props.height};
-  padding: 2em 1.5em;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  background-color: #ecf0f1;
-  -webkit-overflow-scrolling: touch;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-`;
-const Padding = styled.div`
-  width: 100vw;
-  height: 12em;
-`;
+const Wrapper = styled.div`${AppContentWrapper}`;
+const Relative = styled.div`${AppContentRelative}`;
+const Content = styled.div`${AppContentContent}`;
+const Padding = styled.div`${AppContentPadding}`;
 
 class AppContent extends Component {
   constructor(props) {
