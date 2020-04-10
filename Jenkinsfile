@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image "node:12"
-      args "-p 3000:3000"
+      args "-p 3000:3000 -u root:root"
     }
   }
 
@@ -13,7 +13,6 @@ pipeline {
   stages {
     stage("Install") {
       steps {
-        sh "chown -R 111:119 /.npm"
         sh "npm install"
       }
     }
