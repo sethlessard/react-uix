@@ -1,12 +1,15 @@
-# react-uix
+# react-uix [![NPM](https://img.shields.io/npm/v/@react-uix/web.svg)](https://www.npmjs.com/package/@react-uix/web) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 > React UiX components
 
-[![NPM](https://img.shields.io/npm/v/@react-uix/web.svg)](https://www.npmjs.com/package/@react-uix/web) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+## Build Status
 
 | Branch | Build Status |
 | --- | --- |
 | master | [![Build Status](https://jenkins.sethlessard.com/buildStatus/icon?job=react-uix-web%2Fmaster)](https://jenkins.sethlessard.com/job/react-uix-web/job/master/) |
+
+
 
 ## Install
 
