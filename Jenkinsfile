@@ -39,7 +39,7 @@ pipeline {
         branch "master"
       }
       steps {
-        bash """#!/bin/bash
+        sh """#!/bin/bash
         pushd example/
         npm run build
         pushd build/
