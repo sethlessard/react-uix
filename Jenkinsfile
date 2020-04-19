@@ -9,6 +9,7 @@ pipeline {
 
   environment {
     CI = 'true'
+    GITHUB_API_KEY = credentials("github-api-key")
   }
 
   stages {
@@ -45,10 +46,10 @@ pipeline {
         npm run build
         pushd build/
         git init
-        git remote add origin https://github.com/sethlessard/react-uix
+        git remote add origin
         git add .
         git commit -m "Deploy to GitHub Pages"
-        git push -f master:gh-pages
+        git push -f "https://${GITHUB_API_KEY}@github.com/sethlessard/react-uix.git" master:gh-pages
         popd
         popd
         """
