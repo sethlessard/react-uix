@@ -41,14 +41,14 @@ pipeline {
       }
       steps {
         sh """#!/bin/bash
-        # 
-
         pushd example/
         npm install
         npm run build
         pushd build/
         git init
         git add .
+        git config user.name "Jenkins CI"
+        git config user.email "sethlessard@outlook.com"
         git commit -m "Deploy to GitHub Pages"
         git push -f "https://sethlessard:${GITHUB_API_KEY}@github.com/sethlessard/react-uix.git" master:gh-pages
         popd
