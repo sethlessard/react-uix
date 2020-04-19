@@ -7,10 +7,6 @@ pipeline {
     }
   }
 
-  triggers {
-    pollSCM "H/2 * * * *"
-  }
-
   environment {
     CI = 'true'
   }
@@ -22,18 +18,47 @@ pipeline {
       }
     }
 
-    stage("Test") {
-      steps {
-        sh "npm test"
+    stage("Test & Build") {
+      parallel {
+        stage("Test") {
+          steps {
+            sh "npm test"
+          }
+        }
+
+        stage("Build") {
+          steps {
+            sh "npm run build"
+          }
+        }
       }
     }
 
-    stage("Build") {
+    stage("Deploy API Documentation to GitHub Pages") {
+      when {
+        branch "master"
+      }
       steps {
-        sh "npm run build"
+        sh """
+        pushd example/
+        npm run build
+        pushd build/
+        git init
+        git remote add origin https://github.com/sethlessard/react-uix
+        git add .
+        git commit -m "Deploy to GitHub Pages"
+        git push -f master:gh-pages
+        popd
+        popd
+        """
       }
     }
-    // TODO: github pages deploy
-    // TODO: npm deploy
+
+    stage("Publish to NPM") {
+      when { expression { sh([returnStdout: true, script: 'echo $TAG_NAME | tr -d \'\n\'']) } }
+      steps {
+        sh "npm publish"
+      }
+    }
   }
 }
