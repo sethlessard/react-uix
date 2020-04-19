@@ -50,7 +50,7 @@ pipeline {
         git init
         git add .
         git commit -m "Deploy to GitHub Pages"
-        git push -f "${GITHUB_API_KEY}@github.com/sethlessard/react-uix.git" master:gh-pages
+        git push -f "https://sethlessard:${GITHUB_API_KEY}@github.com/sethlessard/react-uix.git" master:gh-pages
         popd
         popd
         """
