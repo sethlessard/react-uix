@@ -41,6 +41,7 @@ pipeline {
       steps {
         sh """#!/bin/bash
         pushd example/
+        npm install
         npm run build
         pushd build/
         git init
