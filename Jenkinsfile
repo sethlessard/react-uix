@@ -46,10 +46,10 @@ pipeline {
         npm run build
         pushd build/
         git init
-        git remote add origin
+        git remote add origin "https://sethlessard:${GITHUB_API_KEY}@github.com/sethlessard/react-uix.git"
         git add .
         git commit -m "Deploy to GitHub Pages"
-        git push -f "https://${GITHUB_API_KEY}@github.com/sethlessard/react-uix.git" master:gh-pages
+        git push -f master:gh-pages
         popd
         popd
         """
