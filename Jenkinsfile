@@ -10,12 +10,14 @@ pipeline {
   environment {
     CI = 'true'
     GITHUB_API_KEY = credentials("github-api-key")
+    NPM_TOKEN = credentials("npm-token")
   }
 
   stages {
     stage("Install") {
       steps {
         sh "npm install"
+        sh "npm install -g npm-cli-login"
       }
     }
 
@@ -60,7 +62,9 @@ pipeline {
     stage("Publish to NPM") {
       when { expression { sh([returnStdout: true, script: 'echo $TAG_NAME | tr -d \'\n\'']) } }
       steps {
-        sh "npm publish"
+        sh '''
+        npm-cli-login -u "sethlessard" -e "sethlessard@outlook.com" -p "$NPM_TOKEN"
+        '''
       }
     }
   }
