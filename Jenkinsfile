@@ -63,7 +63,11 @@ pipeline {
       when { expression { sh([returnStdout: true, script: 'echo $TAG_NAME | tr -d \'\n\'']) } }
       steps {
         sh '''
-        npm-cli-login -u "sethlessard" -e "sethlessard@outlook.com" -p "$NPM_TOKEN"
+        echo \"//reg/:username=sethlessard\" >> ~/.npmrc
+        echo \"//reg/:_password=$NPM_TOKEN\" >> ~/.npmrc
+        echo \"//reg/:_password=sethlessard@outlook.com\" >> ~/.npmrc
+        
+        npm publish
         '''
       }
     }
