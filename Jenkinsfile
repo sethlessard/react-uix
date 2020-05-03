@@ -63,10 +63,12 @@ pipeline {
       when { expression { sh([returnStdout: true, script: 'echo $TAG_NAME | tr -d \'\n\'']) } }
       steps {
         sh '''
-        echo \"//reg/:username=sethlessard\" >> ~/.npmrc
-        echo \"//reg/:_password=$NPM_TOKEN\" >> ~/.npmrc
-        echo \"//reg/:_password=sethlessard@outlook.com\" >> ~/.npmrc
+        echo \"//registry.npmjs.org/:username=sethlessard\" >> ~/.npmrc
+        echo \"//registry.npmjs.org/:_password=$NPM_TOKEN\" >> ~/.npmrc
+        echo \"//registry.npmjs.org/:_password=sethlessard@outlook.com\" >> ~/.npmrc
         
+        npm set registry https://registry.npmjs.org/
+
         npm publish
         '''
       }
