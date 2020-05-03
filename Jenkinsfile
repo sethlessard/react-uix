@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image "node:12"
-      label "docker && linux && digitalocean"
+      label "docker"
       args "-u root:root"
     }
   }
