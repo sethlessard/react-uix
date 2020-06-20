@@ -13,7 +13,6 @@ import BottomNavItemText from "./components/bottomnav/BottomNavItemText";
 
 // Breadcrumb
 import Breadcrumb from "./components/breadcrumb/Breadcrumb";
-import BreadcrumbItem from "./components/breadcrumb/BreadcrumbItem";
 
 // Card
 import Card from "./components/card/Card";
@@ -111,7 +110,6 @@ export {
   BottomNavItemText,
 
   Breadcrumb,
-  BreadcrumbItem,
 
   Card,
   CardBody,

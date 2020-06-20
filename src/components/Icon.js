@@ -29,15 +29,12 @@ const I = styled.i`${IconI}`;
 
 const Icon = ({ accent, children, color, size = "1rem", style: compStyle }) => {
   const style = {
-    icon: {
-      width: size,
-      height: size
-    }
+    icon: {}
   };
 
   Object.assign(style.icon, compStyle);
   return (
-    <Wrapper size={size}>
+    <Wrapper size={size} style={style.icon}>
       <I color={color} size={size} className="material-icons">{children}</I>
     </Wrapper>
   );

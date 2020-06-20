@@ -1,5 +1,6 @@
 import AppbarFragment from "./AppbarFragment";
 import AppFragment from "./AppFragment";
+import BreadcrumbFragment from "./BreadcrumbFragment";
 import BottomNavigationFragment from "./BottomNavigationFragment";
 import ButtonFragment from "./ButtonFragment";
 import CardFragment from "./CardFragment";
@@ -29,6 +30,7 @@ import UsageFragment from "./UsageFragment";
 export {
   AppbarFragment,
   AppFragment,
+  BreadcrumbFragment,
   BottomNavigationFragment,
   ButtonFragment,
   CardFragment,
