@@ -6,7 +6,6 @@ import styled from "styled-components";
 import Icon from "../Icon";
 
 const Wrapper = styled.div`
-  padding: 0 0 .35em 0;
 `;
 
 const mapStateToProps = (state, ownProps) => ({
@@ -20,7 +19,7 @@ const BottomNavItemIcon = ({ children, color, refBackgroundColor, size = "1.2em"
   Object.assign(style.BottomNavItemIcon, compStyle);
   return (
     <Wrapper style={style.BottomNavItemIcon}>
-      <Icon size={size} color={color} refBackgroundColor={refBackgroundColor}>{ children }</Icon>
+      <Icon size={size} color={color} refBackgroundColor={refBackgroundColor}>{children}</Icon>
     </Wrapper>
   );
 };

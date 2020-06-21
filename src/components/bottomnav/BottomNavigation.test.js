@@ -17,7 +17,7 @@ const getTree = (store) => {
 }
 
 describe("BottomNavigation", () => {
-  let defs = {};
+  const defs = {};
   let store;
   beforeEach(() => {
     store = mockStore(defs);
