@@ -9,8 +9,8 @@ pipeline {
 
   environment {
     CI = 'true'
-    GITHUB_API_KEY = credentials("github-api-key")
-    NPM_TOKEN = credentials("npm-token")
+    GITHUB_API_KEY = credentials("github")
+    // NPM_TOKEN = credentials("npm-token")
   }
 
   stages {
