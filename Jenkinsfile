@@ -9,7 +9,7 @@ pipeline {
 
   environment {
     CI = 'true'
-    GITHUB_API_KEY = credentials("github")
+    GITHUB_CREDENTIALS = credentials("github")
     // NPM_TOKEN = credentials("npm-token")
   }
 
@@ -52,7 +52,7 @@ pipeline {
         git config user.name "Jenkins CI"
         git config user.email "sethlessard@outlook.com"
         git commit -m "Deploy to GitHub Pages"
-        git push -f "https://sethlessard:${GITHUB_API_KEY}@github.com/sethlessard/react-uix.git" master:gh-pages
+        git push -f "https://{GITHUB_CREDENTIALS}@github.com/sethlessard/react-uix.git" master:gh-pages
         popd
         popd
         """
