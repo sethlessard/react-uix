@@ -34,6 +34,7 @@ const SwitchFragment = ({ children, style: compStyle }) => {
 
         <Example>
           <Switch>This is a switch</Switch>
+          <Switch checked={true}>This is also a switch</Switch>
         </Example>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
