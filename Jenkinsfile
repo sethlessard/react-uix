@@ -52,7 +52,7 @@ pipeline {
         git config user.name "Jenkins CI"
         git config user.email "sethlessard@outlook.com"
         git commit -m "Deploy to GitHub Pages"
-        git push -f "https://{GITHUB_CREDENTIALS}@github.com/sethlessard/react-uix.git" master:gh-pages
+        git push -f "https://${GITHUB_CREDENTIALS}@github.com/sethlessard/react-uix.git" master:gh-pages
         popd
         popd
         """
