@@ -27,8 +27,14 @@ class Switch extends Component {
     }
   }
 
+  componentDidMount() {
+    const { checked } = this.props;
+    this.setState({ checked });
+  }
+
   render() {
     const { children, colorPrimary, onChecked, style: compStyle } = this.props;
+    const { checked } = this.state;
     const style = {
       Switch: {}
     };
@@ -51,8 +57,9 @@ class Switch extends Component {
               this.setState({ checked });
               onChecked && onChecked(checked);
             }}
+            checked={checked}
           />
-          <Knob on={this.state.checked.toString()} />
+          <Knob on={(this.state.checked) ? "true" : "false"} />
         </SwitchContainer>
       </Wrapper>
     );
@@ -61,6 +68,7 @@ class Switch extends Component {
 
 Switch.propTypes = {
   children: PropTypes.string,
+  checked: PropTypes.bool,
   onChecked: PropTypes.func
 };
 
