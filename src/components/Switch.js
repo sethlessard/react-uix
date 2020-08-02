@@ -16,7 +16,12 @@ const Wrapper = styled.div`${SwitchWrapper}`;
 const LabelContainer = styled.div`${SwitchLabelContainerWrapper}`;
 const Label = styled.label`${SwitchLabelWrapper}`;
 const SwitchContainer = styled.div`${SwitchContainerWrapper}`;
-const InputSwitch = styled.input`${SwitchInput}`;
+// TODO: put the custom styles in the @react-uix/styles package
+const InputSwitch = styled.input`
+  ${SwitchInput}
+  background-color: ${props => props.disabled ? "#eee" : "#fff"};
+  box-shadow: inset -20px 0 0 0 ${props => props.disabled ? "#eee" : "#fff"};
+`;
 const Knob = styled.div`${SwitchKnob}`;
 
 class Switch extends Component {
@@ -33,7 +38,7 @@ class Switch extends Component {
   }
 
   render() {
-    const { children, colorPrimary, onChecked, style: compStyle } = this.props;
+    const { children, colorPrimary, disabled = false, onChecked, style: compStyle } = this.props;
     const { checked } = this.state;
     const style = {
       Switch: {}
@@ -41,13 +46,13 @@ class Switch extends Component {
     Object.assign(style.Switch, compStyle);
     const id = uuid();
     return (
-      <Wrapper style={style.Switch}>
+      <Wrapper style={style.Switch} disabled={disabled}>
         {children &&
           <LabelContainer>
             <Label htmlFor={`switch-${id}`}>{children}</Label>
             <Spacer horizontal={true} size="1em" />
           </LabelContainer>}
-        <SwitchContainer>
+        <SwitchContainer disabled={disabled}>
           <InputSwitch
             colorPrimary={colorPrimary}
             id={`switch-${id}`}
@@ -58,6 +63,7 @@ class Switch extends Component {
               onChecked && onChecked(checked);
             }}
             checked={checked}
+            disabled={disabled}
           />
           <Knob on={(this.state.checked) ? "true" : "false"} />
         </SwitchContainer>
@@ -69,6 +75,7 @@ class Switch extends Component {
 Switch.propTypes = {
   children: PropTypes.string,
   checked: PropTypes.bool,
+  disabled: PropTypes.bool,
   onChecked: PropTypes.func
 };
 
