@@ -37,8 +37,8 @@ class Switch extends Component {
     if (prevProps.checked !== checked) {
       if (this.ref && this.ref.current) {
         this.ref.current.checked = checked;
-        this.forceUpdate();
       }
+      this.forceUpdate();
     }
   }
 
