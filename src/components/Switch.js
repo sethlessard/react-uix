@@ -54,12 +54,13 @@ class Switch extends Component {
             onChange={(event) => {
               const checked = event.target.checked;
               onChecked && onChecked(checked);
+              this.forceUpdate();
             }}
             defaultChecked={checked}
             disabled={disabled}
             ref={this.ref}
           />
-          <Knob on={(this.state.checked) ? "true" : "false"} />
+          <Knob on={(this.ref && this.ref.current && this.ref.current.checked) ? "true" : "false"} />
         </SwitchContainer>
       </Wrapper>
     );
