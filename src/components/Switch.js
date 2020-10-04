@@ -28,8 +28,17 @@ class Switch extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    }
+    };
     this.ref = React.createRef();
+  }
+
+  componentDidUpdate(prevProps) {
+    const { checked } = this.props;
+    if (prevProps.checked !== checked) {
+      if (this.ref && this.ref.current) {
+        this.ref.current.checked = checked;
+      }
+    }
   }
 
   render() {
