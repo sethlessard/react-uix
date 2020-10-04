@@ -28,18 +28,12 @@ class Switch extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      checked: false
     }
-  }
-
-  componentDidMount() {
-    const { checked } = this.props;
-    this.setState({ checked });
+    this.ref = React.createRef();
   }
 
   render() {
-    const { children, colorPrimary, disabled = false, onChecked, style: compStyle } = this.props;
-    const { checked } = this.state;
+    const { children, colorPrimary, disabled = false, onChecked, checked, style: compStyle } = this.props;
     const style = {
       Switch: {}
     };
@@ -59,11 +53,11 @@ class Switch extends Component {
             type="checkbox"
             onChange={(event) => {
               const checked = event.target.checked;
-              this.setState({ checked });
               onChecked && onChecked(checked);
             }}
-            checked={checked}
+            defaultChecked={checked}
             disabled={disabled}
+            ref={this.ref}
           />
           <Knob on={(this.state.checked) ? "true" : "false"} />
         </SwitchContainer>
