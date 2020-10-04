@@ -28,22 +28,19 @@ class Switch extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      checked: false
     };
     this.ref = React.createRef();
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidMount() {
     const { checked } = this.props;
-    if (prevProps.checked !== checked) {
-      if (this.ref && this.ref.current) {
-        this.ref.current.checked = checked;
-      }
-      this.forceUpdate();
-    }
+    this.setState({ checked });
   }
 
   render() {
-    const { children, colorPrimary, disabled = false, onChecked, checked, style: compStyle } = this.props;
+    const { children, colorPrimary, disabled = false, onChecked, style: compStyle } = this.props;
+    const { checked } = this.state;
     const style = {
       Switch: {}
     };
@@ -56,21 +53,26 @@ class Switch extends Component {
             <Label htmlFor={`switch-${id}`}>{children}</Label>
             <Spacer horizontal={true} size="1em" />
           </LabelContainer>}
-        <SwitchContainer disabled={disabled}>
+        <SwitchContainer
+          disabled={disabled}
+          onClick={
+            () => {
+              if (!disabled) {
+                this.setState({ checked: !checked });
+                onChecked && onChecked(!checked);
+              }
+            }
+          }
+        >
           <InputSwitch
             colorPrimary={colorPrimary}
             id={`switch-${id}`}
             type="checkbox"
-            onChange={(event) => {
-              const checked = event.target.checked;
-              onChecked && onChecked(checked);
-              this.forceUpdate();
-            }}
-            defaultChecked={checked}
+            checked={checked}
             disabled={disabled}
             ref={this.ref}
           />
-          <Knob on={(this.ref && this.ref.current && this.ref.current.checked) ? "true" : "false"} />
+          <Knob on={(checked) ? "true" : "false"} />
         </SwitchContainer>
       </Wrapper>
     );
