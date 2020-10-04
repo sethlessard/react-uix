@@ -1,3 +1,4 @@
+/* eslint-disable react/no-did-update-set-state */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
@@ -28,14 +29,25 @@ class Switch extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      checked: false
+      checked: false,
+      defaultChecked: false
     };
     this.ref = React.createRef();
   }
 
   componentDidMount() {
     const { checked } = this.props;
-    this.setState({ checked });
+    this.setState({ checked, defaultChecked: checked });
+  }
+
+  componentDidUpdate() {
+    const { defaultChecked } = this.state;
+    const { checked } = this.props;
+
+    // if the checked prop was updated, reflect that in the state.
+    if (checked !== defaultChecked) {
+      this.setState({ checked, defaultChecked: checked });
+    }
   }
 
   render() {
