@@ -7,3 +7,5 @@ updates:
   open-pull-requests-limit: 10
   target-branch: development
   versioning-strategy: increase
+  default_reviewers:
+    - "sethlessard"
