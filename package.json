@@ -27,7 +27,27 @@
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0"
   },
-  "devDependencies": {
+  "files": [
+    "dist"
+  ],
+  "private": false,
+  "keywords": [
+    "React",
+    "ReactJS",
+    "UI Components",
+    "Material",
+    "UI",
+    "Theme"
+  ],
+  "dependencies": {
+    "@react-uix/styles": "0.0.5",
+    "connected-react-router": "6.8.0",
+    "copy-to-clipboard": "3.3.1",
+    "polished": "3.6.7",
+    "react-redux": "7.2.1",
+    "react-router-dom": "5.2.0",
+    "redux": "4.0.5",
+    "styled-components": "5.2.0",
     "@svgr/rollup": "5.4.0",
     "@testing-library/react": "11.1.0",
     "babel-core": "6.26.3",
@@ -62,7 +82,7 @@
     "redux-thunk": "2.3.0",
     "rollup": "2.28.2",
     "rollup-plugin-babel": "3.0.7",
-    "rollup-plugin-commonjs": "10.1.0",
+    "@rollup/plugin-commonjs": "15.1.0",
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-peer-deps-external": "2.2.3",
     "rollup-plugin-postcss": "3.1.8",
@@ -70,27 +90,5 @@
     "seamless-immutable": "7.1.4",
     "tinycolor2": "1.4.2",
     "typescript": "4.0.3"
-  },
-  "files": [
-    "dist"
-  ],
-  "private": false,
-  "keywords": [
-    "React",
-    "ReactJS",
-    "UI Components",
-    "Material",
-    "UI",
-    "Theme"
-  ],
-  "dependencies": {
-    "@react-uix/styles": "0.0.5",
-    "connected-react-router": "6.8.0",
-    "copy-to-clipboard": "3.3.1",
-    "polished": "3.6.7",
-    "react-redux": "7.2.1",
-    "react-router-dom": "5.2.0",
-    "redux": "4.0.5",
-    "styled-components": "5.2.0"
   }
 }
