@@ -1,2 +1,2 @@
-echo "Testing.."
+Write-Host "Testing.."
 npm test
