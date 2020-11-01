@@ -1,0 +1,31 @@
+trigger:
+  branches:
+    include:
+      - "master"
+      - "RU-21-migrate-from-travis-ci-to-azure-pipelines"
+  tags:
+    include:
+      - "v*"
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '12.x'
+
+  - task: PowerShell@2
+    displayName: "Install dependencies"
+    inputs:
+      filePath: '.azure-pipelines/InstallDependencies.ps1'
+
+  - task: PowerShell@2
+    displayName: "Lint & Test"
+    inputs:
+      filePath: '.azure-pipelines/Test.ps1'
+
+  - task: PowerShell@2
+    displayName: "Build"
+    inputs:
+      filePath: '.azure-pipelines/Build.ps1'
