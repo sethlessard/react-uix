@@ -5,7 +5,6 @@ updates:
   schedule:
     interval: daily
   open-pull-requests-limit: 10
-  target-branch: development
-  versioning-strategy: increase
+  target-branch: "v1.0.0-prep"
   reviewers:
     - "sethlessard"
