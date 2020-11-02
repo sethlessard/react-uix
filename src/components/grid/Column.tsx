@@ -1,12 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ReactNode } from 'react';
 
-const Column = ({ children, span }) => {
-  return (<div>{children}</div>);
+export interface ColumnProps {
+  children: ReactNode[];
 };
 
-Column.propTypes = {
-  children: PropTypes.node
+const Column = ({ children }: ColumnProps) => {
+  return (<div>{children}</div>);
 };
 
 export default Column;

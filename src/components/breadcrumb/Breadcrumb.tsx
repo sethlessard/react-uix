@@ -1,8 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled, { CSSProperties } from "styled-components";
 
 import Icon from "../Icon";
+
+export interface BreadcrumbProps {
+  children: React.ReactNode[];
+  style?: CSSProperties;
+};
 
 const Wrapper = styled.div`
   display: inline-flex;
@@ -12,7 +16,7 @@ const Wrapper = styled.div`
 /**
 * Render the Breadcrumb component.
 */
-const Breadcrumb = ({ children, style: compStyle }) => {
+const Breadcrumb = ({ children, style: compStyle }: BreadcrumbProps) => {
   const style = {
     breadcrumb: {
 
@@ -24,7 +28,7 @@ const Breadcrumb = ({ children, style: compStyle }) => {
   );
 };
 
-const renderBreadcrumbItems = (children) => {
+const renderBreadcrumbItems = (children: React.ReactNode[]) => {
   const newChildren = [];
   let i = 0;
   for (const child of children) {
@@ -35,10 +39,6 @@ const renderBreadcrumbItems = (children) => {
     i++;
   }
   return newChildren;
-};
-
-Breadcrumb.propTypes = {
-  children: PropTypes.node
 };
 
 export default Breadcrumb;

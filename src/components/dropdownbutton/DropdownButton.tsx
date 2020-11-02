@@ -1,14 +1,26 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component, CSSProperties } from "react";
 import styled from "styled-components";
 
 import IconButton from "../IconButton";
+
+export interface DropdownButtonProps {
+  child: React.ReactNode[];
+  color?: string;
+  icon: string;
+  iconSize?: number | string;
+  refBackgroundColor?: string;
+  style?: CSSProperties;
+};
+
+interface DropdownButtonState {
+  visible: boolean;
+}
 
 const Wrapper = styled.div`
   cursor: pointer;
   position: relative;
 `;
-const Content = styled.div`
+const Content = styled.div<DropdownButtonProps & DropdownButtonState>`
   position: absolute;
   visibility: ${props => (props.visible) ? "visible" : "hidden"};
   opacity: ${props => (props.visible) ? 1 : 0};
@@ -22,7 +34,7 @@ const Content = styled.div`
   transition: opacity .2s ease-in-out;
   cursor-events: all;
 `;
-const Arrow = styled.div`
+const Arrow = styled.div<DropdownButtonProps & DropdownButtonState>`
   position: absolute;
   top: 45px;
   left: 21px;
@@ -39,8 +51,11 @@ const Arrow = styled.div`
   opacity: ${props => (props.visible) ? 1 : 0};
 `;
 
-class DropdownButton extends Component {
-  constructor(props) {
+class DropdownButton extends Component<DropdownButtonProps, DropdownButtonState> {
+
+  private readonly dialogRef: React.RefObject<HTMLDivElement>;
+
+  constructor(props: DropdownButtonProps) {
     super(props);
     this.state = {
       visible: false
@@ -56,11 +71,11 @@ class DropdownButton extends Component {
     window.removeEventListener("touchend", (event) => this.handleClickOutside(event));
   }
 
-  handleClickOutside(event) {
+  handleClickOutside(event: TouchEvent) {
     if (this.dialogRef &&
       event &&
       this.dialogRef.current &&
-      this.dialogRef.current.contains(event.target)) { this.setInvisible(); }
+      this.dialogRef.current.contains(event.target as Node)) { this.setInvisible(); }
   }
 
   render() {
@@ -89,12 +104,5 @@ class DropdownButton extends Component {
     this.setState({ visible: false });
   }
 }
-
-DropdownButton.propTypes = {
-  color: PropTypes.string,
-  children: PropTypes.node,
-  icon: PropTypes.string,
-  iconSize: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
-};
 
 export default DropdownButton;

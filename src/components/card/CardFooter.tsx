@@ -1,6 +1,10 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import styled from "styled-components";
+import styled, { CSSProperties } from "styled-components";
+
+export interface CardFooterProps {
+  children: React.ReactNode[];
+  style?: CSSProperties;
+};
 
 const Wrapper = styled.div`
   border-bottom-left-radius: 4px;
@@ -8,16 +12,12 @@ const Wrapper = styled.div`
   padding: 1em;
 `;
 
-const CardFooter = ({ children, style: compStyle }) => {
+const CardFooter = ({ children, style: compStyle }: CardFooterProps) => {
   const style = {
     cardFooter: {}
   };
   Object.assign(style.cardFooter, compStyle);
   return <Wrapper style={style.cardFooter}>{children}</Wrapper>;
-};
-
-CardFooter.propTypes = {
-
 };
 
 export default CardFooter;

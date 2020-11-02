@@ -1,10 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled, { CSSProperties } from "styled-components";
 import Text from "../Text";
 
 const Wrapper = styled.div`
 `;
+
+export interface DropdownButtonTextProps {
+  children: string;
+  style?: CSSProperties;
+};
 
 const DropdownButtonText = (props) => {
   const style = {

@@ -1,8 +1,17 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
-class DropdownButtonItem extends Component {
-  constructor(props) {
+export interface DropdownButtonItemProps {
+  children: React.ReactNode[],
+  foregroundColor?: string;
+  onClick?: () => void;
+};
+
+interface DropdownButtonItemState {
+  hovered: boolean;
+};
+
+class DropdownButtonItem extends Component<DropdownButtonItemProps, DropdownButtonItemState> {
+  constructor(props: DropdownButtonItemProps) {
     super(props);
     this.state = {
       hovered: false
@@ -35,14 +44,5 @@ class DropdownButtonItem extends Component {
     this.setState({ hovered: !this.state.hovered });
   }
 }
-
-DropdownButtonItem.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node)
-  ]),
-  foregroundColor: PropTypes.string,
-  onClick: PropTypes.func
-};
 
 export default DropdownButtonItem;

@@ -31,7 +31,7 @@ export type UIState = {
     defined: boolean,
     height: number
   },
-  appContentScrollableComponent?: React.Ref<HTMLDivElement>,
+  appContentScrollableComponent?: React.RefObject<HTMLDivElement>,
   bottomNav: {
     defined: boolean,
     height: number

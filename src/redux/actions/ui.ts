@@ -16,7 +16,7 @@ export const UPDATE_WINDOW_WIDTH = "UPDATE_WINDOW_WIDTH";
 export interface UIAction extends Action<string> {
   appbarDefined?: boolean,
   appbarHeight?: number,
-  appContentScrollableComponent?: React.Ref<HTMLDivElement>,
+  appContentScrollableComponent?: React.RefObject<HTMLDivElement>,
   bottomNavDefined?: boolean,
   bottomNavHeight?: number,
   navDrawerDefined?: boolean,
@@ -60,7 +60,7 @@ export const updateAppbarHeight = (appbarHeight: number = 0): UIAction => ({
  * The AppContent scrollable component.
  * @param appContentScrollableComponent the scrollable component
  */
-export const updateAppContentScrollableComponent = (appContentScrollableComponent: React.Ref<HTMLDivElement>): UIAction => ({
+export const updateAppContentScrollableComponent = (appContentScrollableComponent: React.RefObject<HTMLDivElement>): UIAction => ({
   type: UPDATE_APPCONTENT_SCROLLABLE_COMPONENT,
   appContentScrollableComponent
 });

@@ -1,14 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from "react-redux";
-import styled from "styled-components";
+import styled, { CSSProperties } from "styled-components";
+import { UIState } from '../../redux/reducers/ui';
 
-const mapStateToProps = (state, ownProps) => ({
+export interface BottomNavItemProps {
+  children: React.ReactNode | React.ReactNode[];
+  foregroundColor?: string;
+  height?: number;
+  style?: CSSProperties;
+  onClick?: () => void;
+};
+
+const mapStateToProps = (state: { ui: UIState }, ownProps: BottomNavItemProps) => ({
   foregroundColor: ownProps.foregroundColor || state.ui.theme.text.colorOnDark,
-  height: state.ui.bottomNavHeight
+  height: state.ui.bottomNav.height
 });
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<BottomNavItemProps>`
   display: flex;
   max-width: 50px;
   flex-direction: column;
@@ -20,7 +28,7 @@ const Wrapper = styled.div`
   color: ${props => props.foregroundColor};
 `;
 
-const BottomNavItem = ({ children, foregroundColor, height, onClick, style }) => {
+const BottomNavItem = ({ children, foregroundColor, height, onClick, style }: BottomNavItemProps) => {
   const compStyle = {
     bottomNavItem: {}
   };
@@ -31,13 +39,6 @@ const BottomNavItem = ({ children, foregroundColor, height, onClick, style }) =>
       {children}
     </Wrapper>
   );
-};
-
-BottomNavItem.propTypes = {
-  children: PropTypes.node,
-  height: PropTypes.number,
-  foregroundColor: PropTypes.string,
-  onClick: PropTypes.func
 };
 
 export default connect(mapStateToProps)(BottomNavItem);

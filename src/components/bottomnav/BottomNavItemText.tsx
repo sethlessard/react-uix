@@ -1,16 +1,21 @@
 import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled, { CSSProperties } from "styled-components";
+
+export interface BottomNavItemTextProps {
+  children: string;
+  fontSize?: number | string;
+  style?: CSSProperties;
+};
 
 const Wrapper = styled.div`
 
 `;
-const Text = styled.span`
+const Text = styled.span<BottomNavItemTextProps>`
   font-family: "Roboto", sans-serif;
   font-size: ${props => props.fontSize};
 `;
 
-const BottomNavItemText = ({ children, fontSize = ".65rem", style: compStyle }) => {
+const BottomNavItemText = ({ children, fontSize = ".65rem", style: compStyle }: BottomNavItemTextProps) => {
   const style = {
     BottomNavItemText: {}
   };
@@ -20,11 +25,6 @@ const BottomNavItemText = ({ children, fontSize = ".65rem", style: compStyle }) 
       <Text fontSize={fontSize}>{children}</Text>
     </Wrapper>
   );
-};
-
-BottomNavItemText.propTypes = {
-  children: PropTypes.string,
-  fontSize: PropTypes.oneOfType(PropTypes.number, PropTypes.string)
 };
 
 export default BottomNavItemText;

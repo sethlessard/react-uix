@@ -1,6 +1,10 @@
-import React from 'react';
-// import PropTypes from 'prop-types';
-import styled from "styled-components";
+import React, { ReactNode } from 'react';
+import styled, { CSSProperties } from "styled-components";
+
+export interface CardHeaderProps {
+  children: ReactNode[];
+  style?: CSSProperties;
+};
 
 const Wrapper = styled.div`
   padding: 1em 1em 0 1em;
@@ -9,16 +13,12 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-const CardHeader = ({ children, style: compStyle }) => {
+const CardHeader = ({ children, style: compStyle }: CardHeaderProps) => {
   const style = {
     cardHeader: {}
   };
   Object.assign(style.cardHeader, compStyle);
   return <Wrapper style={style.cardHeader}>{children}</Wrapper>;
-};
-
-CardHeader.propTypes = {
-
 };
 
 export default CardHeader;

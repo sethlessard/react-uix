@@ -1,18 +1,27 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import styled from "styled-components";
+import styled, { CSSProperties } from "styled-components";
+import { UIState } from "../../redux/reducers/ui";
 
 import Icon from "../Icon";
 
 const Wrapper = styled.div`
 `;
 
-const mapStateToProps = (state, ownProps) => ({
-  refBackgroundColor: ownProps.refBackgroundColor || state.ui.theme.colorPrimary
+export interface BottomNavItemIconProps {
+  children: string;
+  color?: string;
+  refBackgroundColor?: string;
+  size?: number | string;
+  style?: CSSProperties;
+}
+
+const mapStateToProps = (state: { ui: UIState }, ownProps: BottomNavItemIconProps) => ({
+  refBackgroundColor: ownProps.refBackgroundColor || state.ui.theme.primaryColor
 });
 
-const BottomNavItemIcon = ({ children, color, refBackgroundColor, size = "1.2em", style: compStyle }) => {
+
+const BottomNavItemIcon = ({ children, color, refBackgroundColor, size = "1.2em", style: compStyle }: BottomNavItemIconProps) => {
   const style = {
     BottomNavItemIcon: {}
   };
@@ -22,11 +31,6 @@ const BottomNavItemIcon = ({ children, color, refBackgroundColor, size = "1.2em"
       <Icon size={size} color={color} refBackgroundColor={refBackgroundColor}>{children}</Icon>
     </Wrapper>
   );
-};
-
-BottomNavItemIcon.propTypes = {
-  children: PropTypes.string,
-  color: PropTypes.string
 };
 
 export default connect(mapStateToProps)(BottomNavItemIcon);

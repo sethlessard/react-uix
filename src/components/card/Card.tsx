@@ -1,16 +1,23 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Paper from "../Paper";
 import Row from "../Row";
-import styled from "styled-components";
+import styled, { CSSProperties } from "styled-components";
 import DropShadow from "../DropShadow";
+
+export interface CardProps {
+  backgroundColor?: string;
+  children: React.ReactNode[];
+  spanRow?: boolean;
+  style?: CSSProperties;
+  z?: number;
+};
 
 const Wrapper = styled.div`
   border-radius: 4px;
 `;
 
-const Card = ({ backgroundColor, children, spanRow = false, style: compStyle, z = 1 }) => {
-  const style = {
+const Card = ({ backgroundColor, children, spanRow = false, style: compStyle, z = 1 }: CardProps) => {
+  const style: { [component: string]: CSSProperties } = {
     card: {},
     paper: {
       borderRadius: 4
@@ -31,13 +38,6 @@ const Card = ({ backgroundColor, children, spanRow = false, style: compStyle, z 
       </DropShadow>
     </Wrapper>
   );
-};
-
-Card.propTypes = {
-  backgroundColor: PropTypes.string,
-  children: PropTypes.node,
-  style: PropTypes.object,
-  z: PropTypes.number
 };
 
 export default Card;

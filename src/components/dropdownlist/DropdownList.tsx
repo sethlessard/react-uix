@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, ReactNode } from 'react';
 
-class DropdownList extends Component {
-  constructor(props) {
+export interface DropdownListProps {
+  children: ReactNode[];
+};
+
+class DropdownList extends Component<DropdownListProps> {
+  constructor(props: DropdownListProps) {
     super(props);
     this.state = {
       visible: false
     };
-    // TODO: implement
+    // TODO: [RU-22] implement
   }
 
   render() {
@@ -15,9 +18,5 @@ class DropdownList extends Component {
     return <div>{children}</div>;
   }
 }
-
-DropdownList.propTypes = {
-  children: PropTypes.node
-};
 
 export default DropdownList;

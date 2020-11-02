@@ -1,13 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ReactNode } from 'react';
 
-const DropdownListItem = ({ children }) => {
-  // TODO: implement
-  return <div>{children}</div>;
+export interface DropdownListItemProps {
+  children: ReactNode[];
 };
 
-DropdownListItem.propTypes = {
-  children: PropTypes.node
+const DropdownListItem = ({ children }: DropdownListItemProps) => {
+  // TODO: [RU-23] implement
+  return <div>{children}</div>;
 };
 
 export default DropdownListItem;

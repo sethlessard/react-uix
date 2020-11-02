@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import PropTypes from 'prop-types';
 
-const DropdownListItemIcon = ({ children }) => {
-  // TODO: implement
+export interface DropdownListItemIconProps {
+  children: ReactNode[];
+};
+
+
+const DropdownListItemIcon = ({ children }: DropdownListItemIconProps) => {
+  // TODO: [RU-24] implement
   return <div />;
 };
 
