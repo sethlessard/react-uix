@@ -2,7 +2,6 @@ trigger:
   branches:
     include:
       - "master"
-      - "RU-21-migrate-from-travis-ci-to-azure-pipelines"
   tags:
     include:
       - "v*"
