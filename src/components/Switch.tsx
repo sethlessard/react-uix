@@ -17,7 +17,6 @@ const Wrapper = styled.div`${SwitchWrapper}`;
 const LabelContainer = styled.div`${SwitchLabelContainerWrapper}`;
 const Label = styled.label`${SwitchLabelWrapper}`;
 const SwitchContainer = styled.div`${SwitchContainerWrapper}`;
-// TODO: put the custom styles in the @react-uix/styles package
 const InputSwitch = styled.input`
   ${SwitchInput}
   background-color: ${props => props.disabled ? "#eee" : "#fff"};

@@ -55,8 +55,6 @@ import NavSubheader from "./components/navdrawer/NavSubheader";
 import RadioButton from "./components/radio/RadioButton";
 import RadioGroup from "./components/radio/RadioGroup";
 
-// TODO: figure out spinners
-
 // Table
 import HeaderCell from "./components/table/HeaderCell";
 import Table from "./components/table/Table";
