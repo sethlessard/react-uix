@@ -1,20 +1,28 @@
 import React, { Component } from "react";
-// import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { withRouter } from "react-router";
+import { withRouter, RouteComponentProps } from "react-router";
+import { UIState } from "../redux/reducers/ui";
+import HasChildren from "../types/HasChildren";
+import HasStyle from "../types/HasStyle";
 
-const mapStateToProps = (state) => ({
+export interface ScrollToTopProps extends HasChildren, HasStyle, RouteComponentProps<{}> { }
+
+const mapStateToProps = (state: { ui: UIState }) => ({
   appContentScrollableComponent: state.ui.appContentScrollableComponent
 });
 
-class ScrollToTop extends Component {
-  constructor(props) {
+interface ConnectedScrollToTopProps extends ScrollToTopProps {
+  appContentScrollableComponent: React.RefObject<HTMLDivElement> | undefined
+}
+
+class ScrollToTop extends Component<ScrollToTopProps> {
+  constructor(props: ScrollToTopProps) {
     super(props);
     this.state = {};
   }
 
   componentDidMount() {
-    const { appContentScrollableComponent } = this.props;
+    const { appContentScrollableComponent } = this.props as ConnectedScrollToTopProps;
     // scroll to the top on
     if (appContentScrollableComponent && appContentScrollableComponent.current) { appContentScrollableComponent.current.scrollTo(0, 0); }
   }
@@ -32,8 +40,5 @@ class ScrollToTop extends Component {
     );
   }
 }
-
-ScrollToTop.propTypes = {
-};
 
 export default connect(mapStateToProps)(withRouter(ScrollToTop));

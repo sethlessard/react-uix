@@ -7,7 +7,7 @@ const Wrapper = styled.div`
 `;
 
 export interface AppbarToolbarProps {
-  children: React.ReactNode | React.ReactNode[]
+  children?:React.ReactNode | React.ReactNode[]
 };
 
 const AppbarToolbar = (props: AppbarToolbarProps) => {

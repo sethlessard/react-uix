@@ -1,9 +1,14 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
-import media from "../../style/media";
+import media, { ScreenType } from "../../style/media";
+import HasChildren from "../../types/HasChildren";
+import HasStyle from "../../types/HasStyle";
 
-const Wrapper = styled.div`
+interface IHasColumns {
+  numColumns: number;
+}
+
+const Wrapper = styled.div<IHasColumns>`
   float: left;
   padding-top: .5em;
   padding-bottom: .5em;
@@ -11,7 +16,7 @@ const Wrapper = styled.div`
   padding-right: .25em;
   width: calc(100% / ${props => props.numColumns} - 8px);
 
-  ${media.phone`
+  ${media(ScreenType.Phone)`
     display: block;
     width: auto;
     padding-left: 0;
@@ -23,7 +28,7 @@ const ItemLeft = styled(Wrapper)`
   padding-right: .5em;
   padding-left: 0;
 
-  ${media.phone`
+  ${media(ScreenType.Phone)`
     padding-left: 0;
     padding-right: 0;
   `}
@@ -32,13 +37,17 @@ const ItemRight = styled(Wrapper)`
   padding-left: .5em;
   padding-right: 0;
 
-  ${media.phone`
+  ${media(ScreenType.Phone)`
     padding-left: 0;
     padding-right: 0;
   `}
 `;
 
-const GridItem = ({ children, gridIndex, numColumns = 4, style: compStyle }) => {
+export interface GridItemProps extends IHasColumns, HasChildren, HasStyle {
+  gridIndex: number;
+}
+
+const GridItem = ({ children, gridIndex, numColumns = 4, style: compStyle }: GridItemProps) => {
   const style = {
     GridItem: {}
   };
@@ -55,11 +64,6 @@ const GridItem = ({ children, gridIndex, numColumns = 4, style: compStyle }) => 
   return (
     <Wrapper numColumns={numColumns} style={style.GridItem}> {children} </Wrapper>
   );
-};
-
-GridItem.propTypes = {
-  gridIndex: PropTypes.number.isRequired,
-  numColumns: PropTypes.number.isRequired
 };
 
 export default GridItem;

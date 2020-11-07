@@ -17,7 +17,7 @@ const NavSubheader = (props) => {
 };
 
 NavSubheader.propTypes = {
-  children: PropTypes.node
+  children?:PropTypes.node
 };
 
 export default NavSubheader;

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
-import media from '../../style/media';
+import media, { ScreenType } from "../../style/media";
 
 const Wrapper = styled.thead`
-  ${media.phone`
+  ${media(ScreenType.Phone)`
     display: none;
   `}
 `;
@@ -16,7 +16,7 @@ const TableHeader = (props) => {
 };
 
 TableHeader.propTypes = {
-  children: PropTypes.oneOfType([
+  children?:PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node)
   ])

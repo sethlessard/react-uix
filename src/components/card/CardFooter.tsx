@@ -1,10 +1,9 @@
 import React from 'react';
-import styled, { CSSProperties } from "styled-components";
+import styled from "styled-components";
+import HasChildren from '../../types/HasChildren';
+import HasStyle from '../../types/HasStyle';
 
-export interface CardFooterProps {
-  children: React.ReactNode[];
-  style?: CSSProperties;
-};
+export interface CardFooterProps extends HasChildren, HasStyle { }
 
 const Wrapper = styled.div`
   border-bottom-left-radius: 4px;

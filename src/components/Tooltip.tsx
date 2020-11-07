@@ -1,13 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import ReactChildren from '../types/ReactChildren';
 
-const Tooltip = ({ children }) => {
+export interface TooltipProps {
+  children: ReactChildren;
+}
+
+const Tooltip = ({ children }: TooltipProps) => {
   // TODO: [RU-28] implement
   return <div>{children}</div>;
-};
-
-Tooltip.propTypes = {
-  children: PropTypes.node
 };
 
 export default Tooltip;

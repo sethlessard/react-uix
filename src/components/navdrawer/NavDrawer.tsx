@@ -85,7 +85,7 @@ class NavDrawer extends Component {
 }
 
 NavDrawer.propTypes = {
-  children: PropTypes.node,
+  children?:PropTypes.node,
   openByDefault: PropTypes.bool,
   width: PropTypes.number
 };

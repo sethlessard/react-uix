@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import styled from "styled-components";
-import { sizes } from "../../style/media";
 
 import {
   updateBottomNavDefined,
@@ -9,10 +8,11 @@ import {
 } from "../../redux/actions/ui";
 import DropShadow from '../DropShadow';
 import { UIState } from '../../redux/reducers/ui';
+import { ScreenType } from '../../style/media';
 
 export interface BottomNavigationProps {
   backgroundColor?: string;
-  children: React.ReactNode | React.ReactNode[];
+  children?:React.ReactNode | React.ReactNode[];
   demo?: boolean;
   height?: number;
   foregroundColor?: string;
@@ -72,7 +72,7 @@ class BottomNavigation extends Component<BottomNavigationProps> {
     const { demo, height = 62, mobileOnly, updateBottomNavDefined, updateBottomNavHeight, windowWidth } = this.props as ConnectedBottomNavigationProps;
 
     if (!demo) {
-      if ((mobileOnly && (windowWidth <= sizes.tablet)) || !mobileOnly) {
+      if ((mobileOnly && (windowWidth <= ScreenType.Tablet.valueOf())) || !mobileOnly) {
         updateBottomNavDefined(true);
         updateBottomNavHeight(height);
       }
@@ -82,7 +82,7 @@ class BottomNavigation extends Component<BottomNavigationProps> {
   componentDidUpdate() {
     const { demo, mobileOnly, windowWidth, updateBottomNavDefined, updateBottomNavHeight } = this.props as ConnectedBottomNavigationProps;
 
-    if (!demo && (mobileOnly && windowWidth > sizes.tablet)) {
+    if (!demo && (mobileOnly && windowWidth > ScreenType.Tablet.valueOf())) {
       // no longer displaying the Bottom Nav
       updateBottomNavDefined(false);
       updateBottomNavHeight(0);
@@ -96,7 +96,7 @@ class BottomNavigation extends Component<BottomNavigationProps> {
     };
 
     if (!demo && mobileOnly) {
-      if (windowWidth > sizes.tablet) {
+      if (windowWidth > ScreenType.Tablet.valueOf()) {
         return <div style={{ display: "none" }} />;
       }
     }

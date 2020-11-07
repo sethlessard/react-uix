@@ -15,7 +15,7 @@ const NavGroup = ({ children, style: compStyle }) => {
 };
 
 NavGroup.propTypes = {
-  children: PropTypes.node
+  children?:PropTypes.node
 };
 
 export default NavGroup;

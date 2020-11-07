@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -10,7 +9,7 @@ const Wrapper = styled.div`
   justify-content: space-around;
 `;
 
-const Example = (props) => {
+const Example = (props: HasChildren & HasStyle) => {
   const style = {
     example: {}
   };
@@ -18,10 +17,6 @@ const Example = (props) => {
   return (
     <Wrapper style={style.example}>{props.children}</Wrapper>
   );
-};
-
-Example.propTypes = {
-  children: PropTypes.node
 };
 
 export default Example;

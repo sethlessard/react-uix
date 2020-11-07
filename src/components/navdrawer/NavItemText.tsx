@@ -23,7 +23,7 @@ const NavItemText = (props) => {
 };
 
 NavItemText.propTypes = {
-  children: PropTypes.string
+  children?:PropTypes.string
 };
 
 export default NavItemText;

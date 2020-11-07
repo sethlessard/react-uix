@@ -3,7 +3,7 @@ import React from 'react';
 import Text from "../Text";
 
 export interface DropdownListItemTextProps {
-  children: string;
+  children?:string;
 };
 
 const DropdownListItemText = ({ children }: DropdownListItemTextProps) => {

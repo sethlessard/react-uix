@@ -17,7 +17,7 @@ const NavHeader = (props) => {
 };
 
 NavHeader.propTypes = {
-  children: PropTypes.object,
+  children?:PropTypes.object,
   width: PropTypes.number,
   backgroundColor: PropTypes.string,
   foregroundColor: PropTypes.string

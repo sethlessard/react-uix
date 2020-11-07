@@ -3,12 +3,12 @@ import Paper from "../Paper";
 import Row from "../Row";
 import styled, { CSSProperties } from "styled-components";
 import DropShadow from "../DropShadow";
+import HasStyle from "../../types/HasStyle";
+import Styleable from "../../types/Styleable";
+import HasChildren from "../../types/HasChildren";
 
-export interface CardProps {
-  backgroundColor?: string;
-  children: React.ReactNode[];
+export interface CardProps extends HasChildren, HasStyle, Styleable {
   spanRow?: boolean;
-  style?: CSSProperties;
   z?: number;
 };
 

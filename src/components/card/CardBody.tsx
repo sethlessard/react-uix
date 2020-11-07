@@ -1,10 +1,9 @@
-import React, { ReactNode } from 'react';
-import styled, { CSSProperties } from "styled-components";
+import React from 'react';
+import styled from "styled-components";
+import HasChildren from '../../types/HasChildren';
+import HasStyle from '../../types/HasStyle';
 
-export interface CardBodyProps {
-  children: ReactNode[];
-  style?: CSSProperties;
-};
+export interface CardBodyProps extends HasChildren, HasStyle { }
 
 const Wrapper = styled.div`
   padding: 1em;

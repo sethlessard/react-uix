@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Heading from "../Heading";
 
-const ToolbarTitle = ({ children: title, style: compStyle }) => {
+const ToolbarTitle = ({ children?:title, style: compStyle }) => {
   const style = {
     toolbarTitle: {
       height: "4em",
@@ -23,7 +23,7 @@ const ToolbarTitle = ({ children: title, style: compStyle }) => {
 };
 
 ToolbarTitle.propTypes = {
-  children: PropTypes.string
+  children?:PropTypes.string
 };
 
 export default ToolbarTitle;

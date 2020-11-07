@@ -1,7 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import HasChildren from '../../types/HasChildren';
+import HasStyle from '../../types/HasStyle';
 
-const List = ({ children, style: listStyle, type = "ul" }) => {
+export interface ListProps extends HasChildren, HasStyle {
+  type: ListType;
+}
+
+export enum ListType {
+  Ordered = "ol",
+  Unordered = "ul"
+}
+
+const List = ({ children, style: listStyle, type = ListType.Unordered }: ListProps) => {
   const style = {
     list: {
       fontSize: ".8rem"
@@ -10,12 +21,12 @@ const List = ({ children, style: listStyle, type = "ul" }) => {
   Object.assign(style.list, listStyle);
   return (
     <div style={style.list}>
-      {type === "ol" &&
+      {type === ListType.Ordered &&
         <ol>
           {children}
         </ol>
       }
-      {type === "ul" &&
+      {type === ListType.Unordered &&
         <ul>
           {children}
         </ul>
@@ -25,7 +36,7 @@ const List = ({ children, style: listStyle, type = "ul" }) => {
 };
 
 List.propTypes = {
-  children: PropTypes.node,
+  children?:PropTypes.node,
   type: PropTypes.oneOf([
     "ul",
     "ol"

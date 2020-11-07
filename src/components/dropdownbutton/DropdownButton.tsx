@@ -1,15 +1,15 @@
-import React, { Component, CSSProperties } from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
+import HasChildren from "../../types/HasChildren";
+import HasStyle from "../../types/HasStyle";
 
 import IconButton from "../IconButton";
 
-export interface DropdownButtonProps {
-  child: React.ReactNode[];
+export interface DropdownButtonProps extends HasChildren, HasStyle {
   color?: string;
   icon: string;
   iconSize?: number | string;
   refBackgroundColor?: string;
-  style?: CSSProperties;
 };
 
 interface DropdownButtonState {
@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   cursor: pointer;
   position: relative;
 `;
-const Content = styled.div<DropdownButtonProps & DropdownButtonState>`
+const Content = styled.div<DropdownButtonState>`
   position: absolute;
   visibility: ${props => (props.visible) ? "visible" : "hidden"};
   opacity: ${props => (props.visible) ? 1 : 0};
@@ -34,7 +34,7 @@ const Content = styled.div<DropdownButtonProps & DropdownButtonState>`
   transition: opacity .2s ease-in-out;
   cursor-events: all;
 `;
-const Arrow = styled.div<DropdownButtonProps & DropdownButtonState>`
+const Arrow = styled.div<DropdownButtonState>`
   position: absolute;
   top: 45px;
   left: 21px;

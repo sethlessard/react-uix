@@ -75,7 +75,6 @@ import Checkbox from "./components/Checkbox";
 import Code from "./components/Code";
 import ColorPicker from "./components/ColorPicker";
 import DropShadow from "./components/DropShadow";
-import FlexBox from "./components/FlexBox";
 import Heading from "./components/Heading";
 import Icon from "./components/Icon";
 import IconButton from "./components/IconButton";
@@ -87,7 +86,6 @@ import Paragraph from "./components/Paragraph";
 import Row from "./components/Row";
 import ScrollToTop from "./components/ScrollToTop";
 import Spacer from "./components/Spacer";
-import Subtitle from "./components/Subtitle";
 import Switch from "./components/Switch";
 import Text from "./components/Text";
 import TextArea from "./components/TextArea";
@@ -159,7 +157,6 @@ export {
   Button,
   Checkbox,
   ColorPicker,
-  FlexBox,
   Code,
   DropShadow,
   Heading,
@@ -173,7 +170,6 @@ export {
   Row,
   ScrollToTop,
   Spacer,
-  Subtitle,
   Switch,
   Text,
   TextArea,

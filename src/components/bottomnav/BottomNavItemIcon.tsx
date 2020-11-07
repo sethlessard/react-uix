@@ -1,19 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
-import styled, { CSSProperties } from "styled-components";
+import styled from "styled-components";
 import { UIState } from "../../redux/reducers/ui";
+import HasChildren from "../../types/HasChildren";
+import HasStyle from "../../types/HasStyle";
 
 import Icon from "../Icon";
 
 const Wrapper = styled.div`
 `;
 
-export interface BottomNavItemIconProps {
-  children: string;
+export interface BottomNavItemIconProps extends HasChildren, HasStyle {
   color?: string;
   refBackgroundColor?: string;
   size?: number | string;
-  style?: CSSProperties;
 }
 
 const mapStateToProps = (state: { ui: UIState }, ownProps: BottomNavItemIconProps) => ({

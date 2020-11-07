@@ -1,17 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import ReactChildren from '../../types/ReactChildren';
 
-const TableBody = (props) => {
+export interface TableBodyProps {
+  children: ReactChildren;
+}
+
+const TableBody = (props: TableBodyProps) => {
   return (
     <tbody>{props.children}</tbody>
   );
-};
-
-TableBody.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node)
-  ])
 };
 
 export default TableBody;

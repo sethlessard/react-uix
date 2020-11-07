@@ -1,13 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import ReactChildren from '../../types/ReactChildren';
 
-const RadioGroup = ({ children }) => {
+export interface RadioGroupProps {
+  children: ReactChildren;
+}
+
+const RadioGroup = ({ children }: RadioGroupProps) => {
   // TODO: [RU-27] implement
   return <div>{children}</div>;
-};
-
-RadioGroup.propTypes = {
-  children: PropTypes.node
 };
 
 export default RadioGroup;

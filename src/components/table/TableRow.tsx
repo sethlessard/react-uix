@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
-import media from "../../style/media";
+import media, { ScreenType } from "../../style/media";
 
 const Wrapper = styled.tr`
   border-top: 1px solid #ddd;
@@ -10,7 +10,7 @@ const Wrapper = styled.tr`
   color: ${props => props.foregroundColor || "#000"};
 
 
-  ${media.phone`
+  ${media(ScreenType.Phone)`
     border: none;
     padding: 1em 0;
     display: block;
@@ -28,7 +28,7 @@ const TableRow = ({ backgroundColor, children, foregroundColor, style: compStyle
 };
 
 TableRow.propTypes = {
-  children: PropTypes.node,
+  children?:PropTypes.node,
   foregroundColor: PropTypes.string,
   backgroundColor: PropTypes.string
 };

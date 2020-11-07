@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
 import Text from "../Text";
-import media from '../../style/media';
+import media, { ScreenType } from "../../style/media";
 
 const Wrapper = styled.td`
   padding: .625em;
@@ -11,7 +11,7 @@ const Wrapper = styled.td`
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
 
-  ${media.phone`
+  ${media(ScreenType.Phone)`
     border-bottom: 1px solid #ddd;
     display: block;
     text-align: right;
@@ -37,7 +37,7 @@ const TableData = (props) => {
 };
 
 TableData.propTypes = {
-  children: PropTypes.node,
+  children?:PropTypes.node,
   label: PropTypes.string
 };
 

@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import PropTypes from 'prop-types';
 
 export interface DropdownListItemIconProps {
-  children: ReactNode[];
+  children?:ReactNode[];
 };
 
 
@@ -12,7 +12,7 @@ const DropdownListItemIcon = ({ children }: DropdownListItemIconProps) => {
 };
 
 DropdownListItemIcon.propTypes = {
-  children: PropTypes.node
+  children?:PropTypes.node
 };
 
 export default DropdownListItemIcon;

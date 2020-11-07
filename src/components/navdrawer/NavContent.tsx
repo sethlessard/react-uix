@@ -18,7 +18,7 @@ const NavContent = (props) => {
 };
 
 NavContent.propTypes = {
-  children: PropTypes.oneOfType([
+  children?:PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node)
   ])

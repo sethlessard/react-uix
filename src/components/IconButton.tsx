@@ -1,16 +1,30 @@
 import React, { Component, CSSProperties } from 'react';
 import Icon from "./Icon";
 import styled from "styled-components";
-import { IconButtonWrapper } from "@react-uix/styles";
 
-const Wrapper = styled.div`${IconButtonWrapper}`;
+import Clickable from '../types/Clickable';
+import HasStyle from '../types/HasStyle';
+import Styleable from '../types/Styleable';
 
-export interface IconButtonProps {
+const Wrapper = styled.div`
+  position: relative;
+  border: none;
+  border-radius: 4px;
+  vertical-align: center;
+  text-align: center;
+  padding: .5em;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+`;
+
+export interface IconButtonProps extends HasStyle, Styleable, Clickable {
   children: string;
-  color?: string;
   refBackgroundColor?: string;
   size?: number | string;
-  style?: CSSProperties;
   onClick?: () => void;
 };
 
@@ -27,7 +41,7 @@ class IconButton extends Component<IconButtonProps, IconButtonState> {
   }
 
   render() {
-    const { children, color, refBackgroundColor, size, style: compStyle, onClick } = this.props;
+    const { children, foregroundColor, refBackgroundColor, size, style: compStyle, onClick } = this.props;
     const { pressed } = this.state;
     const style: { [component: string]: CSSProperties } = {
       iconButton: {}
@@ -40,7 +54,7 @@ class IconButton extends Component<IconButtonProps, IconButtonState> {
 
     return (
       <Wrapper style={style.iconButton} onClick={onClick} onMouseLeave={() => this.setState({pressed: false})} onMouseDown={() => this.togglePress()} onMouseUp={() => this.togglePress()}>
-        <Icon color={color} refBackgroundColor={refBackgroundColor} size={size}>{children}</Icon>
+        <Icon foregroundColor={foregroundColor} refBackgroundColor={refBackgroundColor} size={size}>{children}</Icon>
       </Wrapper>
     );
   }

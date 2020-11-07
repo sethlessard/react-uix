@@ -3,15 +3,26 @@ import PropTypes from "prop-types";
 import Text from "./Text";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import { ParagraphWrapper } from "@react-uix/styles";
+import HasChildren from "../types/HasChildren";
+import HasStyle from "../types/HasStyle";
+import Styleable from "../types/Styleable";
+import { UIState } from "../redux/reducers/ui";
 
-const mapStateToProps = (state, ownProps) => ({
-  color: ownProps.color || state.ui.foregroundColor
+export interface ParagraphProps extends HasChildren, HasStyle, Styleable {
+  fontSize: string;
+  fontWeight: string;
+}
+
+const mapStateToProps = (state: { ui: UIState }, ownProps: ParagraphProps) => ({
+  // TODO: calculate color based on background
+  foregroundColor: ownProps.foregroundColor || state.ui.theme.text.colorOnLight
 });
 
-const Wrapper = styled.div`${ParagraphWrapper}`;
+const Wrapper = styled.div`
+  padding: .5em 0;
+`;
 
-const Paragraph = ({ children, color, fontSize, fontWeight, style: compStyle }) => {
+const Paragraph = ({ children, foregroundColor, fontSize, fontWeight, style: compStyle }: ParagraphProps) => {
   const style = {
     Paragraph: {}
   };
@@ -19,7 +30,7 @@ const Paragraph = ({ children, color, fontSize, fontWeight, style: compStyle }) 
   return (
     <Wrapper style={style.Paragraph}>
       <Text
-        color={color}
+        foregroundColor={foregroundColor}
         fontSize={fontSize}
         fontWeight={fontWeight}
       >

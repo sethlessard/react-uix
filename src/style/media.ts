@@ -1,21 +1,27 @@
-//@ts-nocheck
-import { css } from 'styled-components'
+import { css, CSSObject } from "styled-components";
 
-export const sizes = {
-  giant: 1170,
-  desktop: 992,
-  tablet: 768,
-  phone: 420
+export enum ScreenType {
+  Phone = 420,
+  Tablet = 768,
+  Desktop = 992,
+  Giant = 1170
 };
 
-// iterate through the sizes and create a media template
-const media = Object.keys(sizes).reduce((accumulator, label) => {
-  const emSize = sizes[label] / 16;
-  accumulator[label] = (...args) => css`
-    @media (max-width: ${emSize}em) {
-      ${css(...args)};
-    }
-  `;
-  return accumulator;
-}, {});
+/**
+ * Returns css for a specific screen type.
+ * @param screenType the screen type.
+ */
+export const media = (screenType: ScreenType) => {
+  const emSize = _getEmSize(screenType);
+  return (style: CSSObject | TemplateStringsArray) => `@media(max-width: ${emSize}em) { ${css(style)} }`;
+};
+
+/**
+ * Get the EM size for a specific screen type.
+ * @param screenType the screen type.
+ */
+const _getEmSize = (screenType: ScreenType) => {
+  return screenType.valueOf() / 16;
+};
+
 export default media;

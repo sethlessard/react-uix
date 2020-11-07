@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from "react-redux";
-import styled, { CSSProperties } from "styled-components";
+import styled from "styled-components";
 import { UIState } from '../../redux/reducers/ui';
+import HasChildren from '../../types/HasChildren';
+import HasStyle from '../../types/HasStyle';
+import Styleable from '../../types/Styleable';
 
-export interface BottomNavItemProps {
-  children: React.ReactNode | React.ReactNode[];
-  foregroundColor?: string;
+export interface BottomNavItemProps extends HasChildren, HasStyle, Styleable {
   height?: number;
-  style?: CSSProperties;
   onClick?: () => void;
 };
 

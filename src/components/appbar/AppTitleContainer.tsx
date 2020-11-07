@@ -1,6 +1,7 @@
-import React, { CSSProperties, ReactNode } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import styled from "styled-components";
+import HasChildren from "../../types/HasChildren";
+import HasStyle from "../../types/HasStyle";
 
 const Wrapper = styled.div`
   margin-right: auto;
@@ -8,10 +9,7 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-export interface AppTitleContainerProps {
-  children: ReactNode,
-  style?: CSSProperties
-}
+export interface AppTitleContainerProps extends HasChildren, HasStyle { }
 
 const AppTitleContainer = (props: AppTitleContainerProps) => {
   const style = {
@@ -23,10 +21,6 @@ const AppTitleContainer = (props: AppTitleContainerProps) => {
       {props.children}
     </Wrapper>
   );
-};
-
-AppTitleContainer.propTypes = {
-  children: PropTypes.node
 };
 
 export default AppTitleContainer;

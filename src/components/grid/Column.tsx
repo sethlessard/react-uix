@@ -1,7 +1,9 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
+
+import ReactChildren from "../../types/ReactChildren";
 
 export interface ColumnProps {
-  children: ReactNode[];
+  children?: ReactChildren;
 };
 
 const Column = ({ children }: ColumnProps) => {

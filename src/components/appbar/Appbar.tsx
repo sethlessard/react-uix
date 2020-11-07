@@ -4,13 +4,12 @@ import styled, { CSSProperties } from "styled-components";
 
 import { updateAppbarDefined, updateAppbarHeight } from '../../redux/actions/ui';
 import { UIState } from '../../redux/reducers/ui';
+import HasStyle from '../../types/HasStyle';
+import Styleable from '../../types/Styleable';
 
-export interface AppbarProps {
-  backgroundColor?: string,
+export interface AppbarProps extends Styleable, HasStyle {
   demo?: boolean,
-  foregroundColor?: string,
   height?: number,
-  style?: CSSProperties
 };
 
 const mapStateToProps = (state: { ui: UIState }, ownProps: AppbarProps) => {

@@ -1,17 +1,15 @@
 import React from "react";
-import PropTypes from "prop-types";
-import styled, { CSSProperties } from "styled-components";
+import styled from "styled-components";
 import Text from "../Text";
+import HasChildren from "../../types/HasChildren";
+import HasStyle from "../../types/HasStyle";
 
 const Wrapper = styled.div`
 `;
 
-export interface DropdownButtonTextProps {
-  children: string;
-  style?: CSSProperties;
-};
+export interface DropdownButtonTextProps extends HasChildren, HasStyle { }
 
-const DropdownButtonText = (props) => {
+const DropdownButtonText = (props: DropdownButtonTextProps) => {
   const style = {
     dropdownText: {}
   };
@@ -21,10 +19,6 @@ const DropdownButtonText = (props) => {
       <Text fontSize=".8rem">{props.children}</Text>
     </Wrapper>
   );
-};
-
-DropdownButtonText.propTypes = {
-  children: PropTypes.string
 };
 
 export default DropdownButtonText;

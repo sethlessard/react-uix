@@ -33,7 +33,7 @@ const TextArea = ({ children, color, height = "100%", placeholderColor, resizabl
 };
 
 TextArea.propTypes = {
-  children: PropTypes.string,
+  children?:PropTypes.string,
   height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   resizable: PropTypes.bool,
   width: PropTypes.oneOfType([PropTypes.number, PropTypes.string])

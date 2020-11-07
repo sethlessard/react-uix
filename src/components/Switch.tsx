@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
 import { connect } from "react-redux";
-import uuid from "uuid/v4";
+import { v4 } from "uuid";
 import { SwitchWrapper, SwitchLabelWrapper, SwitchLabelContainerWrapper, SwitchContainerWrapper, SwitchInput, SwitchKnob } from "@react-uix/styles";
 
 import Spacer from "./Spacer";
@@ -56,7 +56,7 @@ class Switch extends Component {
       Switch: {}
     };
     Object.assign(style.Switch, compStyle);
-    const id = uuid();
+    const id = v4();
     return (
       <Wrapper style={style.Switch} disabled={disabled}>
         {children &&
@@ -91,7 +91,7 @@ class Switch extends Component {
 }
 
 Switch.propTypes = {
-  children: PropTypes.string,
+  children?:PropTypes.string,
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
   onChecked: PropTypes.func

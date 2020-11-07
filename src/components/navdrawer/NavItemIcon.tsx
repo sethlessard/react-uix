@@ -15,7 +15,7 @@ const NavItemIcon = ({ children, size, color, style: compStyle }) => {
 };
 
 NavItemIcon.propTypes = {
-  children: PropTypes.string,
+  children?:PropTypes.string,
   size: PropTypes.number
 };
 

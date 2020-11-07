@@ -1,22 +1,54 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import styled from "styled-components";
 import copy from "copy-to-clipboard";
-import { CodeWrapper, CodeSpan, CodeCopyContainer } from "@react-uix/styles";
 
 import IconButton from "./IconButton";
+import { UIState } from '../redux/reducers/ui';
+import HasChildren from '../types/HasChildren';
+import HasStyle from '../types/HasStyle';
+import Styleable from '../types/Styleable';
 
-const mapStateToProps = (state, ownProps) => ({
-  foregroundColor: ownProps.foregroundColor || state.ui.foregroundColor,
+export interface CodeProps extends HasChildren, HasStyle, Styleable { 
+  code: string;
+}
+
+const mapStateToProps = (state: { ui: UIState }, ownProps: CodeProps) => ({
+  foregroundColor: ownProps.foregroundColor || state.ui.theme.primaryColor,
   backgroundColor: ownProps.backgroundColor || "#33495e"
 });
 
-const Wrapper = styled.div`${CodeWrapper}`;
-const Span = styled.span`${CodeSpan}`;
-const CopyContainer = styled.div`${CodeCopyContainer}`;
+const Wrapper = styled.div<Styleable>`
+  background-color: ${props => props.backgroundColor};
+  color: ${props => props.foregroundColor || "#fff"};
+  padding: 1em 0;
+  border-radius: 4px;
+  display: flex;
+  width: auto;
+  justify-content: space-between;
+  align-items: center;
+`;
 
-const parseCode = (code) => {
+const Span = styled.span<Styleable>`
+  padding: 0 0 0 1em;
+  display: inline-block;
+  word-wrap: break-word;
+  font-family: monospace;
+  font-size: .8rem;
+  line-height: 1rem;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const CopyContainer = styled.div<Styleable>`
+  display: inline-block;
+  cursor: pointer;
+  padding: .5em;
+`;
+
+const parseCode = (code: string) => {
   const html = [];
   let token = "";
   code = code.trim();
@@ -47,11 +79,11 @@ const parseCode = (code) => {
   return html;
 };
 
-const Code = ({ backgroundColor, foregroundColor, style: compStyle, text }) => {
+const Code = ({ backgroundColor, code, foregroundColor, style: compStyle }: CodeProps) => {
   const style = {
-    Code: {}
+    code: {}
   };
-  Object.assign(style.Code, compStyle);
+  Object.assign(style.code, compStyle);
   return (
     <Wrapper
       style={style.code}
@@ -59,14 +91,14 @@ const Code = ({ backgroundColor, foregroundColor, style: compStyle, text }) => {
       foregroundColor={foregroundColor}
     >
       <Span>
-        {parseCode(text)}
+        {parseCode(code)}
       </Span>
       <CopyContainer>
         <IconButton
           onClick={() => {
-            copy(text);
+            copy(code);
           }}
-          color={foregroundColor}
+          foregroundColor={foregroundColor}
           refBackgroundColor={backgroundColor}
         >
           assignment
@@ -74,10 +106,6 @@ const Code = ({ backgroundColor, foregroundColor, style: compStyle, text }) => {
       </CopyContainer>
     </Wrapper>
   );
-};
-
-Code.propTypes = {
-  text: PropTypes.string
 };
 
 export default connect(mapStateToProps)(Code);

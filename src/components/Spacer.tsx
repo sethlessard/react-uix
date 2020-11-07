@@ -1,11 +1,25 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
-import { SpacerWrapper } from "@react-uix/styles";
+import HasChildren from "../types/HasChildren";
+import HasStyle from "../types/HasStyle";
 
-const Wrapper = styled.div`${SpacerWrapper}`;
+interface IHasSize {
+  size?: string;
+}
 
-const Spacer = ({ children, horizontal = false, size = "1em", style: compStyle }) => {
+interface IHorizontal {
+  horizontal?: boolean;
+}
+
+export interface SpacerProps extends HasChildren, HasStyle, IHasSize, IHorizontal { }
+
+const Wrapper = styled.div<IHasSize & IHorizontal>`
+  display: ${props => (props.horizontal) ? "inline-block" : "block"};
+  height: ${props => (props.horizontal) ? "auto" : props.size};
+  width: ${props => (props.horizontal) ? props.size : "auto"};
+`;
+
+const Spacer = ({ children, horizontal = false, size = "1em", style: compStyle }: SpacerProps) => {
   const style = {
     Spacer: {}
   };
@@ -15,11 +29,6 @@ const Spacer = ({ children, horizontal = false, size = "1em", style: compStyle }
       {children}
     </Wrapper>
   );
-};
-
-Spacer.propTypes = {
-  horizontal: PropTypes.bool,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
 export default Spacer;

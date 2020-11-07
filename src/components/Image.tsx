@@ -1,7 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import HasStyle from '../types/HasStyle';
 
-const Image = ({ alt, src, height, width, style: compStyle }) => {
+export interface ImageProps extends HasStyle {
+  alt: string;
+  src: string;
+  height?: number | string;
+  width?: number | string;
+}
+
+const Image = ({ alt, src, height, width, style: compStyle }: ImageProps) => {
   const style = {
     container: {
       height,
@@ -17,13 +24,6 @@ const Image = ({ alt, src, height, width, style: compStyle }) => {
       <img style={style.img} src={src} height={height} width={width} alt={alt} />
     </div>
   );
-};
-
-Image.propTypes = {
-  alt: PropTypes.string,
-  src: PropTypes.string,
-  height: PropTypes.string,
-  width: PropTypes.string
 };
 
 export default Image;

@@ -8,7 +8,7 @@ import { toggleNavigationDrawer } from "../../redux/actions/ui";
 import { UIState } from "../../redux/reducers/ui";
 
 export interface AppbarToggleButtonProps {
-  children: string,
+  children?:string,
   color?: string,
   style: CSSProperties
 };

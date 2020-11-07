@@ -1,11 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from "styled-components";
-import { PaperWrapper } from "@react-uix/styles";
+import HasChildren from '../types/HasChildren';
+import Styleable from '../types/Styleable';
+import HasStyle from '../types/HasStyle';
 
-const Wrapper = styled.div`${PaperWrapper}`;
+export interface PaperProps extends HasChildren, HasStyle, Styleable { }
 
-const Paper = ({ backgroundColor = "#fff", children, style: compStyle }) => {
+const Wrapper = styled.div<Styleable>`
+  background-color: ${props => props.backgroundColor};
+`;
+
+const Paper = ({ backgroundColor = "#fff", children, style: compStyle }: PaperProps) => {
   const style = {
     paper: {}
   };
@@ -13,14 +18,6 @@ const Paper = ({ backgroundColor = "#fff", children, style: compStyle }) => {
   return (
     <Wrapper backgroundColor={backgroundColor} style={style.paper}>{children}</Wrapper>
   );
-};
-
-Paper.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node)
-  ]),
-  style: PropTypes.object
 };
 
 export default Paper;

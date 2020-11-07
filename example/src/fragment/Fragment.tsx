@@ -41,7 +41,7 @@ class Fragment extends Component {
 }
 
 Fragment.propTypes = {
-  children: PropTypes.oneOfType([
+  children?:PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node)
   ])

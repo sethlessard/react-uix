@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
-import media from '../../style/media';
+import media, { ScreenType } from "../../style/media";
 
 const Wrapper = styled.table`
   border-collapse: collapse;
@@ -10,7 +10,7 @@ const Wrapper = styled.table`
   width: 100%;
   table-layout: fixed;
 
-  ${media.phone`
+  ${media(ScreenType.Phone)`
     border: 0
   `}
 `;
@@ -24,7 +24,7 @@ const Table = (props) => {
 };
 
 Table.propTypes = {
-  children: PropTypes.oneOfType([
+  children?:PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node)
   ])

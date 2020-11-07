@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 
 export interface DropdownListItemProps {
-  children: ReactNode[];
+  children?:ReactNode[];
 };
 
 const DropdownListItem = ({ children }: DropdownListItemProps) => {

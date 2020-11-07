@@ -1,10 +1,10 @@
 import React from "react";
-import styled, { CSSProperties } from "styled-components";
+import styled from "styled-components";
+import HasChildren from "../../types/HasChildren";
+import HasStyle from "../../types/HasStyle";
 
-export interface BottomNavItemTextProps {
-  children: string;
+export interface BottomNavItemTextProps extends HasChildren, HasStyle {
   fontSize?: number | string;
-  style?: CSSProperties;
 };
 
 const Wrapper = styled.div`

@@ -8,7 +8,7 @@ import uiReducer from "./reducers/ui";
 
 export const history = createBrowserHistory();
 
-const configureUIStore = (preloadedState: PreloadedState<any>) => {
+const configureUIStore = (preloadedState?: PreloadedState<any>) => {
   return createStore(
     uiReducer(history),
     preloadedState,

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
+import Styleable from "../../types/Styleable";
 
-export interface DropdownButtonItemProps {
-  children: React.ReactNode[],
-  foregroundColor?: string;
+export interface DropdownButtonItemProps extends Styleable {
+  children?:React.ReactNode[],
   onClick?: () => void;
 };
 

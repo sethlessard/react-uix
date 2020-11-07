@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
-import PropTypes from "prop-types";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import configureUIStore, { history } from "../redux/configureUIStore";
 import { updateTheme, updateWindowHeight, updateWindowWidth } from "../redux/actions/ui";
-// import PropTypes from 'prop-types';
 import styled from "styled-components";
-import { AppWrapper } from "@react-uix/styles";
+import { UITheme } from '../redux/reducers/ui';
 
 const uiStore = configureUIStore();
 
-const Wrapper = styled.div`${AppWrapper}`;
+export interface AppProps {
+  theme: UITheme;
+}
 
-class App extends Component {
-  constructor(props) {
+const Wrapper = styled.div`
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  font-size: 16px;
+`;
+
+class App extends Component<AppProps> {
+  constructor(props: AppProps) {
     super(props);
     this._handleWindowResize = this._handleWindowResize.bind(this);
   }
@@ -45,9 +52,5 @@ class App extends Component {
     uiStore.dispatch(updateWindowWidth(window.innerWidth));
   }
 }
-
-App.propTypes = {
-  theme: PropTypes.object
-};
 
 export default App;

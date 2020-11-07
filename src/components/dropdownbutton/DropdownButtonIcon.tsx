@@ -1,10 +1,10 @@
 import React from "react";
+import Styleable from "../../types/Styleable";
 
 import Icon from "../Icon";
 
-export interface DropdownButtonIconProps {
+export interface DropdownButtonIconProps extends Styleable {
   children: string;
-  color?: string;
 };
 
 const DropdownButtonIcon = (props: DropdownButtonIconProps) => {
@@ -15,7 +15,7 @@ const DropdownButtonIcon = (props: DropdownButtonIconProps) => {
   };
   return (
     <div style={style.dropdownIcon}>
-      <Icon color={props.color}>{props.children}</Icon>
+      <Icon foregroundColor={props.foregroundColor}>{props.children}</Icon>
     </div>
   );
 };
