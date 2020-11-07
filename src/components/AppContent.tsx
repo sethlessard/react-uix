@@ -11,7 +11,7 @@ export interface AppContentProps extends HasChildren, HasStyle { }
 const mapStateToProps = (state: { ui: UIState }) => {
   return {
     appbarDefined: state.ui.appbar.defined,
-    appbarHeight: state.ui.appbar.defined,
+    appbarHeight: state.ui.appbar.height,
     bottomNavDefined: state.ui.bottomNav.defined,
     bottomNavHeight: state.ui.bottomNav.height,
     navDrawerOpen: state.ui.navDrawer.open

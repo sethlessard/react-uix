@@ -26,6 +26,7 @@ const Wrapper = styled.div<Styleable>`
   width: auto;
   justify-content: space-between;
   align-items: center;
+  overflow-x: hidden;
 `;
 
 const Span = styled.span<Styleable>`
@@ -35,10 +36,7 @@ const Span = styled.span<Styleable>`
   font-family: monospace;
   font-size: .8rem;
   line-height: 1rem;
-  overflow-x: scroll;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  overflow-x: hidden;
 `;
 
 const CopyContainer = styled.div<Styleable>`
