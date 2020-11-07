@@ -1,22 +1,29 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import styled from "styled-components";
 
-const ToolbarOptionContainer = ({ children, style: compStyle }) => {
+import HasChildren from "../../types/HasChildren";
+import HasStyle from "../../types/HasStyle";
+
+export interface ToolbarOptionContainerProps extends HasChildren, HasStyle { }
+
+const Wrapper = styled.div`
+  float: right;
+  display: flex;
+  height: 100%;
+  padding: 0 1em 0 0;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ToolbarOptionContainer = ({ children, style: compStyle }: ToolbarOptionContainerProps) => {
   const style = {
-    optionContainer: {
-      float: "right",
-      display: "flex",
-      height: "100%",
-      padding: "0 1em 0 0",
-      alignItems: "center",
-      justifyContent: "center"
-    }
+    optionContainer: {}
   };
   Object.assign(style.optionContainer, compStyle);
   return (
-    <div style={style.optionContainer}>
+    <Wrapper style={style.optionContainer}>
       {children}
-    </div>
+    </Wrapper>
   );
 };
 

@@ -1,7 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
+import Styleable from "../../types/Styleable";
+import HasChildren from "../../types/HasChildren";
+import HasStyle from "../../types/HasStyle";
 
-const NavHeader = (props) => {
+export interface NavHeaderProps extends HasChildren, HasStyle, Styleable {
+  width?: number;
+}
+
+const NavHeader = (props: NavHeaderProps) => {
   const style = {
     navHeader: {
       width: props.width || 240,
@@ -10,17 +16,8 @@ const NavHeader = (props) => {
     }
   };
   return (
-    <div style={style.navHeader}>
-      {props.children}
-    </div>
+    <div style={style.navHeader}>{props.children}</div>
   );
-};
-
-NavHeader.propTypes = {
-  children?:PropTypes.object,
-  width: PropTypes.number,
-  backgroundColor: PropTypes.string,
-  foregroundColor: PropTypes.string
 };
 
 export default NavHeader;

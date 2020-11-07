@@ -66,7 +66,7 @@ class Appbar extends Component<AppbarProps> {
     if (demo) {
       style.appbar.position = "inherit";
     }
-    Object.apply(style.appbar, compStyle);
+    Object.assign(style.appbar, compStyle);
     return (
       <Wrapper
         backgroundColor={backgroundColor}

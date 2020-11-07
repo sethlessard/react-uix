@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import HasChildren from "../../types/HasChildren";
 import HasStyle from "../../types/HasStyle";
+import Styleable from "../../types/Styleable";
 
 import IconButton from "../IconButton";
 
-export interface DropdownButtonProps extends HasChildren, HasStyle {
-  color?: string;
+export interface DropdownButtonProps extends HasChildren, HasStyle, Styleable {
   icon: string;
   iconSize?: number | string;
   refBackgroundColor?: string;
@@ -79,7 +79,7 @@ class DropdownButton extends Component<DropdownButtonProps, DropdownButtonState>
   }
 
   render() {
-    const { icon, color, children, refBackgroundColor, style: compStyle } = this.props;
+    const { icon, foregroundColor, children, refBackgroundColor, style: compStyle } = this.props;
     const { visible } = this.state;
     const style = {
       dropdownButton: {}
@@ -87,7 +87,7 @@ class DropdownButton extends Component<DropdownButtonProps, DropdownButtonState>
     Object.assign(style.dropdownButton, compStyle);
     return (
       <Wrapper style={style.dropdownButton} onClick={() => this.toggleVisibility()}>
-        <IconButton color={color} refBackgroundColor={refBackgroundColor} size={this.props.iconSize}>{icon}</IconButton>
+        <IconButton foregroundColor={foregroundColor} refBackgroundColor={refBackgroundColor} size={this.props.iconSize}>{icon}</IconButton>
         <Arrow visible={visible} />
         <Content visible={visible} ref={this.dialogRef} onMouseLeave={() => this.setInvisible()}>
           {children}

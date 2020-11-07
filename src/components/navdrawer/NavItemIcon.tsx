@@ -1,22 +1,24 @@
 import React from "react";
 import Icon from "../Icon";
-import PropTypes from "prop-types";
+import HasStyle from "../../types/HasStyle";
+import Styleable from "../../types/Styleable";
 
-const NavItemIcon = ({ children, size, color, style: compStyle }) => {
+export interface NavItemIconProps extends HasStyle, Styleable {
+  children: string;
+  size?: number;
+}
+
+const NavItemIcon = ({ children, size, foregroundColor, style: compStyle }: NavItemIconProps) => {
   const style = {
     navItemIcon: {}
   };
   Object.assign(style.navItemIcon, compStyle);
   return (
     <div className="NavItemIcon" style={style.navItemIcon}>
-      <Icon size={size || "1.5rem"} color={color || "#000000"}>{children}</Icon>
+      {/* TODO: get foreground color from the UI theme */}
+      <Icon size={size || "1.5rem"} foregroundColor={foregroundColor || "#000000"}>{children}</Icon>
     </div>
   );
-};
-
-NavItemIcon.propTypes = {
-  children?:PropTypes.string,
-  size: PropTypes.number
 };
 
 export default NavItemIcon;

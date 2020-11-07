@@ -1,5 +1,5 @@
 import React from "react";
-import configureStore from "redux-mock-store";
+import configureStore, { MockStore } from "redux-mock-store";
 import { Provider } from "react-redux";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
@@ -9,10 +9,10 @@ import AppbarToggleButton from "./AppbarToggleButton";
 
 const mockStore = configureStore([]);
 
-const getTree = (store) => {
+const getTree = (store: MockStore) => {
   return renderer.create((
     <Provider store={store}>
-      <AppbarToggleButton />
+      <AppbarToggleButton>menu</AppbarToggleButton>
     </Provider>
   )).toJSON();
 }
@@ -30,7 +30,7 @@ describe("AppbarToggleButton", () => {
       }
     }
   };
-  let store;
+  let store: MockStore;
   beforeEach(() => {
     store = mockStore(defs);
   });

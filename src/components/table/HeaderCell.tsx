@@ -1,7 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from "styled-components";
 import Text from "../Text";
+import HasStyle from '../../types/HasStyle';
+
+export interface HeaderCellProps extends HasStyle {
+  children: string;
+}
 
 const Wrapper = styled.th`
   padding: .625rem;
@@ -9,9 +13,13 @@ const Wrapper = styled.th`
   font-size: .75rem;
 `;
 
-const HeaderCell = (props) => {
+const HeaderCell = (props: HeaderCellProps) => {
+  const style = {
+    headerCell: {}
+  };
+  Object.assign(style.headerCell, props.style);
   return (
-    <Wrapper>
+    <Wrapper style={style.headerCell}>
       <Text
         fontWeight="bold"
       >
@@ -19,13 +27,6 @@ const HeaderCell = (props) => {
       </Text>
     </Wrapper>
   );
-};
-
-HeaderCell.propTypes = {
-  children?:PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node)
-  ])
 };
 
 export default HeaderCell;

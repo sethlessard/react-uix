@@ -1,13 +1,17 @@
 import React from 'react';
+import HasChildren from '../../types/HasChildren';
+import HasStyle from '../../types/HasStyle';
 
-import ReactChildren from "../../types/ReactChildren";
+export interface ColumnProps extends HasChildren, HasStyle {};
 
-export interface ColumnProps {
-  children?: ReactChildren;
-};
-
-const Column = ({ children }: ColumnProps) => {
-  return (<div>{children}</div>);
+const Column = (props: ColumnProps) => {
+  const style = {
+    column: {}
+  };
+  Object.assign(style.column, props.style);
+  return (
+    <div>{props.children}</div>
+  );
 };
 
 export default Column;

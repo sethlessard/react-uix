@@ -1,27 +1,46 @@
 import React, { Component } from 'react';
-import PropTypes from "prop-types";
 import { updateNavDrawerDefined, updateNavDrawerOpen, updateNavDrawerWidth } from '../../redux/actions/ui';
 import { connect } from 'react-redux';
 import styled from "styled-components";
+import HasChildren from '../../types/HasChildren';
+import HasStyle from '../../types/HasStyle';
+import { UIState } from '../../redux/reducers/ui';
 
-const mapStateToProps = (state, ownProps) => {
+export interface NavDrawerProps extends HasChildren, HasStyle {
+  openByDefault?: boolean;
+  width?: number;
+}
+
+const mapStateToProps = (state: { ui: UIState }, ownProps: NavDrawerProps) => {
   return {
-    appbarDefined: state.ui.appbarDefined,
-    appbarHeight: state.ui.appbarHeight,
-    bottomNavDefined: state.ui.bottomNavDefined,
-    bottomNavHeight: state.ui.bottomNavHeight,
-    navDrawerOpen: state.ui.navDrawerOpen,
+    appbarDefined: state.ui.appbar.defined,
+    appbarHeight: state.ui.appbar.height,
+    bottomNavDefined: state.ui.bottomNav.defined,
+    bottomNavHeight: state.ui.bottomNav.height,
+    navDrawerOpen: state.ui.navDrawer.open,
     width: ownProps.width || 240
   };
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  updateNavDrawerDefined: (defined) => dispatch(updateNavDrawerDefined(defined)),
-  updateNavDrawerOpen: (open) => dispatch(updateNavDrawerOpen(open)),
-  updateNavDrawerWidth: (width) => dispatch(updateNavDrawerWidth(width))
+const mapDispatchToProps = (dispatch: (v: any) => void) => ({
+  updateNavDrawerDefined: (defined: boolean) => dispatch(updateNavDrawerDefined(defined)),
+  updateNavDrawerOpen: (open: boolean) => dispatch(updateNavDrawerOpen(open)),
+  updateNavDrawerWidth: (width: number) => dispatch(updateNavDrawerWidth(width))
 });
 
-const Wrapper = styled.div`
+interface ConnectedNavDrawerProps extends NavDrawerProps {
+  appbarDefined: boolean;
+  appbarHeight: number;
+  bottomNavDefined: boolean;
+  bottomNavHeight: number;
+  navDrawerOpen: boolean;
+  width: number;
+  updateNavDrawerDefined: (defined: boolean) => void;
+  updateNavDrawerOpen: (open: boolean) => void;
+  updateNavDrawerWidth: (width: number) => void;
+}
+
+const Wrapper = styled.div<{ appbarDefined: boolean, appbarHeight: number, bottomNavDefined: boolean, bottomNavHeight: number, open: boolean, width: number }>`
   position: fixed;
   width: ${props => props.width}px;
   height: calc(100vh - ${props => ((props.appbarDefined) ? props.appbarHeight : 0) + ((props.bottomNavDefined) ? props.bottomNavHeight : 0)}px);
@@ -43,11 +62,7 @@ const Wrapper = styled.div`
   }
 `;
 
-class NavDrawer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+class NavDrawer extends Component<NavDrawerProps> {
 
   componentDidMount() {
     const {
@@ -56,14 +71,14 @@ class NavDrawer extends Component {
       updateNavDrawerOpen,
       updateNavDrawerWidth,
       width
-    } = this.props;
+    } = this.props as ConnectedNavDrawerProps;
     updateNavDrawerDefined(true);
-    updateNavDrawerOpen(openByDefault);
+    updateNavDrawerOpen(openByDefault!!);
     updateNavDrawerWidth(width);
   }
 
   render() {
-    const { appbarDefined, appbarHeight, bottomNavDefined, bottomNavHeight, children, navDrawerOpen, style: compStyle, width } = this.props;
+    const { appbarDefined, appbarHeight, bottomNavDefined, bottomNavHeight, children, navDrawerOpen, style: compStyle, width } = this.props as ConnectedNavDrawerProps;
     const style = {
       navDrawer: {}
     };
@@ -83,11 +98,5 @@ class NavDrawer extends Component {
     );
   }
 }
-
-NavDrawer.propTypes = {
-  children?:PropTypes.node,
-  openByDefault: PropTypes.bool,
-  width: PropTypes.number
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavDrawer);

@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import Text from "../Text";
-import HasChildren from "../../types/HasChildren";
 import HasStyle from "../../types/HasStyle";
 
 const Wrapper = styled.div`
 `;
 
-export interface DropdownButtonTextProps extends HasChildren, HasStyle { }
+export interface DropdownButtonTextProps extends HasStyle {
+  children: string;
+}
 
 const DropdownButtonText = (props: DropdownButtonTextProps) => {
   const style = {

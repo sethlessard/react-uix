@@ -1,20 +1,20 @@
-import React from "react";
+// import React from "react";
 import configureStore from "redux-mock-store";
-import { Provider } from "react-redux";
-import renderer from "react-test-renderer";
+// import { Provider } from "react-redux";
+// import renderer from "react-test-renderer";
 import "jest-styled-components";
 
 import DropdownListItemText from "./DropdownListItemText";
 
 const mockStore = configureStore([]);
 
-const getTree = (store) => {
-  return renderer.create((
-    <Provider store={store}>
-      <DropdownListItemText />
-    </Provider>
-  )).toJSON();
-}
+// const getTree = (store) => {
+//   return renderer.create((
+//     <Provider store={store}>
+//       <DropdownListItemText />
+//     </Provider>
+//   )).toJSON();
+// }
 
 describe("DropdownListItemText", () => {
   let defs = {};

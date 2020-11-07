@@ -1,13 +1,17 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import HasStyle from '../../types/HasStyle';
 
-const RadioButton = ({ children }) => {
+export interface RadioButtonProps extends HasStyle {
+  children: string;
+}
+
+const RadioButton = (props: RadioButtonProps) => {
+  const style = {
+    radioButton: {}
+  };
+  Object.assign(style.radioButton, props.style);
   // TODO: [RU-26] implement
-  return <input type="radio" />;
-};
-
-RadioButton.propTypes = {
-
+  return <input style={style.radioButton} type="radio" />;
 };
 
 export default RadioButton;

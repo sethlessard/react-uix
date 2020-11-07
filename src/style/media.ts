@@ -11,9 +11,9 @@ export enum ScreenType {
  * Returns css for a specific screen type.
  * @param screenType the screen type.
  */
-export const media = (screenType: ScreenType) => {
+export function media<T extends object>(screenType: ScreenType) {
   const emSize = _getEmSize(screenType);
-  return (style: CSSObject | TemplateStringsArray) => `@media(max-width: ${emSize}em) { ${css(style)} }`;
+  return (style: CSSObject | TemplateStringsArray) => css<T>`@media(max-width: ${emSize}em) { ${css<T>(style)} }`;
 };
 
 /**

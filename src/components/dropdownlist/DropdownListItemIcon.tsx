@@ -1,18 +1,18 @@
-import React, { ReactNode } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+import HasStyle from '../../types/HasStyle';
 
-export interface DropdownListItemIconProps {
-  children?:ReactNode[];
+export interface DropdownListItemIconProps extends HasStyle {
+  children: string;
 };
 
 
-const DropdownListItemIcon = ({ children }: DropdownListItemIconProps) => {
+const DropdownListItemIcon = (props: DropdownListItemIconProps) => {
+  const style = {
+    dropdownListItem: {}
+  };
+  Object.assign(style.dropdownListItem, props.style);
   // TODO: [RU-24] implement
   return <div />;
-};
-
-DropdownListItemIcon.propTypes = {
-  children?:PropTypes.node
 };
 
 export default DropdownListItemIcon;

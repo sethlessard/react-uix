@@ -1,9 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Heading from "../Heading";
+import HasStyle from '../../types/HasStyle';
 
-const NavSubheader = (props) => {
+export interface NavSubheaderProps extends HasStyle {
+  children: string;
+}
+
+const NavSubheader = (props: NavSubheaderProps) => {
   const style = {
     navSubheader: {
       padding: ".25em 1em"
@@ -14,10 +18,6 @@ const NavSubheader = (props) => {
       <Heading h={6} style={{ margin: 0, padding: 0 }}>{props.children}</Heading>
     </div>
   );
-};
-
-NavSubheader.propTypes = {
-  children?:PropTypes.node
 };
 
 export default NavSubheader;

@@ -1,7 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 import Text from "../Text";
+import HasStyle from "../../types/HasStyle";
+
+export interface NavItemTextProps extends HasStyle {
+  children: string;
+}
 
 const Wrapper = styled.div`
   margin: 0 0 0 2em;
@@ -10,7 +14,7 @@ const Wrapper = styled.div`
   height: fit-content;
 `;
 
-const NavItemText = (props) => {
+const NavItemText = (props: NavItemTextProps) => {
   const style = {
     navItemText: {}
   };
@@ -20,10 +24,6 @@ const NavItemText = (props) => {
       <Text>{props.children}</Text>
     </Wrapper>
   );
-};
-
-NavItemText.propTypes = {
-  children?:PropTypes.string
 };
 
 export default NavItemText;

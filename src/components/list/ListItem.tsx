@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import styled from "styled-components";
+import HasChildren from '../../types/HasChildren';
+import HasStyle from '../../types/HasStyle';
+
+export interface ListItemProps extends HasChildren, HasStyle { }
 
 const Wrapper = styled.li`
   margin: 0;
 `;
 
-class ListItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+class ListItem extends Component<ListItemProps> {
 
   render() {
     const { children, style: compStyle } = this.props;
@@ -23,9 +22,5 @@ class ListItem extends Component {
     );
   }
 }
-
-ListItem.propTypes = {
-  children?:PropTypes.node
-};
 
 export default ListItem;

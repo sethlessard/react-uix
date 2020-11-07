@@ -1,19 +1,34 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { CSSProperties } from "react";
 import styled from "styled-components";
 
-import Util from "../Util";
 import { updateNavDrawerOpen } from "../../redux/actions/ui";
 
 import { connect } from "react-redux";
+import { lighten } from "polished";
+import { UIState } from "../../redux/reducers/ui";
+import Styleable from "../../types/Styleable";
+import HasChildren from "../../types/HasChildren";
+import HasStyle from "../../types/HasStyle";
 
-const mapStateToProps = (state) => ({});
+export interface NavItemProps extends HasChildren, HasStyle, Styleable {
+  active?: boolean;
+  width?: number;
+}
 
-const mapDispatchToProps = (dispatch) => ({
-  updateNavDrawerOpen: (open) => dispatch(updateNavDrawerOpen(open))
+const mapStateToProps = (state: { ui: UIState }, ownProps: NavItemProps) => ({
+  width: ownProps.width || state.ui.navDrawer.width
 });
 
-const Wrapper = styled.div`
+const mapDispatchToProps = (dispatch: (v: any) => void) => ({
+  updateNavDrawerOpen: (open: boolean) => dispatch(updateNavDrawerOpen(open))
+});
+
+interface ConnectedNavItemProps extends NavItemProps {
+  width: number;
+  updateNavDrawerOpen: (open: boolean) => void;
+}
+
+const Wrapper = styled.div<Styleable & { width: number }>`
   display: flex;
   align-items: center;
   padding: .75em 1em;
@@ -26,32 +41,27 @@ const Wrapper = styled.div`
   color: ${props => (props.foregroundColor) ? props.foregroundColor : "#000"};
 `;
 
-const NavItem = ({ active, backgroundColor, children, foregroundColor, style: compStyle, updateNavDrawerOpen, width }) => {
-  const style = {
-    navItem: {}
+const NavItem = (props: NavItemProps) => {
+  const style: { [component: string]: CSSProperties } = {
+    navItem: {
+      backgroundColor: props.backgroundColor
+    }
   };
-  Object.assign(style.navItem, compStyle);
-  if (active) {
-    style.navItem.backgroundColor = `#${Util.substractHexColor(style.navItem.backgroundColor.replace("#", ""), "222222")}`;
+  Object.assign(style.navItem, props.style);
+  if (props.active) {
+    style.navItem.backgroundColor = `${lighten(0.2, style.navItem.backgroundColor!!)}`;
   }
   return (
     <Wrapper
-      backgroundColor={backgroundColor}
-      foregroundColor={foregroundColor}
+      backgroundColor={props.backgroundColor}
+      foregroundColor={props.foregroundColor}
       style={style.navItem}
-      onClick={(e) => updateNavDrawerOpen(false)}
-      width={width}
+      onClick={() => (props as ConnectedNavItemProps).updateNavDrawerOpen(false)}
+      width={(props as ConnectedNavItemProps).width}
     >
-      {children}
+      {props.children}
     </Wrapper>
   );
-};
-
-NavItem.propTypes = {
-  width: PropTypes.number,
-  active: PropTypes.bool,
-  backgroundColor: PropTypes.string,
-  foregroundColor: PropTypes.string
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavItem);

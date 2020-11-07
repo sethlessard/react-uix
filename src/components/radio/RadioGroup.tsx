@@ -1,13 +1,16 @@
 import React from 'react';
-import ReactChildren from '../../types/ReactChildren';
+import HasChildren from '../../types/HasChildren';
+import HasStyle from '../../types/HasStyle';
 
-export interface RadioGroupProps {
-  children: ReactChildren;
-}
+export interface RadioGroupProps extends HasChildren, HasStyle { }
 
-const RadioGroup = ({ children }: RadioGroupProps) => {
+const RadioGroup = (props: RadioGroupProps) => {
+  const style = {
+    radioGroup: {}
+  };
+  Object.assign(style.radioGroup, props.style);
   // TODO: [RU-27] implement
-  return <div>{children}</div>;
+  return <div style={style.radioGroup}>{props.children}</div>;
 };
 
 export default RadioGroup;

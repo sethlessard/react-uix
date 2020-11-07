@@ -1,7 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from "styled-components";
 import media, { ScreenType } from "../../style/media";
+import HasChildren from '../../types/HasChildren';
+import HasStyle from '../../types/HasStyle';
+
+export interface TableProps extends HasChildren, HasStyle { }
 
 const Wrapper = styled.table`
   border-collapse: collapse;
@@ -15,19 +18,14 @@ const Wrapper = styled.table`
   `}
 `;
 
-const Table = (props) => {
+const Table = (props: TableProps) => {
+  const style = {
+    table: {}
+  };
+  Object.assign(style.table, props.style);
   return (
-    <div>
-      <Wrapper>{props.children}</Wrapper>
-    </div>
+    <Wrapper style={style.table}>{props.children}</Wrapper>
   );
-};
-
-Table.propTypes = {
-  children?:PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node)
-  ])
 };
 
 export default Table;

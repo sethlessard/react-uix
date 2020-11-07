@@ -9,7 +9,7 @@ import { UITheme } from '../redux/reducers/ui';
 const uiStore = configureUIStore();
 
 export interface AppProps {
-  theme: UITheme;
+  theme?: UITheme;
 }
 
 const Wrapper = styled.div`

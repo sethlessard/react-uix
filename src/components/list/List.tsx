@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import HasChildren from '../../types/HasChildren';
 import HasStyle from '../../types/HasStyle';
 
@@ -33,14 +32,6 @@ const List = ({ children, style: listStyle, type = ListType.Unordered }: ListPro
       }
     </div>
   );
-};
-
-List.propTypes = {
-  children?:PropTypes.node,
-  type: PropTypes.oneOf([
-    "ul",
-    "ol"
-  ])
 };
 
 export default List;

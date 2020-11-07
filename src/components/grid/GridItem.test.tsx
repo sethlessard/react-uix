@@ -1,20 +1,20 @@
-import React from "react";
+// import React from "react";
 import configureStore from "redux-mock-store";
-import { Provider } from "react-redux";
-import renderer from "react-test-renderer";
+// import { Provider } from "react-redux";
+// import renderer from "react-test-renderer";
 import "jest-styled-components";
 
 import GridItem from "./GridItem";
 
 const mockStore = configureStore([]);
 
-const getTree = (store) => {
-  return renderer.create((
-    <Provider store={store}>
-      <GridItem />
-    </Provider>
-  )).toJSON();
-}
+// const getTree = (store) => {
+//   return renderer.create((
+//     <Provider store={store}>
+//       <GridItem />
+//     </Provider>
+//   )).toJSON();
+// }
 
 describe("GridItem", () => {
   let defs = {};

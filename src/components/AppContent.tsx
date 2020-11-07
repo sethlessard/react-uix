@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, CSSProperties } from 'react';
 import { connect } from "react-redux";
 import styled from "styled-components";
 import { updateAppContentScrollableComponent, updateNavDrawerOpen } from '../redux/actions/ui';
@@ -33,7 +33,7 @@ interface ConnectedAppContentProps extends AppContentProps {
   updateNavDrawerOpen: (value: boolean) => void;
 }
 
-const Wrapper = styled.div<ConnectedAppContentProps & { height: string }>`
+const Wrapper = styled.div<{ appbarDefined: boolean, appbarHeight: number, height: string }>`
   width: 100vw;
   position: fixed;
   z-index: 0;
@@ -97,7 +97,7 @@ class AppContent extends Component<AppContentProps> {
     updateAppContentScrollableComponent(this.refScrollableContent);
   }
 
-  handleClickInside(_) {
+  handleClickInside(_: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     const { navDrawerOpen, updateNavDrawerOpen } = this.props as ConnectedAppContentProps;
 
     // if the navigation drawer is open, close it
@@ -107,10 +107,10 @@ class AppContent extends Component<AppContentProps> {
   render() {
     const { appbarDefined, appbarHeight } = this.props as ConnectedAppContentProps;
     const height = this.calcHeight();
-    const style = {
+    const style: { [component: string]: CSSProperties } = {
       appContent: {}
     };
-    Object.apply(style.appContent, this.props.style);
+    Object.assign(style.appContent, this.props.style);
     return (
       <Wrapper
         appbarDefined={appbarDefined}

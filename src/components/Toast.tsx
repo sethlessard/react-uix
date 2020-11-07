@@ -1,28 +1,40 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
 import styled from "styled-components";
-import { ToastWrapper, ToastMessage } from "@react-uix/styles";
+import HasStyle from "../types/HasStyle";
 
-const Wrapper = styled.div`${ToastWrapper}`;
-const Message = styled.div`${ToastMessage}`;
+export interface ToastProps extends HasStyle {
+  children: string;
+  visible: boolean;
+}
 
-const Toast = ({ children, visible = false }) => {
+const Wrapper = styled.div<ToastProps>`
+  display: ${props => (props.visible) ? "block" : "none"};
+  opacity: ${props => (props.visible) ? 1 : 0};
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: opacity 0.2s;
+  padding: .5em .75em;
+  border-radius: 3px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  color: #fff;
+`;
+
+const Toast = (props: ToastProps) => {
   const style = {
     toast: {}
   };
-
+  Object.assign(style.toast, props.style);
   return (
     <Wrapper
       style={style.toast}
-      visible={visible}
+      visible={props.visible}
     >
-      <Message>{children}</Message>
+      {props.children}
     </Wrapper>
   );
-};
-
-Toast.propTypes = {
-  visible: PropTypes.bool
 };
 
 export default Toast;

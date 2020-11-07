@@ -1,27 +1,22 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
+import HasChildren from "../../types/HasChildren";
+import HasStyle from "../../types/HasStyle";
+
+export interface NavContentProps extends HasChildren, HasStyle { }
 
 const Wrapper = styled.div`
   padding: 0 0 4em 0;
 `;
 
-const NavContent = (props) => {
+const NavContent = (props: NavContentProps) => {
   const style = {
     navContent: {}
   };
+  Object.assign(style.navContent, props.style);
   return (
-    <Wrapper style={style.navContent}>
-      {props.children}
-    </Wrapper>
+    <Wrapper style={style.navContent}>{ props.children }</Wrapper>
   );
-};
-
-NavContent.propTypes = {
-  children?:PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node)
-  ])
 };
 
 export default NavContent;

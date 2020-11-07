@@ -1,9 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from "styled-components";
 import media, { ScreenType } from "../../style/media";
+import HasChildren from '../../types/HasChildren';
+import HasStyle from '../../types/HasStyle';
+import Styleable from '../../types/Styleable';
 
-const Wrapper = styled.tr`
+export interface TableRow extends HasChildren, HasStyle, Styleable { }
+
+const Wrapper = styled.tr<Styleable>`
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color: ${props => props.backgroundColor || "#fff"};
@@ -17,20 +21,20 @@ const Wrapper = styled.tr`
   `}
 `;
 
-const TableRow = ({ backgroundColor, children, foregroundColor, style: compStyle }) => {
+const TableRow = ({ backgroundColor, children, foregroundColor, style: compStyle }: TableRow) => {
   const style = {
     tableRow: {}
   };
   Object.assign(style.tableRow, compStyle);
   return (
-    <Wrapper backgroundColor={backgroundColor} foregroundColor={foregroundColor} style={style.tableRow}>{children}</Wrapper>
+    <Wrapper
+      backgroundColor={backgroundColor}
+      foregroundColor={foregroundColor}
+      style={style.tableRow}
+    >
+      {children}
+    </Wrapper>
   );
-};
-
-TableRow.propTypes = {
-  children?:PropTypes.node,
-  foregroundColor: PropTypes.string,
-  backgroundColor: PropTypes.string
 };
 
 export default TableRow;

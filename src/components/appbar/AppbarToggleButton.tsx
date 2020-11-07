@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
@@ -6,11 +6,11 @@ import IconButton from "../IconButton";
 
 import { toggleNavigationDrawer } from "../../redux/actions/ui";
 import { UIState } from "../../redux/reducers/ui";
+import HasStyle from "../../types/HasStyle";
+import Styleable from "../../types/Styleable";
 
-export interface AppbarToggleButtonProps {
-  children?:string,
-  color?: string,
-  style: CSSProperties
+export interface AppbarToggleButtonProps extends HasStyle, Styleable {
+  children: string;
 };
 
 const mapStateToProps = (state: { ui: UIState }) => ({
@@ -31,7 +31,7 @@ const Wrapper = styled.div`
 `;
 
 const AppbarToggleButton = (props: AppbarToggleButtonProps) => {
-  const { children, color, colorPrimary, toggleNavigationDrawer, style: compStyle } = props as ConnectedAppbarToggleButtonProps;
+  const { children, foregroundColor, colorPrimary, toggleNavigationDrawer, style: compStyle } = props as ConnectedAppbarToggleButtonProps;
   const style = {
     button: {}
   };
@@ -41,7 +41,7 @@ const AppbarToggleButton = (props: AppbarToggleButtonProps) => {
       style={style.button}
       onClick={() => toggleNavigationDrawer()}
     >
-      <IconButton color={color} size="1.5rem" refBackgroundColor={colorPrimary}>{children}</IconButton>
+      <IconButton foregroundColor={foregroundColor} size="1.5rem" refBackgroundColor={colorPrimary}>{children}</IconButton>
     </Wrapper>
   );
 };

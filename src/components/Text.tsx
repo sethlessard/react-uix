@@ -30,11 +30,9 @@ const Span = styled.span<TextProps>`
   ${props => props.center ? "text-align: center;" : ""}
 `;
 
-const Text = ({ children, center, color, fontSize = ".8rem", fontWeight = "400", foregroundColor, style: compStyle }: TextProps) => {
+const Text = ({ children, center, fontSize = ".8rem", fontWeight = "400", foregroundColor, style: compStyle }: TextProps) => {
   const style = {
-    text: {
-      color: color || foregroundColor
-    }
+    text: {}
   };
 
   Object.assign(style.text, compStyle);
@@ -43,6 +41,7 @@ const Text = ({ children, center, color, fontSize = ".8rem", fontWeight = "400",
       center={center}
       fontSize={fontSize}
       fontWeight={fontWeight}
+      foregroundColor={foregroundColor}
       style={style.text}
     >
       {children}

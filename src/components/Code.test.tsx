@@ -1,5 +1,5 @@
 import React from "react";
-import configureStore from "redux-mock-store";
+import configureStore, { MockStore } from "redux-mock-store";
 import { Provider } from "react-redux";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
@@ -8,10 +8,10 @@ import Code from "./Code";
 
 const mockStore = configureStore([]);
 
-const getTree = (store, code = "Code") => {
+const getTree = (store: MockStore, code = "Code") => {
   return renderer.create((
     <Provider store={store}>
-      <Code text={code} />
+      <Code code={code} />
     </Provider>
   )).toJSON();
 }
@@ -29,7 +29,7 @@ describe("Code", () => {
       }
     }
   }
-  let store;
+  let store: MockStore;
 
   beforeEach(() => {
     store = mockStore(defs);

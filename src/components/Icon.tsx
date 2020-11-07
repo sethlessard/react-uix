@@ -51,7 +51,7 @@ const I = styled.i<IHasSize & Styleable>`
   text-rendering: optimizeLegibility;
 `;
 
-const Icon = ({ accent, children, foregroundColor, size = "1rem", style: compStyle }: IconProps) => {
+const Icon = ({ children, foregroundColor, size = "1rem", style: compStyle }: IconProps) => {
   const style = {
     icon: {}
   };
