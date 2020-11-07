@@ -21,11 +21,12 @@ import {
   Paragraph,
   Text,
   Spacer,
-  Page
+  Page,
+  ListType
 } from "@react-uix/web";
 import { Example } from "../component";
 
-const DropdownButtonFragment = (props) => {
+const DropdownButtonFragment = () => {
   return (
     <Page>
       <Fragment title="Dropdown Button">
@@ -39,7 +40,7 @@ const DropdownButtonFragment = (props) => {
         </Example>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={`import { DropdownButton } from "@react-uix/web";`} />
+        <Code foregroundColor="#fff" code={`import { DropdownButton } from "@react-uix/web";`} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Table>
@@ -81,7 +82,7 @@ const DropdownButtonFragment = (props) => {
         <Paragraph>
           The DropdownButton components has the following child components:
         </Paragraph>
-        <List>
+        <List type={ListType.Unordered}>
           <ListItem><Text fontSize=".7rem">DropdownItem</Text></ListItem>
         </List>
       </Fragment>
@@ -92,45 +93,43 @@ const DropdownButtonFragment = (props) => {
         </Paragraph>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={`import { DropdownIcon } from "@react-uix/web";`} />
+        <Code foregroundColor="#fff" code={`import { DropdownIcon } from "@react-uix/web";`} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
-        <Paragraph>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <HeaderCell>Name</HeaderCell>
-                <HeaderCell>Type</HeaderCell>
-                <HeaderCell>Required</HeaderCell>
-                <HeaderCell>Default</HeaderCell>
-                <HeaderCell>Description</HeaderCell>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow>
-                <TableData label="Name">children</TableData>
-                <TableData label="Type">node</TableData>
-                <TableData label="Required">No</TableData>
-                <TableData label="Default" />
-                <TableData label="Description">The contents of the DropdownButton.</TableData>
-              </TableRow>
-              <TableRow>
-                <TableData label="Name">icon</TableData>
-                <TableData label="Type"><Link to="/component/Icon">Icon</Link></TableData>
-                <TableData label="Required">No</TableData>
-                <TableData label="Default" />
-                <TableData label="Description">The contents of the DropdownButton.</TableData>
-              </TableRow>
-              <TableRow>
-                <TableData label="Name">style</TableData>
-                <TableData label="Type">object</TableData>
-                <TableData label="Required">No</TableData>
-                <TableData label="Default" />
-                <TableData label="Description">The style of the DropdownButton.</TableData>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </Paragraph>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <HeaderCell>Name</HeaderCell>
+              <HeaderCell>Type</HeaderCell>
+              <HeaderCell>Required</HeaderCell>
+              <HeaderCell>Default</HeaderCell>
+              <HeaderCell>Description</HeaderCell>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableData label="Name">children</TableData>
+              <TableData label="Type">node</TableData>
+              <TableData label="Required">No</TableData>
+              <TableData label="Default" />
+              <TableData label="Description">The contents of the DropdownButton.</TableData>
+            </TableRow>
+            <TableRow>
+              <TableData label="Name">icon</TableData>
+              <TableData label="Type"><Link to="/component/Icon">Icon</Link></TableData>
+              <TableData label="Required">No</TableData>
+              <TableData label="Default" />
+              <TableData label="Description">The contents of the DropdownButton.</TableData>
+            </TableRow>
+            <TableRow>
+              <TableData label="Name">style</TableData>
+              <TableData label="Type">object</TableData>
+              <TableData label="Required">No</TableData>
+              <TableData label="Default" />
+              <TableData label="Description">The style of the DropdownButton.</TableData>
+            </TableRow>
+          </TableBody>
+        </Table>
       </Fragment>
       <Spacer size="2em" />
       <Fragment title="DropdownItem">
@@ -139,42 +138,40 @@ const DropdownButtonFragment = (props) => {
         </Paragraph>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={`import { DropdownItem } from "@react-uix/web";`} />
+        <Code foregroundColor="#fff" code={`import { DropdownItem } from "@react-uix/web";`} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
-        <Paragraph>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <HeaderCell>Name</HeaderCell>
-                <HeaderCell>Type</HeaderCell>
-                <HeaderCell>Required</HeaderCell>
-                <HeaderCell>Default</HeaderCell>
-                <HeaderCell>Description</HeaderCell>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow>
-                <TableData label="Name">children</TableData>
-                <TableData label="Type">node</TableData>
-                <TableData label="Required">No</TableData>
-                <TableData label="Default" />
-                <TableData label="Description">The contents of the DropdownItem. See Child Components below.</TableData>
-              </TableRow>
-              <TableRow>
-                <TableData label="Name">foregroundColor</TableData>
-                <TableData label="Type">string</TableData>
-                <TableData label="Required">No</TableData>
-                <TableData label="Default" />
-                <TableData label="Description">The foreground color of the DropdownItem.</TableData>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </Paragraph>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <HeaderCell>Name</HeaderCell>
+              <HeaderCell>Type</HeaderCell>
+              <HeaderCell>Required</HeaderCell>
+              <HeaderCell>Default</HeaderCell>
+              <HeaderCell>Description</HeaderCell>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableData label="Name">children</TableData>
+              <TableData label="Type">node</TableData>
+              <TableData label="Required">No</TableData>
+              <TableData label="Default" />
+              <TableData label="Description">The contents of the DropdownItem. See Child Components below.</TableData>
+            </TableRow>
+            <TableRow>
+              <TableData label="Name">foregroundColor</TableData>
+              <TableData label="Type">string</TableData>
+              <TableData label="Required">No</TableData>
+              <TableData label="Default" />
+              <TableData label="Description">The foreground color of the DropdownItem.</TableData>
+            </TableRow>
+          </TableBody>
+        </Table>
 
         <PaddedHeading h={6}>Child Components</PaddedHeading>
         <Paragraph>The DropdownItem component has the following child components:</Paragraph>
-        <List>
+        <List type={ListType.Unordered}>
           <ListItem><Text fontSize=".7rem">DropdownIcon</Text></ListItem>
           <ListItem><Text fontSize=".7rem">DropdownText</Text></ListItem>
         </List>
@@ -186,31 +183,29 @@ const DropdownButtonFragment = (props) => {
         </Paragraph>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={`import { DropdownText } from "@react-uix/web";`} />
+        <Code foregroundColor="#fff" code={`import { DropdownText } from "@react-uix/web";`} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
-        <Paragraph>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <HeaderCell>Name</HeaderCell>
-                <HeaderCell>Type</HeaderCell>
-                <HeaderCell>Required</HeaderCell>
-                <HeaderCell>Default</HeaderCell>
-                <HeaderCell>Description</HeaderCell>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow>
-                <TableData label="Name">children</TableData>
-                <TableData label="Type">string</TableData>
-                <TableData label="Required">No</TableData>
-                <TableData label="Default" />
-                <TableData label="Description">The text displayed by the DropdownText.</TableData>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </Paragraph>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <HeaderCell>Name</HeaderCell>
+              <HeaderCell>Type</HeaderCell>
+              <HeaderCell>Required</HeaderCell>
+              <HeaderCell>Default</HeaderCell>
+              <HeaderCell>Description</HeaderCell>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableData label="Name">children</TableData>
+              <TableData label="Type">string</TableData>
+              <TableData label="Required">No</TableData>
+              <TableData label="Default" />
+              <TableData label="Description">The text displayed by the DropdownText.</TableData>
+            </TableRow>
+          </TableBody>
+        </Table>
       </Fragment>
     </Page>
   );

@@ -99,10 +99,10 @@ const CardFragment = () => {
             </Grid>
           </Example>
 
-          <Code text={EXAMPLE} />
+          <Code code={EXAMPLE} />
 
           <PaddedHeading h={6}>Usage</PaddedHeading>
-          <Code foregroundColor="#fff" text={`import { Card } from "@react-uix/web";`} />
+          <Code foregroundColor="#fff" code={`import { Card } from "@react-uix/web";`} />
 
           <PaddedHeading h={6}>Props</PaddedHeading>
           <Table>

@@ -20,7 +20,7 @@ const PageFragment = () => {
         <Paragraph>A Page object brings animations to the UI when the page is loaded/unloaded.</Paragraph>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code text={USAGE} />
+        <Code code={USAGE} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Table>

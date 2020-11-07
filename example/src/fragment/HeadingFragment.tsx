@@ -30,7 +30,7 @@ const HeadingFragment = () => {
         </Example>
 
         <Heading h={6}>Usage</Heading>
-        <Code foregroundColor="#fff" text={`import { Heading } from "@react-uix/web";`} />
+        <Code foregroundColor="#fff" code={`import { Heading } from "@react-uix/web";`} />
 
         <Heading h={6}>Props</Heading>
         <Table>

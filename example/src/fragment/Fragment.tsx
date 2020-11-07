@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { DropShadow, Heading, Paper, Row } from '@react-uix/web';
+import { DropShadow, HasChildren, HasStyle, Heading, Paper, Row } from '@react-uix/web';
 import styled from "styled-components";
+
+export interface FragmentProps extends HasChildren, HasStyle {
+  title?: string;
+}
 
 const Wrapper = styled.div`
 `;
@@ -10,7 +13,7 @@ const TitleContainer = styled.div`
   padding: 0 0 .5em 0;
 `;
 
-class Fragment extends Component {
+class Fragment extends Component<FragmentProps> {
   render() {
     const { children, style: compStyle, title } = this.props;
 
@@ -39,12 +42,5 @@ class Fragment extends Component {
     );
   }
 }
-
-Fragment.propTypes = {
-  children?:PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node)
-  ])
-};
 
 export default Fragment;

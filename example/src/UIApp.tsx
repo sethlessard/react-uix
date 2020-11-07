@@ -25,12 +25,9 @@ import {
   BottomNavigation,
   BottomNavItem,
   BottomNavItemIcon,
-  BottomNavItemText
+  BottomNavItemText,
+  UITheme
 } from "@react-uix/web";
-
-// import {
-//   LDSRipple
-// } from '../../dist/spinners';
 
 import {
   AppbarFragment,
@@ -90,9 +87,9 @@ const NSLink = styled(Link)`
   }
 `;
 
-const theme = {
-  colorPrimary: "#00b894",
-  colorSecondary: "#000000",
+const theme: UITheme = {
+  primaryColor: "#00b894",
+  secondaryColor: "#000000",
   text: {
     colorOnLight: "#111",
     colorOnDark: "#fff"
@@ -100,14 +97,12 @@ const theme = {
 };
 
 class UIApp extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      navDrawerOpen: false,
-      aboutBoxOpen: false,
-      settingsBoxOpen: false
-    };
-  }
+  
+  state = {
+    navDrawerOpen: false,
+    aboutBoxOpen: false,
+    settingsBoxOpen: false
+  };
 
   render() {
     const style = {
@@ -126,14 +121,14 @@ class UIApp extends Component {
         <Router basename={process.env.PUBLIC_URL}>
           <Appbar>
             <AppTitleContainer>
-              <AppbarToggleButton visible={!this.state.navDrawerOpen} onClick={() => this.setState({ navDrawerOpen: true })}>menu</AppbarToggleButton>
+              <AppbarToggleButton>menu</AppbarToggleButton>
               <AppTitle>UiX</AppTitle>
             </AppTitleContainer>
             <AppbarToolbar>
               <DropdownButton
                 icon="more_vert"
                 style={style.toolbarButtons}
-                refBackgroundColor={theme.colorPrimary}
+                refBackgroundColor={theme.primaryColor}
               >
                 <DropdownButtonItem onClick={() => this.setState({ settingsBoxOpen: true })}>
                   <DropdownButtonIcon>settings</DropdownButtonIcon>
@@ -217,7 +212,7 @@ class UIApp extends Component {
               </NavGroup>
             </NavContent>
           </NavDrawer>
-          <AppContent navDrawerOpen={this.state.navDrawerOpen}>
+          <AppContent>
             <Switch>
               <Route exact path="/" component={HomeFragment} />
               <Route path="/install" component={InstallationFragment} />

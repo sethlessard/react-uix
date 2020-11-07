@@ -6,7 +6,7 @@ import {
 } from "@react-uix/web";
 import Fragment from "./Fragment";
 
-const HomeFragment = (props) => {
+const HomeFragment = () => {
   return (
     <Page>
       <Fragment title="React UiX">

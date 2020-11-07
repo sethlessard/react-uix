@@ -5,9 +5,9 @@ import styled from "styled-components";
 import HasStyle from "../types/HasStyle";
 import Styleable from "../types/Styleable";
 import { UIState } from "../redux/reducers/ui";
+import HasChildren from "../types/HasChildren";
 
-export interface ParagraphProps extends HasStyle, Styleable {
-  children: string;
+export interface ParagraphProps extends HasChildren, HasStyle, Styleable {
   fontSize?: string;
   fontWeight?: string;
 }
@@ -31,7 +31,6 @@ const Paragraph = ({ children, /* foregroundColor ,*/ fontSize, fontWeight, styl
       <Text
         fontSize={fontSize}
         fontWeight={fontWeight}
-
       >
         {children}
       </Text>

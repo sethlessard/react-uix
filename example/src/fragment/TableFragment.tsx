@@ -1,10 +1,10 @@
 import React from 'react';
 
 import Fragment from "./Fragment";
-import { PaddedHeading, Table, TableHeader, TableBody, TableRow, HeaderCell, TableData, Paragraph, Code, List, ListItem, Text, Page } from "@react-uix/web";
+import { PaddedHeading, Table, TableHeader, TableBody, TableRow, HeaderCell, TableData, Paragraph, Code, List, ListItem, ListType, Text, Page } from "@react-uix/web";
 import { Example } from "../component";
 
-const TableFragment = (props) => {
+const TableFragment = () => {
   return (
     <Page>
       <Fragment title="Table">
@@ -34,7 +34,7 @@ const TableFragment = (props) => {
         </Example>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={`import { Table } from "@react-uix/web";`} />
+        <Code foregroundColor="#fff" code={`import { Table } from "@react-uix/web";`} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Table>
@@ -64,7 +64,7 @@ const TableFragment = (props) => {
 
         <PaddedHeading h={6}>Child Components</PaddedHeading>
         <Paragraph>The Table component has the following child components:</Paragraph>
-        <List>
+        <List type={ListType.Unordered}>
           <ListItem><Text fontSize=".7rem">TableHeader</Text></ListItem>
           <ListItem><Text fontSize=".7rem">TableBody</Text></ListItem>
         </List>

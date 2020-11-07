@@ -24,11 +24,7 @@ import { ColorPicker } from "@react-uix/web";
 <ColorPicker defaultColor="#fff" onChanged={(color) => handleColorChanged(color)} />
 `;
 
-const ColorPickerFragment = ({ style: compStyle }) => {
-  const style = {
-    ColorPickerFragment: {}
-  };
-  Object.assign(style.ColorPickerFragment, compStyle);
+const ColorPickerFragment = () => {
   return (
     <Page>
       <Fragment title="Color Picker">
@@ -37,7 +33,7 @@ const ColorPickerFragment = ({ style: compStyle }) => {
           <ColorPicker />
         </Example>
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code text={USAGE} />
+        <Code code={USAGE} />
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Table>
           <TableHeader>
@@ -59,7 +55,7 @@ const ColorPickerFragment = ({ style: compStyle }) => {
             </TableRow>
             <TableRow>
               <TableData label="Name">onChange</TableData>
-              <TableData label="Type">(color: string) => void</TableData>
+              <TableData label="Type">(color: string) =&gt; void</TableData>
               <TableData label="Required">No</TableData>
               <TableData label="Default" />
               <TableData label="Description">The handler function that is called when the color is choosen.</TableData>

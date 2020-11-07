@@ -4,9 +4,9 @@ import styled from "styled-components";
 import HasStyle from '../types/HasStyle';
 import Styleable from '../types/Styleable';
 import { UIState } from '../redux/reducers/ui';
+import HasChildren from '../types/HasChildren';
 
-export interface TextProps extends HasStyle, Styleable {
-  children: string;
+export interface TextProps extends HasChildren, HasStyle, Styleable {
   center?: boolean;
   fontSize?: string;
   fontWeight?: string;

@@ -1,10 +1,10 @@
 import React from 'react';
 import Fragment from './Fragment';
 import { Link } from "react-router-dom";
-import { PaddedHeading, BottomNavigation, BottomNavItem, Spacer, Code, Paragraph, Table, TableHeader, TableData, TableRow, HeaderCell, TableBody, List, ListItem, ScrollToTop, Text, Page, BottomNavItemIcon, BottomNavItemText } from '@react-uix/web';
+import { PaddedHeading, BottomNavigation, BottomNavItem, Spacer, Code, Paragraph, Table, TableHeader, TableData, TableRow, ListType, HeaderCell, TableBody, List, ListItem, ScrollToTop, Text, Page, BottomNavItemIcon, BottomNavItemText } from '@react-uix/web';
 import { Example } from '../component';
 
-const BottomNavigationFragment = (props) => {
+const BottomNavigationFragment = () => {
   return (
     <Page>
       <ScrollToTop>
@@ -31,26 +31,24 @@ const BottomNavigationFragment = (props) => {
           <Example>
             <BottomNavigation backgroundColor="#ffffff" demo={true}>
               <BottomNavItem foregroundColor="#000">
-                <BottomNavItemIcon color="#000">home</BottomNavItemIcon>
+                <BottomNavItemIcon foregroundColor="#000">home</BottomNavItemIcon>
                 <BottomNavItemText>Home</BottomNavItemText>
               </BottomNavItem>
               <BottomNavItem foregroundColor="#000">
-                <BottomNavItemIcon color="#000">account_circle</BottomNavItemIcon>
+                <BottomNavItemIcon foregroundColor="#000">account_circle</BottomNavItemIcon>
                 <BottomNavItemText>Account</BottomNavItemText>
               </BottomNavItem>
               <BottomNavItem foregroundColor="#000">
-                <BottomNavItemIcon color="#000">settings</BottomNavItemIcon>
+                <BottomNavItemIcon foregroundColor="#000">settings</BottomNavItemIcon>
                 <BottomNavItemText>Settings</BottomNavItemText>
               </BottomNavItem>
             </BottomNavigation>
           </Example>
 
-          <Paragraph>The BottomNavigation component is populated with <Link to="/component/BottomNavItem">BottomNavItem</Link> objects.</Paragraph>
+          <span>The BottomNavigation component is populated with <Link to="/component/BottomNavItem">BottomNavItem</Link> objects.</span>
 
           <PaddedHeading h={6}>Usage</PaddedHeading>
-          <Paragraph>
-            <Code foregroundColor="#fff" text={`import { BottomNavigation } from "@react-uix/web";`} />
-          </Paragraph>
+          <Code foregroundColor="#fff" code={`import { BottomNavigation } from "@react-uix/web";`} />
 
           <PaddedHeading h={6}>Props</PaddedHeading>
           <Table>
@@ -97,7 +95,7 @@ const BottomNavigationFragment = (props) => {
 
           <PaddedHeading h={6}>Child Components</PaddedHeading>
           <Paragraph>The BottomNavigation component has the following child components:</Paragraph>
-          <List>
+          <List type={ListType.Unordered}>
             <ListItem><Text fontSize=".7rem">BottomNavItem</Text></ListItem>
           </List>
         </Fragment>
@@ -107,9 +105,7 @@ const BottomNavigationFragment = (props) => {
           <Paragraph>The BottomNavItem component is used to implement a button within a BottomNavigation component.</Paragraph>
 
           <PaddedHeading h={6}>Usage</PaddedHeading>
-          <Paragraph>
-            <Code foregroundColor="#fff" text={`import { BottomNavItem } from "@react-uix/web";`} />
-          </Paragraph>
+          <Code foregroundColor="#fff" code={`import { BottomNavItem } from "@react-uix/web";`} />
 
           <PaddedHeading h={6}>Props</PaddedHeading>
           <Table>

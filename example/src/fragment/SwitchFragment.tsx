@@ -22,11 +22,7 @@ const onChecked = (checked) => {
 </Switch>
 `;
 
-const SwitchFragment = ({ children, style: compStyle }) => {
-  const style = {
-    SwitchFragment: {}
-  };
-  Object.assign(style.SwitchFragment, compStyle);
+const SwitchFragment = () => {
   return (
     <Page>
       <Fragment title="Switch">
@@ -34,12 +30,12 @@ const SwitchFragment = ({ children, style: compStyle }) => {
 
         <Example>
           <Switch>This is a switch</Switch>
-          <Switch checked={true}>This is also a switch</Switch>
+          <Switch defaultChecked={true}>This is also a switch</Switch>
           <Switch disabled={true}>This is a disabled switch</Switch>
         </Example>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={USAGE} />
+        <Code foregroundColor="#fff" code={USAGE} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Table>
@@ -62,7 +58,7 @@ const SwitchFragment = ({ children, style: compStyle }) => {
             </TableRow>
             <TableRow>
               <TableData label="Name">onChecked</TableData>
-              <TableData label="Type">(isOn: boolean) => void</TableData>
+              <TableData label="Type">(isOn: boolean) =&gt; void</TableData>
               <TableData label="Required">No</TableData>
               <TableData label="Default" />
               <TableData label="Description">The function handler that is called when the Switch is toggled.</TableData>
@@ -73,7 +69,5 @@ const SwitchFragment = ({ children, style: compStyle }) => {
     </Page>
   );
 };
-
-SwitchFragment.propTypes = {};
 
 export default SwitchFragment;

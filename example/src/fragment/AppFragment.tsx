@@ -11,7 +11,7 @@ const AppFragment = () => {
             The App component is used to provide initial layout as well as global themeing for your application.
           </Paragraph>
           <PaddedHeading h={6}>Usage</PaddedHeading>
-          <Code foregroundColor="#fff" text={`import { App } from "@react-uix/web";`} />
+          <Code foregroundColor="#fff" code={`import { App } from "@react-uix/web";`} />
           <PaddedHeading h={6}>Props</PaddedHeading>
           <Table>
             <TableHeader>

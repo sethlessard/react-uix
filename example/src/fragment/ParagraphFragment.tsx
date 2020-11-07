@@ -11,7 +11,7 @@ const ParagraphFragment = () => {
         </Paragraph>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={`import { Paragraph } from "@react-uix/web";`} />
+        <Code foregroundColor="#fff" code={`import { Paragraph } from "@react-uix/web";`} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Table>

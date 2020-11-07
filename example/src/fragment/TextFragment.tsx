@@ -3,7 +3,7 @@ import Fragment from './Fragment';
 import { PaddedHeading, Paragraph, Text, Code, Table, TableHeader, TableRow, TableBody, TableData, HeaderCell, Page } from '@react-uix/web';
 import { Example } from '../component';
 
-const TextFragment = (props) => {
+const TextFragment = () => {
   return (
     <Page>
       <Fragment title="Text">
@@ -15,7 +15,7 @@ const TextFragment = (props) => {
         </Example>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={`import { Text } from "@react-uix/web";`} />
+        <Code foregroundColor="#fff" code={`import { Text } from "@react-uix/web";`} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Table>

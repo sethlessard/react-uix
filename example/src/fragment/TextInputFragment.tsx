@@ -23,11 +23,7 @@ const onChange = (value) => {
 />
 `;
 
-const TextInputFragment = ({ style: compStyle }) => {
-  const style = {
-    TextInputFragment: {}
-  };
-  Object.assign(style.TextInputFragment, compStyle);
+const TextInputFragment = () => {
   return (
     <Page>
       <Fragment title="Text Input">
@@ -38,7 +34,7 @@ const TextInputFragment = ({ style: compStyle }) => {
         </Example>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={USAGE} />
+        <Code foregroundColor="#fff" code={USAGE} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Table>
@@ -61,7 +57,7 @@ const TextInputFragment = ({ style: compStyle }) => {
             </TableRow>
             <TableRow>
               <TableData label="Name">onChange</TableData>
-              <TableData label="Type">(value: string) => void</TableData>
+              <TableData label="Type">(value: string) =&gt; void</TableData>
               <TableData label="Required">No</TableData>
               <TableData label="Default" />
               <TableData label="Description">The handler function that is called when the value is updated.</TableData>

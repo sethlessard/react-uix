@@ -5,11 +5,10 @@ import copy from "copy-to-clipboard";
 
 import IconButton from "./IconButton";
 import { UIState } from '../redux/reducers/ui';
-import HasChildren from '../types/HasChildren';
 import HasStyle from '../types/HasStyle';
 import Styleable from '../types/Styleable';
 
-export interface CodeProps extends HasChildren, HasStyle, Styleable { 
+export interface CodeProps extends HasStyle, Styleable { 
   code: string;
 }
 

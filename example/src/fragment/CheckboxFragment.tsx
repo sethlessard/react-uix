@@ -4,11 +4,11 @@ import Fragment from "./Fragment";
 import { Example } from "../component";
 import { Checkbox, PaddedHeading, Paragraph, Code, Table, TableHeader, TableRow, HeaderCell, TableBody, TableData, ScrollToTop, Page } from "@react-uix/web";
 
-const onChecked = (checked) => {
+const onChecked = (checked: boolean) => {
   alert(`onChecked! Value: ${checked}`);
 }
 
-const CheckboxFragment = (props) => {
+const CheckboxFragment = () => {
   return (
     <Page>
       <ScrollToTop>
@@ -22,7 +22,7 @@ const CheckboxFragment = (props) => {
           </Example>
 
           <PaddedHeading h={6}>Usage</PaddedHeading>
-          <Code foregroundColor="#fff" text={`import { Checkbox } from "@react-uix/web";`} />
+          <Code foregroundColor="#fff" code={`import { Checkbox } from "@react-uix/web";`} />
 
           <PaddedHeading h={6}>Props</PaddedHeading>
           <Table>
@@ -45,7 +45,7 @@ const CheckboxFragment = (props) => {
               </TableRow>
               <TableRow>
                 <TableData label="Name">onChecked</TableData>
-                <TableData label="Type">(checked: boolean) => void</TableData>
+                <TableData label="Type">(checked: boolean) =&gt; void</TableData>
                 <TableData label="Required">No</TableData>
                 <TableData label="Default" />
                 <TableData label="Description">The function handler that is called when the checkbox is checked.</TableData>

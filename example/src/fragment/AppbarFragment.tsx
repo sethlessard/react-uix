@@ -21,13 +21,14 @@ import {
   ScrollToTop,
   Text,
   Spacer,
-  Page
+  Page,
+  ListType
 } from "@react-uix/web";
 
 import Fragment from './Fragment';
 import { Example } from "../component";
 
-const AppbarFragment = (props) => {
+const AppbarFragment = () => {
   return (
     <Page>
       <ScrollToTop>
@@ -40,7 +41,7 @@ const AppbarFragment = (props) => {
                 <AppTitle>Appbar</AppTitle>
               </AppTitleContainer>
               <AppbarToolbar>
-                <IconButton color="#ffffff">more_vert</IconButton>
+                <IconButton foregroundColor="#ffffff">more_vert</IconButton>
               </AppbarToolbar>
             </Appbar>
           </Example>
@@ -50,14 +51,12 @@ const AppbarFragment = (props) => {
                 <AppTitle>Appbar</AppTitle>
               </AppTitleContainer>
               <AppbarToolbar>
-                <IconButton color="#000000">more_vert</IconButton>
+                <IconButton foregroundColor="#000000">more_vert</IconButton>
               </AppbarToolbar>
             </Appbar>
           </Example>
           <PaddedHeading h={6}>Usage</PaddedHeading>
-          <Paragraph>
-            <Code foregroundColor="#fff" text={`import { Appbar } from "@react-uix/web";`} />
-          </Paragraph>
+          <Code foregroundColor="#fff" code={`import { Appbar } from "@react-uix/web";`} />
           <PaddedHeading h={6}>Props</PaddedHeading>
           <Table>
             <TableHeader>
@@ -104,7 +103,7 @@ const AppbarFragment = (props) => {
           <Paragraph>
             Appbar has the following child components:
           </Paragraph>
-          <List>
+          <List type={ListType.Unordered}>
             <ListItem><Text fontSize=".7rem">AppTitle</Text></ListItem>
             <ListItem><Text fontSize=".7rem">AppTitleContainer</Text></ListItem>
             <ListItem><Text fontSize=".7rem">AppbarToggleButton</Text></ListItem>
@@ -124,30 +123,28 @@ const AppbarFragment = (props) => {
             </Appbar>
           </Example>
           <PaddedHeading h={6}>Usage</PaddedHeading>
-          <Code foregroundColor="#fff" text={`import { AppTitle } from "@react-uix/web";`} />
+          <Code foregroundColor="#fff" code={`import { AppTitle } from "@react-uix/web";`} />
           <PaddedHeading h={6}>Props</PaddedHeading>
-          <Paragraph>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <HeaderCell>Name</HeaderCell>
-                  <HeaderCell>Type</HeaderCell>
-                  <HeaderCell>Required</HeaderCell>
-                  <HeaderCell>Default</HeaderCell>
-                  <HeaderCell>Description</HeaderCell>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableData label="Name">children</TableData>
-                  <TableData label="Type">string</TableData>
-                  <TableData label="Required">No</TableData>
-                  <TableData label="Default" />
-                  <TableData label="Description">The title.</TableData>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </Paragraph>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <HeaderCell>Name</HeaderCell>
+                <HeaderCell>Type</HeaderCell>
+                <HeaderCell>Required</HeaderCell>
+                <HeaderCell>Default</HeaderCell>
+                <HeaderCell>Description</HeaderCell>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableData label="Name">children</TableData>
+                <TableData label="Type">string</TableData>
+                <TableData label="Required">No</TableData>
+                <TableData label="Default" />
+                <TableData label="Description">The title.</TableData>
+              </TableRow>
+            </TableBody>
+          </Table>
         </Fragment>
         <Spacer size="2em" />
         <Fragment title="AppTitleContainer">
@@ -156,35 +153,33 @@ const AppbarFragment = (props) => {
             in the Appbar.
           </Paragraph>
           <PaddedHeading h={6}>Usage</PaddedHeading>
-          <Code foregroundColor="#fff" text={`import { AppTitleContainer } from "@react-uix/web";`} />
+          <Code foregroundColor="#fff" code={`import { AppTitleContainer } from "@react-uix/web";`} />
           <PaddedHeading h={6}>Props</PaddedHeading>
-          <Paragraph>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <HeaderCell>Name</HeaderCell>
-                  <HeaderCell>Type</HeaderCell>
-                  <HeaderCell>Required</HeaderCell>
-                  <HeaderCell>Default</HeaderCell>
-                  <HeaderCell>Description</HeaderCell>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableData label="Name">children</TableData>
-                  <TableData label="Type">node</TableData>
-                  <TableData label="Required">No</TableData>
-                  <TableData label="Default" />
-                  <TableData label="Description">The contents of the AppTitleContainer. See Child Components below.</TableData>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </Paragraph>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <HeaderCell>Name</HeaderCell>
+                <HeaderCell>Type</HeaderCell>
+                <HeaderCell>Required</HeaderCell>
+                <HeaderCell>Default</HeaderCell>
+                <HeaderCell>Description</HeaderCell>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableData label="Name">children</TableData>
+                <TableData label="Type">node</TableData>
+                <TableData label="Required">No</TableData>
+                <TableData label="Default" />
+                <TableData label="Description">The contents of the AppTitleContainer. See Child Components below.</TableData>
+              </TableRow>
+            </TableBody>
+          </Table>
           <PaddedHeading h={6}>Child Components</PaddedHeading>
           <Paragraph>
             AppTitleContainer has the following child components used for styling:
           </Paragraph>
-          <List>
+          <List type={ListType.Unordered}>
             <ListItem><Text fontSize=".7rem">AppTitle</Text></ListItem>
             <ListItem><Text fontSize=".7rem">AppbarToggleButton</Text></ListItem>
           </List>
@@ -202,30 +197,28 @@ const AppbarFragment = (props) => {
             </Appbar>
           </Example>
           <PaddedHeading h={6}>Usage</PaddedHeading>
-          <Code foregroundColor="#fff" text={`import { AppbarToggleButton } from "@react-uix/web";`} />
+          <Code foregroundColor="#fff" code={`import { AppbarToggleButton } from "@react-uix/web";`} />
           <PaddedHeading h={6}>Props</PaddedHeading>
-          <Paragraph>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <HeaderCell>Name</HeaderCell>
-                  <HeaderCell>Type</HeaderCell>
-                  <HeaderCell>Required</HeaderCell>
-                  <HeaderCell>Default</HeaderCell>
-                  <HeaderCell>Description</HeaderCell>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableData label="Name">children</TableData>
-                  <TableData label="Type">string</TableData>
-                  <TableData label="Required">No</TableData>
-                  <TableData label="Default" />
-                  <TableData label="Description">The material icon to be used for the AppbarToggleButton.</TableData>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </Paragraph>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <HeaderCell>Name</HeaderCell>
+                <HeaderCell>Type</HeaderCell>
+                <HeaderCell>Required</HeaderCell>
+                <HeaderCell>Default</HeaderCell>
+                <HeaderCell>Description</HeaderCell>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableData label="Name">children</TableData>
+                <TableData label="Type">string</TableData>
+                <TableData label="Required">No</TableData>
+                <TableData label="Default" />
+                <TableData label="Description">The material icon to be used for the AppbarToggleButton.</TableData>
+              </TableRow>
+            </TableBody>
+          </Table>
         </Fragment>
         <Spacer size="2em" />
         <Fragment title="AppbarToolbar">
@@ -233,35 +226,33 @@ const AppbarFragment = (props) => {
             The AppbarToolbar component is used to position elements on the right side of the Appbar.
           </Paragraph>
           <PaddedHeading h={6}>Usage</PaddedHeading>
-          <Code foregroundColor="#fff" text={`import { AppbarToolbar } from "@react-uix/web";`} />
+          <Code foregroundColor="#fff" code={`import { AppbarToolbar } from "@react-uix/web";`} />
           <PaddedHeading h={6}>Props</PaddedHeading>
-          <Paragraph>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <HeaderCell>Name</HeaderCell>
-                  <HeaderCell>Type</HeaderCell>
-                  <HeaderCell>Required</HeaderCell>
-                  <HeaderCell>Default</HeaderCell>
-                  <HeaderCell>Description</HeaderCell>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableData label="Name">children</TableData>
-                  <TableData label="Type">node</TableData>
-                  <TableData label="Required">No</TableData>
-                  <TableData label="Default" />
-                  <TableData label="Description">The contents of the AppbarToolbar. See Child Components below.</TableData>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </Paragraph>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <HeaderCell>Name</HeaderCell>
+                <HeaderCell>Type</HeaderCell>
+                <HeaderCell>Required</HeaderCell>
+                <HeaderCell>Default</HeaderCell>
+                <HeaderCell>Description</HeaderCell>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableData label="Name">children</TableData>
+                <TableData label="Type">node</TableData>
+                <TableData label="Required">No</TableData>
+                <TableData label="Default" />
+                <TableData label="Description">The contents of the AppbarToolbar. See Child Components below.</TableData>
+              </TableRow>
+            </TableBody>
+          </Table>
           <PaddedHeading h={6}>Child Components</PaddedHeading>
           <Paragraph>
             AppbarToolbar has the following child components:
           </Paragraph>
-          <List>
+          <List type={ListType.Unordered}>
             <ListItem><Link to="/component/IconButton"><Text fontSize=".7rem">IconButton</Text></Link></ListItem>
             <ListItem><Link to="/component/DropdownButton"><Text fontSize=".7rem">DropdownButton</Text></Link></ListItem>
           </List>

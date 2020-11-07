@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import { HasChildren, HasStyle } from "@react-uix/web";
 
 const Wrapper = styled.div`
   padding: 1em;

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import styled, { CSSProperties } from "styled-components";
+import { HasChildren } from '../..';
 
 import { updateAppbarDefined, updateAppbarHeight } from '../../redux/actions/ui';
 import { UIState } from '../../redux/reducers/ui';
 import HasStyle from '../../types/HasStyle';
 import Styleable from '../../types/Styleable';
 
-export interface AppbarProps extends Styleable, HasStyle {
+export interface AppbarProps extends HasChildren, Styleable, HasStyle {
   demo?: boolean,
   height?: number,
 };

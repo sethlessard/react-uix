@@ -23,7 +23,9 @@
     "typescript": "file:../node_modules/typescript",
     "styled-components": "file:../node_modules/styled-components",
     "@react-uix/web": "file:..",
-    "uuid": "7.0.2"
+    "uuid": "file:../node_modules/uuid",
+    "@types/react-router-dom": "file:../node_modules/@types/react-router-dom",
+    "react-router-dom": "file:../node_modules/react-router-dom"
   },
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.8.3"

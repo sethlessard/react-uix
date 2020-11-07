@@ -9,15 +9,15 @@ const IconButtonFragment = () => {
       <Fragment title="Icon Button">
         <Paragraph>The IconButton component can be used to implement a clickable Icon.</Paragraph>
         <Example>
-          <IconButton color="#000000">home</IconButton>
-          <IconButton color="#000000">menu</IconButton>
-          <IconButton color="#000000">more_vert</IconButton>
-          <IconButton color="#000000">settings</IconButton>
-          <IconButton color="#000000">account_circle</IconButton>
+          <IconButton foregroundColor="#000000">home</IconButton>
+          <IconButton foregroundColor="#000000">menu</IconButton>
+          <IconButton foregroundColor="#000000">more_vert</IconButton>
+          <IconButton foregroundColor="#000000">settings</IconButton>
+          <IconButton foregroundColor="#000000">account_circle</IconButton>
         </Example>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={`import { IconButton } from "@react-uix/web";`} />
+        <Code foregroundColor="#fff" code={`import { IconButton } from "@react-uix/web";`} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Table>

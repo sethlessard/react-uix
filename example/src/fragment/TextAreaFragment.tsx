@@ -6,7 +6,7 @@ import {
 import Fragment from "./Fragment";
 import { Example } from "../component";
 
-const TextAreaFragment = (props) => {
+const TextAreaFragment = () => {
   return (
     <Page>
       <Fragment title="Text Area">
@@ -18,7 +18,7 @@ const TextAreaFragment = (props) => {
         </Example>
 
         <PaddedHeading h={6}>Usage</PaddedHeading>
-        <Code foregroundColor="#fff" text={`import { TextArea } from "@react-uix/web";`} />
+        <Code foregroundColor="#fff" code={`import { TextArea } from "@react-uix/web";`} />
 
         <PaddedHeading h={6}>Props</PaddedHeading>
         <Table>

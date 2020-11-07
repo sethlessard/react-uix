@@ -2,7 +2,7 @@ import React from 'react';
 import Fragment from './Fragment';
 import { Card, CardBody, Grid, Row, Text, Toolbar, ToolbarTitle, Spacer, Page } from '@react-uix/web';
 
-const generateItems = (numItems) => {
+const generateItems = (numItems: number) => {
   const items = [];
   for (let i = 0; i < numItems; i++) {
     items.push(<Card style={{ height: 50 }} key={i}><CardBody><Text style={{ textAlign: "center" }}>{i + 1}</Text></CardBody></Card>);

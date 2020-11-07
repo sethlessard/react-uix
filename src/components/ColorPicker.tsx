@@ -5,7 +5,7 @@ import { UIState } from "../redux/reducers/ui";
 import HasStyle from "../types/HasStyle";
 
 interface IHasDefaultColor {
-  defaultColor: string;
+  defaultColor?: string;
 }
 
 export interface ColorPickerProps extends HasStyle, IHasDefaultColor {
