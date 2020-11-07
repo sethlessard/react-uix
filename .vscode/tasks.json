@@ -1,0 +1,46 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "start",
+      "path": "example/",
+      "problemMatcher": ["$tsc-watch"],
+      "label": "npm: start - example",
+      "detail": "node ../node_modules/react-scripts/bin/react-scripts.js start"
+    },
+    {
+      "type": "npm",
+      "script": "start",
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^\\(.*\\) (Error): (.*)\\((\\d+),(\\d+)\\): (.*)$",
+          "severity": 2,
+          "file": 3,
+          "line": 4,
+          "column": 5,
+          "message": 6
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Watching source, compiling to dist:",
+          "endsPattern": "Wrote.*"
+        }
+      },
+      "label": "npm: start",
+      "detail": "microbundle-crl watch --no-compress --format modern,cjs"
+    },
+    {
+      "label": "Watch",
+      "dependsOn": [
+        "npm: start",
+        "npm: start - example"
+      ],
+      "dependsOrder": "parallel",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
